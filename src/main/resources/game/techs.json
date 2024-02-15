@@ -1,0 +1,1073 @@
+{
+  "Fire": {
+    "column": 0,
+    "revealDeposit": [
+      "Water"
+    ],
+    "unlockBuilding": [
+      "Aqueduct"
+    ],
+    "requireTech": []
+  },
+  "StoneTools": {
+    "column": 0,
+    "revealDeposit": [
+      "Stone"
+    ],
+    "unlockBuilding": [
+      "StoneQuarry"
+    ],
+    "requireTech": []
+  },
+  "Logging": {
+    "column": 0,
+    "revealDeposit": [
+      "Wood"
+    ],
+    "unlockBuilding": [
+      "LoggingCamp"
+    ],
+    "requireTech": []
+  },
+  "Shelter": {
+    "column": 0,
+    "unlockBuilding": [
+      "Hut"
+    ],
+    "requireTech": []
+  },
+  "Masonry": {
+    "column": 1,
+    "requireTech": [
+      "Fire",
+      "StoneTools"
+    ],
+    "unlockBuilding": [
+      "Brickworks",
+      "PyramidOfGiza"
+    ]
+  },
+  "Counting": {
+    "column": 1,
+    "requireTech": [
+      "Logging",
+      "StoneTools"
+    ],
+    "unlockBuilding": [
+      "LumberMill"
+    ]
+  },
+  "Farming": {
+    "column": 1,
+    "unlockBuilding": [
+      "WheatFarm"
+    ],
+    "requireTech": [
+      "Shelter",
+      "Logging"
+    ]
+  },
+  "Bronze": {
+    "column": 2,
+    "unlockBuilding": [
+      "CopperMiningCamp"
+    ],
+    "revealDeposit": [
+      "Copper"
+    ],
+    "requireTech": [
+      "Masonry"
+    ]
+  },
+  "Housing": {
+    "column": 2,
+    "unlockBuilding": [
+      "House"
+    ],
+    "requireTech": [
+      "Masonry",
+      "Counting"
+    ],
+    "buildingMultiplier": {
+      "Hut": {
+        "output": 1
+      }
+    }
+  },
+  "Herding": {
+    "column": 2,
+    "unlockBuilding": [
+      "LivestockFarm"
+    ],
+    "requireTech": [
+      "Counting",
+      "Farming"
+    ],
+    "additionalUpgrades": [
+      null
+    ]
+  },
+  "HorsebackRiding": {
+    "column": 2,
+    "additionalUpgrades": [
+      null
+    ],
+    "unlockBuilding": [
+      "Stable",
+      "Sandpit"
+    ],
+    "requireTech": [
+      "Farming"
+    ]
+  },
+  "Metallurgy": {
+    "column": 3,
+    "requireTech": [
+      "Bronze"
+    ],
+    "unlockBuilding": [
+      "HatshepsutTemple",
+      "Blacksmith"
+    ]
+  },
+  "Stateship": {
+    "column": 3,
+    "requireTech": [
+      "Housing"
+    ],
+    "unlockBuilding": [
+      "FlourMill",
+      "CottonPlantation"
+    ]
+  },
+  "Market": {
+    "column": 3,
+    "requireTech": [
+      "Housing",
+      "Herding"
+    ],
+    "unlockBuilding": [
+      "Market",
+      "ColossusOfRhodes"
+    ]
+  },
+  "Arithmetic": {
+    "column": 3,
+    "requireTech": [
+      "Herding",
+      "HorsebackRiding"
+    ],
+    "unlockBuilding": [
+      "Statistics"
+    ]
+  },
+  "Writing": {
+    "column": 3,
+    "requireTech": [
+      "HorsebackRiding"
+    ],
+    "unlockBuilding": [
+      "PaperMaker"
+    ]
+  },
+  "Iron": {
+    "column": 4,
+    "revealDeposit": [
+      "Iron"
+    ],
+    "unlockBuilding": [
+      "IronMiningCamp"
+    ],
+    "requireTech": [
+      "Metallurgy",
+      "Stateship"
+    ]
+  },
+  "RoadAndWheel": {
+    "column": 4,
+    "requireTech": [
+      "Market",
+      "Stateship"
+    ],
+    "unlockBuilding": [
+      "Warehouse"
+    ],
+    "buildingMultiplier": {
+      "House": {
+        "worker": 1
+      }
+    }
+  },
+  "LandTrade": {
+    "column": 4,
+    "requireTech": [
+      "Market",
+      "Arithmetic"
+    ],
+    "unlockBuilding": [
+      "Caravansary"
+    ],
+    "globalMultiplier": {
+      "transportCapacity": 1
+    }
+  },
+  "Astronomy": {
+    "column": 4,
+    "requireTech": [
+      "Arithmetic",
+      "Writing"
+    ],
+    "unlockBuilding": [
+      "Brewery",
+      "Stonehenge"
+    ]
+  },
+  "Shamanism": {
+    "column": 5,
+    "requireTech": [
+      "Iron",
+      "RoadAndWheel"
+    ],
+    "unlockBuilding": [
+      "ChariotWorkshop",
+      "Persepolis"
+    ]
+  },
+  "Construction": {
+    "column": 5,
+    "requireTech": [
+      "RoadAndWheel"
+    ],
+    "unlockBuilding": [
+      "IronForge",
+      "Marbleworks"
+    ]
+  },
+  "Music": {
+    "column": 5,
+    "requireTech": [
+      "LandTrade",
+      "RoadAndWheel"
+    ],
+    "unlockBuilding": [
+      "MusiciansGuild",
+      "PaintersGuild"
+    ]
+  },
+  "Calendar": {
+    "column": 5,
+    "requireTech": [
+      "Astronomy",
+      "LandTrade"
+    ],
+    "unlockBuilding": [
+      "CottonMill",
+      "HangingGarden"
+    ]
+  },
+  "Engineering": {
+    "column": 6,
+    "requireTech": [
+      "Shamanism",
+      "Construction"
+    ],
+    "unlockBuilding": [
+      "Armory",
+      "LighthouseOfAlexandria"
+    ]
+  },
+  "PreciousMetal": {
+    "column": 6,
+    "requireTech": [
+      "Construction"
+    ],
+    "revealDeposit": [
+      "Gold"
+    ],
+    "unlockBuilding": [
+      "GoldMiningCamp"
+    ]
+  },
+  "CityState": {
+    "column": 6,
+    "requireTech": [
+      "Construction",
+      "Music"
+    ],
+    "unlockBuilding": [
+      "Bakery",
+      "MausoleumAtHalicarnassus"
+    ]
+  },
+  "Literature": {
+    "column": 6,
+    "requireTech": [
+      "Calendar",
+      "Music"
+    ],
+    "unlockBuilding": [
+      "CheeseMaker",
+      "WritersGuild"
+    ]
+  },
+  "Machinery": {
+    "column": 7,
+    "requireTech": [
+      "PreciousMetal",
+      "Engineering"
+    ],
+    "unlockBuilding": [
+      "SiegeWorkshop",
+      "TerracottaArmy"
+    ],
+    "additionalUpgrades": [
+      null
+    ]
+  },
+  "Politics": {
+    "column": 7,
+    "requireTech": [
+      "CityState",
+      "PreciousMetal"
+    ],
+    "unlockBuilding": [
+      "FurnitureWorkshop",
+      "Petra"
+    ]
+  },
+  "Theater": {
+    "column": 7,
+    "requireTech": [
+      "Literature"
+    ],
+    "unlockBuilding": [
+      "ActorsGuild"
+    ]
+  },
+  "Library": {
+    "column": 7,
+    "requireTech": [
+      "Literature"
+    ],
+    "unlockBuilding": [
+      "Library",
+      "Glassworks"
+    ]
+  },
+  "Architecture": {
+    "column": 8,
+    "requireTech": [
+      "Machinery"
+    ],
+    "unlockBuilding": [
+      "SwordForge",
+      "ChichenItza"
+    ],
+    "globalMultiplier": {
+      "builderCapacity": 1
+    }
+  },
+  "Democracy": {
+    "column": 8,
+    "requireTech": [
+      "Politics"
+    ],
+    "unlockBuilding": [
+      "Apartment"
+    ]
+  },
+  "Autocracy": {
+    "column": 8,
+    "requireTech": [
+      "Politics",
+      "Library",
+      "Theater"
+    ],
+    "unlockBuilding": [
+      "CoinMint",
+      "TempleOfHeaven"
+    ]
+  },
+  "Religion": {
+    "column": 8,
+    "requireTech": [
+      "Library"
+    ],
+    "unlockBuilding": [
+      "Shrine",
+      "LuxorTemple"
+    ]
+  },
+  "Geography": {
+    "column": 9,
+    "requireTech": [
+      "Architecture"
+    ],
+    "unlockBuilding": [
+      "CaravelBuilder"
+    ],
+    "buildingMultiplier": {
+      "Library": {
+        "output": 10,
+        "input": 10
+      }
+    }
+  },
+  "Physics": {
+    "column": 9,
+    "requireTech": [
+      "Architecture"
+    ],
+    "unlockBuilding": [
+      "GarmentWorkshop"
+    ]
+  },
+  "Feudalism": {
+    "column": 9,
+    "requireTech": [
+      "Autocracy",
+      "Democracy"
+    ],
+    "unlockBuilding": [
+      "KnightCamp",
+      "TempleOfArtemis"
+    ]
+  },
+  "Theocracy": {
+    "column": 9,
+    "requireTech": [
+      "Autocracy",
+      "Religion"
+    ],
+    "unlockBuilding": [
+      "Church",
+      "Mosque"
+    ]
+  },
+  "Navigation": {
+    "column": 10,
+    "requireTech": [
+      "Geography",
+      "Physics"
+    ],
+    "unlockBuilding": [
+      "GalleonBuilder"
+    ]
+  },
+  "CivilService": {
+    "column": 10,
+    "requireTech": [
+      "Feudalism"
+    ],
+    "unlockBuilding": [
+      "AngkorWat"
+    ]
+  },
+  "HolyEmpire": {
+    "column": 10,
+    "requireTech": [
+      "Feudalism",
+      "Theocracy"
+    ],
+    "unlockBuilding": [
+      "Cathedral",
+      "HagiaSophia"
+    ]
+  },
+  "Education": {
+    "column": 10,
+    "requireTech": [
+      "Theocracy"
+    ],
+    "unlockBuilding": [
+      "School"
+    ]
+  },
+  "Optics": {
+    "column": 11,
+    "requireTech": [
+      "Navigation"
+    ],
+    "unlockBuilding": [
+      "LensWorkshop"
+    ],
+    "globalMultiplier": {
+      "builderCapacity": 1
+    },
+    "buildingMultiplier": {
+      "Library": {
+        "output": 10,
+        "input": 10
+      },
+      "School": {
+        "output": 10,
+        "input": 10
+      }
+    }
+  },
+  "Banking": {
+    "column": 11,
+    "requireTech": [
+      "CivilService",
+      "Navigation"
+    ],
+    "unlockBuilding": [
+      "Bank"
+    ],
+    "additionalUpgrades": [
+      null
+    ]
+  },
+  "University": {
+    "column": 11,
+    "requireTech": [
+      "HolyEmpire",
+      "Education",
+      "CivilService"
+    ],
+    "unlockBuilding": [
+      "University",
+      "OxfordUniversity"
+    ],
+    "globalMultiplier": {
+      "sciencePerBusyWorker": 1
+    }
+  },
+  "Chemistry": {
+    "column": 11,
+    "requireTech": [
+      "Education"
+    ],
+    "revealDeposit": [
+      "Coal"
+    ],
+    "unlockBuilding": [
+      "CoalMine"
+    ],
+    "buildingMultiplier": {
+      "StoneQuarry": {
+        "storage": 1,
+        "output": 1
+      },
+      "LoggingCamp": {
+        "storage": 1,
+        "output": 1
+      },
+      "IronMiningCamp": {
+        "storage": 1,
+        "output": 1
+      },
+      "CopperMiningCamp": {
+        "storage": 1,
+        "output": 1
+      },
+      "Sandpit": {
+        "storage": 1,
+        "output": 1
+      }
+    }
+  },
+  "Exploration": {
+    "column": 12,
+    "requireTech": [
+      "Optics"
+    ],
+    "unlockBuilding": [
+      "CannonWorkshop"
+    ]
+  },
+  "PrintingPress": {
+    "column": 12,
+    "requireTech": [
+      "Banking",
+      "University",
+      "Optics"
+    ],
+    "unlockBuilding": [
+      "PrintingHouse",
+      "ForbiddenCity"
+    ]
+  },
+  "Enlightenment": {
+    "column": 12,
+    "requireTech": [
+      "University",
+      "Chemistry"
+    ],
+    "unlockBuilding": [
+      "Museum",
+      "StPetersBasilica"
+    ]
+  },
+  "Firearm": {
+    "column": 12,
+    "requireTech": [
+      "Chemistry"
+    ],
+    "unlockBuilding": [
+      "GunpowderMill"
+    ]
+  },
+  "Colonialism": {
+    "column": 13,
+    "requireTech": [
+      "Exploration",
+      "PrintingPress"
+    ],
+    "unlockBuilding": [
+      "FrigateBuilder",
+      "HimejiCastle"
+    ]
+  },
+  "PrivateOwnership": {
+    "column": 13,
+    "requireTech": [
+      "PrintingPress"
+    ],
+    "unlockBuilding": [
+      "BondMarket"
+    ]
+  },
+  "Constitution": {
+    "column": 13,
+    "requireTech": [
+      "Enlightenment",
+      "PrintingPress"
+    ],
+    "unlockBuilding": [
+      "Courthouse",
+      "TajMahal"
+    ]
+  },
+  "Revolution": {
+    "column": 13,
+    "requireTech": [
+      "Enlightenment",
+      "Firearm"
+    ],
+    "unlockBuilding": [
+      "DynamiteWorkshop"
+    ]
+  },
+  "Rifling": {
+    "column": 14,
+    "requireTech": [
+      "PrivateOwnership",
+      "Colonialism"
+    ],
+    "unlockBuilding": [
+      "RifleFactory",
+      "Neuschwanstein"
+    ]
+  },
+  "Alloy": {
+    "column": 14,
+    "requireTech": [
+      "PrivateOwnership"
+    ],
+    "unlockBuilding": [
+      "SteelMill",
+      "EiffelTower"
+    ]
+  },
+  "SteamEngine": {
+    "column": 14,
+    "requireTech": [
+      "PrivateOwnership"
+    ],
+    "unlockBuilding": [
+      "Steamworks"
+    ]
+  },
+  "Capitalism": {
+    "column": 14,
+    "requireTech": [
+      "Constitution",
+      "Revolution"
+    ],
+    "globalMultiplier": {
+      "builderCapacity": 1
+    },
+    "unlockBuilding": [
+      "Parliament"
+    ]
+  },
+  "RapidFire": {
+    "column": 15,
+    "requireTech": [
+      "Rifling",
+      "Alloy"
+    ],
+    "unlockBuilding": [
+      "GatlingGunFactory"
+    ]
+  },
+  "Railway": {
+    "column": 15,
+    "requireTech": [
+      "Alloy",
+      "SteamEngine"
+    ],
+    "unlockBuilding": [
+      "LocomotiveFactory"
+    ],
+    "globalMultiplier": {
+      "transportCapacity": 1
+    }
+  },
+  "Drilling": {
+    "column": 15,
+    "requireTech": [
+      "Capitalism",
+      "SteamEngine"
+    ],
+    "unlockBuilding": [
+      "OilWell"
+    ],
+    "revealDeposit": [
+      "Oil"
+    ]
+  },
+  "Journalism": {
+    "column": 15,
+    "requireTech": [
+      "Capitalism"
+    ],
+    "unlockBuilding": [
+      "PublishingHouse",
+      "Rijksmuseum"
+    ],
+    "globalMultiplier": {
+      "sciencePerBusyWorker": 1
+    }
+  },
+  "Imperialism": {
+    "column": 16,
+    "requireTech": [
+      "Railway",
+      "RapidFire"
+    ],
+    "unlockBuilding": [
+      "IroncladBuilder",
+      "SummerPalace"
+    ]
+  },
+  "Electricity": {
+    "column": 16,
+    "requireTech": [
+      "Railway",
+      "Drilling"
+    ],
+    "unlockBuilding": [
+      "CoalPowerPlant"
+    ],
+    "additionalUpgrades": [
+      null
+    ]
+  },
+  "StockMarket": {
+    "column": 16,
+    "requireTech": [
+      "Journalism"
+    ],
+    "unlockBuilding": [
+      "StockExchange",
+      "StatueOfLiberty"
+    ],
+    "globalMultiplier": {
+      "storage": 1
+    }
+  },
+  "Olympics": {
+    "column": 16,
+    "requireTech": [
+      "Journalism"
+    ],
+    "unlockBuilding": [
+      "Stadium"
+    ],
+    "globalMultiplier": {
+      "happiness": 5
+    }
+  },
+  "Combustion": {
+    "column": 17,
+    "requireTech": [
+      "Imperialism",
+      "Electricity"
+    ],
+    "unlockBuilding": [
+      "TankFactory"
+    ]
+  },
+  "Electrolysis": {
+    "column": 17,
+    "requireTech": [
+      "Electricity"
+    ],
+    "revealDeposit": [
+      "Aluminum"
+    ],
+    "unlockBuilding": [
+      "AluminumSmelter"
+    ]
+  },
+  "Refinery": {
+    "column": 17,
+    "requireTech": [
+      "Electricity"
+    ],
+    "unlockBuilding": [
+      "OilRefinery",
+      "BrandenburgGate"
+    ]
+  },
+  "GasPipeline": {
+    "column": 17,
+    "requireTech": [
+      "Electricity"
+    ],
+    "unlockBuilding": [
+      "NaturalGasWell"
+    ],
+    "revealDeposit": [
+      "NaturalGas"
+    ]
+  },
+  "Urbanization": {
+    "column": 17,
+    "requireTech": [
+      "Olympics",
+      "StockMarket"
+    ],
+    "unlockBuilding": [
+      "Pizzeria",
+      "MagazinePublisher"
+    ]
+  },
+  "Assembly": {
+    "column": 18,
+    "requireTech": [
+      "Combustion",
+      "Electrolysis"
+    ]
+  },
+  "AtomTheory": {
+    "column": 18,
+    "requireTech": [
+      "Refinery",
+      "Electrolysis"
+    ]
+  },
+  "Synthetics": {
+    "column": 18,
+    "requireTech": [
+      "Refinery",
+      "GasPipeline"
+    ]
+  },
+  "MotionPicture": {
+    "column": 18,
+    "requireTech": [
+      "Urbanization"
+    ]
+  },
+  "Aeroplane": {
+    "column": 19,
+    "requireTech": [
+      "Assembly",
+      "AtomTheory"
+    ]
+  },
+  "Medicine": {
+    "column": 19,
+    "requireTech": [
+      "AtomTheory"
+    ]
+  },
+  "Hospital": {
+    "column": 19,
+    "requireTech": [
+      "AtomTheory",
+      "Synthetics"
+    ]
+  },
+  "Greenhouse": {
+    "column": 19,
+    "requireTech": [
+      "Synthetics",
+      "MotionPicture"
+    ]
+  },
+  "Rocketry": {
+    "column": 20,
+    "requireTech": [
+      "Aeroplane"
+    ]
+  },
+  "Semiconductor": {
+    "column": 20,
+    "requireTech": [
+      "Aeroplane",
+      "Medicine"
+    ]
+  },
+  "Vaccine": {
+    "column": 20,
+    "requireTech": [
+      "Hospital",
+      "Medicine",
+      "Greenhouse"
+    ]
+  },
+  "Refrigeration": {
+    "column": 20,
+    "requireTech": [
+      "Greenhouse"
+    ]
+  },
+  "SpaceProgram": {
+    "column": 21,
+    "requireTech": [
+      "Rocketry",
+      "Semiconductor"
+    ]
+  },
+  "Television": {
+    "column": 21,
+    "requireTech": [
+      "Semiconductor"
+    ]
+  },
+  "Tourism": {
+    "column": 21,
+    "requireTech": [
+      "Vaccine",
+      "Semiconductor"
+    ]
+  },
+  "Skyscrapper": {
+    "column": 21,
+    "requireTech": [
+      "Vaccine",
+      "Refrigeration"
+    ]
+  },
+  "Computer": {
+    "column": 22,
+    "requireTech": [
+      "SpaceProgram",
+      "Television"
+    ]
+  },
+  "Globalization": {
+    "column": 22,
+    "requireTech": [
+      "Tourism",
+      "Television"
+    ]
+  },
+  "UnitedNation": {
+    "column": 22,
+    "requireTech": [
+      "Tourism"
+    ]
+  },
+  "Metropolitan": {
+    "column": 22,
+    "requireTech": [
+      "Skyscrapper"
+    ]
+  },
+  "NuclearFission": {
+    "column": 23,
+    "requireTech": [
+      "Computer"
+    ]
+  },
+  "Internet": {
+    "column": 23,
+    "requireTech": [
+      "Computer",
+      "Globalization"
+    ]
+  },
+  "Nanotechnology": {
+    "column": 23,
+    "requireTech": [
+      "Globalization"
+    ]
+  },
+  "Genetics": {
+    "column": 23,
+    "requireTech": [
+      "UnitedNation"
+    ]
+  },
+  "Conglomerate": {
+    "column": 23,
+    "requireTech": [
+      "UnitedNation",
+      "Metropolitan"
+    ]
+  },
+  "Robotics": {
+    "column": 24,
+    "requireTech": [
+      "NuclearFission",
+      "Internet"
+    ]
+  },
+  "SocialNetwork": {
+    "column": 24,
+    "requireTech": [
+      "Internet"
+    ]
+  },
+  "Smartphone": {
+    "column": 24,
+    "requireTech": [
+      "Internet",
+      "Nanotechnology"
+    ]
+  },
+  "UniversalHealthcare": {
+    "column": 24,
+    "requireTech": [
+      "Genetics"
+    ]
+  },
+  "VentureCapital": {
+    "column": 24,
+    "requireTech": [
+      "Conglomerate"
+    ]
+  },
+  "ArtificialIntelligence": {
+    "column": 25,
+    "unlockBuilding": [],
+    "requireTech": [
+      "Robotics",
+      "SocialNetwork"
+    ]
+  },
+  "CloudComputing": {
+    "column": 25,
+    "requireTech": [
+      "SocialNetwork"
+    ]
+  },
+  "VirtualReality": {
+    "column": 25,
+    "requireTech": [
+      "SocialNetwork",
+      "Smartphone"
+    ]
+  },
+  "Cryptocurrency": {
+    "column": 25,
+    "requireTech": [
+      "VentureCapital"
+    ]
+  }
+}

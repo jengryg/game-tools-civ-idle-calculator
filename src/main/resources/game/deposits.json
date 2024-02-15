@@ -1,0 +1,12 @@
+{
+  "Water": true,
+  "Copper": true,
+  "Iron": true,
+  "Wood": true,
+  "Stone": true,
+  "Gold": true,
+  "Coal": true,
+  "Oil": true,
+  "Aluminum": true,
+  "NaturalGas": true
+}

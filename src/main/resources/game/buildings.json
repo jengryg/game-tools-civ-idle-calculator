@@ -1,0 +1,1192 @@
+{
+  "Hut": {
+    "input": {},
+    "output": {
+      "Worker": 1
+    },
+    "construction": {
+      "Wood": 1
+    }
+  },
+  "House": {
+    "input": {
+      "Wheat": 1,
+      "Water": 1
+    },
+    "output": {
+      "Worker": 6
+    },
+    "construction": {
+      "Brick": 2
+    }
+  },
+  "Apartment": {
+    "input": {
+      "Cheese": 1,
+      "Meat": 2,
+      "Bread": 1
+    },
+    "output": {
+      "Worker": 84
+    },
+    "construction": {
+      "Brick": 2,
+      "Lumber": 2
+    }
+  },
+  "WheatFarm": {
+    "input": {},
+    "output": {
+      "Wheat": 1
+    },
+    "construction": {
+      "Wood": 1
+    }
+  },
+  "StoneQuarry": {
+    "input": {},
+    "deposit": {
+      "Stone": true
+    },
+    "output": {
+      "Stone": 1
+    },
+    "construction": {
+      "Wood": 1
+    }
+  },
+  "LoggingCamp": {
+    "input": {},
+    "deposit": {
+      "Wood": true
+    },
+    "output": {
+      "Wood": 1
+    },
+    "construction": {
+      "Stone": 1
+    }
+  },
+  "Aqueduct": {
+    "input": {},
+    "deposit": {
+      "Water": true
+    },
+    "output": {
+      "Water": 1
+    },
+    "construction": {
+      "Stone": 1
+    }
+  },
+  "IronMiningCamp": {
+    "input": {},
+    "deposit": {
+      "Iron": true
+    },
+    "output": {
+      "Iron": 1
+    },
+    "construction": {
+      "Stone": 1
+    }
+  },
+  "CopperMiningCamp": {
+    "input": {},
+    "deposit": {
+      "Copper": true
+    },
+    "output": {
+      "Copper": 1
+    },
+    "construction": {
+      "Brick": 1
+    }
+  },
+  "CoalMine": {
+    "input": {},
+    "deposit": {
+      "Coal": true
+    },
+    "output": {
+      "Coal": 1
+    },
+    "construction": {
+      "Brick": 1
+    }
+  },
+  "Sandpit": {
+    "input": {},
+    "output": {
+      "Sand": 1
+    },
+    "construction": {
+      "Wood": 1
+    }
+  },
+  "GoldMiningCamp": {
+    "input": {},
+    "deposit": {
+      "Gold": true
+    },
+    "output": {
+      "Gold": 1
+    },
+    "construction": {
+      "Stone": 1
+    }
+  },
+  "OilWell": {
+    "input": {},
+    "deposit": {
+      "Oil": true
+    },
+    "output": {
+      "Oil": 1
+    },
+    "construction": {
+      "Steel": 1,
+      "Dynamite": 1
+    }
+  },
+  "NaturalGasWell": {
+    "input": {},
+    "deposit": {
+      "NaturalGas": true
+    },
+    "output": {
+      "NaturalGas": 1
+    },
+    "construction": {
+      "Steel": 1,
+      "Dynamite": 1
+    }
+  },
+  "AluminumSmelter": {
+    "input": {},
+    "deposit": {
+      "Aluminum": true
+    },
+    "output": {
+      "Aluminum": 1
+    },
+    "construction": {
+      "Steel": 1
+    }
+  },
+  "CoalPowerPlant": {
+    "input": {
+      "Coal": 1
+    },
+    "output": {
+      "Power": 1
+    },
+    "construction": {
+      "Steel": 1
+    }
+  },
+  "SwordForge": {
+    "input": {
+      "Tool": 2
+    },
+    "output": {
+      "Sword": 1
+    }
+  },
+  "Armory": {
+    "input": {
+      "Tool": 2
+    },
+    "output": {
+      "Armor": 1
+    }
+  },
+  "ChariotWorkshop": {
+    "input": {
+      "Horse": 2,
+      "Lumber": 2,
+      "Copper": 1
+    },
+    "output": {
+      "Chariot": 1
+    }
+  },
+  "KnightCamp": {
+    "input": {
+      "Horse": 1,
+      "Armor": 1,
+      "Sword": 1
+    },
+    "output": {
+      "Knight": 1
+    }
+  },
+  "CannonWorkshop": {
+    "input": {
+      "Iron": 2,
+      "Wood": 1,
+      "Tool": 1
+    },
+    "output": {
+      "Cannon": 1
+    }
+  },
+  "GunpowderMill": {
+    "input": {
+      "Wood": 1,
+      "Coal": 1
+    },
+    "output": {
+      "Gunpowder": 1
+    }
+  },
+  "DynamiteWorkshop": {
+    "input": {
+      "Wheat": 1,
+      "Gunpowder": 1,
+      "Coal": 1
+    },
+    "output": {
+      "Dynamite": 1
+    }
+  },
+  "SiegeWorkshop": {
+    "input": {
+      "Lumber": 2,
+      "Iron": 2,
+      "Tool": 1
+    },
+    "output": {
+      "SiegeRam": 1
+    }
+  },
+  "CaravelBuilder": {
+    "input": {
+      "Lumber": 5,
+      "Cloth": 2,
+      "Tool": 2
+    },
+    "output": {
+      "Caravel": 1
+    }
+  },
+  "GalleonBuilder": {
+    "input": {
+      "Caravel": 1,
+      "Sword": 1,
+      "SiegeRam": 1,
+      "Armor": 1
+    },
+    "output": {
+      "Galleon": 1
+    }
+  },
+  "FrigateBuilder": {
+    "input": {
+      "Galleon": 1,
+      "Knight": 1,
+      "Cannon": 1,
+      "Lens": 1
+    },
+    "output": {
+      "Frigate": 1
+    }
+  },
+  "RifleFactory": {
+    "input": {
+      "Gunpowder": 5,
+      "Tool": 5
+    },
+    "output": {
+      "Rifle": 1
+    }
+  },
+  "GatlingGunFactory": {
+    "input": {
+      "Rifle": 1,
+      "Gunpowder": 5
+    },
+    "output": {
+      "GatlingGun": 1
+    }
+  },
+  "IroncladBuilder": {
+    "input": {
+      "GatlingGun": 1,
+      "Rifle": 1,
+      "Frigate": 1
+    },
+    "output": {
+      "Ironclad": 1
+    }
+  },
+  "TankFactory": {
+    "input": {
+      "Engine": 1,
+      "Steel": 10,
+      "Cannon": 1,
+      "GatlingGun": 1,
+      "Rifle": 1
+    },
+    "output": {
+      "Tank": 1
+    }
+  },
+  "WritersGuild": {
+    "input": {
+      "Paper": 2
+    },
+    "output": {
+      "Poem": 1
+    }
+  },
+  "PaintersGuild": {
+    "input": {
+      "Paper": 2
+    },
+    "output": {
+      "Painting": 1
+    }
+  },
+  "MusiciansGuild": {
+    "input": {
+      "Alcohol": 2
+    },
+    "output": {
+      "Music": 1
+    }
+  },
+  "ActorsGuild": {
+    "input": {
+      "Music": 1,
+      "Poem": 1
+    },
+    "output": {
+      "Opera": 2
+    }
+  },
+  "Shrine": {
+    "input": {
+      "Horse": 1,
+      "Alcohol": 1
+    },
+    "output": {
+      "Faith": 1
+    }
+  },
+  "Church": {
+    "input": {
+      "Music": 1,
+      "Poem": 1
+    },
+    "output": {
+      "Faith": 3
+    }
+  },
+  "Mosque": {
+    "input": {
+      "Cheese": 1,
+      "Marble": 1
+    },
+    "output": {
+      "Faith": 3
+    }
+  },
+  "Cathedral": {
+    "input": {
+      "Sword": 1,
+      "Armor": 1
+    },
+    "output": {
+      "Faith": 6
+    }
+  },
+  "School": {
+    "input": {
+      "Faith": 1,
+      "Poem": 1
+    },
+    "output": {
+      "Science": 172
+    }
+  },
+  "Library": {
+    "input": {
+      "Paper": 1
+    },
+    "output": {
+      "Science": 16
+    },
+    "construction": {
+      "Marble": 1,
+      "Stone": 1
+    }
+  },
+  "University": {
+    "input": {
+      "Poem": 1,
+      "Painting": 1,
+      "Faith": 1
+    },
+    "output": {
+      "Philosophy": 1,
+      "Science": 100
+    }
+  },
+  "Museum": {
+    "input": {
+      "Music": 1,
+      "Painting": 1,
+      "Faith": 1
+    },
+    "output": {
+      "Culture": 1
+    }
+  },
+  "Courthouse": {
+    "input": {
+      "Philosophy": 1,
+      "Faith": 1
+    },
+    "output": {
+      "Law": 1
+    }
+  },
+  "Stadium": {
+    "input": {
+      "Culture": 1,
+      "Opera": 1
+    },
+    "output": {
+      "Sports": 1
+    }
+  },
+  "Parliament": {
+    "input": {
+      "Culture": 1,
+      "Philosophy": 1
+    },
+    "output": {
+      "Politics": 1
+    }
+  },
+  "PublishingHouse": {
+    "input": {
+      "Politics": 1,
+      "Book": 1
+    },
+    "output": {
+      "Newspaper": 1,
+      "Science": 200
+    }
+  },
+  "MagazinePublisher": {
+    "input": {
+      "Sports": 1,
+      "Book": 10
+    },
+    "output": {
+      "Magazine": 1
+    }
+  },
+  "CottonPlantation": {
+    "input": {},
+    "output": {
+      "Cotton": 1
+    },
+    "construction": {
+      "Wood": 1
+    }
+  },
+  "CottonMill": {
+    "input": {
+      "Cotton": 2
+    },
+    "output": {
+      "Cloth": 1
+    }
+  },
+  "GarmentWorkshop": {
+    "input": {
+      "Cloth": 2
+    },
+    "output": {
+      "Garment": 1
+    }
+  },
+  "FurnitureWorkshop": {
+    "input": {
+      "Lumber": 2,
+      "Copper": 1
+    },
+    "output": {
+      "Furniture": 1
+    }
+  },
+  "PrintingHouse": {
+    "input": {
+      "Paper": 5,
+      "Poem": 1
+    },
+    "output": {
+      "Book": 1
+    }
+  },
+  "FlourMill": {
+    "input": {
+      "Wheat": 2
+    },
+    "output": {
+      "Flour": 1
+    },
+    "construction": {
+      "Brick": 1,
+      "Wood": 1
+    }
+  },
+  "LivestockFarm": {
+    "input": {
+      "Wheat": 2
+    },
+    "output": {
+      "Meat": 1,
+      "Milk": 1
+    }
+  },
+  "Stable": {
+    "input": {
+      "Wheat": 2
+    },
+    "output": {
+      "Horse": 1
+    }
+  },
+  "Bakery": {
+    "input": {
+      "Water": 1,
+      "Flour": 1
+    },
+    "output": {
+      "Bread": 1
+    }
+  },
+  "CheeseMaker": {
+    "input": {
+      "Milk": 2
+    },
+    "output": {
+      "Cheese": 1
+    }
+  },
+  "Brewery": {
+    "input": {
+      "Wheat": 1,
+      "Water": 1
+    },
+    "output": {
+      "Alcohol": 1
+    },
+    "construction": {
+      "Lumber": 1,
+      "Brick": 1,
+      "Copper": 1
+    }
+  },
+  "PaperMaker": {
+    "input": {
+      "Wood": 1,
+      "Water": 1
+    },
+    "output": {
+      "Paper": 1
+    }
+  },
+  "Pizzeria": {
+    "input": {
+      "Cheese": 1,
+      "Meat": 1,
+      "Flour": 2,
+      "Water": 2
+    },
+    "output": {
+      "Pizza": 1
+    }
+  },
+  "LumberMill": {
+    "input": {
+      "Wood": 2
+    },
+    "output": {
+      "Lumber": 1
+    },
+    "construction": {
+      "Stone": 1,
+      "Wood": 1
+    }
+  },
+  "Glassworks": {
+    "input": {
+      "Sand": 2
+    },
+    "output": {
+      "Glass": 1
+    },
+    "construction": {
+      "Stone": 1,
+      "Wood": 1
+    }
+  },
+  "LensWorkshop": {
+    "input": {
+      "Glass": 2
+    },
+    "output": {
+      "Lens": 1
+    }
+  },
+  "Blacksmith": {
+    "input": {
+      "Copper": 1,
+      "Wood": 1
+    },
+    "output": {
+      "Tool": 1
+    }
+  },
+  "IronForge": {
+    "input": {
+      "Iron": 1
+    },
+    "output": {
+      "Tool": 1
+    }
+  },
+  "Brickworks": {
+    "input": {
+      "Stone": 2
+    },
+    "output": {
+      "Brick": 1
+    }
+  },
+  "Marbleworks": {
+    "input": {
+      "Stone": 2,
+      "Tool": 1
+    },
+    "output": {
+      "Marble": 1
+    }
+  },
+  "SteelMill": {
+    "input": {
+      "Iron": 1,
+      "Coal": 1
+    },
+    "output": {
+      "Steel": 1
+    }
+  },
+  "Steamworks": {
+    "input": {
+      "Iron": 1,
+      "Coal": 1,
+      "Tool": 1
+    },
+    "output": {
+      "Engine": 1
+    }
+  },
+  "LocomotiveFactory": {
+    "input": {
+      "Engine": 1,
+      "Steel": 10
+    },
+    "output": {
+      "Train": 1
+    }
+  },
+  "OilRefinery": {
+    "input": {
+      "Oil": 2
+    },
+    "output": {
+      "Petrol": 1
+    },
+    "construction": {
+      "Steel": 1,
+      "Oil": 1
+    }
+  },
+  "CoinMint": {
+    "input": {
+      "Gold": 3
+    },
+    "output": {
+      "Coin": 1
+    }
+  },
+  "Bank": {
+    "input": {
+      "Coin": 3
+    },
+    "output": {
+      "Banknote": 1
+    }
+  },
+  "BondMarket": {
+    "input": {
+      "Banknote": 3
+    },
+    "output": {
+      "Bond": 1
+    }
+  },
+  "StockExchange": {
+    "input": {
+      "Bond": 3
+    },
+    "output": {
+      "Stock": 1
+    }
+  },
+  "Caravansary": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "Brick": 2
+    }
+  },
+  "Market": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "Brick": 2,
+      "Copper": 2,
+      "Lumber": 2
+    }
+  },
+  "Warehouse": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "Lumber": 1,
+      "Brick": 1,
+      "Horse": 1
+    }
+  },
+  "Headquarter": {
+    "input": {},
+    "output": {
+      "Worker": 10
+    },
+    "vision": 3,
+    "max": 0,
+    "special": "HQ"
+  },
+  "Statistics": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "Brick": 100,
+      "Wood": 100,
+      "Lumber": 100
+    },
+    "max": 1,
+    "special": "WorldWonder"
+  },
+  "Petra": {
+    "input": {},
+    "output": {},
+    "max": 1,
+    "construction": {
+      "Gold": 500
+    },
+    "special": "WorldWonder",
+    "wikipedia": "Petra"
+  },
+  "Alps": {
+    "input": {},
+    "output": {},
+    "construction": {},
+    "max": 0,
+    "wikipedia": "Alps",
+    "special": "NaturalWonder"
+  },
+  "GrottaAzzurra": {
+    "input": {},
+    "output": {},
+    "construction": {},
+    "max": 0,
+    "wikipedia": "Blue_Grotto_(Capri)",
+    "special": "NaturalWonder"
+  },
+  "Aphrodite": {
+    "input": {},
+    "output": {},
+    "construction": {},
+    "max": 0,
+    "wikipedia": "Aphrodite",
+    "special": "NaturalWonder"
+  },
+  "Poseidon": {
+    "input": {},
+    "output": {},
+    "construction": {},
+    "max": 0,
+    "wikipedia": "Poseidon",
+    "special": "NaturalWonder"
+  },
+  "Stonehenge": {
+    "input": {},
+    "output": {},
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "Stonehenge",
+    "construction": {
+      "Stone": 300
+    }
+  },
+  "HatshepsutTemple": {
+    "input": {},
+    "output": {},
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "Mortuary_Temple_of_Hatshepsut",
+    "construction": {
+      "Stone": 100,
+      "Wood": 100,
+      "Copper": 100
+    }
+  },
+  "LighthouseOfAlexandria": {
+    "input": {},
+    "output": {},
+    "max": 1,
+    "construction": {
+      "Iron": 100,
+      "Marble": 100,
+      "Tool": 100
+    },
+    "special": "WorldWonder",
+    "wikipedia": "Lighthouse_of_Alexandria"
+  },
+  "PyramidOfGiza": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "Brick": 300
+    },
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "Great_Pyramid_of_Giza"
+  },
+  "ColossusOfRhodes": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "Stone": 300
+    },
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "Colossus_of_Rhodes"
+  },
+  "HangingGarden": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "Stone": 100,
+      "Water": 100,
+      "Copper": 100
+    },
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "Hanging_Gardens_of_Babylon"
+  },
+  "TempleOfHeaven": {
+    "input": {},
+    "output": {},
+    "max": 1,
+    "special": "WorldWonder",
+    "construction": {
+      "Iron": 100,
+      "Bread": 100,
+      "Cheese": 100
+    },
+    "wikipedia": "Temple_of_Heaven"
+  },
+  "Parthenon": {
+    "input": {},
+    "output": {},
+    "max": 1,
+    "special": "WorldWonder",
+    "construction": {
+      "Marble": 100,
+      "Painting": 100,
+      "Music": 100
+    },
+    "wikipedia": "Parthenon"
+  },
+  "TempleOfArtemis": {
+    "input": {},
+    "output": {},
+    "max": 1,
+    "special": "WorldWonder",
+    "construction": {
+      "Armor": 100,
+      "Sword": 100,
+      "Marble": 100
+    },
+    "wikipedia": "Temple_of_Artemis"
+  },
+  "LuxorTemple": {
+    "input": {},
+    "output": {},
+    "max": 1,
+    "special": "WorldWonder",
+    "construction": {
+      "Tool": 100,
+      "Cloth": 100,
+      "Furniture": 100
+    },
+    "wikipedia": "Luxor_Temple"
+  },
+  "ChichenItza": {
+    "input": {},
+    "output": {},
+    "max": 1,
+    "special": "WorldWonder",
+    "construction": {
+      "Stone": 100,
+      "Armor": 100,
+      "SiegeRam": 100
+    },
+    "wikipedia": "Chichen_Itza"
+  },
+  "MausoleumAtHalicarnassus": {
+    "input": {},
+    "output": {},
+    "max": 1,
+    "construction": {
+      "Marble": 100,
+      "Lumber": 100,
+      "Tool": 100
+    },
+    "special": "WorldWonder",
+    "wikipedia": "Mausoleum_at_Halicarnassus"
+  },
+  "HagiaSophia": {
+    "input": {
+      "Faith": 10
+    },
+    "construction": {
+      "Faith": 100,
+      "Marble": 100,
+      "Brick": 100
+    },
+    "output": {},
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "Hagia_Sophia"
+  },
+  "AngkorWat": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "Faith": 100,
+      "Tool": 100,
+      "Stone": 100
+    },
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "Angkor_Wat"
+  },
+  "TerracottaArmy": {
+    "input": {},
+    "output": {},
+    "max": 1,
+    "construction": {
+      "Chariot": 100,
+      "Iron": 100,
+      "Stone": 100
+    },
+    "special": "WorldWonder",
+    "wikipedia": "Terracotta_Army"
+  },
+  "Persepolis": {
+    "input": {},
+    "output": {},
+    "max": 1,
+    "construction": {
+      "Stone": 100,
+      "Wood": 100,
+      "Copper": 100
+    },
+    "special": "WorldWonder",
+    "wikipedia": "Persepolis"
+  },
+  "OxfordUniversity": {
+    "input": {},
+    "output": {},
+    "max": 1,
+    "construction": {
+      "Faith": 100,
+      "Marble": 100,
+      "Poem": 100
+    },
+    "special": "WorldWonder",
+    "wikipedia": "University_of_Oxford"
+  },
+  "StPetersBasilica": {
+    "input": {},
+    "output": {},
+    "max": 1,
+    "construction": {
+      "Faith": 500
+    },
+    "special": "WorldWonder",
+    "wikipedia": "St._Peter%27s_Basilica"
+  },
+  "ForbiddenCity": {
+    "input": {},
+    "output": {},
+    "max": 1,
+    "construction": {
+      "Paper": 100,
+      "Poem": 100,
+      "Book": 100
+    },
+    "special": "WorldWonder",
+    "wikipedia": "Forbidden_City"
+  },
+  "HimejiCastle": {
+    "input": {},
+    "output": {},
+    "max": 1,
+    "construction": {
+      "Caravel": 100,
+      "Galleon": 1,
+      "Frigate": 1
+    },
+    "special": "WorldWonder",
+    "wikipedia": "Himeji_Castle"
+  },
+  "TajMahal": {
+    "input": {},
+    "output": {},
+    "max": 1,
+    "construction": {
+      "Faith": 100,
+      "Marble": 100,
+      "Garment": 100
+    },
+    "special": "WorldWonder",
+    "wikipedia": "Taj_Mahal"
+  },
+  "Colosseum": {
+    "input": {
+      "Chariot": 10
+    },
+    "output": {},
+    "construction": {
+      "Brick": 100,
+      "Chariot": 100,
+      "Alcohol": 100
+    },
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "Colosseum"
+  },
+  "StatueOfZeus": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "Marble": 100,
+      "Brick": 100,
+      "Music": 100
+    },
+    "max": 1,
+    "wikipedia": "Statue_of_Zeus_at_Olympia",
+    "special": "WorldWonder"
+  },
+  "CircusMaximus": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "Music": 100,
+      "Poem": 100,
+      "Painting": 100
+    },
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "Circus_Maximus"
+  },
+  "EiffelTower": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "Steel": 300
+    },
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "Eiffel_Tower"
+  },
+  "Rijksmuseum": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "Painting": 300
+    },
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "Rijksmuseum"
+  },
+  "SummerPalace": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "Gunpowder": 100,
+      "Rifle": 100,
+      "Brick": 100
+    },
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "Summer_Palace"
+  },
+  "StatueOfLiberty": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "Philosophy": 100,
+      "Politics": 100,
+      "Law": 100
+    },
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "Statue_of_Liberty"
+  },
+  "Neuschwanstein": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "Dynamite": 100,
+      "Brick": 100,
+      "Marble": 100
+    },
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "Neuschwanstein_Castle"
+  },
+  "BrandenburgGate": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "Train": 100,
+      "Brick": 100,
+      "Marble": 100
+    },
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "Brandenburg_Gate"
+  }
+}

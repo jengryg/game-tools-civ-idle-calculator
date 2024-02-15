@@ -1,0 +1,50 @@
+{
+  "Rome": {
+    "deposits": {
+      "Water": 0.02,
+      "Copper": 0.02,
+      "Iron": 0.02,
+      "Wood": 0.02,
+      "Stone": 0.02,
+      "Gold": 0.02,
+      "Coal": 0.02,
+      "Oil": 0.02,
+      "Aluminum": 0.02,
+      "NaturalGas": 0.02
+    },
+    "size": 40,
+    "buildingNames": {},
+    "uniqueBuildings": {
+      "CircusMaximus": "CivilService",
+      "Colosseum": "Theater"
+    },
+    "naturalWonders": {
+      "Alps": true,
+      "GrottaAzzurra": true
+    }
+  },
+  "Athens": {
+    "deposits": {
+      "Water": 0.01,
+      "Copper": 0.03,
+      "Iron": 0.01,
+      "Wood": 0.01,
+      "Stone": 0.04,
+      "Gold": 0.01,
+      "Coal": 0.03,
+      "Oil": 0.02,
+      "Aluminum": 0.02,
+      "NaturalGas": 0.02
+    },
+    "size": 40,
+    "buildingNames": {},
+    "uniqueBuildings": {
+      "StatueOfZeus": "Theater",
+      "Parthenon": "Democracy"
+    },
+    "naturalWonders": {
+      "Aphrodite": true,
+      "Poseidon": true
+    }
+  }
+}
