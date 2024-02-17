@@ -65,6 +65,13 @@ class Building(
     }
 
     fun getTotalBuildingValue(currentLevel: Int): Double {
-        return getCostForUpgradingLevels(0, currentLevel).values.sumOf { it.value() }
+        return getCostForUpgradingLevels(0, currentLevel).values.sumOf {
+            if(it.resource.name in listOf("Worker", "Power", "Science", "Warp")) {
+                0.0
+            } else {
+                it.enterpriseValue()
+            }
+
+        }
     }
 }

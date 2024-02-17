@@ -13,6 +13,7 @@ object JsonParser {
         registerModule(JavaTimeModule())
         configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
         configure(SerializationFeature.INDENT_OUTPUT, true)
+        configure(SerializationFeature.ORDER_MAP_ENTRIES_BY_KEYS, true)
     }
 
     inline fun <reified T> deserialize(json: String): T {

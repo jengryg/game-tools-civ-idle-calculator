@@ -93,10 +93,10 @@ class SvgExporter(
 
             if(tile.deposit.isNotEmpty()) {
                 svg.color(DVIPSColors.Black)
-                svg.fontSize(12)
+                svg.fontSize(10)
                 svg.write(
                     tile.deposit.keys.joinToString(" "),
-                    tile.pointSvg.x - SVG_HEXAGON_SIZE * 0.75,
+                    tile.pointSvg.x - SVG_HEXAGON_SIZE * 0.80,
                     tile.pointSvg.y - SVG_HEXAGON_SIZE / 3
                 )
             }
@@ -121,8 +121,8 @@ class SvgExporter(
                     .log()
 
                 svg.write(
-                    tile.building.building.name,
-                    tile.pointSvg.x - SVG_HEXAGON_SIZE * 0.75,
+                    "${tile.building.building.name} ${tile.building.level}",
+                    tile.pointSvg.x - SVG_HEXAGON_SIZE * 0.8,
                     tile.pointSvg.y + SVG_HEXAGON_SIZE / 3
                 )
             }

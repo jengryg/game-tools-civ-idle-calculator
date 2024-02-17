@@ -1,24 +1,31 @@
 package analyze
 
 import custom.CustomObjectRegistry
+import custom.data.BuildingStatus
 import game.GameObjectRegistry
-import java.text.DecimalFormat
+import game.data.BuildingType
+import utils.nf
 
 class Analyzer(
     private val gameObjectRegistry: GameObjectRegistry,
     private val customObjectRegistry: CustomObjectRegistry
 ) {
-    val dec = DecimalFormat("#,###")
+    val tiles = customObjectRegistry.tiles.values.toList()
 
-    fun calculateCurrentBuildingValue(): Double {
-        return customObjectRegistry.tiles.values.sumOf {
-            it.building?.totalCost ?: 0.0
+    private fun calculateCurrentBuildingValue(): Double {
+        return tiles.sumOf { tile ->
+            tile.building?.let {
+                when (it.building.special) {
+                    BuildingType.WORLD_WONDER, BuildingType.NORMAL -> it.totalCost
+                    else -> 0.0
+                }
+            } ?: 0.0
         }
     }
 
-    fun calculateCurrentResourceValue(): Double {
-        return customObjectRegistry.tiles.values.sumOf {
-            it.building?.resources?.sumOf { ra -> if (ra.resource.canPrice) ra.value() else 0.0 } ?: 0.0
+    private fun calculateCurrentResourceValue(): Double {
+        return tiles.sumOf { tile ->
+            tile.building?.resources?.sumOf { ra -> ra.enterpriseValue() } ?: 0.0
         }
     }
 
@@ -27,9 +34,25 @@ class Analyzer(
         val totalResourceValue = calculateCurrentResourceValue()
 
         return mapOf(
-            "Total Building Value" to dec.format(totalBuildingValue),
-            "Total Resource Value" to dec.format(totalResourceValue),
-            "Total Empire Value" to dec.format(totalResourceValue + totalBuildingValue)
+            "Total Building Value" to nf(totalBuildingValue),
+            "Total Resource Value" to nf(totalResourceValue),
+            "Total Empire Value" to nf(totalResourceValue + totalBuildingValue)
         )
+    }
+
+    fun totalResources(): MutableMap<String, Long> {
+        val initial = gameObjectRegistry.resources.keys.associateWith { 0L }.toMutableMap()
+
+        tiles.forEach { tile ->
+            tile.building?.also {
+                if (it.status != BuildingStatus.BUILDING) {
+                    it.resources.forEach { ra ->
+                        initial[ra.resource.name] = initial[ra.resource.name]!! + ra.amount
+                    }
+                }
+            }
+        }
+
+        return initial
     }
 }
