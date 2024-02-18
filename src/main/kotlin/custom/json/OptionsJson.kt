@@ -1,5 +1,5 @@
 package custom.json
 
 class OptionsJson(
-    val greatPeople: Any
+    val greatPeople: Map<String, PermanentPeopleJson>
 )

@@ -3,7 +3,7 @@ package game.data
 import kotlin.math.pow
 import kotlin.math.roundToLong
 
-class Building(
+open class Building(
     val name: String,
     val input: Map<String, ResourceAmount>,
     val output: Map<String, ResourceAmount>,

@@ -1,6 +1,7 @@
 package custom
 
 import Logging
+import custom.data.ActiveGreatPerson
 import custom.data.BuildBuilding
 import custom.data.BuildingStatus
 import custom.data.MapTile
@@ -39,15 +40,28 @@ class CustomDataLoader(
             )
         }
 
-        JsonParser.deserialize<SaveGameJson>(FileIo.readFile("$customDataFile.json")).let {
-            val city = gameObjectRegistry.cities[it.current.city]!!
+        JsonParser.deserialize<SaveGameJson>(FileIo.readFile("$customDataFile.json")).let { save ->
+            val city = gameObjectRegistry.cities[save.current.city]!!
             cor = CustomObjectRegistry(
                 city = city,
-                greatPeople = it.current.greatPeople.toMap(),
-                unlockedTechnologies = it.current.unlockedTech.map { (key, _) ->
+                greatPeople = gameObjectRegistry.persons.values.map {
+                    it.name to ActiveGreatPerson(person = it)
+                }.toMap().also { gps ->
+                    save.current.greatPeople.forEach { (pName, level) ->
+                        gps[pName]?.let {
+                            it.level += level
+                        }
+                    }
+                    save.options.greatPeople.forEach { (pName, data) ->
+                        gps[pName]?.let {
+                            it.level = data.level
+                        }
+                    }
+                }.toMap(),
+                unlockedTechnologies = save.current.unlockedTech.map { (key, _) ->
                     key to gameObjectRegistry.technologies[key]!!
                 }.toMap(),
-                tiles = it.current.tiles.value.associate { json ->
+                tiles = save.current.tiles.value.associate { json ->
                     val tileXY = Point.fromTileInteger(json.tile)
 
                     json.tile to MapTile(

@@ -1,6 +1,6 @@
 package game.data
 
-class ResourceAmount(
+open class ResourceAmount(
     val resource: Resource,
     val amount: Long
 ) {

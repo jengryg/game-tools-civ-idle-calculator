@@ -3,14 +3,15 @@ import ch.qos.logback.classic.Level
 import custom.CustomDataLoader
 import custom.SvgExporter
 import game.GameDataLoader
+import game.data.BuildingType
 import utils.JsonParser
 
-const val SVG_HEXAGON_SIZE = 64
-
 fun main(args: Array<String>) {
-    setLoggingLevel(Level.TRACE)
+    setLoggingLevel(Level.INFO)
 
-    val gor = GameDataLoader().getRegistry()
+    val gor = GameDataLoader().getRegistry().apply {
+        exportToJson()
+    }
     val cor = CustomDataLoader(gor).getRegistry()
 
     val svgExporter = SvgExporter(gameObjectRegistry = gor, customObjectRegistry = cor)

@@ -16,6 +16,7 @@ class GameDataLoader : Logging {
     private val buildingDefinitionFile: String = "src/main/resources/game/buildings.json"
     private val cityDefinitionFile: String = "src/main/resources/game/cities.json"
     private val techDefinitionFile: String = "src/main/resources/game/techs.json"
+    private val greatPersonDefinitionFile: String = "src/main/resources/game/persons.json"
 
     private val ages: Map<String, Age>
     private val deposits: Map<String, Deposit>
@@ -23,6 +24,7 @@ class GameDataLoader : Logging {
     private val buildings: Map<String, Building>
     private val technologies: Map<String, Technology>
     private val cities: Map<String, City>
+    private val persons: Map<String, GreatPerson>
 
     private val gor: GameObjectRegistry
 
@@ -51,6 +53,10 @@ class GameDataLoader : Logging {
             JsonParser.deserialize<Map<String, CityJson>>(FileIo.readFile(cityDefinitionFile))
         )
 
+        persons = processPersons(
+            JsonParser.deserialize<Map<String, GreatPersonJson>>(FileIo.readFile(greatPersonDefinitionFile))
+        )
+
         gor = GameObjectRegistry(
             ages = ages,
             deposits = deposits,
@@ -58,6 +64,7 @@ class GameDataLoader : Logging {
             buildings = buildings,
             technologies = technologies,
             cities = cities,
+            persons = persons
         ).apply {
             GameDataCalculator.calculateTierAndPrice(this)
         }
@@ -67,7 +74,6 @@ class GameDataLoader : Logging {
     fun getRegistry(): GameObjectRegistry {
         return gor
     }
-
 
     private fun processAges(parsed: Map<String, AgeJson>): Map<String, Age> {
         return parsed.map { (name, json) -> name to createAge(name, json) }.toMap().also {
@@ -256,5 +262,49 @@ class GameDataLoader : Logging {
                 }
             }
         )
+    }
+
+    private fun processPersons(parsed: Map<String, GreatPersonJson>): Map<String, GreatPerson> {
+        return parsed.map { (name, json) -> name to createPerson(name, json) }.toMap().also {
+            log.atDebug()
+                .setMessage("Processed persons definition data.")
+                .addKeyValue("elements#") { it.size }
+                .log()
+        }
+    }
+
+    private fun createPerson(name: String, json: GreatPersonJson): GreatPerson {
+        return GreatPerson(
+            name = name,
+            value = json.value,
+            age = ages[json.age]!!,
+            stdBoost = json.boost?.let { createBoosts(it) }
+        )
+    }
+
+    private fun createBoosts(json: Map<String, List<String>>): List<StandardBoost> {
+        require(json.size == 2) { "Great Person standard boost has unexpected format." }
+
+        val types = json["multipliers"].let {
+            require(it != null) { "Great Person standard boost has unexpected format." }
+            it
+        }
+        val targets = json["buildings"].let {
+            require(it != null) { "Great Person standard boost has unexpected format." }
+            it
+        }
+
+        return types.flatMap { type ->
+            targets.map { target ->
+                StandardBoost(
+                    boostType = when (type) {
+                        "output" -> BoostType.OUTPUT
+                        "storage" -> BoostType.STORAGE
+                        else -> throw IllegalArgumentException("Great Person standard boost has unexpected type multipler.")
+                    },
+                    boostTarget = buildings[target]!!
+                )
+            }
+        }
     }
 }

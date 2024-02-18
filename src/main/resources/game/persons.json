@@ -1,0 +1,378 @@
+{
+  "Hammurabi": {
+    "boost": {
+      "multipliers": [
+        "output"
+      ],
+      "buildings": [
+        "House",
+        "Hut"
+      ]
+    },
+    "value": 1,
+    "maxLevel": null,
+    "age": "BronzeAge",
+    "time": "c. 1800s BC"
+  },
+  "RamessesII": {
+    "time": "c. 1300s BC",
+    "value": 1,
+    "maxLevel": null,
+    "age": "BronzeAge"
+  },
+  "TangOfShang": {
+    "time": "c. 1600s BC",
+    "value": 0.5,
+    "maxLevel": null,
+    "age": "BronzeAge"
+  },
+  "Agamemnon": {
+    "boost": {
+      "multipliers": [
+        "output",
+        "storage"
+      ],
+      "buildings": [
+        "StoneQuarry",
+        "Marbleworks"
+      ]
+    },
+    "time": "c. 1200s BC",
+    "value": 1,
+    "maxLevel": null,
+    "age": "IronAge"
+  },
+  "DukeOfZhou": {
+    "boost": {
+      "multipliers": [
+        "output",
+        "storage"
+      ],
+      "buildings": [
+        "CopperMiningCamp",
+        "Blacksmith"
+      ]
+    },
+    "time": "c. 1000s BC",
+    "value": 1,
+    "maxLevel": null,
+    "age": "IronAge"
+  },
+  "Dido": {
+    "boost": {
+      "multipliers": [
+        "output",
+        "storage"
+      ],
+      "buildings": [
+        "LivestockFarm",
+        "Stable"
+      ]
+    },
+    "time": "c. 800s BC",
+    "value": 1,
+    "maxLevel": null,
+    "age": "IronAge"
+  },
+  "NebuchadnezzarII": {
+    "boost": {
+      "multipliers": [
+        "output",
+        "storage"
+      ],
+      "buildings": [
+        "WheatFarm",
+        "Brewery"
+      ]
+    },
+    "time": "c. 600s BC",
+    "value": 1,
+    "maxLevel": null,
+    "age": "ClassicalAge"
+  },
+  "Herodotus": {
+    "boost": {
+      "multipliers": [
+        "output",
+        "storage"
+      ],
+      "buildings": [
+        "WritersGuild",
+        "MusiciansGuild"
+      ]
+    },
+    "time": "c. 600s BC",
+    "value": 1,
+    "maxLevel": null,
+    "age": "ClassicalAge"
+  },
+  "CyrusII": {
+    "boost": {
+      "multipliers": [
+        "output",
+        "storage"
+      ],
+      "buildings": [
+        "IronMiningCamp",
+        "IronForge"
+      ]
+    },
+    "time": "c. 600s BC",
+    "value": 1,
+    "maxLevel": null,
+    "age": "ClassicalAge"
+  },
+  "Socrates": {
+    "time": "c. 600s BC",
+    "value": 1,
+    "maxLevel": null,
+    "age": "ClassicalAge"
+  },
+  "QinShiHuang": {
+    "boost": {
+      "multipliers": [
+        "output",
+        "storage"
+      ],
+      "buildings": [
+        "ChariotWorkshop",
+        "Armory"
+      ]
+    },
+    "time": "c. 200s BC",
+    "value": 1,
+    "maxLevel": null,
+    "age": "ClassicalAge"
+  },
+  "Justinian": {
+    "boost": {
+      "multipliers": [
+        "output",
+        "storage"
+      ],
+      "buildings": [
+        "FurnitureWorkshop",
+        "GarmentWorkshop"
+      ]
+    },
+    "time": "482 ~ 565 AD",
+    "value": 1,
+    "maxLevel": null,
+    "age": "MiddleAge"
+  },
+  "Charlemagne": {
+    "boost": {
+      "multipliers": [
+        "output",
+        "storage"
+      ],
+      "buildings": [
+        "SwordForge",
+        "KnightCamp"
+      ]
+    },
+    "time": "747 ~ 814 AD",
+    "value": 1,
+    "maxLevel": null,
+    "age": "MiddleAge"
+  },
+  "HarunAlRashid": {
+    "boost": {
+      "multipliers": [
+        "output",
+        "storage"
+      ],
+      "buildings": [
+        "CheeseMaker",
+        "Mosque"
+      ]
+    },
+    "time": "763 ~ 809 AD",
+    "value": 1,
+    "maxLevel": null,
+    "age": "MiddleAge"
+  },
+  "WuZetian": {
+    "time": "624 ~ 705 AD",
+    "value": 1,
+    "maxLevel": null,
+    "age": "MiddleAge"
+  },
+  "Rurik": {
+    "time": "624 ~ 705 AD",
+    "value": 2,
+    "maxLevel": null,
+    "age": "MiddleAge"
+  },
+  "LeonardoDaVinci": {
+    "boost": {
+      "multipliers": [
+        "output",
+        "storage"
+      ],
+      "buildings": [
+        "PaintersGuild",
+        "University"
+      ]
+    },
+    "time": "1452 ~ 1519 AD",
+    "value": 1,
+    "maxLevel": null,
+    "age": "RenaissanceAge"
+  },
+  "MartinLuther": {
+    "boost": {
+      "multipliers": [
+        "output",
+        "storage"
+      ],
+      "buildings": [
+        "Church",
+        "Cathedral"
+      ]
+    },
+    "time": "1483 ~ 1546 AD",
+    "value": 1,
+    "maxLevel": null,
+    "age": "RenaissanceAge"
+  },
+  "WilliamShakespeare": {
+    "boost": {
+      "multipliers": [
+        "output",
+        "storage"
+      ],
+      "buildings": [
+        "PaperMaker",
+        "PrintingHouse"
+      ]
+    },
+    "time": "1564 ~ 1616 AD",
+    "value": 1,
+    "maxLevel": null,
+    "age": "RenaissanceAge"
+  },
+  "ReneDescartes": {
+    "boost": {
+      "multipliers": [
+        "output"
+      ],
+      "buildings": [
+        "School",
+        "Library"
+      ]
+    },
+    "time": "1596 ~ 1650 AD",
+    "value": 2,
+    "maxLevel": null,
+    "age": "RenaissanceAge"
+  },
+  "ZhengHe": {
+    "boost": {
+      "multipliers": [
+        "storage",
+        "output"
+      ],
+      "buildings": [
+        "CaravelBuilder",
+        "GalleonBuilder"
+      ]
+    },
+    "time": "1371 ~ 1435 AD",
+    "value": 1,
+    "maxLevel": null,
+    "age": "RenaissanceAge"
+  },
+  "CosimoDeMedici": {
+    "boost": {
+      "multipliers": [
+        "storage",
+        "output"
+      ],
+      "buildings": [
+        "GoldMiningCamp",
+        "CoinMint"
+      ]
+    },
+    "time": "1389 ~ 1464 AD",
+    "value": 1,
+    "maxLevel": null,
+    "age": "RenaissanceAge"
+  },
+  "JamesWatt": {
+    "boost": {
+      "multipliers": [
+        "storage",
+        "output"
+      ],
+      "buildings": [
+        "Steamworks",
+        "DynamiteWorkshop"
+      ]
+    },
+    "time": "1736 ~ 1819 AD",
+    "value": 1,
+    "maxLevel": null,
+    "age": "IndustrialAge"
+  },
+  "KarlMarx": {
+    "boost": {
+      "multipliers": [
+        "storage",
+        "output"
+      ],
+      "buildings": [
+        "Courthouse",
+        "Parliament"
+      ]
+    },
+    "time": "1818 ~ 1883 AD",
+    "value": 1,
+    "maxLevel": null,
+    "age": "IndustrialAge"
+  },
+  "AdaLovelace": {
+    "boost": {
+      "multipliers": [
+        "storage",
+        "output"
+      ],
+      "buildings": [
+        "PrintingHouse",
+        "Museum"
+      ]
+    },
+    "time": "1815 ~ 1852 AD",
+    "value": 1,
+    "maxLevel": null,
+    "age": "IndustrialAge"
+  },
+  "NapoleonBonaparte": {
+    "boost": {
+      "multipliers": [
+        "storage",
+        "output"
+      ],
+      "buildings": [
+        "CannonWorkshop",
+        "GunpowderMill"
+      ]
+    },
+    "time": "1769 ~ 1821 AD",
+    "value": 1,
+    "maxLevel": null,
+    "age": "IndustrialAge"
+  },
+  "CharlesDarwin": {
+    "time": "1809 ~ 1882 AD",
+    "value": 2,
+    "maxLevel": null,
+    "age": "IndustrialAge"
+  },
+  "FlorenceNightingale": {
+    "time": "1820 ~ 1910 AD",
+    "value": 3,
+    "maxLevel": null,
+    "age": "IndustrialAge"
+  }
+}

@@ -1,6 +1,7 @@
 package svg
 
 import Logging
+import OUTPUT_PATH
 import logger
 import org.apache.batik.dom.GenericDOMImplementation
 import org.apache.batik.svggen.SVGGraphics2D
@@ -72,7 +73,7 @@ class SVGImage(
     /**
      * Export the current drawings using [SVGGraphics2D.stream] to the given [java.io.OutputStreamWriter].
      */
-    fun export(name: String? = null, directory: String = "output"): Path {
+    fun export(name: String? = null, directory: String = OUTPUT_PATH): Path {
         return when {
             name.isNullOrBlank() -> "${baseName}_${exportId++}_${creationStamp}_${UUID.randomUUID()}.svg"
             else -> "${name}.svg"

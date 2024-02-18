@@ -101,6 +101,11 @@ class SvgExporter(
                 )
             }
 
+            if(tile.building?.building?.tier == 1 && tile.building?.building?.special == BuildingType.NORMAL) {
+                svg.color(DVIPSColors.Black)
+                svg.circle(tile.pointSvg, 10.0, true)
+            }
+
             svg.color(DVIPSColors.Black)
             svg.polygon(polygon, filled = false)
         }
