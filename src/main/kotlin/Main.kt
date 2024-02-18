@@ -1,13 +1,13 @@
 import analyze.Analyzer
 import ch.qos.logback.classic.Level
+import chain.ProductionChainFactory
 import custom.CustomDataLoader
 import custom.SvgExporter
 import game.GameDataLoader
-import game.data.BuildingType
 import utils.JsonParser
 
 fun main(args: Array<String>) {
-    setLoggingLevel(Level.INFO)
+    setLoggingLevel(Level.TRACE)
 
     val gor = GameDataLoader().getRegistry().apply {
         exportToJson()
@@ -23,5 +23,14 @@ fun main(args: Array<String>) {
     val analyzer = Analyzer(gameObjectRegistry = gor, customObjectRegistry = cor)
 
     println(JsonParser.serialize(analyzer.analyze()))
+
+    val chainFactory = ProductionChainFactory(
+        gor,
+        cor
+    )
+
+    val node = chainFactory.getChain(building = gor.buildings["DynamiteWorkshop"]!!)
+
+    println(node.text(0))
 }
 

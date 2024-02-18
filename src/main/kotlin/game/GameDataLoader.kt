@@ -65,9 +65,7 @@ class GameDataLoader : Logging {
             technologies = technologies,
             cities = cities,
             persons = persons
-        ).apply {
-            GameDataCalculator.calculateTierAndPrice(this)
-        }
+        )
     }
 
 
