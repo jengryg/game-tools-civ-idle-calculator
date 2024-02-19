@@ -2,10 +2,10 @@ package chain
 
 import CHAIN_TEXT_INDENT
 import CHAIN_TEXT_LINE_START
-import custom.data.ActiveGreatPerson
-import game.data.BoostType
-import game.data.Building
-import game.data.Wonder
+import data.model.player.ActiveGreatPerson
+import common.BoostType
+import data.model.definitions.Building
+import data.model.definitions.Wonder
 import org.slf4j.spi.LoggingEventBuilder
 
 class ChainNode(

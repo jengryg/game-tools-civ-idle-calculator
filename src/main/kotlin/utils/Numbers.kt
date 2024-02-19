@@ -2,8 +2,7 @@ package utils
 
 import java.text.DecimalFormat
 
-fun nf(number: Any): String {
-    val dec = DecimalFormat("#,###")
-
-    return dec.format(number)
-}
+fun Int.nf() = DecimalFormat("#,###").format(this)
+fun Long.nf() = DecimalFormat("#,###").format(this)
+fun Double.nf(decimals: Int = 0) =
+    DecimalFormat(if (decimals <= 0) "#,###" else "#,###.${"#".repeat(decimals)}").format(this)

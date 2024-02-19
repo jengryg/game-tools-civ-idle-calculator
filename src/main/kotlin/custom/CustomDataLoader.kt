@@ -1,17 +1,18 @@
 package custom
 
 import Logging
-import custom.data.ActiveGreatPerson
-import custom.data.BuildBuilding
-import custom.data.BuildingStatus
-import custom.data.MapTile
-import custom.json.SaveGameJson
-import custom.json.TileBuildingJson
-import game.GameObjectRegistry
-import game.data.BuildingType
-import game.data.City
-import game.data.ResourceAmount
-import game.data.Wonder
+import data.model.player.ActiveGreatPerson
+import data.model.player.BuildBuilding
+import data.model.player.BuildingStatus
+import data.model.player.MapTile
+import data.json.player.SaveGameJson
+import data.json.player.TileBuildingJson
+import data.GameDefinition
+import common.BuildingType
+import data.model.definitions.City
+import common.ResourceAmount
+import data.PlayerState
+import data.model.definitions.Wonder
 import game.hex.Point
 import logger
 import utils.FileIo
@@ -24,13 +25,13 @@ import kotlin.math.roundToLong
 
 
 class CustomDataLoader(
-    private val gameObjectRegistry: GameObjectRegistry
+    private val gameDefinitions: GameDefinition
 ) : Logging {
     private val log = logger()
 
-    private val customDataFile: String = "src/main/resources/custom/CivIdle"
+    private val customDataFile: String = "src/main/resources/player/CivIdle"
 
-    private val cor: CustomObjectRegistry
+    private val cor: PlayerState
 
     init {
         FileIo.readCompressedFile(customDataFile).let {
@@ -45,8 +46,8 @@ class CustomDataLoader(
         }
 
         JsonParser.deserialize<SaveGameJson>(FileIo.readFile("$customDataFile.json")).let { save ->
-            val city = gameObjectRegistry.cities[save.current.city]!!
-            cor = CustomObjectRegistry(
+            val city = gameDefinitions.cities[save.current.city]!!
+            cor = PlayerState(
                 city = city,
                 greatPeople = extractGreatPeople(save),
                 unlockedTechnologies = extractUnlockedTechnologies(save),
@@ -61,13 +62,13 @@ class CustomDataLoader(
             if (mapTile.building == null) {
                 null
             } else {
-                val building = gameObjectRegistry.buildings[mapTile.building.type]!!
+                val building = gameDefinitions.buildings[mapTile.building.type]!!
 
                 if (building.special == BuildingType.WORLD_WONDER || building.special == BuildingType.NATURAL_WONDER) {
                     building.name to Wonder(
                         name = building.name,
                         building = building,
-                        stdBoost = gameObjectRegistry.wonders[building.name]!!.stdBoost
+                        stdBoost = gameDefinitions.wonders[building.name]!!.stdBoost
                     )
                 } else {
                     null
@@ -86,7 +87,7 @@ class CustomDataLoader(
             tile = json.tile,
             explored = json.explored,
             deposit = json.deposit.map { dName ->
-                dName to gameObjectRegistry.deposits[dName]!!
+                dName to gameDefinitions.deposits[dName]!!
             }.toMap(),
             building = json.building?.let { building ->
                 createBuildBuilding(building)
@@ -97,7 +98,7 @@ class CustomDataLoader(
     }
 
     private fun createBuildBuilding(building: TileBuildingJson) = BuildBuilding(
-        building = gameObjectRegistry.buildings[building.type]!!,
+        building = gameDefinitions.buildings[building.type]!!,
         level = building.level,
         desiredLevel = building.desiredLevel,
         capacity = building.capacity,
@@ -115,17 +116,17 @@ class CustomDataLoader(
         },
         resources = building.resources.map { (rName, rAmount) ->
             ResourceAmount(
-                resource = gameObjectRegistry.resources[rName]!!,
+                resource = gameDefinitions.resources[rName]!!,
                 amount = rAmount.roundToLong()
             )
         },
     )
 
     private fun extractUnlockedTechnologies(save: SaveGameJson) = save.current.unlockedTech.map { (key, _) ->
-        key to gameObjectRegistry.technologies[key]!!
+        key to gameDefinitions.technologies[key]!!
     }.toMap()
 
-    private fun extractGreatPeople(save: SaveGameJson) = gameObjectRegistry.persons.values.map {
+    private fun extractGreatPeople(save: SaveGameJson) = gameDefinitions.persons.values.map {
         it.name to ActiveGreatPerson(person = it)
     }.toMap().also { gps ->
         save.current.greatPeople.forEach { (pName, level) ->
@@ -140,7 +141,7 @@ class CustomDataLoader(
         }
     }.toMap()
 
-    fun getRegistry(): CustomObjectRegistry {
+    fun getRegistry(): PlayerState {
         return cor
     }
 }

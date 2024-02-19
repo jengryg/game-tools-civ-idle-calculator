@@ -1,6 +1,6 @@
 package game.hex
 
-import svg.XY
+import utils.XY
 import kotlin.math.roundToInt
 
 class Point(

@@ -1,8 +1,10 @@
 package game
 
 import Logging
-import game.data.*
-import game.json.*
+import common.*
+import data.GameDefinition
+import data.json.definitions.*
+import data.model.definitions.*
 import logger
 import utils.FileIo
 import utils.JsonParser
@@ -26,7 +28,7 @@ class GameDataLoader : Logging {
     private val cities: Map<String, City>
     private val persons: Map<String, GreatPerson>
 
-    private val gor: GameObjectRegistry
+    private val gor: GameDefinition
 
     init {
         ages = processAges(
@@ -57,7 +59,7 @@ class GameDataLoader : Logging {
             JsonParser.deserialize<Map<String, GreatPersonJson>>(FileIo.readFile(greatPersonDefinitionFile))
         )
 
-        gor = GameObjectRegistry(
+        gor = GameDefinition(
             ages = ages,
             deposits = deposits,
             resources = resources,
@@ -69,7 +71,7 @@ class GameDataLoader : Logging {
     }
 
 
-    fun getRegistry(): GameObjectRegistry {
+    fun getRegistry(): GameDefinition {
         return gor
     }
 
@@ -159,12 +161,7 @@ class GameDataLoader : Logging {
             deposit = json.deposit?.mapNotNull { (dName, required) ->
                 if (required) dName to deposits[dName]!! else null
             }?.toMap() ?: emptyMap(),
-            special = when (json.special) {
-                "HQ" -> BuildingType.HQ
-                "WorldWonder" -> BuildingType.WORLD_WONDER
-                "NaturalWonder" -> BuildingType.NATURAL_WONDER
-                else -> BuildingType.NORMAL
-            }
+            special = getBuildingTypeFromString(json.special)
         )
     }
 

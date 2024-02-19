@@ -10,17 +10,17 @@ fun main(args: Array<String>) {
     setLoggingLevel(Level.TRACE)
 
     val gor = GameDataLoader().getRegistry().apply {
-        exportToJson()
+        //exportToJson()
     }
     val cor = CustomDataLoader(gor).getRegistry()
 
-    val svgExporter = SvgExporter(gameObjectRegistry = gor, customObjectRegistry = cor)
+    val svgExporter = SvgExporter(gameDefinitions = gor, playerState = cor)
 
     svgExporter.drawHexagons()
     svgExporter.drawBuildings()
     svgExporter.export()
 
-    val analyzer = Analyzer(gameObjectRegistry = gor, customObjectRegistry = cor)
+    val analyzer = Analyzer(gameDefinitions = gor, playerState = cor)
 
     println(JsonParser.serialize(analyzer.analyze()))
 

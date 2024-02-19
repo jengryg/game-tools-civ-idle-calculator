@@ -1,18 +1,18 @@
 package chain
 
 import Logging
-import custom.CustomObjectRegistry
-import custom.data.ActiveGreatPerson
-import game.GameObjectRegistry
-import game.data.Building
-import game.data.Wonder
+import data.PlayerState
+import data.model.player.ActiveGreatPerson
+import data.GameDefinition
+import data.model.definitions.Building
+import data.model.definitions.Wonder
 import logger
 import kotlin.math.ceil
 import kotlin.math.roundToLong
 
 class ProductionChainFactory(
-    private val gameObjectRegistry: GameObjectRegistry,
-    private val customObjectRegistry: CustomObjectRegistry,
+    private val gameDefinitions: GameDefinition,
+    private val playerState: PlayerState,
 ) : Logging {
     private val log = logger()
 
@@ -62,7 +62,7 @@ class ProductionChainFactory(
     private fun processInputs(node: ChainNode) {
         node.baseInput.forEach { (rName, input) ->
             // TODO: selecting the producer here or creating alternatives if multiple possibilities are available
-            val producer = gameObjectRegistry.producers[rName]?.values?.first()
+            val producer = gameDefinitions.producers[rName]?.values?.first()
                 ?: throw IllegalArgumentException("No producer found for $rName.")
 
             val supplier = createNode(producer)
@@ -89,13 +89,13 @@ class ProductionChainFactory(
     }
 
     private fun getGreatPersonsAffecting(building: Building): List<ActiveGreatPerson> {
-        return customObjectRegistry.greatPeople.filter {
+        return playerState.greatPeople.filter {
             it.value.person.stdBoost?.any { b -> b.boostTarget == building } == true
         }.values.toList()
     }
 
     private fun getWondersAffecting(building: Building): List<Wonder> {
-        return customObjectRegistry.activeWonders.filter {
+        return playerState.activeWonders.filter {
             it.value.stdBoost?.any { b -> b.boostTarget == building } == true
         }.values.toList()
     }

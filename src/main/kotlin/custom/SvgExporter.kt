@@ -2,27 +2,28 @@ package custom
 
 import Logging
 import SVG_HEXAGON_SIZE
-import game.GameObjectRegistry
-import game.data.BuildingType
-import game.data.Deposit
+import data.GameDefinition
+import common.BuildingType
+import data.PlayerState
+import data.model.definitions.Deposit
 import game.hex.Point
 import logger
-import svg.DVIPSColors
-import svg.DVIPSColors.withAlpha
-import svg.SVGImage
+import utils.DVIPSColors
+import utils.DVIPSColors.withAlpha
+import utils.SVGImage
 import java.awt.Color
 import kotlin.math.sqrt
 
 class SvgExporter(
-    gameObjectRegistry: GameObjectRegistry,
-    customObjectRegistry: CustomObjectRegistry
+    gameDefinitions: GameDefinition,
+    playerState: PlayerState
 ) : Logging {
     private val log = logger()
 
-    val city = customObjectRegistry.city
-    val tiles = customObjectRegistry.tiles
+    val city = playerState.city
+    val tiles = playerState.tiles
 
-    private val svg = customObjectRegistry.city.grid.hexagons.flatten().let { p ->
+    private val svg = playerState.city.grid.hexagons.flatten().let { p ->
         SVGImage(
             coordinateMaxX = p.maxOf { it.x } + sqrt(3.0) * SVG_HEXAGON_SIZE / 2.0,
             coordinateMaxY = p.maxOf { it.y } + sqrt(3.0) * SVG_HEXAGON_SIZE / 2.0,

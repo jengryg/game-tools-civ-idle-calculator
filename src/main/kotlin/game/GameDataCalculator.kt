@@ -1,9 +1,10 @@
 package game
 
 import Logging
-import game.data.Building
-import game.data.BuildingType
-import game.data.Resource
+import data.model.definitions.Building
+import common.BuildingType
+import data.GameDefinition
+import data.model.definitions.Resource
 import logger
 import kotlin.math.pow
 import kotlin.math.round
@@ -11,7 +12,7 @@ import kotlin.math.round
 object GameDataCalculator : Logging {
     private val log = logger()
 
-    fun calculateTierAndPrice(gor: GameObjectRegistry) {
+    fun calculateTierAndPrice(gor: GameDefinition) {
         processDeposits(gor)
         val chain = processSimpleBuildings(gor)
         processChainCalculation(gor, chain)
@@ -19,7 +20,7 @@ object GameDataCalculator : Logging {
         calculateBuildingCostMultiplier(gor)
     }
 
-    private fun processDeposits(gor: GameObjectRegistry) {
+    private fun processDeposits(gor: GameDefinition) {
         gor.deposits.forEach { (dName, deposit) ->
             gor.resources[dName]!!.apply {
                 tier = 1
@@ -35,7 +36,7 @@ object GameDataCalculator : Logging {
         }
     }
 
-    private fun processSimpleBuildings(gor: GameObjectRegistry): List<Building> {
+    private fun processSimpleBuildings(gor: GameDefinition): List<Building> {
         val chainCalculation = mutableListOf<Building>()
 
         gor.buildings.forEach { (bName, building) ->
@@ -91,7 +92,7 @@ object GameDataCalculator : Logging {
     private val resourceTierDependency = mutableMapOf<Resource, Resource>()
     private val buildingTierDependency = mutableMapOf<Building, Resource>()
 
-    private fun processChainCalculation(gor: GameObjectRegistry, chain: List<Building>) {
+    private fun processChainCalculation(gor: GameDefinition, chain: List<Building>) {
         var iteration = 0
         while (iteration <= 10) {
             val nullTiers = gor.buildings.values.count { it.tier == null }
@@ -119,13 +120,13 @@ object GameDataCalculator : Logging {
             resourceTierDependency.clear()
             buildingTierDependency.clear()
 
-            chain.filter { it.allInputsCalculated() }.forEach { building ->
+            chain.filter { it.areAllInputsCalculated() }.forEach { building ->
                 log.atTrace()
                     .setMessage("Checking Update for Building.")
                     .addKeyValue("name") { building.name }
                     .log()
 
-                val highestInput = building.maxInputTier().also {
+                val highestInput = building.getMaxInputTier().also {
                     log.atDebug()
                         .setMessage("Highest Input Resource of building determined.")
                         .addKeyValue("building") { building.name }
@@ -176,7 +177,7 @@ object GameDataCalculator : Logging {
 
                 building.output.values.forEach {
                     val price =
-                        (2.0 * building.totalInputValue() - internallyPricedResourceValues) / building.totalOutputAmount()
+                        (2.0 * building.getTotalValueOfInputs() - internallyPricedResourceValues) / building.getTotalAmountOfOutputs()
 
                     if (it.resource.price == null || price > it.resource.price!!) {
                         log.atTrace()
@@ -245,7 +246,7 @@ object GameDataCalculator : Logging {
         }
     }
 
-    private fun finalizeResources(gor: GameObjectRegistry) {
+    private fun finalizeResources(gor: GameDefinition) {
         gor.resources.forEach { (name, resource) ->
             if (resource.canPrice) {
                 assert(resource.price != null) { "$name can be priced but price is null!" }
@@ -257,7 +258,7 @@ object GameDataCalculator : Logging {
         }
     }
 
-    private fun calculateBuildingCostMultiplier(gor: GameObjectRegistry) {
+    private fun calculateBuildingCostMultiplier(gor: GameDefinition) {
         gor.buildings.forEach { (name, building) ->
             building.costMultiplier = if (building.special == BuildingType.WORLD_WONDER) {
                 val techIdx = building.technology?.column ?: 0

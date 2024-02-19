@@ -1,6 +1,6 @@
 package chain
 
-import game.data.Resource
+import data.model.definitions.Resource
 import org.slf4j.spi.LoggingEventBuilder
 import utils.nf
 
@@ -18,6 +18,6 @@ class ChainLink(
             .addKeyValue("supplier#Id") { supplier.id }
             .addKeyValue("consumer#Id") { consumer.id }
             .addKeyValue("resource") { resource.name }
-            .addKeyValue("amount") { nf(amount) }
+            .addKeyValue("amount") { amount.nf() }
     }
 }

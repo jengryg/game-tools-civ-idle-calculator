@@ -1,7 +1,7 @@
 package chain
 
 import CHAIN_TEXT_LINE_START
-import game.data.Resource
+import data.model.definitions.Resource
 import utils.nf
 
 class ChainNodeIO(
@@ -32,7 +32,7 @@ class ChainNodeIO(
                     "%type",
                     "$typeChar"
                 )
-            } ${resource.name} (${nf(rawAmount)}): ${nf(effectiveAmount)}"
+            } ${resource.name} (${rawAmount.nf()}): ${effectiveAmount.nf()}"
         )
 
         if (effectBlock != null) result.add("$effectBlock")

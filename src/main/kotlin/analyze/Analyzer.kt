@@ -1,16 +1,17 @@
 package analyze
 
-import custom.CustomObjectRegistry
-import custom.data.BuildingStatus
-import game.GameObjectRegistry
-import game.data.BuildingType
+import common.BuildingType
+import common.ResourceAmount
+import data.PlayerState
+import data.model.player.BuildingStatus
+import data.GameDefinition
 import utils.nf
 
 class Analyzer(
-    private val gameObjectRegistry: GameObjectRegistry,
-    private val customObjectRegistry: CustomObjectRegistry
+    private val gameDefinitions: GameDefinition,
+    private val playerState: PlayerState
 ) {
-    val tiles = customObjectRegistry.tiles.values.toList()
+    val tiles = playerState.tiles.values.toList()
 
     private fun calculateCurrentBuildingValue(): Double {
         return tiles.sumOf { tile ->
@@ -23,45 +24,69 @@ class Analyzer(
         }
     }
 
-    private fun calculateCurrentResourceValue(): Double {
-        return tiles.sumOf { tile ->
-            tile.building?.resources?.sumOf { ra -> ra.enterpriseValue() } ?: 0.0
-        }
-    }
-
     private fun calculateImpactOfGrotto(): Double {
         return tiles.sumOf { tile ->
             tile.building.takeIf { it?.building?.tier == 1 }?.let {
-                it.building.getCostForUpgradingLevels(it.level, it.level + 5).values.sumOf { ra ->
+                it.building.getCostForUpgradingLevelsFromTo(it.level, it.level + 5).values.sumOf { ra ->
                     ra.enterpriseValue()
                 }
             } ?: 0.0
         }
     }
 
-    fun analyze(): Map<String, String> {
-        val totalBuildingValue = calculateCurrentBuildingValue()
-        val totalResourceValue = calculateCurrentResourceValue()
+    fun analyze(): Map<String, Any?> {
+        val totalBuildingsValues = totalBuildings().flatMap { outer ->
+            val bld = gameDefinitions.buildings[outer.key]!!
+            outer.value.mapIndexed { index, level ->
+                "${bld.name} #$index" to bld.getTotalBuildingValueAtLevel(level)
+            }
+        }.toMap()
+        val buildingsSum = totalBuildingsValues.values.sumOf { it }
+
+        val totalResourcesValues = totalResources().mapValues {
+            it.value.enterpriseValue()
+        }.filterValues { it > 0 }.entries.sortedBy { it.value }.associate { it.key to it.value }
+
+        val resourcesSum = totalResourcesValues.values.sumOf { it }
+
+        val totalEmpireValue = buildingsSum + resourcesSum
+
         val totalGrotto = calculateImpactOfGrotto()
 
         return mapOf(
-            "Total Building Value" to nf(totalBuildingValue),
-            "Total Resource Value" to nf(totalResourceValue),
-            "Total Empire Value" to nf(totalResourceValue + totalBuildingValue),
-            "Grotto Impact Value" to nf(totalGrotto),
-            "Total Value Grotto" to nf(totalGrotto + totalResourceValue + totalBuildingValue)
+            "1.  Building Values" to totalBuildingsValues,
+            "2.  Resource Values" to totalResourcesValues,
+            "3.1 Total Building Value" to buildingsSum.nf(),
+            "3.2 Total Resource Values" to resourcesSum.nf(),
+            "3.3 Total Empire Value" to totalEmpireValue.nf(),
+            "4   Grotto Impact Value" to totalGrotto.nf(),
+            "4.1 Total Value Grotto" to (totalGrotto + resourcesSum + buildingsSum).nf(),
         )
     }
 
-    fun totalResources(): MutableMap<String, Long> {
-        val initial = gameObjectRegistry.resources.keys.associateWith { 0L }.toMutableMap()
+    private fun totalResources(): Map<String, ResourceAmount> {
+        val initial = gameDefinitions.resources.mapValues { ResourceAmount(resource = it.value) }
 
         tiles.forEach { tile ->
             tile.building?.also {
                 if (it.status != BuildingStatus.BUILDING) {
                     it.resources.forEach { ra ->
-                        initial[ra.resource.name] = initial[ra.resource.name]!! + ra.amount
+                        initial[ra.resource.name]!!.amount += ra.amount
                     }
+                }
+            }
+        }
+
+        return initial
+    }
+
+    private fun totalBuildings(): Map<String, List<Int>> {
+        val initial = gameDefinitions.buildings.mapValues { mutableListOf<Int>() }
+
+        tiles.forEach { tile ->
+            tile.building?.also {
+                if (it.status != BuildingStatus.BUILDING && it.building.special != BuildingType.NATURAL_WONDER && it.building.special != BuildingType.HQ) {
+                    initial[it.building.name]!!.add(it.level)
                 }
             }
         }
