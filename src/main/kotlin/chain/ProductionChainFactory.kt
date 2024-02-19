@@ -5,6 +5,7 @@ import custom.CustomObjectRegistry
 import custom.data.ActiveGreatPerson
 import game.GameObjectRegistry
 import game.data.Building
+import game.data.Wonder
 import logger
 import kotlin.math.ceil
 import kotlin.math.roundToLong
@@ -31,18 +32,25 @@ class ProductionChainFactory(
         return root
     }
 
-    private fun initializeNodes(building: Building): ChainNode {
-        val root = ChainNode(
+    private fun createNode(building: Building): ChainNode {
+        return ChainNode(
             id = nextId(),
             building = building,
-            affectedBy = getGreatPersonsAffecting(building)
+            affectedBy = getGreatPersonsAffecting(building),
+            applyWonders = getWondersAffecting(building)
         ).also {
             nodes.add(it)
-            log.atDebug()
-                .setMessage("Root created.")
-                .addKeyValue("building") { building.name }
-                .log()
         }
+    }
+
+    private fun initializeNodes(building: Building): ChainNode {
+        val root = createNode(building)
+        log.atDebug()
+            .setMessage("Root created.")
+            .also {
+                root.logging(it)
+            }
+            .log()
 
         root.count = 1.0
 
@@ -57,20 +65,16 @@ class ProductionChainFactory(
             val producer = gameObjectRegistry.producers[rName]?.values?.first()
                 ?: throw IllegalArgumentException("No producer found for $rName.")
 
-            val supplier = ChainNode(
-                id = nextId(),
-                building = producer,
-                affectedBy = getGreatPersonsAffecting(producer)
-            ).also { nodes.add(it) }
+            val supplier = createNode(producer)
 
             val link = ChainLink(nextId(), supplier, node, input.resource).also { links.add(it) }
             node.inboundConnections.add(link)
             supplier.outboundConnections.add(link)
 
             supplier.count =
-                (node.count * input.effectiveAmount.toDouble()) / supplier.baseOutput[rName]!!.effectiveAmount
+                (node.count * input.effectiveAmount) / supplier.baseOutput[rName]!!.effectiveAmount
 
-            link.amount = ceil(supplier.count * supplier.baseOutput[rName]!!.effectiveAmount.toDouble()).roundToLong()
+            link.amount = ceil(supplier.count * supplier.baseOutput[rName]!!.effectiveAmount).roundToLong()
 
             log.atDebug()
                 .setMessage("Supplier node created and linked.")
@@ -87,6 +91,12 @@ class ProductionChainFactory(
     private fun getGreatPersonsAffecting(building: Building): List<ActiveGreatPerson> {
         return customObjectRegistry.greatPeople.filter {
             it.value.person.stdBoost?.any { b -> b.boostTarget == building } == true
+        }.values.toList()
+    }
+
+    private fun getWondersAffecting(building: Building): List<Wonder> {
+        return customObjectRegistry.activeWonders.filter {
+            it.value.stdBoost?.any { b -> b.boostTarget == building } == true
         }.values.toList()
     }
 }

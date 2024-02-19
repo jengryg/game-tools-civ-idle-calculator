@@ -3,7 +3,6 @@ package analyze
 import custom.CustomObjectRegistry
 import custom.data.BuildingStatus
 import game.GameObjectRegistry
-import game.data.Building
 import game.data.BuildingType
 import utils.nf
 

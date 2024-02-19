@@ -64,7 +64,7 @@ class GameDataLoader : Logging {
             buildings = buildings,
             technologies = technologies,
             cities = cities,
-            persons = persons
+            persons = persons,
         )
     }
 

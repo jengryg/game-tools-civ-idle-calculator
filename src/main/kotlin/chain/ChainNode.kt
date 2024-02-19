@@ -1,22 +1,31 @@
 package chain
 
 import CHAIN_TEXT_INDENT
+import CHAIN_TEXT_LINE_START
 import custom.data.ActiveGreatPerson
 import game.data.BoostType
 import game.data.Building
+import game.data.Wonder
 import org.slf4j.spi.LoggingEventBuilder
 
 class ChainNode(
     val id: Int = 0,
     val building: Building,
+    val alpMulti: Double = 0.0,
     val affectedBy: List<ActiveGreatPerson>,
+    val applyWonders: List<Wonder>,
 ) {
     val baseInput: Map<String, ChainNodeIO> = building.input.map { (_, ra) ->
         ra.resource.name to ChainNodeIO(
             resource = ra.resource,
             rawAmount = ra.amount,
             effects = affectedBy.filter { it.person.stdBoost?.any { b -> b.boostType == BoostType.INPUT } == true }
-                .associate { it.person.name to (it.level * it.person.value) }
+                .associate { it.person.name to (it.level * it.person.value).toDouble() },
+            wonders = applyWonders.filter { it.stdBoost?.any { b -> b.boostType == BoostType.INPUT } == true }
+                .flatMap { w ->
+                    w.stdBoost!!.filter { it.boostType == BoostType.INPUT }.map { w.name to it.value }
+                }.toMap()
+
         )
     }.toMap()
 
@@ -25,7 +34,11 @@ class ChainNode(
             resource = ra.resource,
             rawAmount = ra.amount,
             effects = affectedBy.filter { it.person.stdBoost?.any { b -> b.boostType == BoostType.OUTPUT } == true }
-                .associate { it.person.name to (it.level * it.person.value) }
+                .associate { it.person.name to (it.level * it.person.value).toDouble() },
+            wonders = applyWonders.filter { it.stdBoost?.any { b -> b.boostType == BoostType.OUTPUT } == true }
+                .flatMap { w ->
+                    w.stdBoost!!.filter { it.boostType == BoostType.OUTPUT }.map { w.name to it.value }
+                }.toMap()
         )
     }.toMap()
 
@@ -49,14 +62,18 @@ class ChainNode(
     }
 
     fun text(indent: Int): String {
-        return mutableListOf(
+        val block = listOf(
             """
             *----------------------------------------------------------------------------------------------------
-            |   ${building.name}: $count
-            |   ${affectedBy.map { "${it.person.name} ${it.level}" }}
-            | + ${baseOutput.values.map { it }.toTypedArray().contentToString()}
-            | - ${baseInput.values.map { it }.toTypedArray().contentToString()}
-            """.trimIndent().prependIndent(" ".repeat(indent))
-        ).plus(inboundConnections.map { it.supplier.text(indent + CHAIN_TEXT_INDENT) }).joinToString("\n")
+            ${CHAIN_TEXT_LINE_START.replace("%type", " ")} ${building.name}: $count
+            """.trimIndent(),
+            baseOutput.mapNotNull { it.value.text('+').takeIf { s -> s.isNotBlank() } }.joinToString("\n").takeIf { it.isNotBlank() },
+            baseInput.mapNotNull { it.value.text('-').takeIf { s -> s.isNotBlank() } }.joinToString("\n").takeIf { it.isNotBlank() }
+        ).filterNotNull().joinToString("\n").prependIndent(" ".repeat(indent))
+
+        return listOf(
+            block,
+            inboundConnections.map { it.supplier.text(indent + CHAIN_TEXT_INDENT) }.joinToString("\n")
+        ).joinToString("\n")
     }
 }
