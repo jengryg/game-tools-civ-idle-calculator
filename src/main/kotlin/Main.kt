@@ -1,4 +1,5 @@
 import analysis.enrichment.AnalyserProvider
+import analysis.processors.citydata.EnterpriseValueProcessor
 import analysis.processors.citymap.CurrentMapProcessor
 import ch.qos.logback.classic.Level
 
@@ -10,6 +11,10 @@ fun main(args: Array<String>) {
     CurrentMapProcessor(analyserProvider).apply {
         createMap()
         export()
+    }
+
+    EnterpriseValueProcessor(analyserProvider).apply {
+        createReport()
     }
 
 
