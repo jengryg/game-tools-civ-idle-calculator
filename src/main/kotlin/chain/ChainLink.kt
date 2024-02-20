@@ -1,6 +1,6 @@
 package chain
 
-import data.model.definitions.Resource
+import data.definitions.model.Resource
 import org.slf4j.spi.LoggingEventBuilder
 import utils.nf
 

@@ -1,14 +1,17 @@
 package common
 
-enum class BuildingType(val requiresUnlockTech: Boolean) {
-    NORMAL(true),
-    HQ(false),
-    WORLD_WONDER(true),
-    NATURAL_WONDER(false)
+enum class BuildingType(
+    val requiresUnlockTech: Boolean,
+    val isAnyWonder: Boolean,
+    val isHQ: Boolean
+) {
+    NORMAL(true, false, false),
+    HQ(false, false, true),
+    WORLD_WONDER(true, true, false),
+    NATURAL_WONDER(false, true, false)
 }
 
-
-fun getBuildingTypeFromString(value: String?): BuildingType {
+fun buildingTypeFromString(value: String?): BuildingType {
     return when (value) {
         "HQ" -> BuildingType.HQ
         "WorldWonder" -> BuildingType.WORLD_WONDER

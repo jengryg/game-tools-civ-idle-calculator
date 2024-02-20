@@ -1,18 +1,18 @@
 package chain
 
 import Logging
-import data.PlayerState
-import data.model.player.ActiveGreatPerson
-import data.GameDefinition
-import data.model.definitions.Building
-import data.model.definitions.Wonder
+import analysis.enrichment.GameDefinitionAnalyser
+import analysis.enrichment.PlayerStateAnalyser
+import data.definitions.model.Building
+import data.definitions.model.Wonder
+import data.player.model.ActiveGreatPerson
 import logger
 import kotlin.math.ceil
 import kotlin.math.roundToLong
 
 class ProductionChainFactory(
-    private val gameDefinitions: GameDefinition,
-    private val playerState: PlayerState,
+    private val gameDefinitions: GameDefinitionAnalyser,
+    private val playerState: PlayerStateAnalyser,
 ) : Logging {
     private val log = logger()
 

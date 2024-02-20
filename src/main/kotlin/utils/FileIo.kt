@@ -42,10 +42,11 @@ object FileIo : Logging {
     }
 
     fun writeFile(file: String, content: String?) {
-        Path.of(file).writeText(
+        Paths.get(file).writeText(
             content ?: "",
             StandardCharsets.UTF_8,
             StandardOpenOption.CREATE,
+            StandardOpenOption.WRITE,
             StandardOpenOption.TRUNCATE_EXISTING
         )
 

@@ -1,6 +1,6 @@
 package common
 
-import data.model.definitions.Deposit
+import data.definitions.model.Deposit
 
 class DepositAmount(
     val deposit: Deposit,

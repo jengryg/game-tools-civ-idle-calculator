@@ -1,7 +1,7 @@
 package chain
 
 import CHAIN_TEXT_LINE_START
-import data.model.definitions.Resource
+import data.definitions.model.Resource
 import utils.nf
 
 class ChainNodeIO(

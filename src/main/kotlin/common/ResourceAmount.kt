@@ -1,6 +1,6 @@
 package common
 
-import data.model.definitions.Resource
+import data.definitions.model.Resource
 
 open class ResourceAmount(
     val resource: Resource,

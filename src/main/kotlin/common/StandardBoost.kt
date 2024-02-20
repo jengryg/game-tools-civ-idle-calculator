@@ -1,6 +1,6 @@
 package common
 
-import data.model.definitions.Building
+import data.definitions.model.Building
 
 class StandardBoost(
     val boostType: BoostType,
