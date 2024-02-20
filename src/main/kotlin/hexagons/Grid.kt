@@ -8,7 +8,7 @@ class Grid(
     private val maxX: Int,
     private val maxY: Int,
     val size: Int
-) : Logging{
+) : Logging {
     private val log = logger()
 
     val layout = Layout(size = Point(x = size.toDouble(), y = size.toDouble()), origin = Point(x = 0.0, y = 0.0))
@@ -19,8 +19,8 @@ class Grid(
         return OffsetCoord.roffsetToCube(Offset.ODD, OffsetCoord(grid.x.roundToInt(), grid.y.roundToInt()))
     }
 
-    val pointIteration = (0 until maxX).flatMap { x->
-        (0 until maxY).map {y->
+    val pointIteration = (0 until maxX).flatMap { x ->
+        (0 until maxY).map { y ->
             Point(x = x.toDouble(), y = y.toDouble())
         }
     }.filter { !isEdge(it) }

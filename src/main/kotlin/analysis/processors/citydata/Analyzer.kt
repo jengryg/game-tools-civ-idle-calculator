@@ -1,4 +1,4 @@
-package analysis
+package analysis.processors.citydata
 
 import common.BuildingType
 import common.ResourceAmount

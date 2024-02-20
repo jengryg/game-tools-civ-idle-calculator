@@ -11,5 +11,5 @@ class Orientation(
     val b1: Double = -1.0 / 3.0,
     val b2: Double = 0.0,
     val b3: Double = 2.0 / 3.0,
-    val start_angle: Double = 0.5,
+    val startAngle: Double = 0.5,
 )

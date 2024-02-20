@@ -1,15 +1,17 @@
+import analysis.enrichment.AnalyserProvider
+import analysis.processors.citymap.CurrentMapProcessor
 import ch.qos.logback.classic.Level
-import data.DataProvider
-import utils.JsonParser
 
 fun main(args: Array<String>) {
     setLoggingLevel(Level.TRACE)
 
-    println(JsonParser.serialize(DataProvider.gs))
+    val analyserProvider = AnalyserProvider()
 
-    println()
+    CurrentMapProcessor(analyserProvider).apply {
+        createMap()
+        export()
+    }
 
-    println(JsonParser.serialize(DataProvider.ps))
 
 //    val svgExporter = SvgExporter(gameDefinitions = gor, playerState = cor)
 

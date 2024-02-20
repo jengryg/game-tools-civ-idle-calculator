@@ -1,3 +1,4 @@
+const val SVG_DEFAULT_FONT_SIZE = 12
 const val SVG_HEXAGON_SIZE = 64
 const val OUTPUT_PATH = "output"
 const val CHAIN_TEXT_INDENT = 12

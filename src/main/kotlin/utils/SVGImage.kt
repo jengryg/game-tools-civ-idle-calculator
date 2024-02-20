@@ -102,14 +102,14 @@ class SVGImage(
         if (filled) {
             svg.fillOval(
                 pV(transformationX(center.x - radius)),
-                pV(transformationY(center.y + radius)),
+                pV(transformationY(center.y - radius)),
                 pV(2 * radius),
                 pV(2 * radius)
             )
         } else {
             svg.drawOval(
                 pV(transformationX(center.x - radius)),
-                pV(transformationY(center.y + radius)),
+                pV(transformationY(center.y - radius)),
                 pV(2 * radius),
                 pV(2 * radius)
             )

@@ -2,8 +2,6 @@ package data.definitions
 
 import Logging
 import common.*
-import common.BoostType
-import common.StandardBoost
 import data.definitions.json.*
 import data.definitions.model.*
 import logger

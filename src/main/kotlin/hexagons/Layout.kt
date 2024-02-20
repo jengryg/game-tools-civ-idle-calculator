@@ -9,7 +9,7 @@ class Layout(
     val origin: Point,
 ) {
     fun hexCornerOffset(corner: Int): Point {
-        val angle = (2.0 * Math.PI * (orientation.start_angle - corner)) / 6.0;
+        val angle = (2.0 * Math.PI * (orientation.startAngle - corner)) / 6.0;
         return Point(
             x = size.x * cos(angle),
             y = size.y * sin(angle)

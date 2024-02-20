@@ -1,8 +1,8 @@
 package data.definitions
 
+import data.definitions.extension.GameDataCalculator
 import data.definitions.extension.WonderDataFactory
 import data.definitions.model.*
-import data.definitions.extension.GameDataCalculator
 
 class GameDefinition(
     override val ages: Map<String, Age>,

@@ -9,7 +9,10 @@ import data.definitions.model.Technology
 import data.definitions.model.Wonder
 import data.player.json.SaveGameJson
 import data.player.json.TileBuildingJson
-import data.player.model.*
+import data.player.model.ActiveGreatPerson
+import data.player.model.BuildBuilding
+import data.player.model.BuildingStatus
+import data.player.model.MapTile
 import hexagons.Point
 import logger
 import utils.FileIo
@@ -60,7 +63,7 @@ class PlayerStateFactory(
     }
 
     /**
-     * [Tiles] representing the map in the current run.
+     * [Map] [Int] -> [MapTile] representing the map in the current run.
      */
     private val tiles = json.current.tiles.value.associate { mts ->
         Point.fromTileInteger(mts.tile).let { xy ->
@@ -68,9 +71,7 @@ class PlayerStateFactory(
                 id = mts.id,
                 tile = mts.tile,
                 explored = mts.explored,
-                deposit = mts.deposit.associate { dName ->
-                    dName to gd.deposits[dName]!!
-                },
+                deposit = mts.deposit.associateWith { dName -> gd.deposits[dName]!! },
                 building = mts.building?.let { createBuildBuilding(it) },
                 point = xy,
                 pointSvg = city.grid.layout.hexToPixel(city.grid.gridToHex(xy))

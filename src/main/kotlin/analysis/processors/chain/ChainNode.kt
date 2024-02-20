@@ -62,18 +62,20 @@ class ChainNode(
     }
 
     fun text(indent: Int): String {
-        val block = listOf(
+        val block = listOfNotNull(
             """
             *----------------------------------------------------------------------------------------------------
             ${CHAIN_TEXT_LINE_START.replace("%type", " ")} ${building.name}: $count
             """.trimIndent(),
-            baseOutput.mapNotNull { it.value.text('+').takeIf { s -> s.isNotBlank() } }.joinToString("\n").takeIf { it.isNotBlank() },
-            baseInput.mapNotNull { it.value.text('-').takeIf { s -> s.isNotBlank() } }.joinToString("\n").takeIf { it.isNotBlank() }
-        ).filterNotNull().joinToString("\n").prependIndent(" ".repeat(indent))
+            baseOutput.mapNotNull { it.value.text('+').takeIf { s -> s.isNotBlank() } }.joinToString("\n")
+                .takeIf { it.isNotBlank() },
+            baseInput.mapNotNull { it.value.text('-').takeIf { s -> s.isNotBlank() } }.joinToString("\n")
+                .takeIf { it.isNotBlank() }
+        ).joinToString("\n").prependIndent(" ".repeat(indent))
 
         return listOf(
             block,
-            inboundConnections.map { it.supplier.text(indent + CHAIN_TEXT_INDENT) }.joinToString("\n")
+            inboundConnections.joinToString("\n") { it.supplier.text(indent + CHAIN_TEXT_INDENT) }
         ).joinToString("\n")
     }
 }
