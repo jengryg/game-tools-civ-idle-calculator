@@ -8,6 +8,7 @@ import common.BuildingType
 import hexagons.Point
 import logger
 import utils.DVIPSColors
+import utils.DVIPSColors.withAlpha
 
 class CurrentMapProcessor(
     ap: AnalyserProvider
@@ -18,7 +19,7 @@ class CurrentMapProcessor(
         addDeposits()
         addBuildings()
 
-        addFogOfWar()
+        addFogOfWar(DVIPSColors.Gray.withAlpha(128))
         drawHexagonBoundaries()
         flushTextBuffer()
     }

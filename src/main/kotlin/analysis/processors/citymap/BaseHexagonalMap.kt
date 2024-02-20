@@ -23,7 +23,7 @@ open class BaseHexagonalMap(
         )
     }
 
-    fun hexagonToPixel(hexagon: Point) : Point {
+    fun hexagonToPixel(hexagon: Point): Point {
         return city.grid.gridToHex(hexagon).let { hex -> city.grid.layout.hexToPixel(hex) }
     }
 
@@ -75,7 +75,7 @@ open class BaseHexagonalMap(
     fun fillHexagon(color: Color = DVIPSColors.Transparent, mapTile: MapTile) {
         color(color)
 
-        svg.polygon(getPolygon(mapTile.point), filled = false)
+        svg.polygon(getPolygon(mapTile.point), filled = true)
     }
 
     fun hexagonCircle(
@@ -85,13 +85,17 @@ open class BaseHexagonalMap(
         scale: Double = 0.25
     ) {
         color(color)
-        svg.circle(center = hexagonToPixel(mapTile.point), radius = SVG_HEXAGON_SIZE.toDouble() * scale, filled = filled)
+        svg.circle(
+            center = hexagonToPixel(mapTile.point),
+            radius = SVG_HEXAGON_SIZE.toDouble() * scale,
+            filled = filled
+        )
     }
 
     fun addFogOfWar(color: Color = DVIPSColors.Gray.withAlpha(64)) {
         city.grid.pointIteration.map {
             val tile = tiles[Point.toTileInteger(it)]!!
-            if (tile.explored) {
+            if (!tile.explored) {
                 fillHexagon(color, tile)
             }
         }
