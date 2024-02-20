@@ -1,12 +1,19 @@
 package analysis.processors.chain
 
 import Logging
+import OUTPUT_PATH
 import analysis.enrichment.AnalyserProvider
 import analysis.enrichment.IAnalyserProvider
 import data.definitions.model.Building
 import data.definitions.model.Wonder
 import data.player.model.ActiveGreatPerson
 import logger
+import utils.FileIo
+import java.nio.file.Paths
+import kotlin.io.path.ExperimentalPathApi
+import kotlin.io.path.createDirectory
+import kotlin.io.path.deleteIfExists
+import kotlin.io.path.deleteRecursively
 import kotlin.math.ceil
 import kotlin.math.roundToLong
 
@@ -21,6 +28,11 @@ class ProductionChainProcessor(
     private var nodeCounter = 0
     private fun nextId(): Int {
         return nodeCounter++
+    }
+
+    fun exportChain(building: Building) {
+        val node = getChain(building)
+        FileIo.writeFile("$OUTPUT_PATH/chains/prod-chain-${building.name.replace(" ", "_")}.txt", node.text(0))
     }
 
     fun getChain(building: Building): ChainNode {

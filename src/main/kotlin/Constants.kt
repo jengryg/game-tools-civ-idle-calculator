@@ -3,6 +3,7 @@ const val SVG_HEXAGON_SIZE = 64
 const val OUTPUT_PATH = "output"
 const val CHAIN_TEXT_INDENT = 12
 const val CHAIN_TEXT_LINE_START = "| %type "
+const val DATA_TEXT_INDENT = 4
 
 // Effects from Wonders
 const val WHEAT_BOOST_TO_ADD_FROM_NEIGHBOR_WATER_SOURCE = 1.0
