@@ -1,4 +1,4 @@
-package chain
+package analysis.processors.chain
 
 import CHAIN_TEXT_INDENT
 import CHAIN_TEXT_LINE_START

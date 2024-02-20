@@ -1,4 +1,4 @@
-package chain
+package analysis.processors.chain
 
 import data.definitions.model.Resource
 import org.slf4j.spi.LoggingEventBuilder

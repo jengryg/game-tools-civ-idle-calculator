@@ -1,8 +1,8 @@
-package chain
+package analysis.processors.chain
 
 import Logging
-import analysis.enrichment.GameDefinitionAnalyser
-import analysis.enrichment.PlayerStateAnalyser
+import analysis.enrichment.AnalyserProvider
+import analysis.enrichment.IAnalyserProvider
 import data.definitions.model.Building
 import data.definitions.model.Wonder
 import data.player.model.ActiveGreatPerson
@@ -10,10 +10,9 @@ import logger
 import kotlin.math.ceil
 import kotlin.math.roundToLong
 
-class ProductionChainFactory(
-    private val gameDefinitions: GameDefinitionAnalyser,
-    private val playerState: PlayerStateAnalyser,
-) : Logging {
+class ProductionChainProcessor(
+    ap: AnalyserProvider
+) : IAnalyserProvider by ap, Logging {
     private val log = logger()
 
     val nodes = mutableListOf<ChainNode>()
@@ -62,7 +61,7 @@ class ProductionChainFactory(
     private fun processInputs(node: ChainNode) {
         node.baseInput.forEach { (rName, input) ->
             // TODO: selecting the producer here or creating alternatives if multiple possibilities are available
-            val producer = gameDefinitions.producers[rName]?.values?.first()
+            val producer = gda.producers[rName]?.values?.first()
                 ?: throw IllegalArgumentException("No producer found for $rName.")
 
             val supplier = createNode(producer)
@@ -89,13 +88,13 @@ class ProductionChainFactory(
     }
 
     private fun getGreatPersonsAffecting(building: Building): List<ActiveGreatPerson> {
-        return playerState.greatPeople.filter {
+        return psa.greatPeople.filter {
             it.value.person.stdBoost?.any { b -> b.boostTarget == building } == true
         }.values.toList()
     }
 
     private fun getWondersAffecting(building: Building): List<Wonder> {
-        return playerState.activeWonders.filter {
+        return psa.activeWonders.filter {
             it.value.stdBoost?.any { b -> b.boostTarget == building } == true
         }.values.toList()
     }

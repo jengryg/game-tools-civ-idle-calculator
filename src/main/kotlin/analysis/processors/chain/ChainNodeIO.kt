@@ -1,4 +1,4 @@
-package chain
+package analysis.processors.chain
 
 import CHAIN_TEXT_LINE_START
 import data.definitions.model.Resource
