@@ -10,6 +10,7 @@ import data.player.model.BuildingStatus
 import logger
 import utils.FileIo
 import utils.nf
+import kotlin.math.floor
 
 class EnterpriseValueProcessor(
     private val ap: AnalyserProvider
@@ -40,15 +41,27 @@ class EnterpriseValueProcessor(
 
         val grottoEmpireValue = totalGrotto + totalEmpireValue
 
+        val extraGP = gda.getExtraGP(totalEmpireValue)
+        val grottoGP = gda.getExtraGP(grottoEmpireValue)
+
+        val nextExtraGP = gda.getEnterpriseValueForGP(floor(extraGP) + 1)
+        val nextGrottoGP = gda.getEnterpriseValueForGP(floor(grottoGP) + 1)
+
         val reportContent =
             """
+            ${psa.city.name}
+            ===========================${"=".repeat(28)}
             Total Building Value:      ${buildingsSum.nf().padStart(28, ' ')}
             Total Resource Value:      ${resourcesSum.nf().padStart(28, ' ')}
             Total Empire Value:        ${totalEmpireValue.nf().padStart(28, ' ')}
+            Extra GP:                  ${extraGP.nf().padStart(28, ' ')}
+            Next GP at:                ${nextExtraGP.nf().padStart(28, ' ')}
             ===========================${"=".repeat(28)}
             Grotto Discovery Impact:   ${totalGrotto.nf().padStart(28, ' ')}
             Grotto Empire Value:       ${grottoEmpireValue.nf().padStart(28, ' ')}
-            
+            Extra GP:                  ${grottoGP.nf().padStart(28, ' ')}
+            Next GP at:                ${nextGrottoGP.nf().padStart(28, ' ')}
+            ===========================${"=".repeat(28)}
         """.trimIndent()
 
         FileIo.writeFile(

@@ -11,7 +11,7 @@ import org.slf4j.spi.LoggingEventBuilder
 class ChainNode(
     val id: Int = 0,
     val building: Building,
-    val alpMulti: Double = 0.0,
+    val alpMulti: Double,
     val affectedBy: List<ActiveGreatPerson>,
     val applyWonders: List<Wonder>,
 ) {
@@ -24,8 +24,8 @@ class ChainNode(
             wonders = applyWonders.filter { it.stdBoost?.any { b -> b.boostType == BoostType.INPUT } == true }
                 .flatMap { w ->
                     w.stdBoost!!.filter { it.boostType == BoostType.INPUT }.map { w.name to it.value }
-                }.toMap()
-
+                }.toMap(),
+            alpMulti = alpMulti
         )
     }.toMap()
 
@@ -38,7 +38,8 @@ class ChainNode(
             wonders = applyWonders.filter { it.stdBoost?.any { b -> b.boostType == BoostType.OUTPUT } == true }
                 .flatMap { w ->
                     w.stdBoost!!.filter { it.boostType == BoostType.OUTPUT }.map { w.name to it.value }
-                }.toMap()
+                }.toMap(),
+            alpMulti = alpMulti
         )
     }.toMap()
 

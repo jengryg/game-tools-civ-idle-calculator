@@ -9,11 +9,6 @@ import data.definitions.model.Wonder
 import data.player.model.ActiveGreatPerson
 import logger
 import utils.FileIo
-import java.nio.file.Paths
-import kotlin.io.path.ExperimentalPathApi
-import kotlin.io.path.createDirectory
-import kotlin.io.path.deleteIfExists
-import kotlin.io.path.deleteRecursively
 import kotlin.math.ceil
 import kotlin.math.roundToLong
 
@@ -30,32 +25,36 @@ class ProductionChainProcessor(
         return nodeCounter++
     }
 
-    fun exportChain(building: Building) {
-        val node = getChain(building)
-        FileIo.writeFile("$OUTPUT_PATH/chains/prod-chain-${building.name.replace(" ", "_")}.txt", node.text(0))
+    fun exportChain(building: Building, alpMulti: Double) {
+        val node = getChain(building, alpMulti)
+        FileIo.writeFile(
+            "$OUTPUT_PATH/chains/prod-chain-${building.name.replace(" ", "_")}-alps-${alpMulti}.txt",
+            node.text(0)
+        )
     }
 
-    fun getChain(building: Building): ChainNode {
+    fun getChain(building: Building, alpMulti: Double): ChainNode {
         nodeCounter = 0
 
-        val root = initializeNodes(building)
+        val root = initializeNodes(building, alpMulti)
 
         return root
     }
 
-    private fun createNode(building: Building): ChainNode {
+    private fun createNode(building: Building, alpMulti: Double): ChainNode {
         return ChainNode(
             id = nextId(),
             building = building,
             affectedBy = getGreatPersonsAffecting(building),
-            applyWonders = getWondersAffecting(building)
+            applyWonders = getWondersAffecting(building),
+            alpMulti = alpMulti
         ).also {
             nodes.add(it)
         }
     }
 
-    private fun initializeNodes(building: Building): ChainNode {
-        val root = createNode(building)
+    private fun initializeNodes(building: Building, alpMulti: Double): ChainNode {
+        val root = createNode(building, alpMulti)
         log.atDebug()
             .setMessage("Root created.")
             .also {
@@ -76,7 +75,7 @@ class ProductionChainProcessor(
             val producer = gda.producers[rName]?.values?.first()
                 ?: throw IllegalArgumentException("No producer found for $rName.")
 
-            val supplier = createNode(producer)
+            val supplier = createNode(producer, node.alpMulti)
 
             val link = ChainLink(nextId(), supplier, node, input.resource).also { links.add(it) }
             node.inboundConnections.add(link)

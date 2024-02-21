@@ -8,6 +8,7 @@ import java.nio.file.Paths
 import kotlin.io.path.ExperimentalPathApi
 import kotlin.io.path.createDirectory
 import kotlin.io.path.deleteRecursively
+import kotlin.math.exp
 
 @OptIn(ExperimentalPathApi::class)
 fun main(args: Array<String>) {
@@ -37,7 +38,8 @@ fun main(args: Array<String>) {
 
         ap.gda.buildings.values.forEach {
             if (it.input.isNotEmpty()) {
-                exportChain(building = it)
+                exportChain(building = it, alpMulti = 0.0)
+                exportChain(building = it, alpMulti = 3.0)
             }
         }
 
