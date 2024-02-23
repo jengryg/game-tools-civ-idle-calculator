@@ -5,6 +5,7 @@ import OUTPUT_PATH
 import analysis.enrichment.AnalyserProvider
 import analysis.enrichment.IAnalyserProvider
 import data.definitions.model.Building
+import data.definitions.model.Technology
 import data.definitions.model.Wonder
 import data.player.model.ActiveGreatPerson
 import logger
@@ -45,8 +46,9 @@ class ProductionChainProcessor(
         return ChainNode(
             id = nextId(),
             building = building,
-            affectedBy = getGreatPersonsAffecting(building),
-            applyWonders = getWondersAffecting(building),
+            affectedByPersons = getGreatPersonsAffecting(building),
+            affectedByWonders = getWondersAffecting(building),
+            affectedByTechnologies = getTechnologiesAffecting(building),
             alpMulti = alpMulti
         ).also {
             nodes.add(it)
@@ -106,6 +108,12 @@ class ProductionChainProcessor(
 
     private fun getWondersAffecting(building: Building): List<Wonder> {
         return psa.activeWonders.filter {
+            it.value.stdBoost?.any { b -> b.boostTarget == building } == true
+        }.values.toList()
+    }
+
+    private fun getTechnologiesAffecting(building: Building): List<Technology> {
+        return psa.unlockedTechnology.filter {
             it.value.stdBoost?.any { b -> b.boostTarget == building } == true
         }.values.toList()
     }
