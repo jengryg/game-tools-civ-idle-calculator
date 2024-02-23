@@ -183,8 +183,27 @@ class GameDefinitionFactory : Logging {
             revealDeposit = json.revealDeposit?.map { deposits[it]!! } ?: emptyList(),
             unlockBuilding = json.unlockBuilding?.map { buildings[it]!! } ?: emptyList(),
             requireTechnologies = json.requireTech?.map { knownTechnology[it]!! } ?: emptyList(),
-            age = age
+            age = age,
+            stdBoost = json.buildingMultiplier?.flatMap {
+                createStdBoostForTech(it.key, it.value)
+            } ?: emptyList()
         )
+    }
+
+    private fun createStdBoostForTech(bName: String, boost: Map<String, Int>): List<StandardBoost> {
+        return boost.map { (type, value) ->
+            StandardBoost(
+                boostTarget = buildings[bName]!!,
+                boostType = when (type) {
+                    "output" -> BoostType.OUTPUT
+                    "input" -> BoostType.INPUT
+                    "storage" -> BoostType.STORAGE
+                    "worker" -> BoostType.WORKER
+                    else -> throw IllegalArgumentException("Unknown boost type for technology parsing.")
+                },
+                value = value.toDouble()
+            )
+        }
     }
 
     private fun applyTechnologyData(technology: Technology) {

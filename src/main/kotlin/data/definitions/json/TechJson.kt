@@ -5,4 +5,5 @@ class TechJson(
     val revealDeposit: List<String>?,
     val unlockBuilding: List<String>?,
     val requireTech: List<String>?,
+    val buildingMultiplier: Map<String, Map<String, Int>>?,
 )
