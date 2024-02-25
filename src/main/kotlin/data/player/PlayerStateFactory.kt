@@ -51,7 +51,7 @@ class PlayerStateFactory(
         }
         json.options.greatPeople.forEach { (pName, data) ->
             // Add permanent great People levels.
-            greatPersonMap[pName]?.let { it.level = data.level }
+            greatPersonMap[pName]?.let { it.level += data.level }
         }
     }
 
