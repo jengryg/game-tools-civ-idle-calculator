@@ -3,6 +3,7 @@ import analysis.processors.chain.ProductionChainProcessor
 import analysis.processors.citydata.EnterpriseValueProcessor
 import analysis.processors.citymap.CurrentMapProcessor
 import analysis.processors.general.BasicInformationProcessor
+import analysis.processors.general.ExportingGameDataProcessor
 import analysis.strategy.GrottoStrategy
 import ch.qos.logback.classic.Level
 import java.nio.file.Paths
@@ -56,5 +57,10 @@ fun main(args: Array<String>) {
         (20..40).forEach {
             createSimpleStrategy(it)
         }
+    }
+
+    ExportingGameDataProcessor(ap).apply {
+        exportGameDefinition()
+        exportPlayerState()
     }
 }

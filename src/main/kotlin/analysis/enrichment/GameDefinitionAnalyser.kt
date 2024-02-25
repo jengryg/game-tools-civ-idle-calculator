@@ -10,7 +10,7 @@ import kotlin.math.cbrt
 import kotlin.math.pow
 
 class GameDefinitionAnalyser(
-    private val gd: GameDefinition
+    val gd: GameDefinition
 ) : IGameDefinition by gd, Logging {
     private val log = logger()
 
