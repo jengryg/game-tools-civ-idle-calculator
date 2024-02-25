@@ -891,6 +891,18 @@
     "special": "WorldWonder",
     "wikipedia": "Colossus_of_Rhodes"
   },
+  "GreatMosqueOfSamarra": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "Sand": 100,
+      "Brick": 100,
+      "Cotton": 100
+    },
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "Great_Mosque_of_Samarra"
+  },
   "HangingGarden": {
     "input": {},
     "output": {},
@@ -1047,6 +1059,18 @@
     "special": "WorldWonder",
     "wikipedia": "St._Peter%27s_Basilica"
   },
+  "SaintBasilsCathedral": {
+    "input": {},
+    "output": {},
+    "max": 1,
+    "construction": {
+      "Faith": 100,
+      "Gold": 100,
+      "Furniture": 100
+    },
+    "special": "WorldWonder",
+    "wikipedia": "Saint_Basil%27s_Cathedral"
+  },
   "ForbiddenCity": {
     "input": {},
     "output": {},
@@ -1074,12 +1098,12 @@
   "TajMahal": {
     "input": {},
     "output": {},
-    "max": 1,
     "construction": {
       "Faith": 100,
       "Marble": 100,
       "Garment": 100
     },
+    "max": 1,
     "special": "WorldWonder",
     "wikipedia": "Taj_Mahal"
   },
@@ -1096,6 +1120,18 @@
     "max": 1,
     "special": "WorldWonder",
     "wikipedia": "Colosseum"
+  },
+  "MogaoCaves": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "Faith": 100,
+      "Marble": 100,
+      "Painting": 100
+    },
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "Mogao_Caves"
   },
   "StatueOfZeus": {
     "input": {},

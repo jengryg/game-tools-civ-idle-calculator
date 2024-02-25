@@ -53,6 +53,17 @@ class GameDefinitionFactory : Logging {
         }
     }
 
+    /**
+     * [Resource] definitions for noPricing attribute.
+     */
+    private val noPriceResources =
+        JsonParser.deserialize<Map<String, Boolean>>(FileIo.readFile("$gameDefinitionPath/resources-noPrice.json"))
+
+    /**
+     * [Resource] definitions for noStorage attribute.
+     */
+    private val noStorageResources =
+        JsonParser.deserialize<Map<String, Boolean>>(FileIo.readFile("$gameDefinitionPath/resources-noStorage.json"))
 
     /**
      * [Resource] definitions.
@@ -73,8 +84,8 @@ class GameDefinitionFactory : Logging {
     private fun createResource(name: String, json: ResourceJson): Resource {
         return Resource(
             name = name,
-            canStore = json.canStore,
-            canPrice = json.canPrice,
+            canStore = noStorageResources[name] ?: false,
+            canPrice = noPriceResources[name] ?: false,
             fromDeposit = deposits.containsKey(name)
         )
     }

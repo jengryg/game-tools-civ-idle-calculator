@@ -26,6 +26,38 @@
     "maxLevel": null,
     "age": "BronzeAge"
   },
+  "Hatshepsut": {
+    "boost": {
+      "multipliers": [
+        "output",
+        "storage"
+      ],
+      "buildings": [
+        "Aqueduct",
+        "Brickworks"
+      ]
+    },
+    "time": "c. 1507 ~ 1458 BC",
+    "value": 1,
+    "maxLevel": null,
+    "age": "BronzeAge"
+  },
+  "SargonOfAkkad": {
+    "boost": {
+      "multipliers": [
+        "output",
+        "storage"
+      ],
+      "buildings": [
+        "LoggingCamp",
+        "LumberMill"
+      ]
+    },
+    "time": "c. 2334 ~2279 BC",
+    "value": 1,
+    "maxLevel": null,
+    "age": "BronzeAge"
+  },
   "Agamemnon": {
     "boost": {
       "multipliers": [
@@ -73,6 +105,54 @@
     "value": 1,
     "maxLevel": null,
     "age": "IronAge"
+  },
+  "Zoroaster": {
+    "boost": {
+      "multipliers": [
+        "output",
+        "storage"
+      ],
+      "buildings": [
+        "CottonPlantation",
+        "CottonMill"
+      ]
+    },
+    "time": "c. 1500s BC",
+    "value": 1,
+    "maxLevel": null,
+    "age": "IronAge"
+  },
+  "Aeschylus": {
+    "boost": {
+      "multipliers": [
+        "output",
+        "storage"
+      ],
+      "buildings": [
+        "FlourMill",
+        "Bakery"
+      ]
+    },
+    "time": "c. 500s",
+    "value": 1,
+    "maxLevel": null,
+    "age": "ClassicalAge"
+  },
+  "Ashurbanipal": {
+    "boost": {
+      "multipliers": [
+        "output",
+        "storage"
+      ],
+      "buildings": [
+        "Sandpit",
+        "Glassworks"
+      ]
+    },
+    "time": "c. 685 ~ 631 BC",
+    "value": 1,
+    "maxLevel": null,
+    "age": "ClassicalAge"
   },
   "NebuchadnezzarII": {
     "boost": {
@@ -128,6 +208,18 @@
     "maxLevel": null,
     "age": "ClassicalAge"
   },
+  "Aristophanes": {
+    "time": "446 ~ 386 AD",
+    "value": 1,
+    "maxLevel": null,
+    "age": "ClassicalAge"
+  },
+  "Confucius": {
+    "time": "c. 600s BC",
+    "value": 1,
+    "maxLevel": null,
+    "age": "ClassicalAge"
+  },
   "QinShiHuang": {
     "boost": {
       "multipliers": [
@@ -157,6 +249,12 @@
     },
     "time": "482 ~ 565 AD",
     "value": 1,
+    "maxLevel": null,
+    "age": "MiddleAge"
+  },
+  "IsidoreOfMiletus": {
+    "time": "c. 500 AD",
+    "value": 2,
     "maxLevel": null,
     "age": "MiddleAge"
   },
@@ -201,6 +299,12 @@
   "Rurik": {
     "time": "624 ~ 705 AD",
     "value": 2,
+    "maxLevel": null,
+    "age": "MiddleAge"
+  },
+  "Fibonacci": {
+    "time": "c. 1170 ~ 1250 AD",
+    "value": 1,
     "maxLevel": null,
     "age": "MiddleAge"
   },
@@ -296,6 +400,12 @@
     },
     "time": "1389 ~ 1464 AD",
     "value": 1,
+    "maxLevel": null,
+    "age": "RenaissanceAge"
+  },
+  "IsaacNewton": {
+    "time": "1642 ~ 1727",
+    "value": 2,
     "maxLevel": null,
     "age": "RenaissanceAge"
   },

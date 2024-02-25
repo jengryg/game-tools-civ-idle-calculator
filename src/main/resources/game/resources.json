@@ -1,286 +1,73 @@
 {
-  "Worker": {
-    "canStore": false,
-    "canPrice": false
-  },
-  "Power": {
-    "canStore": false,
-    "canPrice": false
-  },
-  "Wheat": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Meat": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Wood": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Lumber": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Stone": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Brick": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Horse": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Marble": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Water": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Copper": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Iron": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Gold": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Alcohol": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Tool": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Sword": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Armor": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Chariot": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Knight": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Paper": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Cheese": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Milk": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Pizza": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Bread": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "SiegeRam": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Caravel": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Galleon": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Frigate": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Cotton": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Garment": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Furniture": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Opera": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Poem": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Painting": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Music": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Cloth": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Newspaper": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Magazine": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Flour": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Book": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Science": {
-    "canStore": true,
-    "canPrice": false
-  },
-  "Faith": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Warp": {
-    "canStore": true,
-    "canPrice": false
-  },
-  "Coin": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Banknote": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Bond": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Cannon": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Dynamite": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Gunpowder": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Coal": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Sand": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Glass": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Lens": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Philosophy": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Culture": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Law": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Steel": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Engine": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Train": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Rifle": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "GatlingGun": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Ironclad": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Sports": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Stock": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Tank": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Politics": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Oil": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "NaturalGas": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Aluminum": {
-    "canStore": true,
-    "canPrice": true
-  },
-  "Petrol": {
-    "canStore": true,
-    "canPrice": true
-  }
+  "Worker": {},
+  "Power": {},
+  "Science": {},
+  "Warp": {},
+  "Wheat": {},
+  "Meat": {},
+  "Wood": {},
+  "Lumber": {},
+  "Stone": {},
+  "Brick": {},
+  "Horse": {},
+  "Marble": {},
+  "Water": {},
+  "Copper": {},
+  "Iron": {},
+  "Gold": {},
+  "Alcohol": {},
+  "Tool": {},
+  "Sword": {},
+  "Armor": {},
+  "Chariot": {},
+  "Knight": {},
+  "Paper": {},
+  "Cheese": {},
+  "Milk": {},
+  "Pizza": {},
+  "Bread": {},
+  "SiegeRam": {},
+  "Caravel": {},
+  "Galleon": {},
+  "Frigate": {},
+  "Cotton": {},
+  "Garment": {},
+  "Furniture": {},
+  "Opera": {},
+  "Poem": {},
+  "Painting": {},
+  "Music": {},
+  "Cloth": {},
+  "Newspaper": {},
+  "Magazine": {},
+  "Flour": {},
+  "Book": {},
+  "Faith": {},
+  "Coin": {},
+  "Banknote": {},
+  "Bond": {},
+  "Cannon": {},
+  "Dynamite": {},
+  "Gunpowder": {},
+  "Coal": {},
+  "Sand": {},
+  "Glass": {},
+  "Lens": {},
+  "Philosophy": {},
+  "Culture": {},
+  "Law": {},
+  "Steel": {},
+  "Engine": {},
+  "Train": {},
+  "Rifle": {},
+  "GatlingGun": {},
+  "Ironclad": {},
+  "Sports": {},
+  "Stock": {},
+  "Tank": {},
+  "Politics": {},
+  "Oil": {},
+  "NaturalGas": {},
+  "Aluminum": {},
+  "Petrol": {}
 }
