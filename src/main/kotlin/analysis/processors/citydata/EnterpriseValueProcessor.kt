@@ -20,14 +20,30 @@ class EnterpriseValueProcessor(
     val tiles = psa.tiles.values.toList()
 
     fun createReport() {
-        val totalBuildingsValues = totalBuildings().flatMap { outer ->
+
+
+        val totalBuildings = totalBuildings()
+
+        val totalBuildingsValues = mutableMapOf<String, Double>()
+        val tier1BuildingsValues = mutableMapOf<String, Double>()
+
+        totalBuildings.forEach { outer ->
             val bld = gda.buildings[outer.key]!!
             outer.value.mapIndexed { index, level ->
-                "${bld.name} #$index" to bld.getTotalBuildingValueAtLevel(level)
+                val ev = bld.getTotalBuildingValueAtLevel(level)
+                val key = "${bld.name} #$index"
+
+                if (bld.tier == 1) {
+                    tier1BuildingsValues[key] = ev
+                }
+
+                totalBuildingsValues[key] = ev
             }
-        }.toMap()
+        }
 
         val buildingsSum = totalBuildingsValues.values.sumOf { it }
+
+        val tier1BuildingSum = tier1BuildingsValues.values.sumOf { it }
 
         val totalResourcesValues = totalResources().mapValues {
             it.value.enterpriseValue()
@@ -41,11 +57,11 @@ class EnterpriseValueProcessor(
 
         val grottoEmpireValue = totalGrotto + totalEmpireValue
 
-        val extraGP = gda.getExtraGP(totalEmpireValue)
-        val grottoGP = gda.getExtraGP(grottoEmpireValue)
+        val extraGP = floor(gda.getExtraGP(totalEmpireValue))
+        val grottoGP = floor(gda.getExtraGP(grottoEmpireValue))
 
-        val nextExtraGP = gda.getEnterpriseValueForGP(floor(extraGP) + 1)
-        val nextGrottoGP = gda.getEnterpriseValueForGP(floor(grottoGP) + 1)
+        val nextExtraGP = gda.getEnterpriseValueForGP(extraGP + 1)
+        val nextGrottoGP = gda.getEnterpriseValueForGP(grottoGP + 1)
 
         val reportContent =
             """
@@ -57,6 +73,7 @@ class EnterpriseValueProcessor(
             Extra GP:                  ${extraGP.nf().padStart(28, ' ')}
             Next GP at:                ${nextExtraGP.nf().padStart(28, ' ')}
             ===========================${"=".repeat(28)}
+            Tier 1 Building Value:     ${tier1BuildingSum.nf().padStart(28, ' ')}
             Grotto Discovery Impact:   ${totalGrotto.nf().padStart(28, ' ')}
             Grotto Empire Value:       ${grottoEmpireValue.nf().padStart(28, ' ')}
             Extra GP:                  ${grottoGP.nf().padStart(28, ' ')}
