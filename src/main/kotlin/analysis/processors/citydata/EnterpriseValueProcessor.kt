@@ -33,7 +33,7 @@ class EnterpriseValueProcessor(
                 val ev = bld.getTotalBuildingValueAtLevel(level)
                 val key = "${bld.name} #$index"
 
-                if (bld.tier == 1) {
+                if (bld.tier == 1 && bld.special == BuildingType.NORMAL) {
                     tier1BuildingsValues[key] = ev
                 }
 
@@ -87,20 +87,9 @@ class EnterpriseValueProcessor(
         )
     }
 
-    private fun calculateCurrentBuildingValue(): Double {
-        return tiles.sumOf { tile ->
-            tile.building?.let {
-                when (it.building.special) {
-                    BuildingType.WORLD_WONDER, BuildingType.NORMAL -> it.totalCost
-                    else -> 0.0
-                }
-            } ?: 0.0
-        }
-    }
-
     private fun calculateImpactOfGrotto(): Double {
         return tiles.sumOf { tile ->
-            tile.building.takeIf { it?.building?.tier == 1 }?.let {
+            tile.building.takeIf { it?.building?.tier == 1 && it.building.special == BuildingType.NORMAL }?.let {
                 it.building.getCostForUpgradingLevelsFromTo(it.level, it.level + 5).values.sumOf { ra ->
                     ra.enterpriseValue()
                 }
