@@ -55,7 +55,7 @@ class BasicInformationProcessor(
                 null
             }
         }.sortedBy { it.first }.toMap().map { (name, cost) ->
-            "$name;${cost.joinToString(";") { "${it.amount};${it.resource.name}" }}"
+            "$name;${cost.sumOf { it.enterpriseValue() }.nf()};${cost.joinToString(";") { "${it.amount};${it.resource.name}" }}"
         }.joinToString("\n")
 
         FileIo.writeFile("$OUTPUT_PATH/buildings-wonder-cost.txt", result)
