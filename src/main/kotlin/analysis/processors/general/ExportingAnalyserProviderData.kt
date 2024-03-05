@@ -8,7 +8,7 @@ import logger
 import utils.FileIo
 import utils.JsonParser
 
-class ExportingGameDataProcessor(
+class ExportingAnalyserProviderData(
     private val ap: AnalyserProvider
 ) : IAnalyserProvider by ap, Logging {
     private val log = logger()

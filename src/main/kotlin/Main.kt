@@ -1,9 +1,10 @@
 import analysis.enrichment.AnalyserProvider
 import analysis.processors.chain.ProductionChainProcessor
 import analysis.processors.citydata.EnterpriseValueProcessor
+import analysis.processors.citydata.EnterpriseValueProcessorLegacy
 import analysis.processors.citymap.CurrentMapProcessor
 import analysis.processors.general.BasicInformationProcessor
-import analysis.processors.general.ExportingGameDataProcessor
+import analysis.processors.general.ExportingAnalyserProviderData
 import analysis.strategy.GrottoStrategy
 import ch.qos.logback.classic.Level
 import java.nio.file.Paths
@@ -19,6 +20,7 @@ fun main(args: Array<String>) {
     val ap = AnalyserProvider()
 
     BasicInformationProcessor(ap).apply {
+        exportResourceList()
         exportTierBasedEnterpriseValueData()
         exportWonderEnterpriseValueData()
     }
@@ -26,6 +28,10 @@ fun main(args: Array<String>) {
     CurrentMapProcessor(ap).apply {
         createMap()
         export()
+    }
+
+    EnterpriseValueProcessorLegacy(ap).apply {
+        createReport()
     }
 
     EnterpriseValueProcessor(ap).apply {
@@ -59,7 +65,7 @@ fun main(args: Array<String>) {
         }
     }
 
-    ExportingGameDataProcessor(ap).apply {
+    ExportingAnalyserProviderData(ap).apply {
         exportGameDefinition()
         exportPlayerState()
     }

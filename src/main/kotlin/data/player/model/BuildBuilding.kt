@@ -16,5 +16,7 @@ class BuildBuilding(
     val status: BuildingStatus,
     val resources: List<ResourceAmount>
 ) {
-    val totalCost = building.getTotalBuildingValueAtLevel(level)
+    val investedResources = building.getCostForUpgradingLevelsFromTo(0, level)
+    val investedEnterpriseValue = investedResources.mapValues { it.value.enterpriseValue() }
+    val storedEnterpriseValue = resources.associate { it.resource.name to it.enterpriseValue() }
 }

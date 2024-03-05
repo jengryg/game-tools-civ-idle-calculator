@@ -14,6 +14,26 @@ class BasicInformationProcessor(
 ) : IAnalyserProvider by ap, Logging {
     private val log = logger()
 
+    fun exportResourceList() {
+        val list = mutableListOf<List<String>>()
+
+        val result = ap.gda.resources.mapNotNull { (_, r) ->
+            if(r.tier == null || r.price == null) {
+                null
+            } else {
+                Triple(
+                    r.name,
+                    r.tier!!,
+                    r.price!!
+                )
+            }
+        }.sortedBy { it.third }.joinToString("\n") {(name, tier, price) ->
+            "${name.padEnd(20)}${tier.nf().padStart(10)}${price.nf().padStart(10)}"
+        }
+
+        FileIo.writeFile("$OUTPUT_PATH/resources.txt", result)
+    }
+
     fun exportTierBasedEnterpriseValueData() {
         val output = mutableListOf<String>()
 
