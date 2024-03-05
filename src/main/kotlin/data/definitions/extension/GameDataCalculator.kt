@@ -265,7 +265,7 @@ object GameDataCalculator : Logging {
                 val ageIdx = building.technology?.age?.id ?: 0
 
                 round(
-                    100.0 + 100 * techIdx.toDouble().pow(2) + 5.0.pow(ageIdx) + 1.5.pow(techIdx)
+                    100.0 + 100 * techIdx.toDouble().pow(2) + 5.0.pow(ageIdx) * 1.5.pow(techIdx)
                 ).also {
                     log.atDebug()
                         .setMessage("Calculated build cost multiplier for World Wonder")
