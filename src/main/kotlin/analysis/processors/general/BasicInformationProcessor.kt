@@ -15,10 +15,8 @@ class BasicInformationProcessor(
     private val log = logger()
 
     fun exportResourceList() {
-        val list = mutableListOf<List<String>>()
-
         val result = ap.gda.resources.mapNotNull { (_, r) ->
-            if(r.tier == null || r.price == null) {
+            if (r.tier == null || r.price == null) {
                 null
             } else {
                 Triple(
@@ -27,11 +25,40 @@ class BasicInformationProcessor(
                     r.price!!
                 )
             }
-        }.sortedBy { it.third }.joinToString("\n") {(name, tier, price) ->
+        }.sortedBy { it.third }.joinToString("\n") { (name, tier, price) ->
             "${name.padEnd(20)}${tier.nf().padStart(10)}${price.nf().padStart(10)}"
         }
 
         FileIo.writeFile("$OUTPUT_PATH/resources.txt", result)
+    }
+
+    fun exportBuildingResourceNeeds() {
+        val result = ap.gda.buildings.mapNotNull { (name, b) ->
+            if (b.special.isHQ || b.special.isAnyWonder) {
+                null
+            } else {
+                name to b.getCostForUpgradingLevelsFromTo(0, 1).values
+            }
+
+        }.sortedBy { it.first }.toMap().map { (name, cost) ->
+            "$name;${cost.joinToString(";") { "${it.amount};${it.resource.name}" }}"
+        }.joinToString("\n")
+
+        FileIo.writeFile("$OUTPUT_PATH/buildings-normal-cost.txt", result)
+    }
+
+    fun exportWonderResourceNeeds() {
+        val result = ap.gda.buildings.mapNotNull { (name, b) ->
+            if (b.special.isWorldWonder) {
+                name to b.getCostForUpgradingLevelsFromTo(0, 1).values
+            } else {
+                null
+            }
+        }.sortedBy { it.first }.toMap().map { (name, cost) ->
+            "$name;${cost.joinToString(";") { "${it.amount};${it.resource.name}" }}"
+        }.joinToString("\n")
+
+        FileIo.writeFile("$OUTPUT_PATH/buildings-wonder-cost.txt", result)
     }
 
     fun exportTierBasedEnterpriseValueData() {

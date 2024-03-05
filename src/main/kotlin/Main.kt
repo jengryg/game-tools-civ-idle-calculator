@@ -21,6 +21,8 @@ fun main(args: Array<String>) {
 
     BasicInformationProcessor(ap).apply {
         exportResourceList()
+        exportBuildingResourceNeeds()
+        exportWonderResourceNeeds()
         exportTierBasedEnterpriseValueData()
         exportWonderEnterpriseValueData()
     }
