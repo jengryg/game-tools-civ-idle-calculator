@@ -9,10 +9,7 @@ import data.definitions.model.Technology
 import data.definitions.model.Wonder
 import data.player.json.SaveGameJson
 import data.player.json.TileBuildingJson
-import data.player.model.ActiveGreatPerson
-import data.player.model.BuildBuilding
-import data.player.model.BuildingStatus
-import data.player.model.MapTile
+import data.player.model.*
 import hexagons.Point
 import logger
 import utils.FileIo
@@ -79,6 +76,34 @@ class PlayerStateFactory(
         }
     }
 
+    /**
+     * [Map] [Int] -> [Transportation] representing the current transportations of resources on the map.
+     */
+    private val transportations = json.current.transportation.value.associate {
+        it.id to Transportation(
+            id = it.id,
+            from = tiles[it.fromXy]!!,
+            to = tiles[it.toXy]!!,
+            fromPosition = it.fromPosition,
+            toPosition = it.toPosition,
+            ticksRequired = it.ticksRequired,
+            ticksSpent = it.ticksSpent,
+            resourceAmount = ResourceAmount(
+                resource = gd.resources[it.resource]!!,
+                amount = it.amount.toLong(),
+            ),
+            fuelAmount = ResourceAmount(
+                resource = gd.resources[it.fuel]!!,
+                amount = it.fuelAmount.toLong()
+            ),
+            currentFuelAmount = ResourceAmount(
+                resource = gd.resources[it.fuel]!!,
+                amount = it.currentFuelAmount.toLong()
+            ),
+            hasEnoughFuel = it.hasEnoughFuel
+        )
+    }
+
     private fun createBuildBuilding(building: TileBuildingJson) = BuildBuilding(
         building = gd.buildings[building.type]!!,
         level = building.level,
@@ -128,6 +153,7 @@ class PlayerStateFactory(
             unlockedTechnology = unlockedTechnology,
             tiles = tiles,
             activeWonders = activeWonders,
+            transportations = transportations
         )
     }
 }
