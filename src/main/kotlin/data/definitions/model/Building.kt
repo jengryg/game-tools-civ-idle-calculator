@@ -58,6 +58,10 @@ open class Building(
     fun getCostForUpgradingLevelsFromTo(currentLevel: Int, desiredLevel: Int): Map<String, ResourceAmount> {
         val result = construction.ifEmpty { input }.keys.associateWith { 0L }.toMutableMap()
 
+        if (special == BuildingType.NATURAL_WONDER || special == BuildingType.HQ) {
+            return mapOf()
+        }
+
         for (i in currentLevel until desiredLevel) {
             getCostForBuildingOneLevel(i).forEach { (rName, cost) ->
                 result[rName] = result[rName]!! + cost.amount
