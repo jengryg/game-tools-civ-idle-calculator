@@ -17,7 +17,9 @@
       "Worker": 6
     },
     "construction": {
-      "Brick": 2
+      "Wood": 1,
+      "Stone": 1,
+      "Water": 1
     }
   },
   "Apartment": {
@@ -30,8 +32,10 @@
       "Worker": 84
     },
     "construction": {
-      "Brick": 2,
-      "Lumber": 2
+      "Brick": 1,
+      "Cheese": 1,
+      "Meat": 1,
+      "Bread": 1
     }
   },
   "WheatFarm": {
@@ -88,7 +92,7 @@
       "Iron": 1
     },
     "construction": {
-      "Stone": 1
+      "Brick": 1
     }
   },
   "CopperMiningCamp": {
@@ -100,7 +104,8 @@
       "Copper": 1
     },
     "construction": {
-      "Brick": 1
+      "Stone": 1,
+      "Wood": 1
     }
   },
   "CoalMine": {
@@ -112,7 +117,9 @@
       "Coal": 1
     },
     "construction": {
-      "Brick": 1
+      "Iron": 1,
+      "Brick": 1,
+      "Lumber": 1
     }
   },
   "Sandpit": {
@@ -133,7 +140,8 @@
       "Gold": 1
     },
     "construction": {
-      "Stone": 1
+      "Brick": 1,
+      "Copper": 1
     }
   },
   "OilWell": {
@@ -145,8 +153,9 @@
       "Oil": 1
     },
     "construction": {
-      "Steel": 1,
-      "Dynamite": 1
+      "Brick": 1,
+      "Tool": 1,
+      "Sand": 1
     }
   },
   "NaturalGasWell": {
@@ -158,8 +167,9 @@
       "NaturalGas": 1
     },
     "construction": {
-      "Steel": 1,
-      "Dynamite": 1
+      "Brick": 1,
+      "Tool": 1,
+      "Lumber": 1
     }
   },
   "AluminumSmelter": {
@@ -171,7 +181,9 @@
       "Aluminum": 1
     },
     "construction": {
-      "Steel": 1
+      "Tool": 1,
+      "Brick": 1,
+      "Lumber": 1
     }
   },
   "CoalPowerPlant": {
@@ -182,7 +194,9 @@
       "Power": 1
     },
     "construction": {
-      "Steel": 1
+      "Lumber": 1,
+      "Brick": 1,
+      "Iron": 1
     }
   },
   "SwordForge": {
@@ -191,6 +205,11 @@
     },
     "output": {
       "Sword": 1
+    },
+    "construction": {
+      "Tool": 1,
+      "Brick": 1,
+      "Copper": 2
     }
   },
   "Armory": {
@@ -199,6 +218,12 @@
     },
     "output": {
       "Armor": 1
+    },
+    "construction": {
+      "Tool": 1,
+      "Brick": 1,
+      "Iron": 1,
+      "Wood": 1
     }
   },
   "ChariotWorkshop": {
@@ -209,6 +234,12 @@
     },
     "output": {
       "Chariot": 1
+    },
+    "construction": {
+      "Horse": 1,
+      "Copper": 1,
+      "Lumber": 2,
+      "Brick": 2
     }
   },
   "KnightCamp": {
@@ -229,6 +260,13 @@
     },
     "output": {
       "Cannon": 1
+    },
+    "construction": {
+      "Iron": 1,
+      "Wood": 1,
+      "Tool": 1,
+      "Brick": 1,
+      "Stone": 1
     }
   },
   "GunpowderMill": {
@@ -238,6 +276,10 @@
     },
     "output": {
       "Gunpowder": 1
+    },
+    "construction": {
+      "Stone": 1,
+      "Coal": 1
     }
   },
   "DynamiteWorkshop": {
@@ -248,6 +290,11 @@
     },
     "output": {
       "Dynamite": 1
+    },
+    "construction": {
+      "Stone": 2,
+      "Gunpowder": 1,
+      "Coal": 1
     }
   },
   "SiegeWorkshop": {
@@ -258,6 +305,13 @@
     },
     "output": {
       "SiegeRam": 1
+    },
+    "construction": {
+      "Lumber": 2,
+      "Iron": 1,
+      "Brick": 1,
+      "Tool": 1,
+      "Stone": 1
     }
   },
   "CaravelBuilder": {
@@ -268,6 +322,12 @@
     },
     "output": {
       "Caravel": 1
+    },
+    "construction": {
+      "Lumber": 5,
+      "Marble": 1,
+      "Brick": 2,
+      "Tool": 2
     }
   },
   "GalleonBuilder": {
@@ -338,6 +398,9 @@
     },
     "output": {
       "Poem": 1
+    },
+    "construction": {
+      "Brick": 2
     }
   },
   "PaintersGuild": {
@@ -346,6 +409,10 @@
     },
     "output": {
       "Painting": 1
+    },
+    "construction": {
+      "Lumber": 1,
+      "Brick": 1
     }
   },
   "MusiciansGuild": {
@@ -354,6 +421,10 @@
     },
     "output": {
       "Music": 1
+    },
+    "construction": {
+      "Lumber": 2,
+      "Brick": 1
     }
   },
   "ActorsGuild": {
@@ -367,11 +438,14 @@
   },
   "Shrine": {
     "input": {
-      "Horse": 1,
       "Alcohol": 1
     },
     "output": {
       "Faith": 1
+    },
+    "construction": {
+      "Brick": 1,
+      "Wood": 2
     }
   },
   "Church": {
@@ -418,8 +492,7 @@
       "Science": 16
     },
     "construction": {
-      "Marble": 1,
-      "Stone": 1
+      "Brick": 1
     }
   },
   "University": {
@@ -504,6 +577,10 @@
     },
     "output": {
       "Cloth": 1
+    },
+    "construction": {
+      "Brick": 1,
+      "Lumber": 1
     }
   },
   "GarmentWorkshop": {
@@ -540,8 +617,7 @@
       "Flour": 1
     },
     "construction": {
-      "Brick": 1,
-      "Wood": 1
+      "Brick": 1
     }
   },
   "LivestockFarm": {
@@ -551,6 +627,9 @@
     "output": {
       "Meat": 1,
       "Milk": 1
+    },
+    "construction": {
+      "Lumber": 1
     }
   },
   "Stable": {
@@ -559,6 +638,9 @@
     },
     "output": {
       "Horse": 1
+    },
+    "construction": {
+      "Lumber": 1
     }
   },
   "Bakery": {
@@ -568,6 +650,11 @@
     },
     "output": {
       "Bread": 1
+    },
+    "construction": {
+      "Brick": 1,
+      "Lumber": 1,
+      "Stone": 1
     }
   },
   "CheeseMaker": {
@@ -576,6 +663,10 @@
     },
     "output": {
       "Cheese": 1
+    },
+    "construction": {
+      "Brick": 1,
+      "Lumber": 1
     }
   },
   "Brewery": {
@@ -587,8 +678,6 @@
       "Alcohol": 1
     },
     "construction": {
-      "Lumber": 1,
-      "Brick": 1,
       "Copper": 1
     }
   },
@@ -599,6 +688,10 @@
     },
     "output": {
       "Paper": 1
+    },
+    "construction": {
+      "Wood": 1,
+      "Stone": 1
     }
   },
   "Pizzeria": {
@@ -620,8 +713,7 @@
       "Lumber": 1
     },
     "construction": {
-      "Stone": 1,
-      "Wood": 1
+      "Stone": 2
     }
   },
   "Glassworks": {
@@ -632,8 +724,8 @@
       "Glass": 1
     },
     "construction": {
-      "Stone": 1,
-      "Wood": 1
+      "Brick": 1,
+      "Wood": 2
     }
   },
   "LensWorkshop": {
@@ -651,6 +743,9 @@
     },
     "output": {
       "Tool": 1
+    },
+    "construction": {
+      "Brick": 1
     }
   },
   "IronForge": {
@@ -659,6 +754,9 @@
     },
     "output": {
       "Tool": 1
+    },
+    "construction": {
+      "Brick": 1
     }
   },
   "Brickworks": {
@@ -667,6 +765,9 @@
     },
     "output": {
       "Brick": 1
+    },
+    "construction": {
+      "Wood": 2
     }
   },
   "Marbleworks": {
@@ -678,6 +779,16 @@
       "Marble": 1
     }
   },
+  "ConcretePlant": {
+    "input": {
+      "Brick": 1,
+      "Sand": 2,
+      "Tool": 1
+    },
+    "output": {
+      "Concrete": 1
+    }
+  },
   "SteelMill": {
     "input": {
       "Iron": 1,
@@ -685,6 +796,10 @@
     },
     "output": {
       "Steel": 1
+    },
+    "construction": {
+      "Brick": 1,
+      "Coal": 1
     }
   },
   "Steamworks": {
@@ -695,6 +810,13 @@
     },
     "output": {
       "Engine": 1
+    },
+    "construction": {
+      "Iron": 1,
+      "Coal": 1,
+      "Lumber": 1,
+      "Brick": 1,
+      "Water": 2
     }
   },
   "LocomotiveFactory": {
@@ -714,8 +836,7 @@
       "Petrol": 1
     },
     "construction": {
-      "Steel": 1,
-      "Oil": 1
+      "Steel": 1
     }
   },
   "CoinMint": {
@@ -724,6 +845,11 @@
     },
     "output": {
       "Coin": 1
+    },
+    "construction": {
+      "Gold": 2,
+      "Lumber": 1,
+      "Copper": 1
     }
   },
   "Bank": {
@@ -754,7 +880,9 @@
     "input": {},
     "output": {},
     "construction": {
-      "Brick": 2
+      "Brick": 1,
+      "Horse": 1,
+      "Tool": 1
     }
   },
   "Market": {
@@ -994,7 +1122,7 @@
     "construction": {
       "Faith": 100,
       "Marble": 100,
-      "Brick": 100
+      "Knight": 100
     },
     "output": {},
     "max": 1,
@@ -1007,7 +1135,7 @@
     "construction": {
       "Faith": 100,
       "Tool": 100,
-      "Stone": 100
+      "Marble": 100
     },
     "max": 1,
     "special": "WorldWonder",
@@ -1043,7 +1171,7 @@
     "max": 1,
     "construction": {
       "Faith": 100,
-      "Marble": 100,
+      "Philosophy": 100,
       "Poem": 100
     },
     "special": "WorldWonder",
@@ -1064,9 +1192,9 @@
     "output": {},
     "max": 1,
     "construction": {
-      "Faith": 100,
-      "Gold": 100,
-      "Furniture": 100
+      "Furniture": 100,
+      "Gunpowder": 100,
+      "Lens": 100
     },
     "special": "WorldWonder",
     "wikipedia": "Saint_Basil%27s_Cathedral"
@@ -1076,8 +1204,8 @@
     "output": {},
     "max": 1,
     "construction": {
-      "Paper": 100,
-      "Poem": 100,
+      "Banknote": 100,
+      "Marble": 100,
       "Book": 100
     },
     "special": "WorldWonder",
@@ -1089,8 +1217,8 @@
     "max": 1,
     "construction": {
       "Caravel": 100,
-      "Galleon": 1,
-      "Frigate": 1
+      "Galleon": 100,
+      "Frigate": 100
     },
     "special": "WorldWonder",
     "wikipedia": "Himeji_Castle"
@@ -1171,7 +1299,9 @@
     "input": {},
     "output": {},
     "construction": {
-      "Painting": 300
+      "Newspaper": 100,
+      "Culture": 100,
+      "Concrete": 100
     },
     "max": 1,
     "special": "WorldWonder",
@@ -1183,7 +1313,7 @@
     "construction": {
       "Gunpowder": 100,
       "Rifle": 100,
-      "Brick": 100
+      "GatlingGun": 100
     },
     "max": 1,
     "special": "WorldWonder",
@@ -1205,9 +1335,9 @@
     "input": {},
     "output": {},
     "construction": {
-      "Dynamite": 100,
-      "Brick": 100,
-      "Marble": 100
+      "Rifle": 100,
+      "Bond": 100,
+      "Cannon": 100
     },
     "max": 1,
     "special": "WorldWonder",
@@ -1218,11 +1348,23 @@
     "output": {},
     "construction": {
       "Train": 100,
-      "Brick": 100,
-      "Marble": 100
+      "Politics": 100,
+      "Concrete": 100
     },
     "max": 1,
     "special": "WorldWonder",
     "wikipedia": "Brandenburg_Gate"
+  },
+  "GrandBazaar": {
+    "input": {},
+    "output": {},
+    "max": 1,
+    "construction": {
+      "Coin": 100,
+      "Garment": 100,
+      "Furniture": 100
+    },
+    "special": "WorldWonder",
+    "wikipedia": "Grand_Bazaar,_Istanbul"
   }
 }

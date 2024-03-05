@@ -236,6 +236,12 @@
     "maxLevel": null,
     "age": "ClassicalAge"
   },
+  "Zenobia": {
+    "time": "240 ~ 274 AD",
+    "value": 1,
+    "maxLevel": null,
+    "age": "ClassicalAge"
+  },
   "Justinian": {
     "boost": {
       "multipliers": [

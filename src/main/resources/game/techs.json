@@ -92,7 +92,10 @@
       "Hut": {
         "output": 1
       }
-    }
+    },
+    "additionalUpgrades": [
+      null
+    ]
   },
   "Herding": {
     "column": 2,
@@ -190,7 +193,8 @@
       "Stateship"
     ],
     "unlockBuilding": [
-      "Warehouse"
+      "Warehouse",
+      "GreatMosqueOfSamarra"
     ],
     "buildingMultiplier": {
       "House": {
@@ -441,7 +445,8 @@
     ],
     "unlockBuilding": [
       "Church",
-      "Mosque"
+      "Mosque",
+      "MogaoCaves"
     ]
   },
   "Navigation": {
@@ -480,7 +485,8 @@
       "Theocracy"
     ],
     "unlockBuilding": [
-      "School"
+      "School",
+      "GrandBazaar"
     ]
   },
   "Optics": {
@@ -605,7 +611,8 @@
       "Chemistry"
     ],
     "unlockBuilding": [
-      "GunpowderMill"
+      "GunpowderMill",
+      "SaintBasilsCathedral"
     ]
   },
   "Colonialism": {
@@ -676,7 +683,8 @@
       "PrivateOwnership"
     ],
     "unlockBuilding": [
-      "Steamworks"
+      "Steamworks",
+      "ConcretePlant"
     ]
   },
   "Capitalism": {
