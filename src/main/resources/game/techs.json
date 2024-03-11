@@ -415,7 +415,10 @@
         "output": 10,
         "input": 10
       }
-    }
+    },
+    "additionalUpgrades": [
+      null
+    ]
   },
   "Physics": {
     "column": 9,
@@ -509,7 +512,10 @@
         "output": 10,
         "input": 10
       }
-    }
+    },
+    "additionalUpgrades": [
+      null
+    ]
   },
   "Banking": {
     "column": 11,
@@ -698,6 +704,9 @@
     },
     "unlockBuilding": [
       "Parliament"
+    ],
+    "additionalUpgrades": [
+      null
     ]
   },
   "RapidFire": {

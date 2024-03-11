@@ -438,6 +438,7 @@
   },
   "Shrine": {
     "input": {
+      "Horse": 1,
       "Alcohol": 1
     },
     "output": {
@@ -445,7 +446,8 @@
     },
     "construction": {
       "Brick": 1,
-      "Wood": 2
+      "Lumber": 1,
+      "Alcohol": 1
     }
   },
   "Church": {
@@ -965,6 +967,22 @@
     "wikipedia": "Poseidon",
     "special": "NaturalWonder"
   },
+  "NileRiver": {
+    "input": {},
+    "output": {},
+    "construction": {},
+    "max": 0,
+    "wikipedia": "Nile",
+    "special": "NaturalWonder"
+  },
+  "MountSinai": {
+    "input": {},
+    "output": {},
+    "construction": {},
+    "max": 0,
+    "wikipedia": "Mount_Sinai",
+    "special": "NaturalWonder"
+  },
   "Stonehenge": {
     "input": {},
     "output": {},
@@ -1366,5 +1384,29 @@
     },
     "special": "WorldWonder",
     "wikipedia": "Grand_Bazaar,_Istanbul"
+  },
+  "AbuSimbel": {
+    "input": {},
+    "output": {},
+    "max": 1,
+    "construction": {
+      "Stone": 100,
+      "Brick": 100,
+      "Lumber": 100
+    },
+    "special": "WorldWonder",
+    "wikipedia": "Abu_Simbel"
+  },
+  "GreatSphinx": {
+    "input": {},
+    "output": {},
+    "max": 1,
+    "construction": {
+      "Stone": 100,
+      "Brick": 100,
+      "Lumber": 100
+    },
+    "special": "WorldWonder",
+    "wikipedia": "Great_Sphinx_of_Giza"
   }
 }

@@ -14,7 +14,7 @@
     const data = {
         // Bronze /////////////////////////////////////////////////////////////////////////////////////////////////
 
-        Hammurabi:{
+        Hammurabi: IGreatPersonDefinition = {
             name: () => t(L.Hammurabi),
             boost: {
                 multipliers: ["output"],
@@ -44,7 +44,7 @@
             age: "BronzeAge",
         },
 
-        Hatshepsut:{
+        Hatshepsut: IGreatPersonDefinition = {
             name: () => t(L.Hatshepsut),
             boost: {
                 multipliers: ["output", "storage"],
@@ -56,7 +56,7 @@
             age: "BronzeAge",
         },
 
-        SargonOfAkkad:{
+        SargonOfAkkad: IGreatPersonDefinition = {
             name: () => t(L.SargonOfAkkad),
             boost: {
                 multipliers: ["output", "storage"],
@@ -70,7 +70,7 @@
 
         // Iron ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-        Agamemnon:{
+        Agamemnon: IGreatPersonDefinition = {
             name: () => t(L.Agamemnon),
             boost: {
                 multipliers: ["output", "storage"],
@@ -82,7 +82,7 @@
             age: "IronAge",
         },
 
-        DukeOfZhou:{
+        DukeOfZhou: IGreatPersonDefinition = {
             name: () => t(L.DukeOfZhou),
             boost: {
                 multipliers: ["output", "storage"],
@@ -94,7 +94,7 @@
             age: "IronAge",
         },
 
-        Dido:{
+        Dido: IGreatPersonDefinition = {
             name: () => t(L.Dido),
             boost: {
                 multipliers: ["output", "storage"],
@@ -106,7 +106,7 @@
             age: "IronAge",
         },
 
-        Zoroaster:{
+        Zoroaster: IGreatPersonDefinition = {
             name: () => t(L.Zoroaster),
             boost: {
                 multipliers: ["output", "storage"],
@@ -120,7 +120,7 @@
 
         // Classical //////////////////////////////////////////////////////////////////////////////////////////////
 
-        Aeschylus:{
+        Aeschylus: IGreatPersonDefinition = {
             name: () => t(L.Aeschylus),
             boost: {
                 multipliers: ["output", "storage"],
@@ -132,7 +132,7 @@
             age: "ClassicalAge",
         },
 
-        Ashurbanipal:{
+        Ashurbanipal: IGreatPersonDefinition = {
             name: () => t(L.Ashurbanipal),
             boost: {
                 multipliers: ["output", "storage"],
@@ -144,7 +144,7 @@
             age: "ClassicalAge",
         },
 
-        NebuchadnezzarII:{
+        NebuchadnezzarII: IGreatPersonDefinition = {
             name: () => t(L.NebuchadnezzarII),
             boost: {
                 multipliers: ["output", "storage"],
@@ -156,7 +156,7 @@
             age: "ClassicalAge",
         },
 
-        Herodotus:{
+        Herodotus: IGreatPersonDefinition = {
             name: () => t(L.Herodotus),
             boost: {
                 multipliers: ["output", "storage"],
@@ -168,7 +168,7 @@
             age: "ClassicalAge",
         },
 
-        CyrusII:{
+        CyrusII: IGreatPersonDefinition = {
             name: () => t(L.CyrusII),
             boost: {
                 multipliers: ["output", "storage"],
@@ -207,7 +207,7 @@
             age: "ClassicalAge",
         },
 
-        QinShiHuang:{
+        QinShiHuang: IGreatPersonDefinition = {
             name: () => t(L.QinShiHuang),
             boost: {
                 multipliers: ["output", "storage"],
@@ -230,7 +230,7 @@
 
         // Middle Age /////////////////////////////////////////////////////////////////////////////////////////////
 
-        Justinian:{
+        Justinian: IGreatPersonDefinition = {
             name: () => t(L.Justinian),
             boost: {
                 multipliers: ["output", "storage"],
@@ -251,7 +251,7 @@
             age: "MiddleAge",
         },
 
-        Charlemagne:{
+        Charlemagne: IGreatPersonDefinition = {
             name: () => t(L.Charlemagne),
             boost: {
                 multipliers: ["output", "storage"],
@@ -263,7 +263,7 @@
             age: "MiddleAge",
         },
 
-        HarunAlRashid:{
+        HarunAlRashid: IGreatPersonDefinition = {
             name: () => t(L.HarunAlRashid),
             boost: {
                 multipliers: ["output", "storage"],
@@ -304,7 +304,7 @@
 
         // Renaissance ////////////////////////////////////////////////////////////////////////////////////////////
 
-        LeonardoDaVinci:{
+        LeonardoDaVinci: IGreatPersonDefinition = {
             name: () => t(L.LeonardoDaVinci),
             boost: {
                 multipliers: ["output", "storage"],
@@ -316,7 +316,28 @@
             age: "RenaissanceAge",
         },
 
-        MartinLuther:{
+        JohannesKepler: IGreatPersonDefinition = {
+            name: () => t(L.JohannesKepler),
+            boost: {
+                multipliers: ["output", "storage"],
+                buildings: ["Shrine", "LensWorkshop"],
+            },
+            time: "1571 ~ 1630 AD",
+            value: 1,
+            maxLevel: Infinity,
+            age: "RenaissanceAge",
+        },
+
+        GalileoGalilei: IGreatPersonDefinition = {
+            name: () => t(L.GalileoGalilei),
+            desc: (self, level) => t(L.GalileoGalileiDesc, { value: self.value(level) }),
+            time: "1564 ~ 1642 AD",
+            value: 1 * 1,
+            maxLevel: Infinity,
+            age: "RenaissanceAge",
+        },
+
+        MartinLuther: IGreatPersonDefinition = {
             name: () => t(L.MartinLuther),
             boost: {
                 multipliers: ["output", "storage"],
@@ -328,11 +349,11 @@
             age: "RenaissanceAge",
         },
 
-        WilliamShakespeare:{
+        WilliamShakespeare: IGreatPersonDefinition = {
             name: () => t(L.WilliamShakespeare),
             boost: {
                 multipliers: ["output", "storage"],
-                buildings: ["PaperMaker", "PrintingHouse"],
+                buildings: ["PaperMaker", "ActorsGuild"],
             },
             time: "1564 ~ 1616 AD",
             value: 1,
@@ -340,7 +361,7 @@
             age: "RenaissanceAge",
         },
 
-        ReneDescartes:{
+        ReneDescartes: IGreatPersonDefinition = {
             name: () => t(L.ReneDescartes),
             boost: {
                 multipliers: ["output"],
@@ -352,10 +373,10 @@
             age: "RenaissanceAge",
         },
 
-        ZhengHe:{
+        ZhengHe: IGreatPersonDefinition = {
             name: () => t(L.ZhengHe),
             boost: {
-                multipliers: ["storage", "output"],
+                multipliers: ["output", "storage"],
                 buildings: ["CaravelBuilder", "GalleonBuilder"],
             },
             time: "1371 ~ 1435 AD",
@@ -364,10 +385,10 @@
             age: "RenaissanceAge",
         },
 
-        CosimoDeMedici:{
+        CosimoDeMedici: IGreatPersonDefinition = {
             name: () => t(L.CosimoDeMedici),
             boost: {
-                multipliers: ["storage", "output"],
+                multipliers: ["output", "storage"],
                 buildings: ["GoldMiningCamp", "CoinMint"],
             },
             time: "1389 ~ 1464 AD",
@@ -385,12 +406,24 @@
             age: "RenaissanceAge",
         },
 
+        GeorgiusAgricola: IGreatPersonDefinition = {
+            name: () => t(L.GeorgiusAgricola),
+            boost: {
+                multipliers: ["output", "storage"],
+                buildings: ["SiegeWorkshop", "CoalMine"],
+            },
+            time: "1494 ~ 1555 AD",
+            value: 1,
+            maxLevel: Infinity,
+            age: "RenaissanceAge",
+        },
+
         // Industrial /////////////////////////////////////////////////////////////////////////////////////////////
 
-        JamesWatt:{
+        JamesWatt: IGreatPersonDefinition = {
             name: () => t(L.JamesWatt),
             boost: {
-                multipliers: ["storage", "output"],
+                multipliers: ["output", "storage"],
                 buildings: ["Steamworks", "DynamiteWorkshop"],
             },
             time: "1736 ~ 1819 AD",
@@ -399,10 +432,31 @@
             age: "IndustrialAge",
         },
 
-        KarlMarx:{
+        IsambardKingdomBrunel: IGreatPersonDefinition = {
+            name: () => t(L.IsambardKingdomBrunel),
+            boost: {
+                multipliers: ["output", "storage"],
+                buildings: ["FrigateBuilder", "ConcretePlant"],
+            },
+            time: "1806 ~ 1859 AD",
+            value: 1,
+            maxLevel: Infinity,
+            age: "IndustrialAge",
+        },
+
+        LouisSullivan: IGreatPersonDefinition = {
+            name: () => t(L.LouisSullivan),
+            desc: (self, level) => t(L.LouisSullivanDesc, { value: self.value(level) }),
+            time: "1856 ~ 1924 AD",
+            value: 1 * 3,
+            maxLevel: Infinity,
+            age: "IndustrialAge",
+        },
+
+        KarlMarx: IGreatPersonDefinition = {
             name: () => t(L.KarlMarx),
             boost: {
-                multipliers: ["storage", "output"],
+                multipliers: ["output", "storage"],
                 buildings: ["Courthouse", "Parliament"],
             },
             time: "1818 ~ 1883 AD",
@@ -411,10 +465,10 @@
             age: "IndustrialAge",
         },
 
-        AdaLovelace:{
+        AdaLovelace: IGreatPersonDefinition = {
             name: () => t(L.AdaLovelace),
             boost: {
-                multipliers: ["storage", "output"],
+                multipliers: ["output", "storage"],
                 buildings: ["PrintingHouse", "Museum"],
             },
             time: "1815 ~ 1852 AD",
@@ -423,10 +477,10 @@
             age: "IndustrialAge",
         },
 
-        NapoleonBonaparte:{
+        NapoleonBonaparte: IGreatPersonDefinition = {
             name: () => t(L.NapoleonBonaparte),
             boost: {
-                multipliers: ["storage", "output"],
+                multipliers: ["output", "storage"],
                 buildings: ["CannonWorkshop", "GunpowderMill"],
             },
             time: "1769 ~ 1821 AD",
@@ -449,6 +503,30 @@
             desc: (self, level) => t(L.FlorenceNightingaleDesc, { value: self.value(level) }),
             time: "1820 ~ 1910 AD",
             value: 1 * 3,
+            maxLevel: Infinity,
+            age: "IndustrialAge",
+        },
+
+        JPMorgan: IGreatPersonDefinition = {
+            name: () => t(L.JPMorgan),
+            boost: {
+                multipliers: ["output", "storage"],
+                buildings: ["BondMarket", "RifleFactory"],
+            },
+            time: "1837 ~ 1913 AD",
+            value: 1,
+            maxLevel: Infinity,
+            age: "IndustrialAge",
+        },
+
+        AndrewCarnegie: IGreatPersonDefinition = {
+            name: () => t(L.AndrewCarnegie),
+            boost: {
+                multipliers: ["output", "storage"],
+                buildings: ["Bank", "SteelMill"],
+            },
+            time: "1837 ~ 1913 AD",
+            value: 1,
             maxLevel: Infinity,
             age: "IndustrialAge",
         },

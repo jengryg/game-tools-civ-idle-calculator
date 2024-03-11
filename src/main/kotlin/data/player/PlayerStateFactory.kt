@@ -111,7 +111,6 @@ class PlayerStateFactory(
         capacity = building.capacity,
         stockpileCapacity = building.stockpileCapacity,
         stockpileMax = building.stockpileMax,
-        priority = building.priority,
         options = building.options,
         electrification = building.electrification,
         status = when (building.status) {

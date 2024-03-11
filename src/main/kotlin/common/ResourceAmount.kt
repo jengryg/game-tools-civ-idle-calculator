@@ -7,7 +7,7 @@ open class ResourceAmount(
     var amount: Long = 0L
 ) {
     fun enterpriseValue(): Double {
-        return if (resource.canPrice && resource.name !in listOf("Worker", "Power", "Science", "Warp")) {
+        return if (resource.canPrice && resource.name !in listOf("Worker", "Power", "Science", "Warp", "Explorer")) {
             resource.price!! * amount.toDouble()
         } else {
             0.0

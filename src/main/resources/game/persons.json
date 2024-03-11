@@ -330,6 +330,28 @@
     "maxLevel": null,
     "age": "RenaissanceAge"
   },
+  "JohannesKepler": {
+    "boost": {
+      "multipliers": [
+        "output",
+        "storage"
+      ],
+      "buildings": [
+        "Shrine",
+        "LensWorkshop"
+      ]
+    },
+    "time": "1571 ~ 1630 AD",
+    "value": 1,
+    "maxLevel": null,
+    "age": "RenaissanceAge"
+  },
+  "GalileoGalilei": {
+    "time": "1564 ~ 1642 AD",
+    "value": 1,
+    "maxLevel": null,
+    "age": "RenaissanceAge"
+  },
   "MartinLuther": {
     "boost": {
       "multipliers": [
@@ -354,7 +376,7 @@
       ],
       "buildings": [
         "PaperMaker",
-        "PrintingHouse"
+        "ActorsGuild"
       ]
     },
     "time": "1564 ~ 1616 AD",
@@ -380,8 +402,8 @@
   "ZhengHe": {
     "boost": {
       "multipliers": [
-        "storage",
-        "output"
+        "output",
+        "storage"
       ],
       "buildings": [
         "CaravelBuilder",
@@ -396,8 +418,8 @@
   "CosimoDeMedici": {
     "boost": {
       "multipliers": [
-        "storage",
-        "output"
+        "output",
+        "storage"
       ],
       "buildings": [
         "GoldMiningCamp",
@@ -415,11 +437,27 @@
     "maxLevel": null,
     "age": "RenaissanceAge"
   },
+  "GeorgiusAgricola": {
+    "boost": {
+      "multipliers": [
+        "output",
+        "storage"
+      ],
+      "buildings": [
+        "SiegeWorkshop",
+        "CoalMine"
+      ]
+    },
+    "time": "1494 ~ 1555 AD",
+    "value": 1,
+    "maxLevel": null,
+    "age": "RenaissanceAge"
+  },
   "JamesWatt": {
     "boost": {
       "multipliers": [
-        "storage",
-        "output"
+        "output",
+        "storage"
       ],
       "buildings": [
         "Steamworks",
@@ -431,11 +469,33 @@
     "maxLevel": null,
     "age": "IndustrialAge"
   },
+  "IsambardKingdomBrunel": {
+    "boost": {
+      "multipliers": [
+        "output",
+        "storage"
+      ],
+      "buildings": [
+        "FrigateBuilder",
+        "ConcretePlant"
+      ]
+    },
+    "time": "1806 ~ 1859 AD",
+    "value": 1,
+    "maxLevel": null,
+    "age": "IndustrialAge"
+  },
+  "LouisSullivan": {
+    "time": "1856 ~ 1924 AD",
+    "value": 3,
+    "maxLevel": null,
+    "age": "IndustrialAge"
+  },
   "KarlMarx": {
     "boost": {
       "multipliers": [
-        "storage",
-        "output"
+        "output",
+        "storage"
       ],
       "buildings": [
         "Courthouse",
@@ -450,8 +510,8 @@
   "AdaLovelace": {
     "boost": {
       "multipliers": [
-        "storage",
-        "output"
+        "output",
+        "storage"
       ],
       "buildings": [
         "PrintingHouse",
@@ -466,8 +526,8 @@
   "NapoleonBonaparte": {
     "boost": {
       "multipliers": [
-        "storage",
-        "output"
+        "output",
+        "storage"
       ],
       "buildings": [
         "CannonWorkshop",
@@ -488,6 +548,38 @@
   "FlorenceNightingale": {
     "time": "1820 ~ 1910 AD",
     "value": 3,
+    "maxLevel": null,
+    "age": "IndustrialAge"
+  },
+  "JPMorgan": {
+    "boost": {
+      "multipliers": [
+        "output",
+        "storage"
+      ],
+      "buildings": [
+        "BondMarket",
+        "RifleFactory"
+      ]
+    },
+    "time": "1837 ~ 1913 AD",
+    "value": 1,
+    "maxLevel": null,
+    "age": "IndustrialAge"
+  },
+  "AndrewCarnegie": {
+    "boost": {
+      "multipliers": [
+        "output",
+        "storage"
+      ],
+      "buildings": [
+        "Bank",
+        "SteelMill"
+      ]
+    },
+    "time": "1837 ~ 1913 AD",
+    "value": 1,
     "maxLevel": null,
     "age": "IndustrialAge"
   }

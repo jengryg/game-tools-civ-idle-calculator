@@ -28,7 +28,6 @@ class MapTileWrapper(
                         capacity = building["capacity"] as Int,
                         stockpileCapacity = building["stockpileCapacity"] as Int,
                         stockpileMax = building["stockpileMax"] as Int,
-                        priority = building["priority"] as Int,
                         options = building["options"] as Int,
                         electrification = building["electrification"] as Int,
                         type = building["type"] as String,
