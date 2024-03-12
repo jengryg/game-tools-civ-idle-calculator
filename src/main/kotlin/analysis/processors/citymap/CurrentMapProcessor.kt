@@ -85,11 +85,11 @@ class CurrentMapProcessor(
                 }
 
                 BuildingType.NATURAL_WONDER -> {
-                    if (tile.building.building.name == "GrottaAzzurra") {
-                        hexagonCircle(color = DVIPSColors.Magenta, mapTile = tile, scale = 0.75)
-                    } else {
-                        hexagonCircle(color = DVIPSColors.Green, mapTile = tile, scale = 0.75)
-                    }
+                    hexagonCircle(
+                        color = ColorSchema.getColor(tile.building.building),
+                        mapTile = tile,
+                        scale = 0.75
+                    )
 
                     writeToTextBuffer(
                         string = "${tile.building.building.name} NAT WND",
