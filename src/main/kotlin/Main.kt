@@ -5,7 +5,6 @@ import analysis.processors.citydata.EnterpriseValueProcessorLegacy
 import analysis.processors.citymap.CurrentMapProcessor
 import analysis.processors.general.BasicInformationProcessor
 import analysis.processors.general.ExportingAnalyserProviderData
-import analysis.strategy.GrottoStrategy
 import ch.qos.logback.classic.Level
 import java.nio.file.Paths
 import kotlin.io.path.ExperimentalPathApi
@@ -54,16 +53,6 @@ fun main(args: Array<String>) {
                 exportChain(building = it, alpMulti = 3.0)
                 exportChain(building = it, alpMulti = 4.0)
             }
-        }
-    }
-
-    GrottoStrategy(ap).apply {
-        Paths.get("$OUTPUT_PATH/strategy/grotto").apply {
-            deleteRecursively()
-            createDirectories()
-        }
-        (20..40).forEach {
-            createSimpleStrategy(it)
         }
     }
 
