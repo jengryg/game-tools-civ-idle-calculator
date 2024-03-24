@@ -8,5 +8,6 @@
   "Coal": true,
   "Oil": true,
   "Aluminum": true,
-  "NaturalGas": true
+  "NaturalGas": true,
+  "Uranium": true
 }

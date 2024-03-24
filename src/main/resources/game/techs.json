@@ -267,7 +267,10 @@
     "unlockBuilding": [
       "CottonMill",
       "HangingGarden"
-    ]
+    ],
+    "globalMultiplier": {
+      "storage": 1
+    }
   },
   "Engineering": {
     "column": 6,
@@ -412,8 +415,7 @@
     ],
     "buildingMultiplier": {
       "Library": {
-        "output": 10,
-        "input": 10
+        "output": 1
       }
     },
     "additionalUpgrades": [
@@ -427,7 +429,10 @@
     ],
     "unlockBuilding": [
       "GarmentWorkshop"
-    ]
+    ],
+    "globalMultiplier": {
+      "storage": 1
+    }
   },
   "Feudalism": {
     "column": 9,
@@ -505,12 +510,10 @@
     },
     "buildingMultiplier": {
       "Library": {
-        "output": 10,
-        "input": 10
+        "output": 1
       },
       "School": {
-        "output": 10,
-        "input": 10
+        "output": 1
       }
     },
     "additionalUpgrades": [
@@ -691,16 +694,31 @@
     "unlockBuilding": [
       "Steamworks",
       "ConcretePlant"
-    ]
+    ],
+    "globalMultiplier": {
+      "storage": 1
+    }
   },
   "Capitalism": {
     "column": 14,
     "requireTech": [
       "Constitution",
-      "Revolution"
+      "Revolution",
+      "PrivateOwnership"
     ],
     "globalMultiplier": {
       "builderCapacity": 1
+    },
+    "buildingMultiplier": {
+      "Library": {
+        "output": 1
+      },
+      "School": {
+        "output": 1
+      },
+      "University": {
+        "output": 1
+      }
     },
     "unlockBuilding": [
       "Parliament"
@@ -739,7 +757,8 @@
       "SteamEngine"
     ],
     "unlockBuilding": [
-      "OilWell"
+      "OilWell",
+      "CableFactory"
     ],
     "revealDeposit": [
       "Oil"
@@ -855,148 +874,209 @@
     "column": 17,
     "requireTech": [
       "Olympics",
-      "StockMarket"
+      "StockMarket",
+      "Electricity"
     ],
     "unlockBuilding": [
       "Pizzeria",
       "MagazinePublisher"
     ]
   },
-  "Assembly": {
+  "Aviation": {
     "column": 18,
     "requireTech": [
       "Combustion",
       "Electrolysis"
-    ]
-  },
-  "AtomTheory": {
-    "column": 18,
-    "requireTech": [
-      "Refinery",
-      "Electrolysis"
+    ],
+    "unlockBuilding": [
+      "BiplaneFactory"
     ]
   },
   "Synthetics": {
     "column": 18,
     "requireTech": [
       "Refinery",
-      "GasPipeline"
+      "Electrolysis"
+    ],
+    "unlockBuilding": [
+      "PlasticsFactory",
+      "GasPowerPlant"
     ]
+  },
+  "AtomicTheory": {
+    "column": 18,
+    "requireTech": [
+      "Refinery",
+      "GasPipeline"
+    ],
+    "revealDeposit": [
+      "Uranium"
+    ],
+    "unlockBuilding": [
+      "UraniumMine"
+    ],
+    "buildingMultiplier": {
+      "Library": {
+        "output": 1
+      },
+      "School": {
+        "output": 1
+      },
+      "University": {
+        "output": 1
+      },
+      "PublishingHouse": {
+        "output": 1
+      }
+    }
   },
   "MotionPicture": {
     "column": 18,
     "requireTech": [
       "Urbanization"
+    ],
+    "unlockBuilding": [
+      "MovieStudio",
+      "Hollywood"
     ]
   },
-  "Aeroplane": {
+  "Assembly": {
     "column": 19,
     "requireTech": [
-      "Assembly",
-      "AtomTheory"
-    ]
-  },
-  "Medicine": {
-    "column": 19,
-    "requireTech": [
-      "AtomTheory"
-    ]
-  },
-  "Hospital": {
-    "column": 19,
-    "requireTech": [
-      "AtomTheory",
+      "Aviation",
       "Synthetics"
+    ],
+    "unlockBuilding": [
+      "CarFactory",
+      "SagradaFamilia"
     ]
   },
-  "Greenhouse": {
+  "Ballistics": {
     "column": 19,
     "requireTech": [
-      "Synthetics",
+      "Synthetics"
+    ],
+    "unlockBuilding": [
+      "ArtilleryFactory"
+    ]
+  },
+  "Enrichment": {
+    "column": 19,
+    "requireTech": [
+      "AtomicTheory",
+      "Synthetics"
+    ],
+    "unlockBuilding": [
+      "UraniumEnrichmentPlant"
+    ]
+  },
+  "Radio": {
+    "column": 19,
+    "requireTech": [
+      "AtomicTheory",
       "MotionPicture"
+    ],
+    "unlockBuilding": [
+      "RadioStation",
+      "CristoRedentor"
     ]
   },
   "Rocketry": {
     "column": 20,
     "requireTech": [
-      "Aeroplane"
+      "Assembly",
+      "Ballistics"
+    ],
+    "unlockBuilding": [
+      "RocketFactory",
+      "BattleshipBuilder"
     ]
   },
-  "Semiconductor": {
+  "NuclearFission": {
     "column": 20,
     "requireTech": [
-      "Aeroplane",
-      "Medicine"
+      "Enrichment",
+      "Ballistics"
+    ],
+    "unlockBuilding": [
+      "AtomicFacility",
+      "ManhattanProject"
     ]
   },
-  "Vaccine": {
+  "Hydroelectricity": {
     "column": 20,
     "requireTech": [
-      "Hospital",
-      "Medicine",
-      "Greenhouse"
+      "Radio"
+    ],
+    "unlockBuilding": [
+      "HydroDam",
+      "GoldenGateBridge"
     ]
   },
-  "Refrigeration": {
+  "UnitedNations": {
     "column": 20,
     "requireTech": [
-      "Greenhouse"
+      "Radio"
+    ],
+    "unlockBuilding": [
+      "Embassy",
+      "UnitedNations"
     ]
   },
   "SpaceProgram": {
     "column": 21,
     "requireTech": [
       "Rocketry",
-      "Semiconductor"
+      "NuclearFission"
+    ]
+  },
+  "Semiconductor": {
+    "column": 21,
+    "requireTech": [
+      "NuclearFission",
+      "Hydroelectricity"
     ]
   },
   "Television": {
     "column": 21,
     "requireTech": [
-      "Semiconductor"
-    ]
-  },
-  "Tourism": {
-    "column": 21,
-    "requireTech": [
-      "Vaccine",
-      "Semiconductor"
+      "UnitedNations",
+      "Hydroelectricity"
     ]
   },
   "Skyscrapper": {
     "column": 21,
     "requireTech": [
-      "Vaccine",
-      "Refrigeration"
+      "UnitedNations"
     ]
   },
   "Computer": {
     "column": 22,
     "requireTech": [
       "SpaceProgram",
-      "Television"
+      "Semiconductor"
     ]
   },
   "Globalization": {
     "column": 22,
     "requireTech": [
-      "Tourism",
+      "Semiconductor",
       "Television"
     ]
   },
-  "UnitedNation": {
-    "column": 22,
-    "requireTech": [
-      "Tourism"
-    ]
-  },
-  "Metropolitan": {
+  "Tourism": {
     "column": 22,
     "requireTech": [
       "Skyscrapper"
     ]
   },
-  "NuclearFission": {
+  "Conglomerate": {
+    "column": 22,
+    "requireTech": [
+      "Skyscrapper"
+    ]
+  },
+  "Nanotechnology": {
     "column": 23,
     "requireTech": [
       "Computer"
@@ -1009,29 +1089,24 @@
       "Globalization"
     ]
   },
-  "Nanotechnology": {
-    "column": 23,
-    "requireTech": [
-      "Globalization"
-    ]
-  },
   "Genetics": {
     "column": 23,
     "requireTech": [
-      "UnitedNation"
+      "Tourism",
+      "Globalization"
     ]
   },
-  "Conglomerate": {
+  "VentureCapital": {
     "column": 23,
     "requireTech": [
-      "UnitedNation",
-      "Metropolitan"
+      "Conglomerate",
+      "Tourism"
     ]
   },
   "Robotics": {
     "column": 24,
     "requireTech": [
-      "NuclearFission",
+      "Nanotechnology",
       "Internet"
     ]
   },
@@ -1044,20 +1119,14 @@
   "Smartphone": {
     "column": 24,
     "requireTech": [
-      "Internet",
-      "Nanotechnology"
+      "Internet"
     ]
   },
   "UniversalHealthcare": {
     "column": 24,
     "requireTech": [
+      "VentureCapital",
       "Genetics"
-    ]
-  },
-  "VentureCapital": {
-    "column": 24,
-    "requireTech": [
-      "Conglomerate"
     ]
   },
   "ArtificialIntelligence": {
@@ -1084,7 +1153,8 @@
   "Cryptocurrency": {
     "column": 25,
     "requireTech": [
-      "VentureCapital"
+      "Smartphone",
+      "UniversalHealthcare"
     ]
   }
 }

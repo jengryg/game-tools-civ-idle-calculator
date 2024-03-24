@@ -15,7 +15,7 @@ class BasicInformationProcessor(
     private val log = logger()
 
     fun exportResourceList() {
-        val result = ap.gda.resources.mapNotNull { (_, r) ->
+        val result = ap.gda.resources.filter { it.value.canPrice }.mapNotNull { (_, r) ->
             if (r.tier == null || r.price == null) {
                 null
             } else {
@@ -55,7 +55,9 @@ class BasicInformationProcessor(
                 null
             }
         }.sortedBy { it.first }.toMap().map { (name, cost) ->
-            "$name;${cost.sumOf { it.enterpriseValue() }.nf()};${cost.joinToString(";") { "${it.amount};${it.resource.name}" }}"
+            "$name;${
+                cost.sumOf { it.enterpriseValue() }.nf()
+            };${cost.joinToString(";") { "${it.amount};${it.resource.name}" }}"
         }.joinToString("\n")
 
         FileIo.writeFile("$OUTPUT_PATH/buildings-wonder-cost.txt", result)

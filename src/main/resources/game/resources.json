@@ -62,6 +62,9 @@
   "Rifle": {},
   "GatlingGun": {},
   "Ironclad": {},
+  "Battleship": {},
+  "Artillery": {},
+  "Biplane": {},
   "Sports": {},
   "Stock": {},
   "Tank": {},
@@ -71,5 +74,15 @@
   "Aluminum": {},
   "Petrol": {},
   "Concrete": {},
-  "Explorer": {}
+  "Explorer": {},
+  "Plastics": {},
+  "Uranium": {},
+  "Car": {},
+  "Movie": {},
+  "Radio": {},
+  "Rocket": {},
+  "NuclearFuelRod": {},
+  "AtomicBomb": {},
+  "Diplomacy": {},
+  "Cable": {}
 }

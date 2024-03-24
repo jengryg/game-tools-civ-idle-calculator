@@ -12,7 +12,7 @@
 <script type="text/javascript" src="language.js"></script>
 <script type="application/javascript">
     const data = {
-        Rome: {
+        Rome: ICityDefinition = {
             name: () => t(L.Rome),
             deposits: {
                 Water: 0.02,
@@ -25,6 +25,7 @@
                 Oil: 0.02,
                 Aluminum: 0.02,
                 NaturalGas: 0.02,
+                Uranium: 0.02,
             },
             size: 40,
             buildingNames: {
@@ -37,7 +38,7 @@
             },
             naturalWonders: {Alps: true, GrottaAzzurra: true},
         },
-        Athens: {
+        Athens: ICityDefinition = {
             name: () => t(L.Athens),
             deposits: {
                 Water: 0.01,
@@ -49,7 +50,8 @@
                 Coal: 0.03,
                 Oil: 0.02,
                 Aluminum: 0.02,
-                NaturalGas: 0.02,
+                NaturalGas: 0.03,
+                Uranium: 0.01,
             },
             size: 40,
             buildingNames: {
@@ -58,7 +60,7 @@
             uniqueBuildings: {StatueOfZeus: "Theater", Parthenon: "Democracy"},
             naturalWonders: {Aphrodite: true, Poseidon: true},
         },
-        Memphis: {
+        Memphis: ICityDefinition = {
             name: () => t(L.Memphis),
             deposits: {
                 Water: 0.01,
@@ -70,7 +72,8 @@
                 Coal: 0.025,
                 Oil: 0.01,
                 Aluminum: 0.025,
-                NaturalGas: 0.02,
+                NaturalGas: 0.015,
+                Uranium: 0.025,
             },
             size: 50,
             buildingNames: {
@@ -81,7 +84,7 @@
                 GreatSphinx: "Arithmetic",
             },
             naturalWonders: {NileRiver: true, MountSinai: true},
-        }
+        },
     }
 
     document.getElementById("output").innerHTML = JSON.stringify(data)

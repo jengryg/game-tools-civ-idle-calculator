@@ -6,6 +6,7 @@ import data.definitions.GameDefinition
 import data.definitions.model.Building
 import data.definitions.model.Resource
 import logger
+import utils.roundHalfUp
 import kotlin.math.pow
 import kotlin.math.round
 
@@ -24,10 +25,12 @@ object GameDataCalculator : Logging {
         gor.deposits.forEach { (dName, deposit) ->
             gor.resources[dName]!!.apply {
                 tier = 1
-                price = 1.0 + deposit.technology!!.column
+                price = round(
+                    deposit.technology!!.column.toDouble() + (deposit.technology!!.age.id.toDouble()).pow(2)
+                )
 
                 log.atDebug()
-                    .setMessage("Calculated Resource Tier and Price.")
+                    .setMessage("Calculated Resource Tier and Price from Deposit.")
                     .addKeyValue("name") { name }
                     .addKeyValue("tier") { tier }
                     .addKeyValue("price") { price }
@@ -44,14 +47,16 @@ object GameDataCalculator : Logging {
                 building.output.forEach { (_, ra) ->
                     ra.resource.apply {
                         if (tier == null) tier = 1
-                        if (price == null) price = 1.0 + (building.technology?.column ?: 0).toDouble()
+                        if (price == null || price == 0.0) {
+                            price = 1.0 + (building.technology?.column ?: 0).toDouble()
 
-                        log.atDebug()
-                            .setMessage("Calculated Resource Tier and Price.")
-                            .addKeyValue("name") { name }
-                            .addKeyValue("tier") { tier }
-                            .addKeyValue("price") { price }
-                            .log()
+                            log.atDebug()
+                                .setMessage("Calculated Resource Price from Factory with no inputs.")
+                                .addKeyValue("name") { name }
+                                .addKeyValue("tier") { tier }
+                                .addKeyValue("price") { price }
+                                .log()
+                        }
                     }
                 }
                 building.apply {
@@ -174,11 +179,10 @@ object GameDataCalculator : Logging {
                         .addKeyValue("target") { targetTier }
                         .log()
                 }
-
-                building.output.values.forEach {
+                val multiplier = 1.5 + 0.25 * building.input.size
+                building.output.values.filter { it.resource.canPrice }.forEach {
                     val price =
-                        (2.0 * building.getTotalValueOfInputs() - internallyPricedResourceValues) / building.getTotalAmountOfOutputs()
-
+                        ((multiplier * building.getTotalValueOfInputs() - internallyPricedResourceValues) / building.getTotalAmountOfOutputs()).roundHalfUp()
                     if (it.resource.price == null || price > it.resource.price!!) {
                         log.atTrace()
                             .setMessage("Update Resource Price")
@@ -265,7 +269,9 @@ object GameDataCalculator : Logging {
                 val ageIdx = building.technology?.age?.id ?: 0
 
                 round(
-                    100.0 + 100 * techIdx.toDouble().pow(2) + 5.0.pow(ageIdx) * 1.5.pow(techIdx)
+                    300 +
+                            10 * ageIdx.toDouble().pow(3) * techIdx.toDouble().pow(2) +
+                            (100 * 5.0.pow(ageIdx) * 1.5.pow(techIdx)) / techIdx.toDouble().pow(2)
                 ).also {
                     log.atDebug()
                         .setMessage("Calculated build cost multiplier for World Wonder")

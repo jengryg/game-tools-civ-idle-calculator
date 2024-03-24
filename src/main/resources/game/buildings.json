@@ -144,6 +144,32 @@
       "Copper": 1
     }
   },
+  "UraniumMine": {
+    "input": {},
+    "deposit": {
+      "Uranium": true
+    },
+    "output": {
+      "Uranium": 1
+    },
+    "construction": {
+      "Concrete": 1,
+      "Tool": 1
+    }
+  },
+  "UraniumEnrichmentPlant": {
+    "input": {
+      "Uranium": 10
+    },
+    "output": {
+      "NuclearFuelRod": 1
+    },
+    "construction": {
+      "Concrete": 4,
+      "Steel": 5
+    },
+    "power": true
+  },
   "OilWell": {
     "input": {},
     "deposit": {
@@ -194,9 +220,33 @@
       "Power": 1
     },
     "construction": {
-      "Lumber": 1,
-      "Brick": 1,
-      "Iron": 1
+      "Lumber": 5,
+      "Brick": 4
+    }
+  },
+  "GasPowerPlant": {
+    "input": {
+      "NaturalGas": 2
+    },
+    "output": {
+      "Power": 3
+    },
+    "construction": {
+      "Concrete": 2
+    }
+  },
+  "HydroDam": {
+    "input": {},
+    "deposit": {
+      "Water": true
+    },
+    "output": {
+      "Water": 1,
+      "Power": 2
+    },
+    "construction": {
+      "Dynamite": 1,
+      "Concrete": 1
     }
   },
   "SwordForge": {
@@ -370,6 +420,16 @@
       "GatlingGun": 1
     }
   },
+  "ArtilleryFactory": {
+    "input": {
+      "GatlingGun": 1,
+      "Dynamite": 1,
+      "Aluminum": 5
+    },
+    "output": {
+      "Artillery": 1
+    }
+  },
   "IroncladBuilder": {
     "input": {
       "GatlingGun": 1,
@@ -380,17 +440,63 @@
       "Ironclad": 1
     }
   },
+  "BattleshipBuilder": {
+    "input": {
+      "Ironclad": 1,
+      "Artillery": 1,
+      "Cable": 5,
+      "Steel": 5,
+      "Aluminum": 5
+    },
+    "output": {
+      "Battleship": 1
+    },
+    "power": true
+  },
   "TankFactory": {
     "input": {
       "Engine": 1,
       "Steel": 10,
       "Cannon": 1,
-      "GatlingGun": 1,
-      "Rifle": 1
+      "GatlingGun": 1
     },
     "output": {
       "Tank": 1
     }
+  },
+  "BiplaneFactory": {
+    "input": {
+      "Engine": 1,
+      "Steel": 1,
+      "Lens": 1,
+      "Petrol": 5
+    },
+    "output": {
+      "Biplane": 1
+    }
+  },
+  "RocketFactory": {
+    "input": {
+      "Engine": 1,
+      "Artillery": 1,
+      "Steel": 5,
+      "Cable": 5,
+      "Petrol": 10
+    },
+    "output": {
+      "Rocket": 1
+    },
+    "power": true
+  },
+  "AtomicFacility": {
+    "input": {
+      "Dynamite": 10,
+      "Uranium": 10
+    },
+    "output": {
+      "AtomicBomb": 1
+    },
+    "power": true
   },
   "WritersGuild": {
     "input": {
@@ -508,6 +614,16 @@
       "Science": 100
     }
   },
+  "PublishingHouse": {
+    "input": {
+      "Philosophy": 1,
+      "Book": 10
+    },
+    "output": {
+      "Newspaper": 1,
+      "Science": 200
+    }
+  },
   "Museum": {
     "input": {
       "Music": 1,
@@ -521,7 +637,8 @@
   "Courthouse": {
     "input": {
       "Philosophy": 1,
-      "Faith": 1
+      "Faith": 1,
+      "Culture": 1
     },
     "output": {
       "Law": 1
@@ -530,7 +647,8 @@
   "Stadium": {
     "input": {
       "Culture": 1,
-      "Opera": 1
+      "Opera": 1,
+      "Philosophy": 1
     },
     "output": {
       "Sports": 1
@@ -538,21 +656,12 @@
   },
   "Parliament": {
     "input": {
-      "Culture": 1,
-      "Philosophy": 1
+      "Culture": 2,
+      "Philosophy": 2,
+      "Law": 2
     },
     "output": {
       "Politics": 1
-    }
-  },
-  "PublishingHouse": {
-    "input": {
-      "Politics": 1,
-      "Book": 1
-    },
-    "output": {
-      "Newspaper": 1,
-      "Science": 200
     }
   },
   "MagazinePublisher": {
@@ -562,6 +671,38 @@
     },
     "output": {
       "Magazine": 1
+    }
+  },
+  "MovieStudio": {
+    "input": {
+      "Sports": 5,
+      "Lens": 5,
+      "Garment": 5
+    },
+    "output": {
+      "Movie": 1
+    },
+    "power": true
+  },
+  "RadioStation": {
+    "input": {
+      "Magazine": 5,
+      "Newspaper": 5,
+      "Culture": 5
+    },
+    "output": {
+      "Radio": 1
+    },
+    "power": true
+  },
+  "Embassy": {
+    "input": {
+      "Law": 5,
+      "Politics": 5,
+      "Philosophy": 5
+    },
+    "output": {
+      "Diplomacy": 1
     }
   },
   "CottonPlantation": {
@@ -707,6 +848,14 @@
       "Pizza": 1
     }
   },
+  "PlasticsFactory": {
+    "input": {
+      "Oil": 2
+    },
+    "output": {
+      "Plastics": 1
+    }
+  },
   "LumberMill": {
     "input": {
       "Wood": 2
@@ -804,6 +953,14 @@
       "Coal": 1
     }
   },
+  "CableFactory": {
+    "input": {
+      "Copper": 5
+    },
+    "output": {
+      "Cable": 1
+    }
+  },
   "Steamworks": {
     "input": {
       "Iron": 1,
@@ -812,13 +969,6 @@
     },
     "output": {
       "Engine": 1
-    },
-    "construction": {
-      "Iron": 1,
-      "Coal": 1,
-      "Lumber": 1,
-      "Brick": 1,
-      "Water": 2
     }
   },
   "LocomotiveFactory": {
@@ -829,6 +979,20 @@
     "output": {
       "Train": 1
     }
+  },
+  "CarFactory": {
+    "input": {
+      "Engine": 1,
+      "Steel": 1,
+      "Furniture": 1,
+      "Cable": 1,
+      "Plastics": 1,
+      "Petrol": 5
+    },
+    "output": {
+      "Car": 1
+    },
+    "power": true
   },
   "OilRefinery": {
     "input": {
@@ -1138,9 +1302,9 @@
       "Faith": 10
     },
     "construction": {
-      "Faith": 100,
-      "Marble": 100,
-      "Knight": 100
+      "Faith": 150,
+      "Marble": 150,
+      "Knight": 150
     },
     "output": {},
     "max": 1,
@@ -1408,5 +1572,75 @@
     },
     "special": "WorldWonder",
     "wikipedia": "Great_Sphinx_of_Giza"
+  },
+  "Hollywood": {
+    "input": {},
+    "output": {},
+    "max": 1,
+    "construction": {
+      "Magazine": 100,
+      "Movie": 100,
+      "Newspaper": 100
+    },
+    "special": "WorldWonder",
+    "wikipedia": "Hollywood,_Los_Angeles"
+  },
+  "GoldenGateBridge": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "Steel": 100,
+      "Movie": 100,
+      "Radio": 100
+    },
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "Golden_Gate_Bridge"
+  },
+  "CristoRedentor": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "Concrete": 100,
+      "Sports": 100,
+      "Politics": 100
+    },
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "Christ_the_Redeemer_(statue)"
+  },
+  "UnitedNations": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "Politics": 100,
+      "Law": 100,
+      "Diplomacy": 100
+    },
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "United_Nations"
+  },
+  "ManhattanProject": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "Uranium": 500
+    },
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "Manhattan_Project"
+  },
+  "SagradaFamilia": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "Tank": 100,
+      "Biplane": 100,
+      "Train": 100
+    },
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "Sagrada_Família"
   }
 }

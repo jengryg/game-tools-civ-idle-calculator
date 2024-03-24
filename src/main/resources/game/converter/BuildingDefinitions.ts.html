@@ -19,529 +19,620 @@
 
     const data = {
         // #region Workers ////////////////////////////////////////////////////////////////////////////////////////
-        Hut: IBuildingDefinition = {
+        Hut:  {
             name: () => t(L.Hut),
             input: {},
-            output: {Worker: 1},
-            construction: {Wood: 1},
+            output: { Worker: 1 },
+            construction: { Wood: 1 },
         },
-        House: IBuildingDefinition = {
+        House:  {
             name: () => t(L.House),
-            input: {Wheat: 1, Water: 1},
-            output: {Worker: 6},
-            construction: {Wood: 1, Stone: 1, Water: 1},
+            input: { Wheat: 1, Water: 1 },
+            output: { Worker: 6 },
+            construction: { Wood: 1, Stone: 1, Water: 1 },
         },
-        Apartment: IBuildingDefinition = {
+        Apartment:  {
             name: () => t(L.Apartment),
-            input: {Cheese: 1, Meat: 2, Bread: 1},
-            output: {Worker: 84},
-            construction: {Brick: 1, Cheese: 1, Meat: 1, Bread: 1},
+            input: { Cheese: 1, Meat: 2, Bread: 1 },
+            output: { Worker: 84 },
+            construction: { Brick: 1, Cheese: 1, Meat: 1, Bread: 1 },
         },
         // #endregion /////////////////////////////////////////////////////////////////////////////////////////////
 
         // #region Resources //////////////////////////////////////////////////////////////////////////////////////
-        WheatFarm: IBuildingDefinition = {
+        WheatFarm:  {
             name: () => t(L.WheatFarm),
             input: {},
-            output: {Wheat: 1},
-            construction: {Wood: 1},
+            output: { Wheat: 1 },
+            construction: { Wood: 1 },
         },
-        StoneQuarry: IBuildingDefinition = {
+        StoneQuarry:  {
             name: () => t(L.StoneQuarry),
             input: {},
-            deposit: {Stone: true},
-            output: {Stone: 1},
-            construction: {Wood: 1},
+            deposit: { Stone: true },
+            output: { Stone: 1 },
+            construction: { Wood: 1 },
         },
-        LoggingCamp: IBuildingDefinition = {
+        LoggingCamp:  {
             name: () => t(L.LoggingCamp),
             input: {},
-            deposit: {Wood: true},
-            output: {Wood: 1},
-            construction: {Stone: 1},
+            deposit: { Wood: true },
+            output: { Wood: 1 },
+            construction: { Stone: 1 },
         },
-        Aqueduct: IBuildingDefinition = {
+        Aqueduct:  {
             name: () => t(L.Aqueduct),
             input: {},
-            deposit: {Water: true},
-            output: {Water: 1},
-            construction: {Stone: 1},
+            deposit: { Water: true },
+            output: { Water: 1 },
+            construction: { Stone: 1 },
         },
-        IronMiningCamp: IBuildingDefinition = {
+        IronMiningCamp:  {
             name: () => t(L.IronMiningCamp),
             input: {},
-            deposit: {Iron: true},
-            output: {Iron: 1},
-            construction: {Brick: 1},
+            deposit: { Iron: true },
+            output: { Iron: 1 },
+            construction: { Brick: 1 },
         },
-        CopperMiningCamp: IBuildingDefinition = {
+        CopperMiningCamp:  {
             name: () => t(L.CopperMiningCamp),
             input: {},
-            deposit: {Copper: true},
-            output: {Copper: 1},
-            construction: {Stone: 1, Wood: 1},
+            deposit: { Copper: true },
+            output: { Copper: 1 },
+            construction: { Stone: 1, Wood: 1 },
         },
 
-        CoalMine: IBuildingDefinition = {
+        CoalMine:  {
             name: () => t(L.CoalMine),
             input: {},
-            deposit: {Coal: true},
-            output: {Coal: 1},
-            construction: {Iron: 1, Brick: 1, Lumber: 1},
+            deposit: { Coal: true },
+            output: { Coal: 1 },
+            construction: { Iron: 1, Brick: 1, Lumber: 1 },
         },
 
-        Sandpit: IBuildingDefinition = {
+        Sandpit:  {
             name: () => t(L.Sandpit),
             input: {},
-            output: {Sand: 1},
-            construction: {Wood: 1},
+            output: { Sand: 1 },
+            construction: { Wood: 1 },
         },
 
-        GoldMiningCamp: IBuildingDefinition = {
+        GoldMiningCamp:  {
             name: () => t(L.GoldMiningCamp),
             input: {},
-            deposit: {Gold: true},
-            output: {Gold: 1},
-            construction: {Brick: 1, Copper: 1},
+            deposit: { Gold: true },
+            output: { Gold: 1 },
+            construction: { Brick: 1, Copper: 1 },
         },
 
-        OilWell: IBuildingDefinition = {
+        UraniumMine:  {
+            name: () => t(L.UraniumMine),
+            input: {},
+            deposit: { Uranium: true },
+            output: { Uranium: 1 },
+            construction: { Concrete: 1, Tool: 1 },
+        },
+
+        UraniumEnrichmentPlant:  {
+            name: () => t(L.UraniumEnrichmentPlant),
+            input: { Uranium: 10 },
+            output: { NuclearFuelRod: 1 },
+            construction: { Concrete: 4, Steel: 5 },
+            power: true,
+        },
+
+        OilWell:  {
             name: () => t(L.OilWell),
             input: {},
-            deposit: {Oil: true},
-            output: {Oil: 1},
-            construction: {Brick: 1, Tool: 1, Sand: 1},
+            deposit: { Oil: true },
+            output: { Oil: 1 },
+            construction: { Brick: 1, Tool: 1, Sand: 1 },
         },
 
-        NaturalGasWell: IBuildingDefinition = {
+        NaturalGasWell:  {
             name: () => t(L.NaturalGasWell),
             input: {},
-            deposit: {NaturalGas: true},
-            output: {NaturalGas: 1},
-            construction: {Brick: 1, Tool: 1, Lumber: 1},
+            deposit: { NaturalGas: true },
+            output: { NaturalGas: 1 },
+            construction: { Brick: 1, Tool: 1, Lumber: 1 },
         },
 
-        AluminumSmelter: IBuildingDefinition = {
+        AluminumSmelter:  {
             name: () => t(L.AluminumSmelter),
             input: {},
-            deposit: {Aluminum: true},
-            output: {Aluminum: 1},
-            construction: {Tool: 1, Brick: 1, Lumber: 1},
+            deposit: { Aluminum: true },
+            output: { Aluminum: 1 },
+            construction: { Tool: 1, Brick: 1, Lumber: 1 },
         },
 
-        CoalPowerPlant: IBuildingDefinition = {
+        CoalPowerPlant:  {
             name: () => t(L.CoalPowerPlant),
-            input: {Coal: 1},
-            output: {Power: 1},
-            construction: {Lumber: 1, Brick: 1, Iron: 1},
+            input: { Coal: 1 },
+            output: { Power: 1 },
+            construction: { Lumber: 5, Brick: 4 },
+        },
+
+        GasPowerPlant:  {
+            name: () => t(L.GasPowerPlant),
+            input: { NaturalGas: 2 },
+            output: { Power: 3 },
+            construction: { Concrete: 2 },
+        },
+
+        HydroDam:  {
+            name: () => t(L.HydroDam),
+            input: {},
+            deposit: { Water: true },
+            output: { Water: 1, Power: 2 },
+            construction: { Dynamite: 1, Concrete: 1 },
         },
         // #endregion /////////////////////////////////////////////////////////////////////////////////////////////
 
         // #region Military ///////////////////////////////////////////////////////////////////////////////////////
-        SwordForge: IBuildingDefinition = {
+        SwordForge:  {
             name: () => t(L.SwordForge),
-            input: {Tool: 2},
-            output: {Sword: 1},
-            construction: {Tool: 1, Brick: 1, Copper: 2},
+            input: { Tool: 2 },
+            output: { Sword: 1 },
+            construction: { Tool: 1, Brick: 1, Copper: 2 },
         },
-        Armory: IBuildingDefinition = {
+        Armory:  {
             name: () => t(L.Armory),
-            input: {Tool: 2},
-            output: {Armor: 1},
-            construction: {Tool: 1, Brick: 1, Iron: 1, Wood: 1},
+            input: { Tool: 2 },
+            output: { Armor: 1 },
+            construction: { Tool: 1, Brick: 1, Iron: 1, Wood: 1 },
         },
-        ChariotWorkshop: IBuildingDefinition = {
+        ChariotWorkshop:  {
             name: () => t(L.ChariotWorkshop),
-            input: {Horse: 2, Lumber: 2, Copper: 1},
-            output: {Chariot: 1},
-            construction: {Horse: 1, Copper: 1, Lumber: 2, Brick: 2},
+            input: { Horse: 2, Lumber: 2, Copper: 1 },
+            output: { Chariot: 1 },
+            construction: { Horse: 1, Copper: 1, Lumber: 2, Brick: 2 },
         },
-        KnightCamp: IBuildingDefinition = {
+        KnightCamp:  {
             name: () => t(L.KnightCamp),
-            input: {Horse: 1, Armor: 1, Sword: 1},
-            output: {Knight: 1},
+            input: { Horse: 1, Armor: 1, Sword: 1 },
+            output: { Knight: 1 },
         },
-        CannonWorkshop: IBuildingDefinition = {
+        CannonWorkshop:  {
             name: () => t(L.CannonWorkshop),
-            input: {Iron: 2, Wood: 1, Tool: 1},
-            output: {Cannon: 1},
-            construction: {Iron: 1, Wood: 1, Tool: 1, Brick: 1, Stone: 1},
+            input: { Iron: 2, Wood: 1, Tool: 1 },
+            output: { Cannon: 1 },
+            construction: { Iron: 1, Wood: 1, Tool: 1, Brick: 1, Stone: 1 },
         },
-        GunpowderMill: IBuildingDefinition = {
+        GunpowderMill:  {
             name: () => t(L.GunpowderMill),
-            input: {Wood: 1, Coal: 1},
-            output: {Gunpowder: 1},
-            construction: {Stone: 1, Coal: 1},
+            input: { Wood: 1, Coal: 1 },
+            output: { Gunpowder: 1 },
+            construction: { Stone: 1, Coal: 1 },
         },
-        DynamiteWorkshop: IBuildingDefinition = {
+        DynamiteWorkshop:  {
             name: () => t(L.DynamiteWorkshop),
-            input: {Wheat: 1, Gunpowder: 1, Coal: 1},
-            output: {Dynamite: 1},
-            construction: {Stone: 2, Gunpowder: 1, Coal: 1},
+            input: { Wheat: 1, Gunpowder: 1, Coal: 1 },
+            output: { Dynamite: 1 },
+            construction: { Stone: 2, Gunpowder: 1, Coal: 1 },
         },
-        SiegeWorkshop: IBuildingDefinition = {
+        SiegeWorkshop:  {
             name: () => t(L.SiegeWorkshop),
-            input: {Lumber: 2, Iron: 2, Tool: 1},
-            output: {SiegeRam: 1},
-            construction: {Lumber: 2, Iron: 1, Brick: 1, Tool: 1, Stone: 1},
+            input: { Lumber: 2, Iron: 2, Tool: 1 },
+            output: { SiegeRam: 1 },
+            construction: { Lumber: 2, Iron: 1, Brick: 1, Tool: 1, Stone: 1 },
         },
-        CaravelBuilder: IBuildingDefinition = {
+        CaravelBuilder:  {
             name: () => t(L.CaravelBuilder),
-            input: {Lumber: 5, Cloth: 2, Tool: 2},
-            output: {Caravel: 1},
-            construction: {Lumber: 5, Marble: 1, Brick: 2, Tool: 2},
+            input: { Lumber: 5, Cloth: 2, Tool: 2 },
+            output: { Caravel: 1 },
+            construction: { Lumber: 5, Marble: 1, Brick: 2, Tool: 2 },
         },
-        GalleonBuilder: IBuildingDefinition = {
+        GalleonBuilder:  {
             name: () => t(L.GalleonBuilder),
-            input: {Caravel: 1, Sword: 1, SiegeRam: 1, Armor: 1},
-            output: {Galleon: 1},
+            input: { Caravel: 1, Sword: 1, SiegeRam: 1, Armor: 1 },
+            output: { Galleon: 1 },
         },
-        FrigateBuilder: IBuildingDefinition = {
+        FrigateBuilder:  {
             name: () => t(L.FrigateBuilder),
-            input: {Galleon: 1, Knight: 1, Cannon: 1, Lens: 1},
-            output: {Frigate: 1},
+            input: { Galleon: 1, Knight: 1, Cannon: 1, Lens: 1 },
+            output: { Frigate: 1 },
         },
-        RifleFactory: IBuildingDefinition = {
+        RifleFactory:  {
             name: () => t(L.RifleFactory),
-            input: {Gunpowder: 5, Tool: 5},
-            output: {Rifle: 1},
+            input: { Gunpowder: 5, Tool: 5 },
+            output: { Rifle: 1 },
         },
-        GatlingGunFactory: IBuildingDefinition = {
+        GatlingGunFactory:  {
             name: () => t(L.GatlingGunFactory),
-            input: {Rifle: 1, Gunpowder: 5},
-            output: {GatlingGun: 1},
+            input: { Rifle: 1, Gunpowder: 5 },
+            output: { GatlingGun: 1 },
         },
-        IroncladBuilder: IBuildingDefinition = {
+        ArtilleryFactory:  {
+            name: () => t(L.ArtilleryFactory),
+            input: { GatlingGun: 1, Dynamite: 1, Aluminum: 5 },
+            output: { Artillery: 1 },
+        },
+        IroncladBuilder:  {
             name: () => t(L.IroncladBuilder),
-            input: {GatlingGun: 1, Rifle: 1, Frigate: 1},
-            output: {Ironclad: 1},
+            input: { GatlingGun: 1, Rifle: 1, Frigate: 1 },
+            output: { Ironclad: 1 },
         },
-        TankFactory: IBuildingDefinition = {
+        BattleshipBuilder:  {
+            name: () => t(L.BattleshipBuilder),
+            input: { Ironclad: 1, Artillery: 1, Cable: 5, Steel: 5, Aluminum: 5 },
+            output: { Battleship: 1 },
+            power: true,
+        },
+        TankFactory:  {
             name: () => t(L.TankFactory),
-            input: {Engine: 1, Steel: 10, Cannon: 1, GatlingGun: 1, Rifle: 1},
-            output: {Tank: 1},
+            input: { Engine: 1, Steel: 10, Cannon: 1, GatlingGun: 1 },
+            output: { Tank: 1 },
+        },
+        BiplaneFactory:  {
+            name: () => t(L.BiplaneFactory),
+            input: { Engine: 1, Steel: 1, Lens: 1, Petrol: 5 },
+            output: { Biplane: 1 },
+        },
+        RocketFactory:  {
+            name: () => t(L.RocketFactory),
+            input: { Engine: 1, Artillery: 1, Steel: 5, Cable: 5, Petrol: 10 },
+            output: { Rocket: 1 },
+            power: true,
+        },
+        AtomicFacility:  {
+            name: () => t(L.AtomicFacility),
+            input: { Dynamite: 10, Uranium: 10 },
+            output: { AtomicBomb: 1 },
+            power: true,
         },
         // #endregion /////////////////////////////////////////////////////////////////////////////////////////////
 
         // #region Culture ////////////////////////////////////////////////////////////////////////////////////////
-        WritersGuild: IBuildingDefinition = {
+        WritersGuild:  {
             name: () => t(L.WritersGuild),
-            input: {Paper: 2},
-            output: {Poem: 1},
-            construction: {Brick: 2},
+            input: { Paper: 2 },
+            output: { Poem: 1 },
+            construction: { Brick: 2 },
         },
-        PaintersGuild: IBuildingDefinition = {
+        PaintersGuild:  {
             name: () => t(L.PaintersGuild),
-            input: {Paper: 2},
-            output: {Painting: 1},
-            construction: {Lumber: 1, Brick: 1},
+            input: { Paper: 2 },
+            output: { Painting: 1 },
+            construction: { Lumber: 1, Brick: 1 },
         },
-        MusiciansGuild: IBuildingDefinition = {
+        MusiciansGuild:  {
             name: () => t(L.MusiciansGuild),
-            input: {Alcohol: 2},
-            output: {Music: 1},
-            construction: {Lumber: 2, Brick: 1},
+            input: { Alcohol: 2 },
+            output: { Music: 1 },
+            construction: { Lumber: 2, Brick: 1 },
         },
-        ActorsGuild: IBuildingDefinition = {
+        ActorsGuild:  {
             name: () => t(L.ActorsGuild),
-            input: {Music: 1, Poem: 1},
-            output: {Opera: 2},
+            input: { Music: 1, Poem: 1 },
+            output: { Opera: 2 },
         },
-        Shrine: IBuildingDefinition = {
+        Shrine:  {
             name: () => t(L.Shrine),
-            input: {Horse: 1, Alcohol: 1},
-            output: {Faith: 1},
-            construction: {Brick: 1, Lumber: 1, Alcohol: 1},
+            input: { Horse: 1, Alcohol: 1 },
+            output: { Faith: 1 },
+            construction: { Brick: 1, Lumber: 1, Alcohol: 1 },
         },
-        Church: IBuildingDefinition = {
+        Church:  {
             name: () => t(L.Church),
-            input: {Music: 1, Poem: 1},
-            output: {Faith: 3},
+            input: { Music: 1, Poem: 1 },
+            output: { Faith: 3 },
         },
-        Mosque: IBuildingDefinition = {
+        Mosque:  {
             name: () => t(L.Mosque),
-            input: {Cheese: 1, Marble: 1},
-            output: {Faith: 3},
+            input: { Cheese: 1, Marble: 1 },
+            output: { Faith: 3 },
         },
-        Cathedral: IBuildingDefinition = {
+        Cathedral:  {
             name: () => t(L.Cathedral),
-            input: {Sword: 1, Armor: 1},
-            output: {Faith: 6},
+            input: { Sword: 1, Armor: 1 },
+            output: { Faith: 6 },
         },
         // Science is valued at 0.5
-        School: IBuildingDefinition = {
+        School:  {
             name: () => t(L.School),
-            input: {Faith: 1, Poem: 1},
-            output: {Science: 172},
+            input: { Faith: 1, Poem: 1 },
+            output: { Science: 172 },
         },
-        Library: IBuildingDefinition = {
+        Library:  {
             name: () => t(L.Library),
-            input: {Paper: 1},
-            output: {Science: 16},
-            construction: {Brick: 1},
+            input: { Paper: 1 },
+            output: { Science: 16 },
+            construction: { Brick: 1 },
         },
-        University: IBuildingDefinition = {
+        University:  {
             name: () => t(L.University),
-            input: {Poem: 1, Painting: 1, Faith: 1},
-            output: {Philosophy: 1, Science: 100},
+            input: { Poem: 1, Painting: 1, Faith: 1 },
+            output: { Philosophy: 1, Science: 100 },
         },
-        Museum: IBuildingDefinition = {
-            name: () => t(L.Museum),
-            input: {Music: 1, Painting: 1, Faith: 1},
-            output: {Culture: 1},
-        },
-        Courthouse: IBuildingDefinition = {
-            name: () => t(L.Courthouse),
-            input: {Philosophy: 1, Faith: 1},
-            output: {Law: 1},
-        },
-        Stadium: IBuildingDefinition = {
-            name: () => t(L.Stadium),
-            input: {Culture: 1, Opera: 1},
-            output: {Sports: 1},
-        },
-        Parliament: IBuildingDefinition = {
-            name: () => t(L.Parliament),
-            input: {Culture: 1, Philosophy: 1},
-            output: {Politics: 1},
-        },
-        PublishingHouse: IBuildingDefinition = {
+        PublishingHouse:  {
             name: () => t(L.PublishingHouse),
-            input: {Politics: 1, Book: 1},
-            output: {Newspaper: 1, Science: 200},
+            input: { Philosophy: 1, Book: 10 },
+            output: { Newspaper: 1, Science: 200 },
         },
-        MagazinePublisher: IBuildingDefinition = {
+        Museum:  {
+            name: () => t(L.Museum),
+            input: { Music: 1, Painting: 1, Faith: 1 },
+            output: { Culture: 1 },
+        },
+        Courthouse:  {
+            name: () => t(L.Courthouse),
+            input: { Philosophy: 1, Faith: 1, Culture: 1 },
+            output: { Law: 1 },
+        },
+        Stadium:  {
+            name: () => t(L.Stadium),
+            input: { Culture: 1, Opera: 1, Philosophy: 1 },
+            output: { Sports: 1 },
+        },
+        Parliament:  {
+            name: () => t(L.Parliament),
+            input: { Culture: 2, Philosophy: 2, Law: 2 },
+            output: { Politics: 1 },
+        },
+        MagazinePublisher:  {
             name: () => t(L.MagazinePublisher),
-            input: {Sports: 1, Book: 10},
-            output: {Magazine: 1},
+            input: { Sports: 1, Book: 10 },
+            output: { Magazine: 1 },
+        },
+        MovieStudio:  {
+            name: () => t(L.MovieStudio),
+            input: { Sports: 5, Lens: 5, Garment: 5 },
+            output: { Movie: 1 },
+            power: true,
+        },
+        RadioStation:  {
+            name: () => t(L.RadioStation),
+            input: { Magazine: 5, Newspaper: 5, Culture: 5 },
+            output: { Radio: 1 },
+            power: true,
+        },
+        Embassy:  {
+            name: () => t(L.Embassy),
+            input: { Law: 5, Politics: 5, Philosophy: 5 },
+            output: { Diplomacy: 1 },
         },
         // #endregion /////////////////////////////////////////////////////////////////////////////////////////////
 
         // #region Food & Light Industry //////////////////////////////////////////////////////////////////////////
-        CottonPlantation: IBuildingDefinition = {
+        CottonPlantation:  {
             name: () => t(L.CottonPlantation),
             input: {},
-            output: {Cotton: 1},
-            construction: {Wood: 1},
+            output: { Cotton: 1 },
+            construction: { Wood: 1 },
         },
-        CottonMill: IBuildingDefinition = {
+        CottonMill:  {
             name: () => t(L.CottonMill),
-            input: {Cotton: 2},
-            output: {Cloth: 1},
-            construction: {Brick: 1, Lumber: 1},
+            input: { Cotton: 2 },
+            output: { Cloth: 1 },
+            construction: { Brick: 1, Lumber: 1 },
         },
-        GarmentWorkshop: IBuildingDefinition = {
+        GarmentWorkshop:  {
             name: () => t(L.GarmentWorkshop),
-            input: {Cloth: 2},
-            output: {Garment: 1},
+            input: { Cloth: 2 },
+            output: { Garment: 1 },
         },
-        FurnitureWorkshop: IBuildingDefinition = {
+        FurnitureWorkshop:  {
             name: () => t(L.FurnitureWorkshop),
-            input: {Lumber: 2, Copper: 1},
-            output: {Furniture: 1},
+            input: { Lumber: 2, Copper: 1 },
+            output: { Furniture: 1 },
         },
-        PrintingHouse: IBuildingDefinition = {
+        PrintingHouse:  {
             name: () => t(L.PrintingHouse),
-            input: {Paper: 5, Poem: 1},
-            output: {Book: 1},
+            input: { Paper: 5, Poem: 1 },
+            output: { Book: 1 },
         },
-        FlourMill: IBuildingDefinition = {
+        FlourMill:  {
             name: () => t(L.FlourMill),
-            input: {Wheat: 2},
-            output: {Flour: 1},
-            construction: {Brick: 1},
+            input: { Wheat: 2 },
+            output: { Flour: 1 },
+            construction: { Brick: 1 },
         },
-        LivestockFarm: IBuildingDefinition = {
+        LivestockFarm:  {
             name: () => t(L.LivestockFarm),
-            input: {Wheat: 2},
-            output: {Meat: 1, Milk: 1},
-            construction: {Lumber: 1},
+            input: { Wheat: 2 },
+            output: { Meat: 1, Milk: 1 },
+            construction: { Lumber: 1 },
         },
-        Stable: IBuildingDefinition = {
+        Stable:  {
             name: () => t(L.Stable),
-            input: {Wheat: 2},
-            output: {Horse: 1},
-            construction: {Lumber: 1},
+            input: { Wheat: 2 },
+            output: { Horse: 1 },
+            construction: { Lumber: 1 },
         },
-        Bakery: IBuildingDefinition = {
+        Bakery:  {
             name: () => t(L.Bakery),
-            input: {Water: 1, Flour: 1},
-            output: {Bread: 1},
-            construction: {Brick: 1, Lumber: 1, Stone: 1},
+            input: { Water: 1, Flour: 1 },
+            output: { Bread: 1 },
+            construction: { Brick: 1, Lumber: 1, Stone: 1 },
         },
-        CheeseMaker: IBuildingDefinition = {
+        CheeseMaker:  {
             name: () => t(L.CheeseMaker),
-            input: {Milk: 2},
-            output: {Cheese: 1},
-            construction: {Brick: 1, Lumber: 1},
+            input: { Milk: 2 },
+            output: { Cheese: 1 },
+            construction: { Brick: 1, Lumber: 1 },
         },
-        Brewery: IBuildingDefinition = {
+        Brewery:  {
             name: () => t(L.Brewery),
-            input: {Wheat: 1, Water: 1},
-            output: {Alcohol: 1},
-            construction: {Copper: 1},
+            input: { Wheat: 1, Water: 1 },
+            output: { Alcohol: 1 },
+            construction: { Copper: 1 },
         },
-        PaperMaker: IBuildingDefinition = {
+        PaperMaker:  {
             name: () => t(L.PaperMaker),
-            input: {Wood: 1, Water: 1},
-            output: {Paper: 1},
-            construction: {Wood: 1, Stone: 1},
+            input: { Wood: 1, Water: 1 },
+            output: { Paper: 1 },
+            construction: { Wood: 1, Stone: 1 },
         },
-        Pizzeria: IBuildingDefinition = {
+        Pizzeria:  {
             name: () => t(L.Pizzeria),
-            input: {Cheese: 1, Meat: 1, Flour: 2, Water: 2},
-            output: {Pizza: 1},
+            input: { Cheese: 1, Meat: 1, Flour: 2, Water: 2 },
+            output: { Pizza: 1 },
+        },
+        PlasticsFactory:  {
+            name: () => t(L.PlasticsFactory),
+            input: { Oil: 2 },
+            output: { Plastics: 1 },
         },
         // #endregion /////////////////////////////////////////////////////////////////////////////////////////////
 
         // #region Heavy Industry /////////////////////////////////////////////////////////////////////////////////
-        LumberMill: IBuildingDefinition = {
+        LumberMill:  {
             name: () => t(L.LumberMill),
-            input: {Wood: 2},
-            output: {Lumber: 1},
-            construction: {Stone: 2},
+            input: { Wood: 2 },
+            output: { Lumber: 1 },
+            construction: { Stone: 2 },
         },
-        Glassworks: IBuildingDefinition = {
+        Glassworks:  {
             name: () => t(L.Glassworks),
-            input: {Sand: 2},
-            output: {Glass: 1},
-            construction: {Brick: 1, Wood: 2},
+            input: { Sand: 2 },
+            output: { Glass: 1 },
+            construction: { Brick: 1, Wood: 2 },
         },
-        LensWorkshop: IBuildingDefinition = {
+        LensWorkshop:  {
             name: () => t(L.LensWorkshop),
-            input: {Glass: 2},
-            output: {Lens: 1},
+            input: { Glass: 2 },
+            output: { Lens: 1 },
         },
-        Blacksmith: IBuildingDefinition = {
+        Blacksmith:  {
             name: () => t(L.Blacksmith),
-            input: {Copper: 1, Wood: 1},
-            output: {Tool: 1},
-            construction: {Brick: 1},
+            input: { Copper: 1, Wood: 1 },
+            output: { Tool: 1 },
+            construction: { Brick: 1 },
         },
-        IronForge: IBuildingDefinition = {
+        IronForge:  {
             name: () => t(L.IronForge),
-            input: {Iron: 1},
-            output: {Tool: 1},
-            construction: {Brick: 1},
+            input: { Iron: 1 },
+            output: { Tool: 1 },
+            construction: { Brick: 1 },
         },
-        Brickworks: IBuildingDefinition = {
+        Brickworks:  {
             name: () => t(L.Brickworks),
-            input: {Stone: 2},
-            output: {Brick: 1},
-            construction: {Wood: 2},
+            input: { Stone: 2 },
+            output: { Brick: 1 },
+            construction: { Wood: 2 },
         },
-        Marbleworks: IBuildingDefinition = {
+        Marbleworks:  {
             name: () => t(L.Marbleworks),
-            input: {Stone: 2, Tool: 1},
-            output: {Marble: 1},
+            input: { Stone: 2, Tool: 1 },
+            output: { Marble: 1 },
         },
-        ConcretePlant: IBuildingDefinition = {
+        ConcretePlant:  {
             name: () => t(L.ConcretePlant),
-            input: {Brick: 1, Sand: 2, Tool: 1},
-            output: {Concrete: 1},
+            input: { Brick: 1, Sand: 2, Tool: 1 },
+            output: { Concrete: 1 },
         },
-        SteelMill: IBuildingDefinition = {
+        SteelMill:  {
             name: () => t(L.SteelMill),
-            input: {Iron: 1, Coal: 1},
-            output: {Steel: 1},
-            construction: {Brick: 1, Coal: 1},
+            input: { Iron: 1, Coal: 1 },
+            output: { Steel: 1 },
+            construction: { Brick: 1, Coal: 1 },
         },
-        Steamworks: IBuildingDefinition = {
+        CableFactory:  {
+            name: () => t(L.CableFactory),
+            input: { Copper: 5 },
+            output: { Cable: 1 },
+        },
+        Steamworks:  {
             name: () => t(L.Steamworks),
-            input: {Iron: 1, Coal: 1, Tool: 1},
-            output: {Engine: 1},
-            construction: {Iron: 1, Coal: 1, Lumber: 1, Brick: 1, Water: 2},
+            input: { Iron: 1, Coal: 1, Tool: 1 },
+            output: { Engine: 1 },
         },
-        LocomotiveFactory: IBuildingDefinition = {
+        LocomotiveFactory:  {
             name: () => t(L.LocomotiveFactory),
-            input: {Engine: 1, Steel: 10},
-            output: {Train: 1},
+            input: { Engine: 1, Steel: 10 },
+            output: { Train: 1 },
         },
-        OilRefinery: IBuildingDefinition = {
+        CarFactory:  {
+            name: () => t(L.CarFactory),
+            input: { Engine: 1, Steel: 1, Furniture: 1, Cable: 1, Plastics: 1, Petrol: 5 },
+            output: { Car: 1 },
+            power: true,
+        },
+        OilRefinery:  {
             name: () => t(L.OilRefinery),
-            input: {Oil: 2},
-            output: {Petrol: 1},
-            construction: {Steel: 1},
+            input: { Oil: 2 },
+            output: { Petrol: 1 },
+            construction: { Steel: 1 },
         },
         // #endregion /////////////////////////////////////////////////////////////////////////////////////////////
 
         // #region Financial & Trade //////////////////////////////////////////////////////////////////////////////
-        CoinMint: IBuildingDefinition = {
+        CoinMint:  {
             name: () => t(L.CoinMint),
-            input: {Gold: 3},
-            output: {Coin: 1},
-            construction: {Gold: 2, Lumber: 1, Copper: 1},
+            input: { Gold: 3 },
+            output: { Coin: 1 },
+            construction: { Gold: 2, Lumber: 1, Copper: 1 },
         },
-        Bank: IBuildingDefinition = {
+        Bank:  {
             name: () => t(L.Bank),
-            input: {Coin: 3},
-            output: {Banknote: 1},
+            input: { Coin: 3 },
+            output: { Banknote: 1 },
         },
-        BondMarket: IBuildingDefinition = {
+        BondMarket:  {
             name: () => t(L.BondMarket),
-            input: {Banknote: 3},
-            output: {Bond: 1},
+            input: { Banknote: 3 },
+            output: { Bond: 1 },
         },
-        StockExchange: IBuildingDefinition = {
+        StockExchange:  {
             name: () => t(L.StockExchange),
-            input: {Bond: 3},
-            output: {Stock: 1},
+            input: { Bond: 3 },
+            output: { Stock: 1 },
         },
-        Caravansary: IBuildingDefinition = {
+        Caravansary:  {
             name: () => t(L.Caravansary),
             desc: () => t(L.CaravansaryDesc),
             input: {},
             output: {},
-            construction: {Brick: 1, Horse: 1, Tool: 1},
+            construction: { Brick: 1, Horse: 1, Tool: 1 },
         },
-        Market: IBuildingDefinition = {
+        Market:  {
             name: () => t(L.Market),
             input: {},
             output: {},
             desc: () => t(L.MarketDesc),
-            construction: {Brick: 2, Copper: 2, Lumber: 2},
+            construction: { Brick: 2, Copper: 2, Lumber: 2 },
         },
-        Warehouse: IBuildingDefinition = {
+        Warehouse:  {
             name: () => t(L.Warehouse),
             input: {},
             output: {},
             desc: () => t(L.WarehouseDesc),
-            construction: {Lumber: 1, Brick: 1, Horse: 1},
+            construction: { Lumber: 1, Brick: 1, Horse: 1 },
         },
         // #endregion /////////////////////////////////////////////////////////////////////////////////////////////
 
         // #region Functional Wonders /////////////////////////////////////////////////////////////////////////////
-        Headquarter: IBuildingDefinition = {
+        Headquarter:  {
             name: () => t(L.Headquarter),
             input: {},
-            output: {Worker: 10},
+            output: { Worker: 10 },
             vision: 3,
             max: 0,
             special: BuildingSpecial.HQ,
         },
-        Statistics: IBuildingDefinition = {
+        Statistics:  {
             name: () => t(L.StatisticsOffice),
             desc: () => t(L.StatisticsOfficeDesc),
             input: {},
             output: {},
-            construction: {Brick: 100, Wood: 100, Lumber: 100},
+            construction: { Brick: 100, Wood: 100, Lumber: 100 },
             max: 1,
             special: BuildingSpecial.WorldWonder,
         },
-        Petra: IBuildingDefinition = {
+        Petra:  {
             name: () => t(L.Petra),
             desc: () => t(L.PetraDesc),
             input: {},
             output: {},
             max: 1,
-            construction: {Gold: 500},
+            construction: { Gold: 500 },
             special: BuildingSpecial.WorldWonder,
             wikipedia: "Petra",
         },
         // #endregion
 
         // #region Natural Wonders ////////////////////////////////////////////////////////////////////////////////
-        Alps: IBuildingDefinition = {
+        Alps:  {
             name: () => t(L.Alps),
             desc: () => t(L.AlpsDesc),
             input: {},
@@ -551,7 +642,7 @@
             wikipedia: "Alps",
             special: BuildingSpecial.NaturalWonder,
         },
-        GrottaAzzurra: IBuildingDefinition = {
+        GrottaAzzurra:  {
             name: () => t(L.GrottaAzzurra),
             desc: () => t(L.GrottaAzzurraDesc),
             input: {},
@@ -561,7 +652,7 @@
             wikipedia: "Blue_Grotto_(Capri)",
             special: BuildingSpecial.NaturalWonder,
         },
-        Aphrodite: IBuildingDefinition = {
+        Aphrodite:  {
             name: () => t(L.Aphrodite),
             desc: () => t(L.AphroditeDesc),
             input: {},
@@ -571,7 +662,7 @@
             wikipedia: "Aphrodite",
             special: BuildingSpecial.NaturalWonder,
         },
-        Poseidon: IBuildingDefinition = {
+        Poseidon:  {
             name: () => t(L.Poseidon),
             desc: () => t(L.PoseidonDesc),
             input: {},
@@ -581,7 +672,7 @@
             wikipedia: "Poseidon",
             special: BuildingSpecial.NaturalWonder,
         },
-        NileRiver: IBuildingDefinition = {
+        NileRiver:  {
             name: () => t(L.NileRiver),
             desc: () => t(L.NileRiverDesc),
             input: {},
@@ -591,7 +682,7 @@
             wikipedia: "Nile",
             special: BuildingSpecial.NaturalWonder,
         },
-        MountSinai: IBuildingDefinition = {
+        MountSinai:  {
             name: () => t(L.MountSinai),
             desc: () => t(L.MountSinaiDesc),
             input: {},
@@ -604,7 +695,7 @@
         // #endregion /////////////////////////////////////////////////////////////////////////////////////////////
 
         // #region World Wonders //////////////////////////////////////////////////////////////////////////////////
-        Stonehenge: IBuildingDefinition = {
+        Stonehenge:  {
             name: () => t(L.Stonehenge),
             desc: () => t(L.StonehengeDesc),
             input: {},
@@ -612,9 +703,9 @@
             max: 1,
             special: BuildingSpecial.WorldWonder,
             wikipedia: "Stonehenge",
-            construction: {Stone: 300},
+            construction: { Stone: 300 },
         },
-        HatshepsutTemple: IBuildingDefinition = {
+        HatshepsutTemple:  {
             name: () => t(L.HatshepsutTemple),
             desc: () => t(L.HatshepsutTempleDesc),
             input: {},
@@ -622,349 +713,409 @@
             max: 1,
             special: BuildingSpecial.WorldWonder,
             wikipedia: "Mortuary_Temple_of_Hatshepsut",
-            construction: {Stone: 100, Wood: 100, Copper: 100},
+            construction: { Stone: 100, Wood: 100, Copper: 100 },
         },
-        LighthouseOfAlexandria: IBuildingDefinition = {
+        LighthouseOfAlexandria:  {
             name: () => t(L.LighthouseOfAlexandria),
             desc: () => t(L.LighthouseOfAlexandriaDesc),
             input: {},
             output: {},
             max: 1,
-            construction: {Iron: 100, Marble: 100, Tool: 100},
+            construction: { Iron: 100, Marble: 100, Tool: 100 },
             special: BuildingSpecial.WorldWonder,
             wikipedia: "Lighthouse_of_Alexandria",
         },
-        PyramidOfGiza: IBuildingDefinition = {
+        PyramidOfGiza:  {
             name: () => t(L.PyramidOfGiza),
             desc: () => t(L.PyramidOfGizaDesc),
             input: {},
             output: {},
-            construction: {Brick: 300},
+            construction: { Brick: 300 },
             max: 1,
             special: BuildingSpecial.WorldWonder,
             wikipedia: "Great_Pyramid_of_Giza",
         },
-        ColossusOfRhodes: IBuildingDefinition = {
+        ColossusOfRhodes:  {
             name: () => t(L.ColossusOfRhodes),
             desc: () => t(L.ColossusOfRhodesDesc),
             input: {},
             output: {},
-            construction: {Stone: 300},
+            construction: { Stone: 300 },
             max: 1,
             special: BuildingSpecial.WorldWonder,
             wikipedia: "Colossus_of_Rhodes",
         },
-        GreatMosqueOfSamarra: IBuildingDefinition = {
+        GreatMosqueOfSamarra:  {
             name: () => t(L.GreatMosqueOfSamarra),
             desc: () => t(L.GreatMosqueOfSamarraDescV2),
             input: {},
             output: {},
-            construction: {Sand: 100, Brick: 100, Cotton: 100},
+            construction: { Sand: 100, Brick: 100, Cotton: 100 },
             max: 1,
             special: BuildingSpecial.WorldWonder,
             wikipedia: "Great_Mosque_of_Samarra",
         },
-        HangingGarden: IBuildingDefinition = {
+        HangingGarden:  {
             name: () => t(L.HangingGarden),
             desc: () => t(L.HangingGardenDesc),
             input: {},
             output: {},
-            construction: {Stone: 100, Water: 100, Copper: 100},
+            construction: { Stone: 100, Water: 100, Copper: 100 },
             max: 1,
             special: BuildingSpecial.WorldWonder,
             wikipedia: "Hanging_Gardens_of_Babylon",
         },
-        TempleOfHeaven: IBuildingDefinition = {
+        TempleOfHeaven:  {
             name: () => t(L.TempleOfHeaven),
             desc: () => t(L.TempleOfHeavenDesc),
             input: {},
             output: {},
             max: 1,
             special: BuildingSpecial.WorldWonder,
-            construction: {Iron: 100, Bread: 100, Cheese: 100},
+            construction: { Iron: 100, Bread: 100, Cheese: 100 },
             wikipedia: "Temple_of_Heaven",
         },
-        Parthenon: IBuildingDefinition = {
+        Parthenon:  {
             name: () => t(L.Parthenon),
-            desc: () => t(L.ParthenonDesc),
+            desc: () => t(L.ParthenonDescV2),
             input: {},
             output: {},
             max: 1,
             special: BuildingSpecial.WorldWonder,
-            construction: {Marble: 100, Painting: 100, Music: 100},
+            construction: { Marble: 100, Painting: 100, Music: 100 },
             wikipedia: "Parthenon",
         },
-        TempleOfArtemis: IBuildingDefinition = {
+        TempleOfArtemis:  {
             name: () => t(L.TempleOfArtemis),
             desc: () => t(L.TempleOfArtemisDesc),
             input: {},
             output: {},
             max: 1,
             special: BuildingSpecial.WorldWonder,
-            construction: {Armor: 100, Sword: 100, Marble: 100},
+            construction: { Armor: 100, Sword: 100, Marble: 100 },
             wikipedia: "Temple_of_Artemis",
         },
-        LuxorTemple: IBuildingDefinition = {
+        LuxorTemple:  {
             name: () => t(L.LuxorTemple),
             desc: () => t(L.LuxorTempleDesc),
             input: {},
             output: {},
             max: 1,
             special: BuildingSpecial.WorldWonder,
-            construction: {Tool: 100, Cloth: 100, Furniture: 100},
+            construction: { Tool: 100, Cloth: 100, Furniture: 100 },
             wikipedia: "Luxor_Temple",
         },
-        ChichenItza: IBuildingDefinition = {
+        ChichenItza:  {
             name: () => t(L.ChichenItza),
             desc: () => t(L.ChichenItzaDesc),
             input: {},
             output: {},
             max: 1,
             special: BuildingSpecial.WorldWonder,
-            construction: {Stone: 100, Armor: 100, SiegeRam: 100},
+            construction: { Stone: 100, Armor: 100, SiegeRam: 100 },
             wikipedia: "Chichen_Itza",
         },
-        MausoleumAtHalicarnassus: IBuildingDefinition = {
+        MausoleumAtHalicarnassus:  {
             name: () => t(L.MausoleumAtHalicarnassus),
             desc: () => t(L.MausoleumAtHalicarnassusDesc),
             input: {},
             output: {},
             max: 1,
-            construction: {Marble: 100, Lumber: 100, Tool: 100},
+            construction: { Marble: 100, Lumber: 100, Tool: 100 },
             special: BuildingSpecial.WorldWonder,
             wikipedia: "Mausoleum_at_Halicarnassus",
         },
-        HagiaSophia: IBuildingDefinition = {
+        HagiaSophia:  {
             name: () => t(L.HagiaSophia),
             desc: () => t(L.HagiaSophiaDesc),
-            input: {Faith: 10},
-            construction: {Faith: 100, Marble: 100, Knight: 100},
+            input: { Faith: 10 },
+            construction: { Faith: 150, Marble: 150, Knight: 150 },
             output: {},
             max: 1,
             special: BuildingSpecial.WorldWonder,
             wikipedia: "Hagia_Sophia",
         },
-        AngkorWat: IBuildingDefinition = {
+        AngkorWat:  {
             name: () => t(L.AngkorWat),
             desc: () => t(L.AngkorWatDesc),
             input: {},
             output: {},
-            construction: {Faith: 100, Tool: 100, Marble: 100},
+            construction: { Faith: 100, Tool: 100, Marble: 100 },
             max: 1,
             special: BuildingSpecial.WorldWonder,
             wikipedia: "Angkor_Wat",
         },
-        TerracottaArmy: IBuildingDefinition = {
+        TerracottaArmy:  {
             name: () => t(L.TerracottaArmy),
             desc: () => t(L.TerracottaArmyDesc),
             input: {},
             output: {},
             max: 1,
-            construction: {Chariot: 100, Iron: 100, Stone: 100},
+            construction: { Chariot: 100, Iron: 100, Stone: 100 },
             special: BuildingSpecial.WorldWonder,
             wikipedia: "Terracotta_Army",
         },
-        Persepolis: IBuildingDefinition = {
+        Persepolis:  {
             name: () => t(L.Persepolis),
             desc: () => t(L.PersepolisDesc),
             input: {},
             output: {},
             max: 1,
-            construction: {Stone: 100, Wood: 100, Copper: 100},
+            construction: { Stone: 100, Wood: 100, Copper: 100 },
             special: BuildingSpecial.WorldWonder,
             wikipedia: "Persepolis",
         },
-        OxfordUniversity: IBuildingDefinition = {
+        OxfordUniversity:  {
             name: () => t(L.OxfordUniversity),
             desc: () => t(L.OxfordUniversityDescV2),
             input: {},
             output: {},
             max: 1,
-            construction: {Faith: 100, Philosophy: 100, Poem: 100},
+            construction: { Faith: 100, Philosophy: 100, Poem: 100 },
             special: BuildingSpecial.WorldWonder,
             wikipedia: "University_of_Oxford",
         },
-        StPetersBasilica: IBuildingDefinition = {
+        StPetersBasilica:  {
             name: () => t(L.StPetersBasilica),
             desc: () => t(L.StPetersBasilicaDesc),
             input: {},
             output: {},
             max: 1,
-            construction: {Faith: 500},
+            construction: { Faith: 500 },
             special: BuildingSpecial.WorldWonder,
             wikipedia: "St._Peter%27s_Basilica",
         },
-        SaintBasilsCathedral: IBuildingDefinition = {
+        SaintBasilsCathedral:  {
             name: () => t(L.SaintBasilsCathedral),
             desc: () => t(L.SaintBasilsCathedralDescV2),
             input: {},
             output: {},
             max: 1,
-            construction: {Furniture: 100, Gunpowder: 100, Lens: 100},
+            construction: { Furniture: 100, Gunpowder: 100, Lens: 100 },
             special: BuildingSpecial.WorldWonder,
             wikipedia: "Saint_Basil%27s_Cathedral",
         },
-        ForbiddenCity: IBuildingDefinition = {
+        ForbiddenCity:  {
             name: () => t(L.ForbiddenCity),
             desc: () => t(L.ForbiddenCityDesc),
             input: {},
             output: {},
             max: 1,
-            construction: {Banknote: 100, Marble: 100, Book: 100},
+            construction: { Banknote: 100, Marble: 100, Book: 100 },
             special: BuildingSpecial.WorldWonder,
             wikipedia: "Forbidden_City",
         },
-        HimejiCastle: IBuildingDefinition = {
+        HimejiCastle:  {
             name: () => t(L.HimejiCastle),
             desc: () => t(L.HimejiCastleDesc),
             input: {},
             output: {},
             max: 1,
-            construction: {Caravel: 100, Galleon: 100, Frigate: 100},
+            construction: { Caravel: 100, Galleon: 100, Frigate: 100 },
             special: BuildingSpecial.WorldWonder,
             wikipedia: "Himeji_Castle",
         },
-        TajMahal: IBuildingDefinition = {
+        TajMahal:  {
             name: () => t(L.TajMahal),
-            desc: () => t(L.TajMahalDesc),
+            desc: () => t(L.TajMahalDescV2),
             input: {},
             output: {},
-            construction: {Faith: 100, Marble: 100, Garment: 100},
+            construction: { Faith: 100, Marble: 100, Garment: 100 },
             max: 1,
             special: BuildingSpecial.WorldWonder,
             wikipedia: "Taj_Mahal",
         },
-        Colosseum: IBuildingDefinition = {
+        Colosseum:  {
             name: () => t(L.Colosseum),
             desc: () => t(L.ColosseumDesc),
-            input: {Chariot: 10},
+            input: { Chariot: 10 },
             output: {},
-            construction: {Brick: 100, Chariot: 100, Alcohol: 100},
+            construction: { Brick: 100, Chariot: 100, Alcohol: 100 },
             max: 1,
             special: BuildingSpecial.WorldWonder,
             wikipedia: "Colosseum",
         },
-        MogaoCaves: IBuildingDefinition = {
+        MogaoCaves:  {
             name: () => t(L.MogaoCaves),
             desc: () => t(L.MogaoCavesDescV2),
             input: {},
             output: {},
-            construction: {Faith: 100, Marble: 100, Painting: 100},
+            construction: { Faith: 100, Marble: 100, Painting: 100 },
             max: 1,
             special: BuildingSpecial.WorldWonder,
             wikipedia: "Mogao_Caves",
         },
-        StatueOfZeus: IBuildingDefinition = {
+        StatueOfZeus:  {
             name: () => t(L.StatueOfZeus),
             desc: () => t(L.StatueOfZeusDesc),
             input: {},
             output: {},
-            construction: {Marble: 100, Brick: 100, Music: 100},
+            construction: { Marble: 100, Brick: 100, Music: 100 },
             max: 1,
             wikipedia: "Statue_of_Zeus_at_Olympia",
             special: BuildingSpecial.WorldWonder,
         },
-        CircusMaximus: IBuildingDefinition = {
+        CircusMaximus:  {
             name: () => t(L.CircusMaximus),
             desc: () => t(L.CircusMaximusDescV2),
             input: {},
             output: {},
-            construction: {Music: 100, Poem: 100, Painting: 100},
+            construction: { Music: 100, Poem: 100, Painting: 100 },
             max: 1,
             special: BuildingSpecial.WorldWonder,
             wikipedia: "Circus_Maximus",
         },
-        EiffelTower: IBuildingDefinition = {
+        EiffelTower:  {
             name: () => t(L.EiffelTower),
             desc: () => t(L.EiffelTowerDesc),
             input: {},
             output: {},
-            construction: {Steel: 300},
+            construction: { Steel: 300 },
             max: 1,
             special: BuildingSpecial.WorldWonder,
             wikipedia: "Eiffel_Tower",
         },
-        Rijksmuseum: IBuildingDefinition = {
+        Rijksmuseum:  {
             name: () => t(L.Rijksmuseum),
             desc: () => t(L.RijksmuseumDesc),
             input: {},
             output: {},
-            construction: {Newspaper: 100, Culture: 100, Concrete: 100},
+            construction: { Newspaper: 100, Culture: 100, Concrete: 100 },
             max: 1,
             special: BuildingSpecial.WorldWonder,
             wikipedia: "Rijksmuseum",
         },
-        SummerPalace: IBuildingDefinition = {
+        SummerPalace:  {
             name: () => t(L.SummerPalace),
             desc: () => t(L.SummerPalaceDesc),
             input: {},
             output: {},
-            construction: {Gunpowder: 100, Rifle: 100, GatlingGun: 100},
+            construction: { Gunpowder: 100, Rifle: 100, GatlingGun: 100 },
             max: 1,
             special: BuildingSpecial.WorldWonder,
             wikipedia: "Summer_Palace",
         },
-        StatueOfLiberty: IBuildingDefinition = {
+        StatueOfLiberty:  {
             name: () => t(L.StatueOfLiberty),
             desc: () => t(L.StatueOfLibertyDesc),
             input: {},
             output: {},
-            construction: {Philosophy: 100, Politics: 100, Law: 100},
+            construction: { Philosophy: 100, Politics: 100, Law: 100 },
             max: 1,
             special: BuildingSpecial.WorldWonder,
             wikipedia: "Statue_of_Liberty",
         },
-        Neuschwanstein: IBuildingDefinition = {
+        Neuschwanstein:  {
             name: () => t(L.Neuschwanstein),
             desc: () => t(L.NeuschwansteinDesc),
             input: {},
             output: {},
-            construction: {Rifle: 100, Bond: 100, Cannon: 100},
+            construction: { Rifle: 100, Bond: 100, Cannon: 100 },
             max: 1,
             special: BuildingSpecial.WorldWonder,
             wikipedia: "Neuschwanstein_Castle",
         },
-        BrandenburgGate: IBuildingDefinition = {
+        BrandenburgGate:  {
             name: () => t(L.BrandenburgGate),
             desc: () => t(L.BrandenburgGateDesc),
             input: {},
             output: {},
-            construction: {Train: 100, Politics: 100, Concrete: 100},
+            construction: { Train: 100, Politics: 100, Concrete: 100 },
             max: 1,
             special: BuildingSpecial.WorldWonder,
             wikipedia: "Brandenburg_Gate",
         },
-        GrandBazaar: IBuildingDefinition = {
+        GrandBazaar:  {
             name: () => t(L.GrandBazaar),
             desc: () => t(L.GrandBazaarDesc),
             input: {},
             output: {},
             max: 1,
-            construction: {Coin: 100, Garment: 100, Furniture: 100},
+            construction: { Coin: 100, Garment: 100, Furniture: 100 },
             special: BuildingSpecial.WorldWonder,
             wikipedia: "Grand_Bazaar,_Istanbul",
         },
-        AbuSimbel: IBuildingDefinition = {
+        AbuSimbel:  {
             name: () => t(L.AbuSimbel),
             desc: () => t(L.AbuSimbelDesc),
             input: {},
             output: {},
             max: 1,
-            construction: {Stone: 100, Brick: 100, Lumber: 100},
+            construction: { Stone: 100, Brick: 100, Lumber: 100 },
             special: BuildingSpecial.WorldWonder,
             wikipedia: "Abu_Simbel",
         },
-        GreatSphinx: IBuildingDefinition = {
+        GreatSphinx:  {
             name: () => t(L.GreatSphinx),
             desc: () => t(L.GreatSphinxDesc),
             input: {},
             output: {},
             max: 1,
-            construction: {Stone: 100, Brick: 100, Lumber: 100},
+            construction: { Stone: 100, Brick: 100, Lumber: 100 },
             special: BuildingSpecial.WorldWonder,
             wikipedia: "Great_Sphinx_of_Giza",
         },
-        // ArcDeTriomphe: IBuildingDefinition = {
+        Hollywood:  {
+            name: () => t(L.Hollywood),
+            desc: () => t(L.HollywoodDesc),
+            input: {},
+            output: {},
+            max: 1,
+            construction: { Magazine: 100, Movie: 100, Newspaper: 100 },
+            special: BuildingSpecial.WorldWonder,
+            wikipedia: "Hollywood,_Los_Angeles",
+        },
+        GoldenGateBridge:  {
+            name: () => t(L.GoldenGateBridge),
+            desc: () => t(L.GoldenGateBridgeDesc),
+            input: {},
+            output: {},
+            construction: { Steel: 100, Movie: 100, Radio: 100 },
+            max: 1,
+            special: BuildingSpecial.WorldWonder,
+            wikipedia: "Golden_Gate_Bridge",
+        },
+        CristoRedentor:  {
+            name: () => t(L.CristoRedentor),
+            desc: () => t(L.CristoRedentorDesc),
+            input: {},
+            output: {},
+            construction: { Concrete: 100, Sports: 100, Politics: 100 },
+            max: 1,
+            special: BuildingSpecial.WorldWonder,
+            wikipedia: "Christ_the_Redeemer_(statue)",
+        },
+        UnitedNations:  {
+            name: () => t(L.UnitedNations),
+            desc: () => t(L.UnitedNationsDesc),
+            input: {},
+            output: {},
+            construction: { Politics: 100, Law: 100, Diplomacy: 100 },
+            max: 1,
+            special: BuildingSpecial.WorldWonder,
+            wikipedia: "United_Nations",
+        },
+        ManhattanProject:  {
+            name: () => t(L.ManhattanProject),
+            desc: () => t(L.ManhattanProjectDesc),
+            input: {},
+            output: {},
+            construction: { Uranium: 500 },
+            max: 1,
+            special: BuildingSpecial.WorldWonder,
+            wikipedia: "Manhattan_Project",
+        },
+        SagradaFamilia:  {
+            name: () => t(L.SagradaFamilia),
+            desc: () => t(L.SagradaFamiliaDesc),
+            input: {},
+            output: {},
+            construction: { Tank: 100, Biplane: 100, Train: 100 },
+            max: 1,
+            special: BuildingSpecial.WorldWonder,
+            wikipedia: "Sagrada_Família",
+        },
+        // ArcDeTriomphe:  {
         //    name: () => t(L.ArcDeTriomphe),
         //    desc: () => t(L.ArcDeTriompheDesc),
         //    input: {},
@@ -976,28 +1127,14 @@
         // },
         // #endregion /////////////////////////////////////////////////////////////////////////////////////////////
 
-        // GarumMaker: IBuildingDefinition = {
-        //    name: () => t(L.GarumMaker),
-        //    input: { Water: 1, Fish: 1 },
-        //    output: { Garum: 1 },
-        //    construction: { Brick: 1, Copper: 1 },
-        // },
-
-        // Castrum: IBuildingDefinition = {
-        //    name: () => t(L.Castrum),
-        //    input: { Sword: 2 },
-        //    output: { Legion: 1 },
-        //    construction: { Sword: 2, Stone: 2 },
-        // },
-
-        // Winery: IBuildingDefinition = {
+        // Winery:  {
         //    name: () => t(L.Winery),
         //    input: { Grape: 1, Water: 1 },
         //    output: { Wine: 1 },
         //    construction: { Stone: 1, Marble: 1 },
         // },
 
-        // Pantheon: IBuildingDefinition = {
+        // Pantheon:  {
         //    name: () => t(L.Pantheon),
         //    desc: () => t(L.PantheonDesc),
         //    input: {},
@@ -1008,7 +1145,7 @@
         //    wikipedia: "Pantheon,_Rome",
         // },
 
-        // GreatDagonPagoda: IBuildingDefinition = {
+        // GreatDagonPagoda:  {
         //    name: () => t(L.GreatDagonPagoda),
         //    desc: () => t(L.GreatDagonPagodaDesc),
         //    input: {},
@@ -1018,16 +1155,7 @@
         //    wikipedia: "Shwedagon_Pagoda",
         // },
 
-        // SagradaFamília: IBuildingDefinition = {
-        //    name: () => t(L.SagradaFamília),
-        //    desc: () => t(L.SagradaFamíliaDesc),
-        //    input: {},
-        //    output: {},
-        //    max: 1,
-        //    wikipedia: "Sagrada_Família",
-        // },
-
-        // Borobudur: IBuildingDefinition = {
+        // Borobudur:  {
         //    name: () => t(L.Borobudur),
         //    desc: () => t(L.BorobudurDesc),
         //    input: {},
@@ -1036,7 +1164,7 @@
         //    wikipedia: "Borobudur",
         // },
 
-        // ItsukushimaShrine: IBuildingDefinition = {
+        // ItsukushimaShrine:  {
         //    name: () => t(L.ItsukushimaShrine),
         //    desc: () => t(L.ItsukushimaShrineDesc),
         //    input: {},
@@ -1045,16 +1173,7 @@
         //    wikipedia: "Itsukushima_Shrine",
         // },
 
-        // StatueOfLiberty: IBuildingDefinition = {
-        //    name: () => t(L.StatueOfLiberty),
-        //    desc: () => t(L.StatueOfLibertyDesc),
-        //    input: {},
-        //    output: {},
-        //    max: 1,
-        //    wikipedia: "Statue_of_Liberty",
-        // },
-
-        // Moai: IBuildingDefinition = {
+        // Moai:  {
         //    name: () => t(L.Moai),
         //    desc: () => t(L.MoaiDesc),
         //    input: {},
@@ -1063,7 +1182,7 @@
         //    wikipedia: "Moai",
         // },
 
-        // BranCastle: IBuildingDefinition = {
+        // BranCastle:  {
         //    name: () => t(L.BranCastle),
         //    desc: () => t(L.BranCastleDesc),
         //    input: {},
@@ -1072,7 +1191,7 @@
         //    wikipedia: "Bran_Castle",
         // },
 
-        // ChoghaZanbil: IBuildingDefinition = {
+        // ChoghaZanbil:  {
         //    name: () => t(L.ChoghaZanbil),
         //    desc: () => t(L.ChoghaZanbilDesc),
         //    input: {},
@@ -1081,25 +1200,7 @@
         //    wikipedia: "Chogha_Zanbil",
         // },
 
-        // CristoRedentor: IBuildingDefinition = {
-        //    name: () => t(L.CristoRedentor),
-        //    desc: () => t(L.CristoRedentorDesc),
-        //    input: {},
-        //    output: {},
-        //    max: 1,
-        //    wikipedia: "Christ_the_Redeemer_(statue)",
-        // },
-
-        // GoldenGateBridge: IBuildingDefinition = {
-        //    name: () => t(L.GoldenGateBridge),
-        //    desc: () => t(L.GoldenGateBridgeDesc),
-        //    input: {},
-        //    output: {},
-        //    max: 1,
-        //    wikipedia: "Golden_Gate_Bridge",
-        // },
-
-        // SydneyOperaHouse: IBuildingDefinition = {
+        // SydneyOperaHouse:  {
         //    name: () => t(L.SydneyOperaHouse),
         //    desc: () => t(L.SydneyOperaHouseDesc),
         //    input: {},
@@ -1108,7 +1209,7 @@
         //    wikipedia: "Sydney_Opera_House",
         // },
 
-        // FishPond: IBuildingDefinition = {
+        // FishPond:  {
         //    name: () => t(L.FishPond),
         //    input: {},
         //    deposit: { Water: true },
@@ -1116,21 +1217,21 @@
         //    construction: { Brick: 1 },
         // },
 
-        // OlivePlantation: IBuildingDefinition = {
+        // OlivePlantation:  {
         //    name: () => t(L.OlivePlantation),
         //    input: {},
         //    output: { Olive: 1 },
         //    construction: { Wood: 1 },
         // },
 
-        // Vineyard: IBuildingDefinition = {
+        // Vineyard:  {
         //    name: () => t(L.Vineyard),
         //    input: {},
         //    output: { Grape: 1 },
         //    construction: { Wood: 1 },
         // },
 
-        // OilPress: IBuildingDefinition = {
+        // OilPress:  {
         //    name: () => t(L.OilPress),
         //    input: { Olive: 2 },
         //    output: { OliveOil: 1 },

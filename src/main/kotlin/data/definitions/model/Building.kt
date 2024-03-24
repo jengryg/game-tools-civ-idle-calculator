@@ -43,12 +43,12 @@ open class Building(
             if (special == BuildingType.WORLD_WONDER) {
                 ResourceAmount(
                     resource = base.resource,
-                    amount = ((costMultiplier!! * base.amount * base.resource.tier!!) / base.resource.price!!.pow(0.9)).roundToLong()
+                    amount = ((costMultiplier!! * base.amount) / (base.resource.price ?: 1.0)).roundToLong()
                 )
             } else {
                 ResourceAmount(
                     resource = base.resource,
-                    amount = (costMultiplier!! * base.amount * 1.5.pow(level)).roundToLong()
+                    amount = (1.5.pow(level) * costMultiplier!! * base.amount).roundToLong(),
                 )
             }
         }

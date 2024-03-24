@@ -177,7 +177,7 @@
         "storage"
       ],
       "buildings": [
-        "WritersGuild",
+        "PaperMaker",
         "MusiciansGuild"
       ]
     },
@@ -375,7 +375,7 @@
         "storage"
       ],
       "buildings": [
-        "PaperMaker",
+        "WritersGuild",
         "ActorsGuild"
       ]
     },
@@ -582,5 +582,117 @@
     "value": 1,
     "maxLevel": null,
     "age": "IndustrialAge"
+  },
+  "JohnDRockefeller": {
+    "boost": {
+      "multipliers": [
+        "output",
+        "storage"
+      ],
+      "buildings": [
+        "OilWell",
+        "StockExchange"
+      ]
+    },
+    "time": "1839 ~ 1937 AD",
+    "value": 1,
+    "maxLevel": null,
+    "age": "WorldWarAge"
+  },
+  "RudolfDiesel": {
+    "boost": {
+      "multipliers": [
+        "output",
+        "storage"
+      ],
+      "buildings": [
+        "OilRefinery",
+        "LocomotiveFactory"
+      ]
+    },
+    "time": "1858 ~ 1913 AD",
+    "value": 1,
+    "maxLevel": null,
+    "age": "WorldWarAge"
+  },
+  "PierreDeCoubertin": {
+    "boost": {
+      "multipliers": [
+        "output",
+        "storage"
+      ],
+      "buildings": [
+        "PublishingHouse",
+        "Stadium"
+      ]
+    },
+    "time": "1863 ~ 1937 AD",
+    "value": 1,
+    "maxLevel": null,
+    "age": "WorldWarAge"
+  },
+  "CharlesParsons": {
+    "boost": {
+      "multipliers": [
+        "output",
+        "storage"
+      ],
+      "buildings": [
+        "CoalPowerPlant",
+        "IroncladBuilder"
+      ]
+    },
+    "time": "1854 ~ 1931 AD",
+    "value": 1,
+    "maxLevel": null,
+    "age": "WorldWarAge"
+  },
+  "RichardJordanGatling": {
+    "boost": {
+      "multipliers": [
+        "output",
+        "storage"
+      ],
+      "buildings": [
+        "GatlingGunFactory",
+        "TankFactory"
+      ]
+    },
+    "time": "1818 ~ 1903 AD",
+    "value": 1,
+    "maxLevel": null,
+    "age": "WorldWarAge"
+  },
+  "JosephPulitzer": {
+    "boost": {
+      "multipliers": [
+        "output",
+        "storage"
+      ],
+      "buildings": [
+        "MagazinePublisher",
+        "Pizzeria"
+      ]
+    },
+    "time": "1847 ~ 1911 AD",
+    "value": 1,
+    "maxLevel": null,
+    "age": "WorldWarAge"
+  },
+  "CharlesMartinHall": {
+    "boost": {
+      "multipliers": [
+        "output",
+        "storage"
+      ],
+      "buildings": [
+        "NaturalGasWell",
+        "AluminumSmelter"
+      ]
+    },
+    "time": "1863 ~ 1914 AD",
+    "value": 1,
+    "maxLevel": null,
+    "age": "WorldWarAge"
   }
 }

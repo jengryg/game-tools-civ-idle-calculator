@@ -84,8 +84,8 @@ class GameDefinitionFactory : Logging {
     private fun createResource(name: String, json: ResourceJson): Resource {
         return Resource(
             name = name,
-            canStore = noStorageResources[name] ?: true,
-            canPrice = noPriceResources[name] ?: true,
+            canStore = noStorageResources[name] != true,
+            canPrice = noPriceResources[name] != true,
             fromDeposit = deposits.containsKey(name)
         )
     }
