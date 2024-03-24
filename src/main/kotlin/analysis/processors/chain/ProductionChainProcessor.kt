@@ -10,6 +10,7 @@ import data.definitions.model.Wonder
 import data.player.model.ActiveGreatPerson
 import logger
 import utils.FileIo
+import utils.JsonParser
 import kotlin.math.ceil
 import kotlin.math.roundToLong
 
@@ -26,15 +27,22 @@ class ProductionChainProcessor(
         return nodeCounter++
     }
 
-    fun exportChain(building: Building, alpMulti: Double) {
+    fun exportChain(building: Building, alpMulti: Double = 0.0) {
         val node = getChain(building, alpMulti)
         FileIo.writeFile(
             "$OUTPUT_PATH/chains/prod-chain-${building.name.replace(" ", "_")}-alps-${alpMulti}.txt",
             node.text(0)
         )
+
+        FileIo.writeFile(
+            "$OUTPUT_PATH/chains/prod-chain-${building.name.replace(" ", "_")}-alps-${alpMulti}-req-buildings.json",
+            JsonParser.serialize(
+                node.requiredBuildings()
+            )
+        )
     }
 
-    fun getChain(building: Building, alpMulti: Double): ChainNode {
+    fun getChain(building: Building, alpMulti: Double = 0.0): ChainNode {
         nodeCounter = 0
 
         val root = initializeNodes(building, alpMulti)

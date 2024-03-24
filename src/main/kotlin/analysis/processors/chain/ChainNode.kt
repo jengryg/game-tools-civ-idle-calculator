@@ -89,4 +89,19 @@ class ChainNode(
             inboundConnections.joinToString("\n") { it.supplier.text(indent + CHAIN_TEXT_INDENT) }
         ).joinToString("\n")
     }
+
+    fun requiredBuildings(): Map<String, Double> {
+        val result = mutableMapOf<String, Double>()
+        result[building.name] = count
+        inboundConnections.forEach {
+            it.supplier.requiredBuildings().forEach { (bName, reqCount) ->
+                if (result.containsKey(bName)) {
+                    result[bName] = result[bName]!! + reqCount
+                } else {
+                    result[bName] = reqCount
+                }
+            }
+        }
+        return result
+    }
 }
