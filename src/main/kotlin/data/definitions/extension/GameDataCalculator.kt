@@ -79,7 +79,10 @@ object GameDataCalculator : Logging {
             }
 
             building.input.forEach { (rName, ra) ->
-                ra.resource.technology!!.let {
+                ra.resource.technology?.let {
+                    if(building.technology == null) {
+                        throw NullPointerException("Building ${building.name} has null technology.")
+                    }
                     assert(it.column < building.technology!!.column) {
                         """
                             Building $bName unlocks with ${building.technology!!.name} ${building.technology!!.column} 
@@ -87,7 +90,7 @@ object GameDataCalculator : Logging {
                             Resource must unlock before building can unlock.
                         """.trimIndent()
                     }
-                }
+                } ?: throw NullPointerException("ResourceAmount has a resource without a technology: ${ra.resource.name} for building input ${building.name}.")
             }
         }
 
