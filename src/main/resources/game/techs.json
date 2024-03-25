@@ -913,7 +913,8 @@
       "Uranium"
     ],
     "unlockBuilding": [
-      "UraniumMine"
+      "UraniumMine",
+      "ResearchLab"
     ],
     "buildingMultiplier": {
       "Library": {

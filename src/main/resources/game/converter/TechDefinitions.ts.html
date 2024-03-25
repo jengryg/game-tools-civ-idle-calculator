@@ -79,7 +79,7 @@
             column: 2,
             unlockBuilding: ["House"],
             requireTech: ["Masonry", "Counting"],
-            buildingMultiplier: { Hut: { output: 1 } },
+            buildingMultiplier: {Hut: {output: 1}},
             additionalUpgrades: [() => t(L.TechResourceTransportPreference)],
         },
 
@@ -147,7 +147,7 @@
             column: 4,
             requireTech: ["Market", "Stateship"],
             unlockBuilding: ["Warehouse", "GreatMosqueOfSamarra"],
-            buildingMultiplier: { House: { worker: 1 } },
+            buildingMultiplier: {House: {worker: 1}},
         },
 
         LandTrade: ITechDefinition = {
@@ -155,7 +155,7 @@
             column: 4,
             requireTech: ["Market", "Arithmetic"],
             unlockBuilding: ["Caravansary"],
-            globalMultiplier: { transportCapacity: 1 },
+            globalMultiplier: {transportCapacity: 1},
         },
 
         Astronomy: ITechDefinition = {
@@ -259,7 +259,7 @@
             column: 8,
             requireTech: ["Machinery"],
             unlockBuilding: ["SwordForge", "ChichenItza"],
-            globalMultiplier: { builderCapacity: 1 },
+            globalMultiplier: {builderCapacity: 1},
         },
 
         Democracy: ITechDefinition = {
@@ -289,9 +289,9 @@
             requireTech: ["Architecture"],
             unlockBuilding: ["CaravelBuilder"],
             buildingMultiplier: {
-                Library: { output: 1 },
+                Library: {output: 1},
             },
-            additionalUpgrades: [() => t(L.SeaTradeUpgrade, { tariff: formatPercent(SEA_TILE_COST_1) })],
+            additionalUpgrades: [() => t(L.SeaTradeUpgrade, {tariff: formatPercent(SEA_TILE_COST_1)})],
         },
 
         Physics: ITechDefinition = {
@@ -351,12 +351,12 @@
             column: 11,
             requireTech: ["Navigation"],
             unlockBuilding: ["LensWorkshop"],
-            globalMultiplier: { builderCapacity: 1 },
+            globalMultiplier: {builderCapacity: 1},
             buildingMultiplier: {
-                Library: { output: 1 },
-                School: { output: 1 },
+                Library: {output: 1},
+                School: {output: 1},
             },
-            additionalUpgrades: [() => t(L.SeaTradeUpgrade, { tariff: formatPercent(SEA_TILE_COST_2) })],
+            additionalUpgrades: [() => t(L.SeaTradeUpgrade, {tariff: formatPercent(SEA_TILE_COST_2)})],
         },
 
         Banking: ITechDefinition = {
@@ -372,7 +372,7 @@
             column: 11,
             requireTech: ["HolyEmpire", "Education", "CivilService"],
             unlockBuilding: ["University", "OxfordUniversity"],
-            globalMultiplier: { sciencePerBusyWorker: 1 },
+            globalMultiplier: {sciencePerBusyWorker: 1},
         },
 
         Chemistry: ITechDefinition = {
@@ -382,11 +382,11 @@
             revealDeposit: ["Coal"],
             unlockBuilding: ["CoalMine"],
             buildingMultiplier: {
-                StoneQuarry: { storage: 1, output: 1 },
-                LoggingCamp: { storage: 1, output: 1 },
-                IronMiningCamp: { storage: 1, output: 1 },
-                CopperMiningCamp: { storage: 1, output: 1 },
-                Sandpit: { storage: 1, output: 1 },
+                StoneQuarry: {storage: 1, output: 1},
+                LoggingCamp: {storage: 1, output: 1},
+                IronMiningCamp: {storage: 1, output: 1},
+                CopperMiningCamp: {storage: 1, output: 1},
+                Sandpit: {storage: 1, output: 1},
             },
         },
 
@@ -478,12 +478,12 @@
                 builderCapacity: 1,
             },
             buildingMultiplier: {
-                Library: { output: 1 },
-                School: { output: 1 },
-                University: { output: 1 },
+                Library: {output: 1},
+                School: {output: 1},
+                University: {output: 1},
             },
             unlockBuilding: ["Parliament"],
-            additionalUpgrades: [() => t(L.SeaTradeUpgrade, { tariff: formatPercent(SEA_TILE_COST_3) })],
+            additionalUpgrades: [() => t(L.SeaTradeUpgrade, {tariff: formatPercent(SEA_TILE_COST_3)})],
         },
 
         RapidFire: ITechDefinition = {
@@ -612,12 +612,12 @@
             column: 18,
             requireTech: ["Refinery", "GasPipeline"],
             revealDeposit: ["Uranium"],
-            unlockBuilding: ["UraniumMine"],
+            unlockBuilding: ["UraniumMine", "ResearchLab"],
             buildingMultiplier: {
-                Library: { output: 1 },
-                School: { output: 1 },
-                University: { output: 1 },
-                PublishingHouse: { output: 1 },
+                Library: {output: 1},
+                School: {output: 1},
+                University: {output: 1},
+                PublishingHouse: {output: 1},
             },
         },
 
