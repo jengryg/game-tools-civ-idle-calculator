@@ -7,6 +7,7 @@ import java.nio.file.Paths
 import java.nio.file.StandardOpenOption
 import java.util.zip.Inflater
 import java.util.zip.InflaterInputStream
+import kotlin.io.path.createParentDirectories
 import kotlin.io.path.readBytes
 import kotlin.io.path.readText
 import kotlin.io.path.writeText
@@ -41,12 +42,12 @@ object FileIo : Logging {
     }
 
     fun writeFile(file: String, content: String?) {
-        Paths.get(file).writeText(
+        Paths.get(file).createParentDirectories().writeText(
             content ?: "",
             StandardCharsets.UTF_8,
             StandardOpenOption.CREATE,
             StandardOpenOption.WRITE,
-            StandardOpenOption.TRUNCATE_EXISTING
+            StandardOpenOption.TRUNCATE_EXISTING,
         )
 
         log.atInfo()

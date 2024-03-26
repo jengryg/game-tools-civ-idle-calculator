@@ -8,16 +8,19 @@ import analysis.processors.general.ExportingAnalyserProviderData
 import ch.qos.logback.classic.Level
 import java.nio.file.Paths
 import kotlin.io.path.ExperimentalPathApi
-import kotlin.io.path.createDirectories
 import kotlin.io.path.createDirectory
 import kotlin.io.path.deleteRecursively
 
-@OptIn(ExperimentalPathApi::class)
 fun main(args: Array<String>) {
     setLoggingLevel(Level.TRACE)
 
     val ap = AnalyserProvider()
 
+    completeAnalysis(ap)
+}
+
+@OptIn(ExperimentalPathApi::class)
+private fun completeAnalysis(ap: AnalyserProvider) {
     BasicInformationProcessor(ap).apply {
         exportResourceList()
         exportBuildingResourceNeeds()
@@ -45,14 +48,12 @@ fun main(args: Array<String>) {
             createDirectory()
         }
 
-        ap.gda.buildings.values.forEach {
-            if (it.input.isNotEmpty()) {
-                exportChain(building = it, alpMulti = 0.0)
-                exportChain(building = it, alpMulti = 1.0)
-                exportChain(building = it, alpMulti = 2.0)
-                exportChain(building = it, alpMulti = 3.0)
-                exportChain(building = it, alpMulti = 4.0)
-            }
+        ap.gda.buildings.values.filter { !it.special.isAnyWonder && it.input.isNotEmpty() }.forEach {
+            exportChain(building = it, alpMulti = 0.0)
+            exportChain(building = it, alpMulti = 1.0)
+            exportChain(building = it, alpMulti = 2.0)
+            exportChain(building = it, alpMulti = 3.0)
+            exportChain(building = it, alpMulti = 4.0)
         }
     }
 

@@ -115,12 +115,16 @@ class GameDefinitionFactory : Logging {
                     amount = amount.toLong()
                 )
             }.toMap(),
-            output = json.output.map { (rName, amount) ->
-                rName to ResourceAmount(
-                    resource = resources[rName]!!,
-                    amount = amount.toLong()
-                )
-            }.toMap(),
+            output = when (name) {
+                "StPetersBasilica" -> mapOf("Faith" to ResourceAmount(resource = resources["Faith"]!!, 1L))
+                // manual enrichment of StPetersBasilica since it is a Faith fountain
+                else -> json.output.map { (rName, amount) ->
+                    rName to ResourceAmount(
+                        resource = resources[rName]!!,
+                        amount = amount.toLong()
+                    )
+                }.toMap()
+            },
             construction = json.construction?.map { (rName, amount) ->
                 rName to ResourceAmount(
                     resource = resources[rName]!!,

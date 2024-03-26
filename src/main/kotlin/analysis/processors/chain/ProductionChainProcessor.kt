@@ -11,11 +11,12 @@ import data.player.model.ActiveGreatPerson
 import logger
 import utils.FileIo
 import utils.JsonParser
+import utils.stUs
 import kotlin.math.ceil
 import kotlin.math.roundToLong
 
 class ProductionChainProcessor(
-    ap: AnalyserProvider
+    private val ap: AnalyserProvider
 ) : IAnalyserProvider by ap, Logging {
     private val log = logger()
 
@@ -29,16 +30,32 @@ class ProductionChainProcessor(
 
     fun exportChain(building: Building, alpMulti: Double = 0.0) {
         val node = getChain(building, alpMulti)
+
+        val chainName = building.name.stUs()
+
+        log.atDebug()
+            .setMessage("Exporting Chain Data.")
+            .addKeyValue("building") { building.name }
+            .log()
+
         FileIo.writeFile(
-            "$OUTPUT_PATH/chains/prod-chain-${building.name.replace(" ", "_")}-alps-${alpMulti}.txt",
+            "$OUTPUT_PATH/chains/$chainName/$chainName-alps-${alpMulti}.txt",
             node.text(0)
         )
 
+        val requiredBuildings = node.requiredBuildings().let { map ->
+            map.keys.sortedBy { b ->
+                ap.gda.buildings[b]!!.tier!!
+            }.associateWith { map[it] }
+        }
+
         FileIo.writeFile(
-            "$OUTPUT_PATH/chains/prod-chain-${building.name.replace(" ", "_")}-alps-${alpMulti}-req-buildings.json",
-            JsonParser.serialize(
-                node.requiredBuildings()
-            )
+            "$OUTPUT_PATH/chains/$chainName/$chainName-alps-${alpMulti}-req-buildings.json",
+            JsonParser.serialize(requiredBuildings)
+        )
+        FileIo.writeFile(
+            "$OUTPUT_PATH/chains/$chainName/$chainName-alps-${alpMulti}-req-buildings.txt",
+            requiredBuildings.map { "${it.key};${it.value}" }.joinToString("\n")
         )
     }
 
