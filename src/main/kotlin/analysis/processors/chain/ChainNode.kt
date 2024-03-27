@@ -4,30 +4,24 @@ import CHAIN_TEXT_INDENT
 import CHAIN_TEXT_LINE_START
 import common.BoostType
 import data.definitions.model.Building
-import data.definitions.model.Technology
-import data.definitions.model.Wonder
-import data.player.model.ActiveGreatPerson
 import org.slf4j.spi.LoggingEventBuilder
 
 class ChainNode(
     val id: Int = 0,
     val building: Building,
     val alpMulti: Double,
-    val affectedByPersons: List<ActiveGreatPerson>,
-    val affectedByWonders: List<Wonder>,
-    val affectedByTechnologies: List<Technology>,
 ) {
     val baseInput: Map<String, ChainNodeIO> = building.input.map { (_, ra) ->
         ra.resource.name to ChainNodeIO(
             resource = ra.resource,
             rawAmount = ra.amount,
-            effects = affectedByPersons.filter { it.person.stdBoost?.any { b -> b.boostType == BoostType.INPUT } == true }
+            effects = building.affectedByGreatPersons.filter { it.person.stdBoost?.any { b -> b.boostType == BoostType.INPUT } == true }
                 .associate { it.person.name to (it.level * it.person.value).toDouble() },
-            wonders = affectedByWonders.filter { it.stdBoost?.any { b -> b.boostType == BoostType.INPUT } == true }
+            wonders = building.affectedByWonders.filter { it.stdBoost?.any { b -> b.boostType == BoostType.INPUT } == true }
                 .flatMap { w ->
                     w.stdBoost!!.filter { it.boostType == BoostType.INPUT }.map { w.name to it.value }
                 }.toMap(),
-            technologies = affectedByTechnologies.filter { it.stdBoost.any { b -> b.boostType == BoostType.INPUT } }
+            technologies = building.affectedByTechnologies.filter { it.stdBoost.any { b -> b.boostType == BoostType.INPUT } }
                 .flatMap { t ->
                     t.stdBoost.filter { it.boostType == BoostType.INPUT }.map { t.name to it.value }
                 }.toMap(),
@@ -39,13 +33,13 @@ class ChainNode(
         ra.resource.name to ChainNodeIO(
             resource = ra.resource,
             rawAmount = ra.amount,
-            effects = affectedByPersons.filter { it.person.stdBoost?.any { b -> b.boostType == BoostType.OUTPUT } == true }
+            effects = building.affectedByGreatPersons.filter { it.person.stdBoost?.any { b -> b.boostType == BoostType.OUTPUT } == true }
                 .associate { it.person.name to (it.level * it.person.value).toDouble() },
-            wonders = affectedByWonders.filter { it.stdBoost?.any { b -> b.boostType == BoostType.OUTPUT } == true }
+            wonders = building.affectedByWonders.filter { it.stdBoost?.any { b -> b.boostType == BoostType.OUTPUT } == true }
                 .flatMap { w ->
                     w.stdBoost!!.filter { it.boostType == BoostType.OUTPUT }.map { w.name to it.value }
                 }.toMap(),
-            technologies = affectedByTechnologies.filter { it.stdBoost.any { b -> b.boostType == BoostType.OUTPUT } }
+            technologies = building.affectedByTechnologies.filter { it.stdBoost.any { b -> b.boostType == BoostType.OUTPUT } }
                 .flatMap { t ->
                     t.stdBoost.filter { it.boostType == BoostType.OUTPUT }.map { t.name to it.value }
                 }.toMap(),
@@ -62,7 +56,6 @@ class ChainNode(
         return builder
             .addKeyValue("ChainNode#Id") { id }
             .addKeyValue("ChainNode#building") { building.name }
-            .addKeyValue("ChainNode#affectedBy") { affectedByPersons.map { "${it.person.name} ${it.level}" } }
             .addKeyValue("ChainNode#baseInput") {
                 baseInput.values.map { it }.toTypedArray().contentToString()
             }

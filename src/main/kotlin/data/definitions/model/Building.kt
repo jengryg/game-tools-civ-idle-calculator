@@ -3,6 +3,7 @@ package data.definitions.model
 import com.fasterxml.jackson.annotation.JsonIgnore
 import common.BuildingType
 import common.ResourceAmount
+import data.player.model.ActiveGreatPerson
 import kotlin.math.pow
 import kotlin.math.roundToLong
 
@@ -17,6 +18,13 @@ open class Building(
     var technology: Technology? = null
     var tier: Int? = null
     var costMultiplier: Double? = null
+
+    @JsonIgnore
+    val affectedByGreatPersons = mutableListOf<ActiveGreatPerson>()
+    @JsonIgnore
+    val affectedByWonders = mutableListOf<Wonder>()
+    @JsonIgnore
+    val affectedByTechnologies = mutableListOf<Technology>()
 
     @JsonIgnore
     fun areAllInputsCalculated(): Boolean {

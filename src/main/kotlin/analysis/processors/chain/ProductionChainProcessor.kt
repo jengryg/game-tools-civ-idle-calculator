@@ -71,9 +71,6 @@ class ProductionChainProcessor(
         return ChainNode(
             id = nextId(),
             building = building,
-            affectedByPersons = getGreatPersonsAffecting(building),
-            affectedByWonders = getWondersAffecting(building),
-            affectedByTechnologies = getTechnologiesAffecting(building),
             alpMulti = alpMulti
         ).also {
             nodes.add(it)
@@ -123,23 +120,5 @@ class ProductionChainProcessor(
 
             processInputs(supplier)
         }
-    }
-
-    private fun getGreatPersonsAffecting(building: Building): List<ActiveGreatPerson> {
-        return psa.greatPeople.filter {
-            it.value.person.stdBoost?.any { b -> b.boostTarget == building } == true
-        }.values.toList()
-    }
-
-    private fun getWondersAffecting(building: Building): List<Wonder> {
-        return psa.activeWonders.filter {
-            it.value.stdBoost?.any { b -> b.boostTarget == building } == true
-        }.values.toList()
-    }
-
-    private fun getTechnologiesAffecting(building: Building): List<Technology> {
-        return psa.unlockedTechnology.filter {
-            it.value.stdBoost?.any { b -> b.boostTarget == building } == true
-        }.values.toList()
     }
 }
