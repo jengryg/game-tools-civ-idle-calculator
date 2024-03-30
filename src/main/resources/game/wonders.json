@@ -1,0 +1,176 @@
+{
+  "CircusMaximus": [
+    {
+      "target": "MusiciansGuild",
+      "mods": {
+        "output": 1,
+        "storage": 1
+      }
+    },
+    {
+      "target": "PaintersGuild",
+      "mods": {
+        "output": 1,
+        "storage": 1
+      }
+    },
+    {
+      "target": "WritersGuild",
+      "mods": {
+        "output": 1,
+        "storage": 1
+      }
+    }
+  ],
+  "Parthenon": [
+    {
+      "target": "MusiciansGuild",
+      "mods": {
+        "output": 1,
+        "worker": 1,
+        "storage": 1
+      }
+    },
+    {
+      "target": "PaintersGuild",
+      "mods": {
+        "output": 1,
+        "worker": 1,
+        "storage": 1
+      }
+    }
+  ],
+  "TerracottaArmy": [
+    {
+      "target": "IronMiningCamp",
+      "mods": {
+        "output": 1,
+        "worker": 1,
+        "storage": 1
+      }
+    }
+  ],
+  "Persepolis": [
+    {
+      "target": "StoneQuarry",
+      "mods": {
+        "output": 1,
+        "worker": 1,
+        "storage": 1
+      }
+    },
+    {
+      "target": "LoggingCamp",
+      "mods": {
+        "output": 1,
+        "worker": 1,
+        "storage": 1
+      }
+    },
+    {
+      "target": "CopperMiningCamp",
+      "mods": {
+        "output": 1,
+        "worker": 1,
+        "storage": 1
+      }
+    }
+  ],
+  "ForbiddenCity": [
+    {
+      "target": "PaperMaker",
+      "mods": {
+        "output": 1,
+        "worker": 1,
+        "storage": 1
+      }
+    },
+    {
+      "target": "WritersGuild",
+      "mods": {
+        "output": 1,
+        "worker": 1,
+        "storage": 1
+      }
+    },
+    {
+      "target": "PrintingHouse",
+      "mods": {
+        "output": 1,
+        "worker": 1,
+        "storage": 1
+      }
+    }
+  ],
+  "HimejiCastle": [
+    {
+      "target": "CaravelBuilder",
+      "mods": {
+        "output": 1,
+        "worker": 1,
+        "storage": 1
+      }
+    },
+    {
+      "target": "GalleonBuilder",
+      "mods": {
+        "output": 1,
+        "worker": 1,
+        "storage": 1
+      }
+    },
+    {
+      "target": "FrigateBuilder",
+      "mods": {
+        "output": 1,
+        "worker": 1,
+        "storage": 1
+      }
+    }
+  ],
+  "TempleOfArtemis": [
+    {
+      "target": "SwordForge",
+      "mods": {
+        "worker": 1,
+        "storage": 1,
+        "output": 1
+      }
+    },
+    {
+      "target": "Armory",
+      "mods": {
+        "worker": 1,
+        "storage": 1,
+        "output": 1
+      }
+    }
+  ],
+  "BrandenburgGate": [
+    {
+      "target": "OilWell",
+      "mods": {
+        "output": 1,
+        "worker": 1,
+        "storage": 1
+      }
+    },
+    {
+      "target": "CoalMine",
+      "mods": {
+        "output": 1,
+        "worker": 1,
+        "storage": 1
+      }
+    }
+  ],
+  "NileRiver": [
+    {
+      "target": "WheatFarm",
+      "mods": {
+        "output": 1,
+        "storage": 1
+      }
+    }
+  ]
+}

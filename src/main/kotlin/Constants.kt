@@ -1,12 +1,8 @@
-const val SVG_DEFAULT_FONT_SIZE = 12
-const val SVG_HEXAGON_SIZE = 64
-const val OUTPUT_PATH = "output"
-const val CHAIN_TEXT_INDENT = 12
-const val CHAIN_TEXT_LINE_START = "| %type "
-const val DATA_TEXT_INDENT = 4
+// default directory constants
+const val DEFAULT_OUTPUT_PATH = "output"
 
-// Effects from Wonders
-const val WHEAT_BOOST_TO_ADD_FROM_NEIGHBOR_WATER_SOURCE = 1.0
-const val IRON_FORGE_BOOST_TO_ADD_FROM_NEIGHBOR_IRON_MINE = 1.0
-const val STEEL_MILL_BOOST_TO_ADD_FROM_NEIGHBOR_EIFFEL_TOWER = 1.0
-const val REFINERY_BOOST_TO_ADD_FROM_NEIGHBOR_OIL_SOURCE = 1.0
+const val DEFAULT_INPUT_PATH_GAME = "src/main/resources/game"
+const val DEFAULT_INPUT_PATH_PLAYER = "src/main/resources/player"
+
+// game specific constants
+const val ENTERPRISE_VALUE_OF_SCIENCE = 0.2

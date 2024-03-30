@@ -1,0 +1,3 @@
+package game.loader.player
+
+class PlayerConverterConfiguration
