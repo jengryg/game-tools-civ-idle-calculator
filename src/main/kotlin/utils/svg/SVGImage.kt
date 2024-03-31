@@ -84,7 +84,7 @@ class SVGImage(
                         svg.stream(osw, false)
                     }
 
-                log.atDebug()
+                log.atInfo()
                     .setMessage("Saved SvgImage")
                     .addKeyValue("fileName", fileName)
                     .log()

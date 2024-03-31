@@ -36,7 +36,7 @@ class Grid(
         layout.polygonCorners(
             gridToHex(p)
         ).also {
-            log.atDebug()
+            log.atTrace()
                 .setMessage("Drawing Hexagon.")
                 .addKeyValue("xy") { p }
                 .addKeyValue("hexagon") { it }

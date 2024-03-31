@@ -17,4 +17,10 @@ class Resource(
     val price: Double,
 ) : HasNameBase(name) {
     val producer: MutableList<Building> = mutableListOf()
+
+    companion object {
+        fun getEvOf(map: Map<Resource, Double>): Double {
+            return map.map { (r, d) -> d * r.price }.sum()
+        }
+    }
 }
