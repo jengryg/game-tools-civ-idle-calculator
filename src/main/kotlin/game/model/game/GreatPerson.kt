@@ -7,7 +7,7 @@ import utils.io.JustNameSerializer
 
 class GreatPerson(
     name: String,
-    val value: Int,
+    val value: Double,
     @JsonSerialize(using = JustNameSerializer::class)
     val age: Age,
     val mods: List<BuildingMod>,

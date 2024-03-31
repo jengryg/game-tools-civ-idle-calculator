@@ -1,9 +1,9 @@
 package game.common.modifiers
 
-class BuildingMod(
-    val note: String,
+open class BuildingMod(
+    val from: String,
     val bldName: String,
     val type: BuildingModType,
     val target: BuildingModTarget,
-    val value: Double = 0.0
+    val value: Double = 0.0,
 )

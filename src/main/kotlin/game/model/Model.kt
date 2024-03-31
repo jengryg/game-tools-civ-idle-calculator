@@ -16,7 +16,8 @@ class Model(
     val obtainedGreatPeoples: Map<String, ObtainedGreatPeople>,
     val tiles: Map<Int, Tile>,
     val transports: Map<Int, Transportation>,
-    val currentCity: City
+    val currentCity: City,
+    val unlockedTechnologies: Map<String, Technology>,
 ) {
     fun getAge(name: String): Age {
         return ages[name] ?: throw IllegalArgumentException("Requested unknown age $name from model.")

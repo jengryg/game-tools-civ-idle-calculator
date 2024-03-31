@@ -2,6 +2,7 @@ package game.model.game
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize
 import game.common.BuildingType
+import game.common.modifiers.ActiveBuildingMod
 import game.common.modifiers.BuildingMod
 import utils.io.HasNameBase
 import utils.io.JustNameSerializer
@@ -19,7 +20,8 @@ class Building(
     val unlockedBy: Technology?,
     val mods: List<BuildingMod>,
     val tier: Int,
-    val cost: Map<Resource, Double>
+    val cost: Map<Resource, Double>,
+    val activeMods: List<ActiveBuildingMod>
 ) : HasNameBase(name) {
     fun getCostForOneLevel(level: Int): Map<Resource, Double> {
         val levelFactor = when (type) {

@@ -10,4 +10,8 @@ class ObtainedGreatPeopleData(
     val current: Int,
     val permanent: Int,
     val shards: Int,
-)
+) {
+    val currentEffect = if (current <= 1) current.toDouble() else (1..current).sumOf { i -> 1.0 / i.toDouble() }
+    val permanentEffect = permanent.toDouble()
+    val totalEffect = currentEffect + permanentEffect
+}

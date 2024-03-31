@@ -2,6 +2,7 @@ package game.loader.game.data
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize
 import game.common.BuildingType
+import game.common.modifiers.ActiveBuildingMod
 import game.common.modifiers.BuildingMod
 import utils.io.HasNameBase
 import utils.io.JustNameSerializer
@@ -23,4 +24,5 @@ class BuildingData(
     var tier: Int? = null
 
     val cost: MutableMap<ResourceData, Double> = mutableMapOf()
+    val activeMods: MutableList<ActiveBuildingMod> = mutableListOf()
 }

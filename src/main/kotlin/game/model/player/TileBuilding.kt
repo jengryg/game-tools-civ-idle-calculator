@@ -20,4 +20,7 @@ class TileBuilding(
     val electrification: Int,
     val status: BuildingStatus,
     val resources: Map<Resource, Double>
-) : HasIdBase(id)
+) : HasIdBase(id) {
+    val spendResources = bld.getTotalCostForLevels(0, level)
+    val ev = Resource.getEvOf(spendResources)
+}

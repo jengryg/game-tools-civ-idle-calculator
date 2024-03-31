@@ -2,6 +2,7 @@ package game.loader
 
 import game.loader.game.*
 import game.loader.player.*
+import game.loader.tasks.ActiveBuildingModTask
 
 class DataLoader(
     private val gameLoaderCfg: GameJsonLoaderConfiguration? = null,
@@ -21,10 +22,10 @@ class DataLoader(
 
     fun loadCombinedData(): Pair<GameData, PlayerData> {
         val gd = loadGameData()
-        val ps = loadPlayerData(gd)
+        val pd = loadPlayerData(gd)
 
-        return Pair(gd, ps).apply {
-            // TODO apply combined tasks
-        }
+        ActiveBuildingModTask(gd, pd).process()
+
+        return Pair(gd, pd)
     }
 }

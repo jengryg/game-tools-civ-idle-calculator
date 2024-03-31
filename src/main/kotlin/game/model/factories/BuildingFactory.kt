@@ -33,7 +33,8 @@ class BuildingFactory(
             },
             mods = data.mods.toList(),
             tier = data.tier ?: throw IllegalStateException("Building ${data.name} has tier null!"),
-            cost = createResourceAmountMap(data.cost)
+            cost = createResourceAmountMap(data.cost),
+            activeMods = data.activeMods.toList()
         ).also { bld ->
             bld.output.keys.forEach {
                 it.producer.add(bld)

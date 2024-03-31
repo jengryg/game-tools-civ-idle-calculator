@@ -2,7 +2,7 @@ package game.loader.game.converter
 
 import Logging
 import game.common.BuildingType
-import game.common.modifiers.BuildingMod
+ import game.common.modifiers.BuildingMod
 import game.common.modifiers.BuildingModTarget
 import game.common.modifiers.BuildingModType
 import game.loader.game.data.*
@@ -19,8 +19,25 @@ class BuildingConverter(
 ) : Logging {
     private val log = logger()
 
+    private val results = mutableMapOf<String, BuildingData>()
+
     fun process(buildings: Map<String, BuildingJson>): Map<String, BuildingData> {
-        return buildings.mapValues { (name, json) -> createBuilding(name, json) }
+        buildings.filterValues { isWonder(it.special) }.forEach { (name, json) ->
+            results[name] = createBuilding(name, json)
+        }
+
+        buildings.filterValues { !isWonder(it.special) }.forEach { (name, json) ->
+            results[name] = createBuilding(name, json)
+        }
+
+        return results
+    }
+
+    private fun isWonder(special: String?): Boolean {
+        return BuildingType.fromString(special) in listOf(
+            BuildingType.WORLD_WONDER,
+            BuildingType.NATURAL_WONDER
+        )
     }
 
     private fun createBuilding(name: String, json: BuildingJson): BuildingData {
@@ -76,7 +93,7 @@ class BuildingConverter(
         val modsFromTech = technologies.values.flatMap { tech ->
             tech.buildingMultipliers.filter { m -> m.first == buildingName }.map {
                 BuildingMod(
-                    note = tech.name,
+                    from = tech.name,
                     bldName = buildingName,
                     type = BuildingModType.TECHNOLOGY,
                     target = BuildingModTarget.fromString(it.second),
@@ -88,7 +105,7 @@ class BuildingConverter(
         val modsFromPersons = greatPersons.values.flatMap { person ->
             person.buildingMultipliers.filter { m -> m.first == buildingName }.map {
                 BuildingMod(
-                    note = person.name,
+                    from = person.name,
                     bldName = buildingName,
                     type = BuildingModType.GREAT_PERSON,
                     target = BuildingModTarget.fromString(it.second),
@@ -101,7 +118,7 @@ class BuildingConverter(
             wonders.values.flatten().filter { it.targetBuildingName == buildingName }.flatMap { wonder ->
                 wonder.multipliers.map { (t, a) ->
                     BuildingMod(
-                        note = wonder.name,
+                        from = wonder.name,
                         bldName = buildingName,
                         type = BuildingModType.WONDER,
                         target = t,

@@ -51,7 +51,8 @@ class ModelFactory(
             obtainedGreatPeoples = obtainedGreatPeoples,
             tiles = tiles,
             transports = transports,
-            currentCity = cities[pd.city.name]!!
+            currentCity = cities[pd.city.name]!!,
+            unlockedTechnologies = pd.unlockedTechnology.mapValues { technologies[it.key]!! }
         ).also {
             FileIo.writeFile(cfg.output, JsonParser.serialize(it))
         }

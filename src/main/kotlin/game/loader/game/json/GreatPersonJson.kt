@@ -1,7 +1,7 @@
 package game.loader.game.json
 
 class GreatPersonJson(
-    val boost: Map<String, List<String>>?,
-    val value: Int,
+    val boost: GreatPersonBoostJson?,
+    val value: Double,
     val age: String,
 )

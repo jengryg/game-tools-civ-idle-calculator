@@ -2,6 +2,7 @@ package game.loader.game.converter
 
 import game.loader.game.data.AgeData
 import game.loader.game.data.GreatPersonData
+import game.loader.game.json.GreatPersonBoostJson
 import game.loader.game.json.GreatPersonJson
 
 class GreatPersonConverter(
@@ -16,9 +17,18 @@ class GreatPersonConverter(
             name = name,
             value = json.value,
             age = ages[json.age]!!,
-            buildingMultipliers = json.boost?.flatMap { (bName, multi) ->
-                multi.map { type -> Triple(bName, type, json.value.toDouble()) }
-            } ?: emptyList()
+            buildingMultipliers = json.boost?.let { createMultiplierTriples(it, json.value) } ?: emptyList()
         )
+    }
+
+    private fun createMultiplierTriples(
+        greatPersonBoostJson: GreatPersonBoostJson,
+        value: Double
+    ): List<Triple<String, String, Double>> {
+        return greatPersonBoostJson.buildings.flatMap { bName ->
+            greatPersonBoostJson.multipliers.map { type ->
+                Triple(bName, type, value)
+            }
+        }
     }
 }

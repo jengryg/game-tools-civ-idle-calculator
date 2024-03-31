@@ -1,7 +1,7 @@
 package game.loader.game.data
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize
-import game.common.modifiers.BuildingMod
+ import game.common.modifiers.BuildingMod
 import utils.io.HasNameBase
 import utils.io.JustNameSerializer
 

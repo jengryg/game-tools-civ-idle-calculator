@@ -18,16 +18,8 @@ class ObtainedGreatPeopleFactory(
             current = data.current,
             permanent = data.permanent,
             shards = data.shards,
-            currentEffect = getCurrentEffect(data.current, person.value),
-            permanentEffect = getPermanentEffect(data.permanent, person.value)
+            currentEffect = data.currentEffect,
+            permanentEffect = data.permanentEffect
         )
     }
-
-    private fun getCurrentEffect(current: Int, gpValue: Int): Double {
-        val count = if (current <= 1) current.toDouble() else (1..current).sumOf { i -> 1.0 / i.toDouble() }
-        return count * gpValue.toDouble()
-    }
-
-
-    private fun getPermanentEffect(permanent: Int, gpValue: Int) = permanent.toDouble() * gpValue.toDouble()
 }
