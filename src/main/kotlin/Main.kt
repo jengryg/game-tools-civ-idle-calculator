@@ -13,4 +13,8 @@ fun main(args: Array<String>) {
         visualize()
         export()
     }
+
+    // TODO: exporting lists with resources, tiers and prices calculated
+    // TODO: exporting lists with cost of wonders and their enterprise value
+    // TODO: chain analysis with each variant and for each building
 }
