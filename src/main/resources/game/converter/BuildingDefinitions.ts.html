@@ -327,31 +327,41 @@
             input: {Sword: 1, Armor: 1},
             output: {Faith: 6},
         },
-        // Science is valued at 0.5
+        // Science is valued at 0.2
         School: {
             name: () => t(L.School),
             input: {Faith: 1, Poem: 1},
-            output: {Science: 172},
+            output: {Science: 470},
         },
         Library: {
             name: () => t(L.Library),
             input: {Paper: 1},
-            output: {Science: 16},
+            output: {Science: 35},
             construction: {Brick: 1},
         },
         University: {
             name: () => t(L.University),
-            input: {Poem: 1, Painting: 1, Faith: 1},
-            output: {Philosophy: 1, Science: 100},
+            input: {Poem: 2, Faith: 2},
+            output: {Philosophy: 1, Science: 250},
         },
         PublishingHouse: {
             name: () => t(L.PublishingHouse),
-            input: {Politics: 2, Book: 5},
-            output: {Newspaper: 1, Science: 400},
+            input: {Philosophy: 2, Book: 10},
+            output: {Newspaper: 1, Science: 1000},
+        },
+        MagazinePublisher: {
+            name: () => t(L.MagazinePublisher),
+            input: {Sports: 2, Book: 10},
+            output: {Magazine: 1, Science: 1000},
+        },
+        ResearchLab: {
+            name: () => t(L.ResearchLab),
+            input: {Culture: 2, Philosophy: 2},
+            output: {Science: 5560},
         },
         Museum: {
             name: () => t(L.Museum),
-            input: {Music: 1, Painting: 1, Faith: 1},
+            input: {Music: 2, Painting: 2},
             output: {Culture: 1},
         },
         Courthouse: {
@@ -368,16 +378,6 @@
             name: () => t(L.Parliament),
             input: {Culture: 2, Philosophy: 2, Law: 2},
             output: {Politics: 1},
-        },
-        ResearchLab: {
-            name: () => t(L.ResearchLab),
-            input: {Culture: 1, Philosophy: 1},
-            output: {Science: 960},
-        },
-        MagazinePublisher: {
-            name: () => t(L.MagazinePublisher),
-            input: {Sports: 1, Book: 10},
-            output: {Magazine: 1},
         },
         MovieStudio: {
             name: () => t(L.MovieStudio),
@@ -735,7 +735,7 @@
             desc: () => t(L.PyramidOfGizaDesc),
             input: {},
             output: {},
-            construction: {Brick: 300},
+            construction: {Stone: 300},
             max: 1,
             special: BuildingSpecial.WorldWonder,
             wikipedia: "Great_Pyramid_of_Giza",
@@ -872,7 +872,7 @@
         },
         OxfordUniversity: {
             name: () => t(L.OxfordUniversity),
-            desc: () => t(L.OxfordUniversityDescV2),
+            desc: () => t(L.OxfordUniversityDescV3),
             input: {},
             output: {},
             max: 1,
@@ -1115,12 +1115,62 @@
             desc: () => t(L.SagradaFamiliaDesc),
             input: {},
             output: {},
-            construction: {Tank: 100, Biplane: 100, Train: 100},
+            construction: {Stone: 100},
             max: 1,
             special: BuildingSpecial.WorldWonder,
             wikipedia: "Sagrada_Família",
         },
-        // ArcDeTriomphe: {
+        GreatWall: {
+            name: () => t(L.GreatWall),
+            desc: () => t(L.GreatWallDesc),
+            input: {},
+            output: {},
+            construction: {Brick: 100, Tool: 100, Horse: 100},
+            max: 1,
+            special: BuildingSpecial.WorldWonder,
+            wikipedia: "Great_Wall_of_China",
+        },
+        YellowCraneTower: {
+            name: () => t(L.YellowCraneTower),
+            desc: () => t(L.YellowCraneTowerDesc),
+            input: {},
+            output: {},
+            construction: {Furniture: 100, Sword: 100, Coin: 100},
+            max: 1,
+            special: BuildingSpecial.WorldWonder,
+            wikipedia: "Yellow_Crane_Tower",
+        },
+        PorcelainTower: {
+            name: () => t(L.PorcelainTower),
+            desc: () => t(L.PorcelainTowerDesc),
+            input: {},
+            output: {},
+            construction: {Banknote: 100, Garment: 100, Knight: 100},
+            max: 1,
+            special: BuildingSpecial.WorldWonder,
+            wikipedia: "Porcelain_Tower_of_Nanjing",
+        },
+        MountTai: {
+            name: () => t(L.MountTai),
+            desc: () => t(L.MountTaiDesc),
+            input: {},
+            output: {},
+            construction: {},
+            max: 0,
+            special: BuildingSpecial.NaturalWonder,
+            wikipedia: "Mount_Tai",
+        },
+        YangtzeRiver: {
+            name: () => t(L.YangtzeRiver),
+            desc: () => t(L.YangtzeRiverDesc),
+            input: {},
+            output: {},
+            construction: {},
+            max: 0,
+            special: BuildingSpecial.NaturalWonder,
+            wikipedia: "Yangtze",
+        },
+        // ArcDeTriomphe:  {
         //    name: () => t(L.ArcDeTriomphe),
         //    desc: () => t(L.ArcDeTriompheDesc),
         //    input: {},
@@ -1132,14 +1182,14 @@
         // },
         // #endregion /////////////////////////////////////////////////////////////////////////////////////////////
 
-        // Winery: {
+        // Winery:  {
         //    name: () => t(L.Winery),
         //    input: { Grape: 1, Water: 1 },
         //    output: { Wine: 1 },
         //    construction: { Stone: 1, Marble: 1 },
         // },
 
-        // Pantheon: {
+        // Pantheon:  {
         //    name: () => t(L.Pantheon),
         //    desc: () => t(L.PantheonDesc),
         //    input: {},
@@ -1150,7 +1200,7 @@
         //    wikipedia: "Pantheon,_Rome",
         // },
 
-        // GreatDagonPagoda: {
+        // GreatDagonPagoda:  {
         //    name: () => t(L.GreatDagonPagoda),
         //    desc: () => t(L.GreatDagonPagodaDesc),
         //    input: {},
@@ -1160,7 +1210,7 @@
         //    wikipedia: "Shwedagon_Pagoda",
         // },
 
-        // Borobudur: {
+        // Borobudur:  {
         //    name: () => t(L.Borobudur),
         //    desc: () => t(L.BorobudurDesc),
         //    input: {},
@@ -1169,7 +1219,7 @@
         //    wikipedia: "Borobudur",
         // },
 
-        // ItsukushimaShrine: {
+        // ItsukushimaShrine:  {
         //    name: () => t(L.ItsukushimaShrine),
         //    desc: () => t(L.ItsukushimaShrineDesc),
         //    input: {},
@@ -1178,7 +1228,7 @@
         //    wikipedia: "Itsukushima_Shrine",
         // },
 
-        // Moai: {
+        // Moai:  {
         //    name: () => t(L.Moai),
         //    desc: () => t(L.MoaiDesc),
         //    input: {},
@@ -1187,7 +1237,7 @@
         //    wikipedia: "Moai",
         // },
 
-        // BranCastle: {
+        // BranCastle:  {
         //    name: () => t(L.BranCastle),
         //    desc: () => t(L.BranCastleDesc),
         //    input: {},
@@ -1196,7 +1246,7 @@
         //    wikipedia: "Bran_Castle",
         // },
 
-        // ChoghaZanbil: {
+        // ChoghaZanbil:  {
         //    name: () => t(L.ChoghaZanbil),
         //    desc: () => t(L.ChoghaZanbilDesc),
         //    input: {},
@@ -1205,7 +1255,7 @@
         //    wikipedia: "Chogha_Zanbil",
         // },
 
-        // SydneyOperaHouse: {
+        // SydneyOperaHouse:  {
         //    name: () => t(L.SydneyOperaHouse),
         //    desc: () => t(L.SydneyOperaHouseDesc),
         //    input: {},
@@ -1214,7 +1264,7 @@
         //    wikipedia: "Sydney_Opera_House",
         // },
 
-        // FishPond: {
+        // FishPond:  {
         //    name: () => t(L.FishPond),
         //    input: {},
         //    deposit: { Water: true },
@@ -1222,21 +1272,21 @@
         //    construction: { Brick: 1 },
         // },
 
-        // OlivePlantation: {
+        // OlivePlantation:  {
         //    name: () => t(L.OlivePlantation),
         //    input: {},
         //    output: { Olive: 1 },
         //    construction: { Wood: 1 },
         // },
 
-        // Vineyard: {
+        // Vineyard:  {
         //    name: () => t(L.Vineyard),
         //    input: {},
         //    output: { Grape: 1 },
         //    construction: { Wood: 1 },
         // },
 
-        // OilPress: {
+        // OilPress:  {
         //    name: () => t(L.OilPress),
         //    input: { Olive: 2 },
         //    output: { OliveOil: 1 },

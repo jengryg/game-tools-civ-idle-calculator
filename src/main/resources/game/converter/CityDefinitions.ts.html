@@ -12,7 +12,7 @@
 <script type="text/javascript" src="language.js"></script>
 <script type="application/javascript">
     const data = {
-        Rome: ICityDefinition = {
+        Rome: {
             name: () => t(L.Rome),
             deposits: {
                 Water: 0.02,
@@ -37,8 +37,9 @@
                 Colosseum: "Theater",
             },
             naturalWonders: {Alps: true, GrottaAzzurra: true},
+            requiredGreatPeopleLevel: 0,
         },
-        Athens: ICityDefinition = {
+        Athens: {
             name: () => t(L.Athens),
             deposits: {
                 Water: 0.01,
@@ -59,8 +60,9 @@
             },
             uniqueBuildings: {StatueOfZeus: "Theater", Parthenon: "Democracy"},
             naturalWonders: {Aphrodite: true, Poseidon: true},
+            requiredGreatPeopleLevel: 5,
         },
-        Memphis: ICityDefinition = {
+        Memphis: {
             name: () => t(L.Memphis),
             deposits: {
                 Water: 0.01,
@@ -84,6 +86,34 @@
                 GreatSphinx: "Arithmetic",
             },
             naturalWonders: {NileRiver: true, MountSinai: true},
+            requiredGreatPeopleLevel: 10,
+        },
+        Beijing: {
+            name: () => t(L.Beijing),
+            deposits: {
+                Water: 0.01,
+                Copper: 0.02,
+                Iron: 0.03,
+                Wood: 0.01,
+                Stone: 0.02,
+                Gold: 0.03,
+                Coal: 0.01,
+                Oil: 0.02,
+                Aluminum: 0.03,
+                NaturalGas: 0.01,
+                Uranium: 0.03,
+            },
+            size: 50,
+            buildingNames: {
+                Headquarter: () => t(L.HallOfSupremeHarmony),
+            },
+            uniqueBuildings: {
+                GreatWall: "LandTrade",
+                YellowCraneTower: "Geography",
+                PorcelainTower: "Banking",
+            },
+            naturalWonders: {MountTai: true, YangtzeRiver: true},
+            requiredGreatPeopleLevel: 15,
         },
     }
 

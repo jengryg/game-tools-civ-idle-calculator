@@ -22,7 +22,8 @@ class PlayerConverter(
     }
 
     fun convert(ps: PlayerJson): PlayerData {
-        val city = gd.cities[ps.saveGame.current.city]!!
+        val city = gd.cities[ps.saveGame.current.city]
+            ?: throw IllegalArgumentException("Player is currently on unknown city ${ps.saveGame.current.city}!")
         // just simply select the city of the current run from GameData
 
         val unlockedTechnology = ps.saveGame.current.unlockedTech.mapValues { gd.technologies[it.key]!! }

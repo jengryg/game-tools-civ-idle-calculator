@@ -257,7 +257,7 @@
         Architecture: ITechDefinition = {
             name: () => t(L.Architecture),
             column: 8,
-            requireTech: ["Machinery"],
+            requireTech: ["Machinery", "Politics"],
             unlockBuilding: ["SwordForge", "ChichenItza"],
             globalMultiplier: {builderCapacity: 1},
         },
@@ -550,7 +550,7 @@
             name: () => t(L.Olympics),
             column: 16,
             requireTech: ["Journalism"],
-            unlockBuilding: ["Stadium"],
+            unlockBuilding: ["Stadium", "MagazinePublisher"],
             globalMultiplier: {
                 happiness: 5,
             },
@@ -590,7 +590,7 @@
             name: () => t(L.Urbanization),
             column: 17,
             requireTech: ["Olympics", "StockMarket", "Electricity"],
-            unlockBuilding: ["Pizzeria", "MagazinePublisher"],
+            unlockBuilding: ["Pizzeria", "ResearchLab"],
         },
 
         Aviation: ITechDefinition = {
@@ -610,9 +610,9 @@
         AtomicTheory: ITechDefinition = {
             name: () => t(L.AtomicTheory),
             column: 18,
-            requireTech: ["Refinery", "GasPipeline"],
+            requireTech: ["Refinery", "GasPipeline", "Urbanization"],
             revealDeposit: ["Uranium"],
-            unlockBuilding: ["UraniumMine", "ResearchLab"],
+            unlockBuilding: ["UraniumMine"],
             buildingMultiplier: {
                 Library: {output: 1},
                 School: {output: 1},

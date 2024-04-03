@@ -18,13 +18,15 @@
     "time": "c. 1300s BC",
     "value": 1,
     "maxLevel": null,
-    "age": "BronzeAge"
+    "age": "BronzeAge",
+    "type": "Normal"
   },
   "TangOfShang": {
     "time": "c. 1600s BC",
     "value": 0.5,
     "maxLevel": null,
-    "age": "BronzeAge"
+    "age": "BronzeAge",
+    "type": "Normal"
   },
   "Hatshepsut": {
     "boost": {
@@ -206,19 +208,54 @@
     "time": "c. 600s BC",
     "value": 1,
     "maxLevel": null,
-    "age": "ClassicalAge"
+    "age": "ClassicalAge",
+    "type": "Normal"
   },
   "Aristophanes": {
     "time": "446 ~ 386 AD",
     "value": 1,
     "maxLevel": null,
-    "age": "ClassicalAge"
+    "age": "ClassicalAge",
+    "type": "Normal"
   },
   "Confucius": {
     "time": "c. 600s BC",
     "value": 1,
     "maxLevel": null,
+    "age": "ClassicalAge",
+    "type": "Normal"
+  },
+  "Archimedes": {
+    "boost": {
+      "multipliers": [
+        "output",
+        "storage"
+      ],
+      "buildings": [
+        "Caravansary",
+        "Warehouse"
+      ]
+    },
+    "time": "c. 200 BC",
+    "value": 1,
+    "maxLevel": null,
     "age": "ClassicalAge"
+  },
+  "EmperorWuOfHan": {
+    "boost": {
+      "multipliers": [
+        "output",
+        "storage"
+      ],
+      "buildings": [
+        "Caravansary"
+      ]
+    },
+    "time": "156 ~ 87 BC",
+    "value": 2,
+    "maxLevel": null,
+    "age": "ClassicalAge",
+    "city": "Beijing"
   },
   "QinShiHuang": {
     "boost": {
@@ -240,7 +277,15 @@
     "time": "240 ~ 274 AD",
     "value": 1,
     "maxLevel": null,
-    "age": "ClassicalAge"
+    "age": "ClassicalAge",
+    "type": "Normal"
+  },
+  "Plato": {
+    "time": "427 ~ 348 BC",
+    "value": 1,
+    "maxLevel": null,
+    "age": "ClassicalAge",
+    "type": "Wildcard"
   },
   "Justinian": {
     "boost": {
@@ -262,7 +307,8 @@
     "time": "c. 500 AD",
     "value": 2,
     "maxLevel": null,
-    "age": "MiddleAge"
+    "age": "MiddleAge",
+    "type": "Normal"
   },
   "Charlemagne": {
     "boost": {
@@ -300,19 +346,29 @@
     "time": "624 ~ 705 AD",
     "value": 1,
     "maxLevel": null,
-    "age": "MiddleAge"
+    "age": "MiddleAge",
+    "type": "Normal"
   },
   "Rurik": {
     "time": "624 ~ 705 AD",
     "value": 2,
     "maxLevel": null,
-    "age": "MiddleAge"
+    "age": "MiddleAge",
+    "type": "Normal"
   },
   "Fibonacci": {
     "time": "c. 1170 ~ 1250 AD",
     "value": 1,
     "maxLevel": null,
-    "age": "MiddleAge"
+    "age": "MiddleAge",
+    "type": "Normal"
+  },
+  "Saladin": {
+    "time": "1137 ~ 1193 AD",
+    "value": 1,
+    "maxLevel": null,
+    "age": "MiddleAge",
+    "type": "Wildcard"
   },
   "LeonardoDaVinci": {
     "boost": {
@@ -350,7 +406,8 @@
     "time": "1564 ~ 1642 AD",
     "value": 1,
     "maxLevel": null,
-    "age": "RenaissanceAge"
+    "age": "RenaissanceAge",
+    "type": "Normal"
   },
   "MartinLuther": {
     "boost": {
@@ -435,7 +492,8 @@
     "time": "1642 ~ 1727",
     "value": 2,
     "maxLevel": null,
-    "age": "RenaissanceAge"
+    "age": "RenaissanceAge",
+    "type": "Normal"
   },
   "GeorgiusAgricola": {
     "boost": {
@@ -452,6 +510,13 @@
     "value": 1,
     "maxLevel": null,
     "age": "RenaissanceAge"
+  },
+  "Michelangelo": {
+    "time": "1475 ~ 1564 AD",
+    "value": 1,
+    "maxLevel": null,
+    "age": "RenaissanceAge",
+    "type": "Wildcard"
   },
   "JamesWatt": {
     "boost": {
@@ -489,7 +554,8 @@
     "time": "1856 ~ 1924 AD",
     "value": 3,
     "maxLevel": null,
-    "age": "IndustrialAge"
+    "age": "IndustrialAge",
+    "type": "Normal"
   },
   "KarlMarx": {
     "boost": {
@@ -543,13 +609,15 @@
     "time": "1809 ~ 1882 AD",
     "value": 2,
     "maxLevel": null,
-    "age": "IndustrialAge"
+    "age": "IndustrialAge",
+    "type": "Normal"
   },
   "FlorenceNightingale": {
     "time": "1820 ~ 1910 AD",
     "value": 3,
     "maxLevel": null,
-    "age": "IndustrialAge"
+    "age": "IndustrialAge",
+    "type": "Normal"
   },
   "JPMorgan": {
     "boost": {
@@ -582,6 +650,13 @@
     "value": 1,
     "maxLevel": null,
     "age": "IndustrialAge"
+  },
+  "ThomasEdison": {
+    "time": "1847 ~ 1931 AD",
+    "value": 1,
+    "maxLevel": null,
+    "age": "IndustrialAge",
+    "type": "Wildcard"
   },
   "JohnDRockefeller": {
     "boost": {
@@ -694,5 +769,55 @@
     "value": 1,
     "maxLevel": null,
     "age": "WorldWarAge"
+  },
+  "MarieCurie": {
+    "boost": {
+      "multipliers": [
+        "output",
+        "storage"
+      ],
+      "buildings": [
+        "CableFactory",
+        "UraniumMine"
+      ]
+    },
+    "time": "1867 ~ 1934 AD",
+    "value": 1,
+    "maxLevel": null,
+    "age": "WorldWarAge"
+  },
+  "AlbertEinstein": {
+    "boost": {
+      "multipliers": [
+        "output"
+      ],
+      "buildings": [
+        "ResearchLab"
+      ]
+    },
+    "time": "1879 ~ 1955 AD",
+    "maxLevel": null,
+    "age": "WorldWarAge"
+  },
+  "AlanTuring": {
+    "time": "1912 ~ 1954 AD",
+    "value": 3,
+    "maxLevel": null,
+    "age": "WorldWarAge",
+    "type": "Normal"
+  },
+  "NielsBohr": {
+    "time": "1885 ~ 1962",
+    "value": 3,
+    "maxLevel": null,
+    "age": "WorldWarAge",
+    "type": "Normal"
+  },
+  "AmeliaEarhart": {
+    "time": "1897 ~ 1937 AD",
+    "value": 1,
+    "maxLevel": null,
+    "age": "WorldWarAge",
+    "type": "Wildcard"
   }
 }

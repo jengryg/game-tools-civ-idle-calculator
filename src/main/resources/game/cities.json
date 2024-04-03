@@ -22,7 +22,8 @@
     "naturalWonders": {
       "Alps": true,
       "GrottaAzzurra": true
-    }
+    },
+    "requiredGreatPeopleLevel": 0
   },
   "Athens": {
     "deposits": {
@@ -47,7 +48,8 @@
     "naturalWonders": {
       "Aphrodite": true,
       "Poseidon": true
-    }
+    },
+    "requiredGreatPeopleLevel": 5
   },
   "Memphis": {
     "deposits": {
@@ -72,6 +74,34 @@
     "naturalWonders": {
       "NileRiver": true,
       "MountSinai": true
-    }
+    },
+    "requiredGreatPeopleLevel": 10
+  },
+  "Beijing": {
+    "deposits": {
+      "Water": 0.01,
+      "Copper": 0.02,
+      "Iron": 0.03,
+      "Wood": 0.01,
+      "Stone": 0.02,
+      "Gold": 0.03,
+      "Coal": 0.01,
+      "Oil": 0.02,
+      "Aluminum": 0.03,
+      "NaturalGas": 0.01,
+      "Uranium": 0.03
+    },
+    "size": 50,
+    "buildingNames": {},
+    "uniqueBuildings": {
+      "GreatWall": "LandTrade",
+      "YellowCraneTower": "Geography",
+      "PorcelainTower": "Banking"
+    },
+    "naturalWonders": {
+      "MountTai": true,
+      "YangtzeRiver": true
+    },
+    "requiredGreatPeopleLevel": 15
   }
 }

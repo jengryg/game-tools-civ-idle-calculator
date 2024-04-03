@@ -589,7 +589,7 @@
       "Poem": 1
     },
     "output": {
-      "Science": 172
+      "Science": 470
     }
   },
   "Library": {
@@ -597,7 +597,7 @@
       "Paper": 1
     },
     "output": {
-      "Science": 16
+      "Science": 35
     },
     "construction": {
       "Brick": 1
@@ -605,30 +605,47 @@
   },
   "University": {
     "input": {
-      "Poem": 1,
-      "Painting": 1,
-      "Faith": 1
+      "Poem": 2,
+      "Faith": 2
     },
     "output": {
       "Philosophy": 1,
-      "Science": 100
+      "Science": 250
     }
   },
   "PublishingHouse": {
     "input": {
-      "Politics": 2,
-      "Book": 5
+      "Philosophy": 2,
+      "Book": 10
     },
     "output": {
       "Newspaper": 1,
-      "Science": 400
+      "Science": 1000
+    }
+  },
+  "MagazinePublisher": {
+    "input": {
+      "Sports": 2,
+      "Book": 10
+    },
+    "output": {
+      "Magazine": 1,
+      "Science": 1000
+    }
+  },
+  "ResearchLab": {
+    "input": {
+      "Culture": 2,
+      "Philosophy": 2
+    },
+    "output": {
+      "Science": 5560
     }
   },
   "Museum": {
     "input": {
-      "Music": 1,
-      "Painting": 1,
-      "Faith": 1
+      "Music": 2,
+      "Painting": 2
     },
     "output": {
       "Culture": 1
@@ -662,24 +679,6 @@
     },
     "output": {
       "Politics": 1
-    }
-  },
-  "ResearchLab": {
-    "input": {
-      "Culture": 1,
-      "Philosophy": 1
-    },
-    "output": {
-      "Science": 960
-    }
-  },
-  "MagazinePublisher": {
-    "input": {
-      "Sports": 1,
-      "Book": 10
-    },
-    "output": {
-      "Magazine": 1
     }
   },
   "MovieStudio": {
@@ -1194,7 +1193,7 @@
     "input": {},
     "output": {},
     "construction": {
-      "Brick": 300
+      "Stone": 300
     },
     "max": 1,
     "special": "WorldWonder",
@@ -1644,12 +1643,62 @@
     "input": {},
     "output": {},
     "construction": {
-      "Tank": 100,
-      "Biplane": 100,
-      "Train": 100
+      "Stone": 100
     },
     "max": 1,
     "special": "WorldWonder",
     "wikipedia": "Sagrada_Família"
+  },
+  "GreatWall": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "Brick": 100,
+      "Tool": 100,
+      "Horse": 100
+    },
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "Great_Wall_of_China"
+  },
+  "YellowCraneTower": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "Furniture": 100,
+      "Sword": 100,
+      "Coin": 100
+    },
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "Yellow_Crane_Tower"
+  },
+  "PorcelainTower": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "Banknote": 100,
+      "Garment": 100,
+      "Knight": 100
+    },
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "Porcelain_Tower_of_Nanjing"
+  },
+  "MountTai": {
+    "input": {},
+    "output": {},
+    "construction": {},
+    "max": 0,
+    "special": "NaturalWonder",
+    "wikipedia": "Mount_Tai"
+  },
+  "YangtzeRiver": {
+    "input": {},
+    "output": {},
+    "construction": {},
+    "max": 0,
+    "special": "NaturalWonder",
+    "wikipedia": "Yangtze"
   }
 }

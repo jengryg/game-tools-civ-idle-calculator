@@ -27,6 +27,7 @@ object VisualizerSchema {
         return when (building.name) {
             "GrottaAzzurra" -> DVIPSColors.Magenta
             "MountSinai" -> DVIPSColors.Magenta
+            "MountTai" -> DVIPSColors.Magenta
             else -> getBuildingColorByType(building)
         }
     }

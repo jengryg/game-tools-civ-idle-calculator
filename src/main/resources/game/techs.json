@@ -364,7 +364,8 @@
   "Architecture": {
     "column": 8,
     "requireTech": [
-      "Machinery"
+      "Machinery",
+      "Politics"
     ],
     "unlockBuilding": [
       "SwordForge",
@@ -820,7 +821,8 @@
       "Journalism"
     ],
     "unlockBuilding": [
-      "Stadium"
+      "Stadium",
+      "MagazinePublisher"
     ],
     "globalMultiplier": {
       "happiness": 5
@@ -879,7 +881,7 @@
     ],
     "unlockBuilding": [
       "Pizzeria",
-      "MagazinePublisher"
+      "ResearchLab"
     ]
   },
   "Aviation": {
@@ -907,14 +909,14 @@
     "column": 18,
     "requireTech": [
       "Refinery",
-      "GasPipeline"
+      "GasPipeline",
+      "Urbanization"
     ],
     "revealDeposit": [
       "Uranium"
     ],
     "unlockBuilding": [
-      "UraniumMine",
-      "ResearchLab"
+      "UraniumMine"
     ],
     "buildingMultiplier": {
       "Library": {
