@@ -1,3 +1,5 @@
+import analysis.defs.ResourcePriceListExporter
+import analysis.defs.WonderPriceListExporter
 import analysis.visual.CurrentMapVisualizer
 import ch.qos.logback.classic.Level
 import game.loader.DataLoader
@@ -8,6 +10,9 @@ fun main(args: Array<String>) {
 
     val (gd, pd) = DataLoader().loadCombinedData()
     val model = ModelFactory().create(gd, pd)
+
+    ResourcePriceListExporter(model).apply { export() }
+    WonderPriceListExporter(model).apply { export() }
 
     CurrentMapVisualizer(model).apply {
         visualize()
