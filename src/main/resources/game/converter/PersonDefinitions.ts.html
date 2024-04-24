@@ -261,8 +261,6 @@
             value: 1,
             maxLevel: Number.POSITIVE_INFINITY,
             age: "ClassicalAge",
-            tick: (self, level, permanent) => {
-            },
             type: GreatPersonType.Normal,
         },
 
@@ -273,8 +271,6 @@
             value: 1,
             maxLevel: Number.POSITIVE_INFINITY,
             age: "ClassicalAge",
-            tick: (self, level, permanent) => {
-            },
             type: GreatPersonType.Wildcard,
         },
 
@@ -336,6 +332,18 @@
             type: GreatPersonType.Normal,
         },
 
+        Xuanzang: {
+            name: () => t(L.Xuanzang),
+            boost: {
+                multipliers: ["output"],
+                buildings: ["School"],
+            },
+            time: "602 ~ 664 AD",
+            value: 2 * 1,
+            maxLevel: Number.POSITIVE_INFINITY,
+            age: "MiddleAge",
+        },
+
         Rurik: {
             name: () => t(L.Rurik),
             desc: (self, level) => t(L.RurikDesc, {value: self.value(level)}),
@@ -363,8 +371,6 @@
             value: 1,
             maxLevel: Number.POSITIVE_INFINITY,
             age: "MiddleAge",
-            tick: (self, level, permanent) => {
-            },
             type: GreatPersonType.Wildcard,
         },
 
@@ -432,10 +438,10 @@
             name: () => t(L.ReneDescartes),
             boost: {
                 multipliers: ["output"],
-                buildings: ["School", "Library"],
+                buildings: ["School"],
             },
             time: "1596 ~ 1650 AD",
-            value: 1 * 2,
+            value: 2 * 1,
             maxLevel: Number.POSITIVE_INFINITY,
             age: "RenaissanceAge",
         },
@@ -619,8 +625,6 @@
             value: 1,
             maxLevel: Number.POSITIVE_INFINITY,
             age: "IndustrialAge",
-            tick: (self, level, permanent) => {
-            },
             type: GreatPersonType.Wildcard,
         },
 
@@ -729,7 +733,7 @@
                 buildings: ["ResearchLab"],
             },
             time: "1879 ~ 1955 AD",
-            value: (level) => 2 * level,
+            value: 2 * 1,
             maxLevel: Number.POSITIVE_INFINITY,
             age: "WorldWarAge",
         },
@@ -756,13 +760,170 @@
 
         AmeliaEarhart: {
             name: () => t(L.AmeliaEarhart),
-            desc: (self, level) => t(L.WildCardGreatPersonDesc),
+            boost: {
+                multipliers: ["output"],
+                buildings: ["BiplaneFactory", "GasPowerPlant"],
+            },
             time: "1897 ~ 1937 AD",
+            value: 1,
+            maxLevel: Number.POSITIVE_INFINITY,
+            age: "WorldWarAge",
+        },
+
+        HenryFord: {
+            name: () => t(L.HenryFord),
+            boost: {
+                multipliers: ["output"],
+                buildings: ["CarFactory", "PlasticsFactory"],
+            },
+            time: "1863 ~ 1947 AD",
+            value: 1,
+            maxLevel: Number.POSITIVE_INFINITY,
+            age: "WorldWarAge",
+        },
+
+        MahatmaGandhi: {
+            name: () => t(L.MahatmaGandhi),
+            desc: (self, level) => t(L.WildCardGreatPersonDesc),
+            time: "1869 ~ 1948 AD",
             value: 1,
             maxLevel: Number.POSITIVE_INFINITY,
             age: "WorldWarAge",
             type: GreatPersonType.Wildcard,
         },
+
+        JRobertOppenheimer: {
+            name: () => t(L.JRobertOppenheimer),
+            boost: {
+                multipliers: ["output"],
+                buildings: ["UraniumEnrichmentPlant", "AtomicFacility"],
+            },
+            time: "1904 ~ 1967 AD",
+            value: 1,
+            maxLevel: Number.POSITIVE_INFINITY,
+            age: "ColdWarAge",
+        },
+
+        WaltDisney: {
+            name: () => t(L.WaltDisney),
+            boost: {
+                multipliers: ["output"],
+                buildings: ["MovieStudio", "RadioStation"],
+            },
+            time: "1901 ~ 1966 AD",
+            value: 1,
+            maxLevel: Number.POSITIVE_INFINITY,
+            age: "ColdWarAge",
+        },
+
+        WernherVonBraun: {
+            name: () => t(L.WernherVonBraun),
+            boost: {
+                multipliers: ["output"],
+                buildings: ["RocketFactory", "ArtilleryFactory"],
+            },
+            time: "1912 ~ 1977 AD",
+            value: 1,
+            maxLevel: Number.POSITIVE_INFINITY,
+            age: "ColdWarAge",
+        },
+
+        ChesterWNimitz: {
+            name: () => t(L.ChesterWNimitz),
+            boost: {
+                multipliers: ["output"],
+                buildings: ["BattleshipBuilder", "HydroDam"],
+            },
+            time: "1885 ~ 1966 AD",
+            value: 1,
+            maxLevel: Number.POSITIVE_INFINITY,
+            age: "ColdWarAge",
+        },
+
+        FrankWhittle: {
+            name: () => t(L.FrankWhittle),
+            boost: {
+                multipliers: ["output"],
+                buildings: ["AirplaneFactory", "FighterJetPlant"],
+            },
+            time: "1907 ~ 1996 AD",
+            value: 1,
+            maxLevel: Number.POSITIVE_INFINITY,
+            age: "ColdWarAge",
+        },
+
+        EnricoFermi: {
+            name: () => t(L.EnricoFermi),
+            boost: {
+                multipliers: ["output"],
+                buildings: ["NuclearPowerPlant", "SubmarineYard"],
+            },
+            time: "1901 ~ 1954 AD",
+            value: 1,
+            maxLevel: Number.POSITIVE_INFINITY,
+            age: "ColdWarAge",
+        },
+
+        PhiloFarnsworth: {
+            name: () => t(L.PhiloFarnsworth),
+            boost: {
+                multipliers: ["output"],
+                buildings: ["TVStation", "NuclearMissileSilo"],
+            },
+            time: "1906 ~ 1971 AD",
+            value: 1,
+            maxLevel: Number.POSITIVE_INFINITY,
+            age: "ColdWarAge",
+        },
+
+        SergeiKorolev: {
+            name: () => t(L.SergeiKorolev),
+            boost: {
+                multipliers: ["output"],
+                buildings: ["SatelliteFactory", "SpacecraftFactory"],
+            },
+            time: "1907 ~ 1966 AD",
+            value: 1,
+            maxLevel: Number.POSITIVE_INFINITY,
+            age: "ColdWarAge",
+        },
+
+        GeorgeCMarshall: {
+            name: () => t(L.GeorgeCMarshall),
+            boost: {
+                multipliers: ["output"],
+                buildings: ["Embassy", "ForexMarket"],
+            },
+            time: "1880 ~ 1959 AD",
+            value: 1,
+            maxLevel: Number.POSITIVE_INFINITY,
+            age: "ColdWarAge",
+        },
+
+        RobertNoyce: {
+            name: () => t(L.RobertNoyce),
+            boost: {
+                multipliers: ["output"],
+                buildings: ["SemiconductorFab", "SiliconSmelter"],
+            },
+            time: "1927 ~ 1990 AD",
+            value: 1,
+            maxLevel: Number.POSITIVE_INFINITY,
+            age: "ColdWarAge",
+        },
+
+        ElvisPresley: {
+            name: () => t(L.ElvisPresley),
+            desc: (self, level) => t(L.WildCardGreatPersonDesc),
+            time: "1935 ~ 1977 AD",
+            value: 1,
+            maxLevel: Number.POSITIVE_INFINITY,
+            age: "ColdWarAge",
+            type: GreatPersonType.Wildcard,
+        },
+
     }
+
+
     document.getElementById("output").innerHTML = JSON.stringify(data)
 </script>

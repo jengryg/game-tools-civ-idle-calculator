@@ -433,7 +433,10 @@
     ],
     "globalMultiplier": {
       "storage": 1
-    }
+    },
+    "additionalUpgrades": [
+      null
+    ]
   },
   "Feudalism": {
     "column": 9,
@@ -930,6 +933,9 @@
       },
       "PublishingHouse": {
         "output": 1
+      },
+      "ResearchLab": {
+        "output": 1
       }
     }
   },
@@ -1026,114 +1032,202 @@
       "UnitedNations"
     ]
   },
-  "SpaceProgram": {
+  "Satellite": {
     "column": 21,
     "requireTech": [
       "Rocketry",
       "NuclearFission"
+    ],
+    "unlockBuilding": [
+      "SatelliteFactory",
+      "SpaceNeedle"
     ]
   },
-  "Semiconductor": {
+  "JetPropulsion": {
+    "column": 21,
+    "requireTech": [
+      "NuclearFission"
+    ],
+    "unlockBuilding": [
+      "AirplaneFactory",
+      "SiliconSmelter"
+    ]
+  },
+  "NuclearReactor": {
     "column": 21,
     "requireTech": [
       "NuclearFission",
       "Hydroelectricity"
-    ]
-  },
-  "Television": {
-    "column": 21,
-    "requireTech": [
-      "UnitedNations",
-      "Hydroelectricity"
+    ],
+    "unlockBuilding": [
+      "NuclearPowerPlant",
+      "Atomium"
     ]
   },
   "Skyscrapper": {
     "column": 21,
     "requireTech": [
-      "UnitedNations"
+      "UnitedNations",
+      "Hydroelectricity"
+    ],
+    "unlockBuilding": [
+      "Condo"
+    ],
+    "buildingMultiplier": {
+      "Library": {
+        "output": 1
+      },
+      "School": {
+        "output": 1
+      },
+      "University": {
+        "output": 1
+      },
+      "PublishingHouse": {
+        "output": 1
+      },
+      "ResearchLab": {
+        "output": 1
+      }
+    }
+  },
+  "MilitaryTactics": {
+    "column": 22,
+    "requireTech": [
+      "JetPropulsion",
+      "Satellite"
+    ],
+    "unlockBuilding": [
+      "FighterJetPlant",
+      "SubmarineYard"
+    ]
+  },
+  "Semiconductor": {
+    "column": 22,
+    "requireTech": [
+      "NuclearReactor",
+      "JetPropulsion"
+    ],
+    "unlockBuilding": [
+      "SemiconductorFab"
+    ]
+  },
+  "Television": {
+    "column": 22,
+    "requireTech": [
+      "Skyscrapper",
+      "NuclearReactor"
+    ],
+    "unlockBuilding": [
+      "TVStation",
+      "CNTower"
+    ]
+  },
+  "MonetarySystem": {
+    "column": 22,
+    "requireTech": [
+      "Skyscrapper"
+    ],
+    "unlockBuilding": [
+      "ForexMarket"
+    ]
+  },
+  "SpaceProgram": {
+    "column": 23,
+    "requireTech": [
+      "MilitaryTactics"
+    ],
+    "unlockBuilding": [
+      "SpacecraftFactory",
+      "ApolloProgram"
+    ]
+  },
+  "MutualAssuredDestruction": {
+    "column": 23,
+    "requireTech": [
+      "MilitaryTactics",
+      "Semiconductor"
+    ],
+    "unlockBuilding": [
+      "NuclearMissileSilo",
+      "AircraftCarrierYard"
     ]
   },
   "Computer": {
-    "column": 22,
-    "requireTech": [
-      "SpaceProgram",
-      "Semiconductor"
-    ]
-  },
-  "Globalization": {
-    "column": 22,
+    "column": 23,
     "requireTech": [
       "Semiconductor",
       "Television"
+    ],
+    "unlockBuilding": [
+      "ComputerFactory"
     ]
   },
-  "Tourism": {
-    "column": 22,
+  "Globalization": {
+    "column": 23,
     "requireTech": [
-      "Skyscrapper"
-    ]
-  },
-  "Conglomerate": {
-    "column": 22,
-    "requireTech": [
-      "Skyscrapper"
+      "Television",
+      "MonetarySystem"
+    ],
+    "unlockBuilding": [
+      "OpticalFiberPlant"
     ]
   },
   "Nanotechnology": {
-    "column": 23,
+    "column": 24,
     "requireTech": [
-      "Computer"
+      "MutualAssuredDestruction",
+      "SpaceProgram"
     ]
   },
   "Internet": {
-    "column": 23,
+    "column": 24,
     "requireTech": [
+      "MutualAssuredDestruction",
       "Computer",
       "Globalization"
     ]
   },
   "Genetics": {
-    "column": 23,
+    "column": 24,
     "requireTech": [
-      "Tourism",
       "Globalization"
     ]
   },
-  "VentureCapital": {
-    "column": 23,
+  "FinancialLeverage": {
+    "column": 24,
     "requireTech": [
-      "Conglomerate",
-      "Tourism"
+      "Globalization"
     ]
   },
   "Robotics": {
-    "column": 24,
+    "column": 25,
     "requireTech": [
       "Nanotechnology",
       "Internet"
     ]
   },
   "SocialNetwork": {
-    "column": 24,
+    "column": 25,
     "requireTech": [
       "Internet"
     ]
   },
   "Smartphone": {
-    "column": 24,
+    "column": 25,
     "requireTech": [
       "Internet"
     ]
   },
   "UniversalHealthcare": {
-    "column": 24,
+    "column": 25,
     "requireTech": [
-      "VentureCapital",
+      "FinancialLeverage",
       "Genetics"
     ]
   },
   "ArtificialIntelligence": {
-    "column": 25,
+    "column": 26,
     "unlockBuilding": [],
     "requireTech": [
       "Robotics",
@@ -1141,20 +1235,20 @@
     ]
   },
   "CloudComputing": {
-    "column": 25,
+    "column": 26,
     "requireTech": [
       "SocialNetwork"
     ]
   },
   "VirtualReality": {
-    "column": 25,
+    "column": 26,
     "requireTech": [
       "SocialNetwork",
       "Smartphone"
     ]
   },
   "Cryptocurrency": {
-    "column": 25,
+    "column": 26,
     "requireTech": [
       "Smartphone",
       "UniversalHealthcare"

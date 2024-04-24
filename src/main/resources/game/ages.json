@@ -42,11 +42,11 @@
   "ColdWarAge": {
     "idx": 8,
     "from": 21,
-    "to": 22
+    "to": 23
   },
   "InformationAge": {
     "idx": 9,
-    "from": 23,
-    "to": 25
+    "from": 24,
+    "to": 26
   }
 }

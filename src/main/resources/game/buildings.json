@@ -38,6 +38,19 @@
       "Bread": 1
     }
   },
+  "Condo": {
+    "input": {
+      "Pizza": 3
+    },
+    "output": {
+      "Worker": 510
+    },
+    "construction": {
+      "Concrete": 3,
+      "Steel": 1
+    },
+    "power": true
+  },
   "WheatFarm": {
     "input": {},
     "output": {
@@ -247,6 +260,18 @@
     "construction": {
       "Dynamite": 1,
       "Concrete": 1
+    }
+  },
+  "NuclearPowerPlant": {
+    "input": {
+      "NuclearFuelRod": 2
+    },
+    "output": {
+      "Power": 65
+    },
+    "construction": {
+      "Concrete": 16,
+      "Steel": 16
     }
   },
   "SwordForge": {
@@ -498,6 +523,45 @@
     },
     "power": true
   },
+  "FighterJetPlant": {
+    "input": {
+      "Airplane": 1,
+      "Artillery": 1
+    },
+    "output": {
+      "FighterJet": 2
+    },
+    "power": true
+  },
+  "AircraftCarrierYard": {
+    "input": {
+      "Battleship": 1,
+      "FighterJet": 10
+    },
+    "output": {
+      "AircraftCarrier": 1
+    },
+    "power": true
+  },
+  "SubmarineYard": {
+    "input": {
+      "Ironclad": 2
+    },
+    "output": {
+      "Submarine": 1
+    },
+    "power": true
+  },
+  "NuclearMissileSilo": {
+    "input": {
+      "AtomicBomb": 1,
+      "Rocket": 1
+    },
+    "output": {
+      "NuclearMissile": 1
+    },
+    "power": true
+  },
   "WritersGuild": {
     "input": {
       "Paper": 2
@@ -583,6 +647,17 @@
       "Faith": 6
     }
   },
+  "Library": {
+    "input": {
+      "Paper": 3
+    },
+    "output": {
+      "Science": 105
+    },
+    "construction": {
+      "Brick": 1
+    }
+  },
   "School": {
     "input": {
       "Faith": 1,
@@ -590,17 +665,6 @@
     },
     "output": {
       "Science": 470
-    }
-  },
-  "Library": {
-    "input": {
-      "Paper": 1
-    },
-    "output": {
-      "Science": 35
-    },
-    "construction": {
-      "Brick": 1
     }
   },
   "University": {
@@ -712,6 +776,16 @@
     "output": {
       "Diplomacy": 1
     }
+  },
+  "TVStation": {
+    "input": {
+      "Radio": 2,
+      "Movie": 10
+    },
+    "output": {
+      "TV": 1
+    },
+    "power": true
   },
   "CottonPlantation": {
     "input": {},
@@ -961,6 +1035,19 @@
       "Coal": 1
     }
   },
+  "SiliconSmelter": {
+    "input": {
+      "Sand": 5
+    },
+    "output": {
+      "Silicon": 1
+    },
+    "construction": {
+      "Brick": 1,
+      "Coal": 1
+    },
+    "power": true
+  },
   "CableFactory": {
     "input": {
       "Copper": 5
@@ -1013,6 +1100,67 @@
       "Steel": 1
     }
   },
+  "SatelliteFactory": {
+    "input": {
+      "Rocket": 2
+    },
+    "output": {
+      "Satellite": 1
+    },
+    "power": true
+  },
+  "AirplaneFactory": {
+    "input": {
+      "Biplane": 2
+    },
+    "output": {
+      "Airplane": 1
+    },
+    "power": true
+  },
+  "SpacecraftFactory": {
+    "input": {
+      "Rocket": 2,
+      "Satellite": 2,
+      "Airplane": 2
+    },
+    "output": {
+      "Spacecraft": 1
+    },
+    "power": true
+  },
+  "SemiconductorFab": {
+    "input": {
+      "Silicon": 10,
+      "Copper": 10
+    },
+    "output": {
+      "Semiconductor": 1
+    },
+    "power": true
+  },
+  "ComputerFactory": {
+    "input": {
+      "Semiconductor": 5,
+      "Plastics": 5,
+      "Aluminum": 5
+    },
+    "output": {
+      "Computer": 1
+    },
+    "power": true
+  },
+  "OpticalFiberPlant": {
+    "input": {
+      "Cable": 10,
+      "Glass": 10,
+      "Plastics": 10
+    },
+    "output": {
+      "OpticalFiber": 1
+    },
+    "power": true
+  },
   "CoinMint": {
     "input": {
       "Gold": 3
@@ -1048,6 +1196,15 @@
     },
     "output": {
       "Stock": 1
+    }
+  },
+  "ForexMarket": {
+    "input": {
+      "Banknote": 2,
+      "Bond": 2
+    },
+    "output": {
+      "Forex": 1
     }
   },
   "Caravansary": {
@@ -1643,7 +1800,9 @@
     "input": {},
     "output": {},
     "construction": {
-      "Stone": 100
+      "Tank": 100,
+      "Biplane": 100,
+      "Train": 100
     },
     "max": 1,
     "special": "WorldWonder",
@@ -1700,5 +1859,53 @@
     "max": 0,
     "special": "NaturalWonder",
     "wikipedia": "Yangtze"
+  },
+  "CNTower": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "Movie": 100,
+      "Radio": 100,
+      "Diplomacy": 100
+    },
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "CN_Tower"
+  },
+  "SpaceNeedle": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "Battleship": 150,
+      "Rocket": 150,
+      "Car": 150
+    },
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "Space_Needle"
+  },
+  "ApolloProgram": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "FighterJet": 100,
+      "Satellite": 100,
+      "Spacecraft": 100
+    },
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "Apollo_program"
+  },
+  "Atomium": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "NuclearFuelRod": 100,
+      "AtomicBomb": 100,
+      "Artillery": 100
+    },
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "Atomium"
   }
 }

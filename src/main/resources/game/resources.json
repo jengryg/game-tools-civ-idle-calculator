@@ -84,5 +84,18 @@
   "NuclearFuelRod": {},
   "AtomicBomb": {},
   "Diplomacy": {},
-  "Cable": {}
+  "Cable": {},
+  "Satellite": {},
+  "Airplane": {},
+  "Spacecraft": {},
+  "Silicon": {},
+  "Forex": {},
+  "FighterJet": {},
+  "NuclearMissile": {},
+  "AircraftCarrier": {},
+  "Semiconductor": {},
+  "TV": {},
+  "Computer": {},
+  "OpticalFiber": {},
+  "Submarine": {}
 }

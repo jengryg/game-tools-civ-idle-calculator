@@ -349,6 +349,20 @@
     "age": "MiddleAge",
     "type": "Normal"
   },
+  "Xuanzang": {
+    "boost": {
+      "multipliers": [
+        "output"
+      ],
+      "buildings": [
+        "School"
+      ]
+    },
+    "time": "602 ~ 664 AD",
+    "value": 2,
+    "maxLevel": null,
+    "age": "MiddleAge"
+  },
   "Rurik": {
     "time": "624 ~ 705 AD",
     "value": 2,
@@ -447,8 +461,7 @@
         "output"
       ],
       "buildings": [
-        "School",
-        "Library"
+        "School"
       ]
     },
     "time": "1596 ~ 1650 AD",
@@ -796,6 +809,7 @@
       ]
     },
     "time": "1879 ~ 1955 AD",
+    "value": 2,
     "maxLevel": null,
     "age": "WorldWarAge"
   },
@@ -814,10 +828,197 @@
     "type": "Normal"
   },
   "AmeliaEarhart": {
+    "boost": {
+      "multipliers": [
+        "output"
+      ],
+      "buildings": [
+        "BiplaneFactory",
+        "GasPowerPlant"
+      ]
+    },
     "time": "1897 ~ 1937 AD",
     "value": 1,
     "maxLevel": null,
+    "age": "WorldWarAge"
+  },
+  "HenryFord": {
+    "boost": {
+      "multipliers": [
+        "output"
+      ],
+      "buildings": [
+        "CarFactory",
+        "PlasticsFactory"
+      ]
+    },
+    "time": "1863 ~ 1947 AD",
+    "value": 1,
+    "maxLevel": null,
+    "age": "WorldWarAge"
+  },
+  "MahatmaGandhi": {
+    "time": "1869 ~ 1948 AD",
+    "value": 1,
+    "maxLevel": null,
     "age": "WorldWarAge",
+    "type": "Wildcard"
+  },
+  "JRobertOppenheimer": {
+    "boost": {
+      "multipliers": [
+        "output"
+      ],
+      "buildings": [
+        "UraniumEnrichmentPlant",
+        "AtomicFacility"
+      ]
+    },
+    "time": "1904 ~ 1967 AD",
+    "value": 1,
+    "maxLevel": null,
+    "age": "ColdWarAge"
+  },
+  "WaltDisney": {
+    "boost": {
+      "multipliers": [
+        "output"
+      ],
+      "buildings": [
+        "MovieStudio",
+        "RadioStation"
+      ]
+    },
+    "time": "1901 ~ 1966 AD",
+    "value": 1,
+    "maxLevel": null,
+    "age": "ColdWarAge"
+  },
+  "WernherVonBraun": {
+    "boost": {
+      "multipliers": [
+        "output"
+      ],
+      "buildings": [
+        "RocketFactory",
+        "ArtilleryFactory"
+      ]
+    },
+    "time": "1912 ~ 1977 AD",
+    "value": 1,
+    "maxLevel": null,
+    "age": "ColdWarAge"
+  },
+  "ChesterWNimitz": {
+    "boost": {
+      "multipliers": [
+        "output"
+      ],
+      "buildings": [
+        "BattleshipBuilder",
+        "HydroDam"
+      ]
+    },
+    "time": "1885 ~ 1966 AD",
+    "value": 1,
+    "maxLevel": null,
+    "age": "ColdWarAge"
+  },
+  "FrankWhittle": {
+    "boost": {
+      "multipliers": [
+        "output"
+      ],
+      "buildings": [
+        "AirplaneFactory",
+        "FighterJetPlant"
+      ]
+    },
+    "time": "1907 ~ 1996 AD",
+    "value": 1,
+    "maxLevel": null,
+    "age": "ColdWarAge"
+  },
+  "EnricoFermi": {
+    "boost": {
+      "multipliers": [
+        "output"
+      ],
+      "buildings": [
+        "NuclearPowerPlant",
+        "SubmarineYard"
+      ]
+    },
+    "time": "1901 ~ 1954 AD",
+    "value": 1,
+    "maxLevel": null,
+    "age": "ColdWarAge"
+  },
+  "PhiloFarnsworth": {
+    "boost": {
+      "multipliers": [
+        "output"
+      ],
+      "buildings": [
+        "TVStation",
+        "NuclearMissileSilo"
+      ]
+    },
+    "time": "1906 ~ 1971 AD",
+    "value": 1,
+    "maxLevel": null,
+    "age": "ColdWarAge"
+  },
+  "SergeiKorolev": {
+    "boost": {
+      "multipliers": [
+        "output"
+      ],
+      "buildings": [
+        "SatelliteFactory",
+        "SpacecraftFactory"
+      ]
+    },
+    "time": "1907 ~ 1966 AD",
+    "value": 1,
+    "maxLevel": null,
+    "age": "ColdWarAge"
+  },
+  "GeorgeCMarshall": {
+    "boost": {
+      "multipliers": [
+        "output"
+      ],
+      "buildings": [
+        "Embassy",
+        "ForexMarket"
+      ]
+    },
+    "time": "1880 ~ 1959 AD",
+    "value": 1,
+    "maxLevel": null,
+    "age": "ColdWarAge"
+  },
+  "RobertNoyce": {
+    "boost": {
+      "multipliers": [
+        "output"
+      ],
+      "buildings": [
+        "SemiconductorFab",
+        "SiliconSmelter"
+      ]
+    },
+    "time": "1927 ~ 1990 AD",
+    "value": 1,
+    "maxLevel": null,
+    "age": "ColdWarAge"
+  },
+  "ElvisPresley": {
+    "time": "1935 ~ 1977 AD",
+    "value": 1,
+    "maxLevel": null,
+    "age": "ColdWarAge",
     "type": "Wildcard"
   }
 }
