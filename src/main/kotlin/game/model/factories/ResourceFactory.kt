@@ -20,6 +20,7 @@ class ResourceFactory(
             canPrice = data.canPrice,
             deposit = data.deposit?.let { deposits[it.name]!! },
             isScience = data.isScience,
+            isWorker = data.isWorker,
             unlockedBy = data.unlockedBy?.let { technologies[it.name]!! },
             tier = data.tier!!,
             price = data.price!!,

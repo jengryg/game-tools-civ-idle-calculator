@@ -11,6 +11,7 @@ class Resource(
     @JsonSerialize(using = JustNameSerializer::class)
     val deposit: Deposit? = null,
     val isScience: Boolean,
+    val isWorker: Boolean,
     @JsonSerialize(using = JustNameSerializer::class)
     val unlockedBy: Technology? = null,
     val tier: Int,

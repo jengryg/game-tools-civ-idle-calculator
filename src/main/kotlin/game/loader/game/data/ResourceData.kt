@@ -12,6 +12,7 @@ class ResourceData(
     val deposit: DepositData? = null
 ) : HasNameBase(name) {
     val isScience = name == "Science"
+    val isWorker = name == "Worker"
 
     @JsonSerialize(using = JustNameSerializer::class)
     var unlockedBy: TechnologyData? = null

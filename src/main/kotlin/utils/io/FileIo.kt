@@ -2,6 +2,7 @@ package utils.io
 
 import Logging
 import logger
+import utils.tabular
 import java.nio.charset.StandardCharsets
 import java.nio.file.Paths
 import java.nio.file.StandardOpenOption
@@ -71,13 +72,8 @@ object FileIo : Logging {
      * @param table the table given as list of rows, where each row is a list of cells to write into the file
      */
     fun writeTable(file: String, table: List<List<String?>>) {
-        val columns = table.maxOf { it.size }
-        val columnWidth = (0 until columns).map { c -> table.maxOf { if (it.size <= c) 0 else (it[c]?.length ?: 0) } }
-
         Paths.get(file).createParentDirectories().writeText(
-            table.joinToString("\n") {
-                it.mapIndexed { index, s -> (s ?: "").padStart(columnWidth[index]) }.joinToString(" ".repeat(3))
-            },
+            tabular(table),
             StandardCharsets.UTF_8,
             StandardOpenOption.CREATE,
             StandardOpenOption.WRITE,

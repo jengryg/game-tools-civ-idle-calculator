@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize
 import game.common.BuildingType
 import game.common.modifiers.ActiveBuildingMod
 import game.common.modifiers.BuildingMod
+import game.common.modifiers.BuildingModTarget
 import utils.io.HasNameBase
 import utils.io.JustNameSerializer
 import kotlin.math.pow
@@ -43,4 +44,33 @@ class Building(
 
         return result.filterValues { it > 0.0 }
     }
+
+    val ageTierDiff = unlockedBy?.let { it.age.id + 1 - tier } ?: -1
+
+
+    val inputMulti
+        get() = activeMods.filter { it.mod.target == BuildingModTarget.INPUT }.sumOf { it.effect }
+
+    val outputMulti
+        get() = activeMods.filter { it.mod.target == BuildingModTarget.OUTPUT }.sumOf { it.effect }
+
+    val storageMulti
+        get() = activeMods.filter { it.mod.target == BuildingModTarget.STORAGE }.sumOf { it.effect }
+
+    val workerMulti
+        get() = activeMods.filter { it.mod.target == BuildingModTarget.WORKER }.sumOf { it.effect }
+
+    val effectiveOutput
+        get() = output.mapValues { (_, a) -> a * (1.0 + outputMulti) }
+
+    val effectiveInput
+        get() = input.mapValues { (_, a) -> a * (1.0 + inputMulti) }
+
+    val effectiveWorkers
+        get() : Double {
+            val workersForInput = effectiveInput.filterKeys { !it.isWorker && !it.isScience }.values.sum()
+            val workersForOutput = effectiveOutput.filterKeys { !it.isWorker && !it.isScience }.values.sum()
+
+            return (workersForInput + workersForOutput) / (1 + workerMulti)
+        }
 }

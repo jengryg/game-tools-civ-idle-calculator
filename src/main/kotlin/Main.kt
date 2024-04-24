@@ -1,3 +1,4 @@
+import analysis.defs.BuildingListExporter
 import analysis.defs.ResourcePriceListExporter
 import analysis.defs.WonderPriceListExporter
 import analysis.visual.CurrentMapVisualizer
@@ -13,6 +14,7 @@ fun main(args: Array<String>) {
 
     ResourcePriceListExporter(model).apply { export() }
     WonderPriceListExporter(model).apply { export() }
+    BuildingListExporter(model).apply { export() }
 
     CurrentMapVisualizer(model).apply {
         visualize()

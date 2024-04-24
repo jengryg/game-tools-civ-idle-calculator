@@ -9,4 +9,6 @@ open class HasNameBase(
     override fun compareTo(other: HasNameBase): Int {
         return name.compareTo(other.name)
     }
+
+    val short get() = name.padEnd(4).substring(0,4)
 }
