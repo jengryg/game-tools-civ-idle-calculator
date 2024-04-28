@@ -22,7 +22,8 @@ class Building(
     val mods: List<BuildingMod>,
     val tier: Int,
     val cost: Map<Resource, Double>,
-    val activeMods: List<ActiveBuildingMod>
+    val activeMods: List<ActiveBuildingMod>,
+    val specialMods: MutableList<ActiveBuildingMod>,
 ) : HasNameBase(name) {
     fun getCostForOneLevel(level: Int): Map<Resource, Double> {
         val levelFactor = when (type) {
@@ -49,16 +50,16 @@ class Building(
 
 
     val inputMulti
-        get() = activeMods.filter { it.mod.target == BuildingModTarget.INPUT }.sumOf { it.effect }
+        get() = activeMods.plus(specialMods).filter { it.mod.target == BuildingModTarget.INPUT }.sumOf { it.effect }
 
     val outputMulti
-        get() = activeMods.filter { it.mod.target == BuildingModTarget.OUTPUT }.sumOf { it.effect }
+        get() = activeMods.plus(specialMods).filter { it.mod.target == BuildingModTarget.OUTPUT }.sumOf { it.effect }
 
     val storageMulti
-        get() = activeMods.filter { it.mod.target == BuildingModTarget.STORAGE }.sumOf { it.effect }
+        get() = activeMods.plus(specialMods).filter { it.mod.target == BuildingModTarget.STORAGE }.sumOf { it.effect }
 
     val workerMulti
-        get() = activeMods.filter { it.mod.target == BuildingModTarget.WORKER }.sumOf { it.effect }
+        get() = activeMods.plus(specialMods).filter { it.mod.target == BuildingModTarget.WORKER }.sumOf { it.effect }
 
     val effectiveOutput
         get() = output.mapValues { (_, a) -> a * (1.0 + outputMulti) }

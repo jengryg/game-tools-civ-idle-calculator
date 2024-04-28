@@ -43,7 +43,8 @@ class BuildingFactory(
             mods = data.mods.toList(),
             tier = data.tier ?: throw IllegalStateException("Building ${data.name} has tier null!"),
             cost = createResourceAmountMap(data.cost),
-            activeMods = data.activeMods.toList()
+            activeMods = data.activeMods.toList(),
+            specialMods = mutableListOf()
         )
     }
 
@@ -65,7 +66,8 @@ class BuildingFactory(
             mods = data.mods.toList(),
             tier = data.tier ?: throw IllegalStateException("Building ${data.name} has tier null!"),
             cost = createResourceAmountMap(data.cost),
-            activeMods = data.activeMods.toList()
+            activeMods = data.activeMods.toList(),
+            specialMods = mutableListOf()
         )
     }
 

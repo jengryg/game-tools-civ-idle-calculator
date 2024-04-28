@@ -6,6 +6,7 @@ import game.loader.player.PlayerData
 import game.model.factories.*
 import game.model.game.*
 import game.model.player.Tile
+import game.model.task.ProgrammaticWonderEffectsTask
 import logger
 import utils.io.FileIo
 import utils.io.JsonParser
@@ -55,6 +56,11 @@ class ModelFactory(
             unlockedTechnologies = pd.unlockedTechnology.mapValues { technologies[it.key]!! },
             assignedProducers = cfg.producers.map { (rName, bName) -> resources[rName]!! to buildings[bName]!! }.toMap()
         ).also {
+            ProgrammaticWonderEffectsTask(
+                model = it,
+                waterNextToWheat = cfg.waterNextToWheat,
+                ironNextToForge = cfg.ironNextToForge
+            ).process()
             FileIo.writeFile(cfg.output, JsonParser.serialize(it))
         }
     }
