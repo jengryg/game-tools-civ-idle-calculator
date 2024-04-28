@@ -1,6 +1,7 @@
 package game.model.task
 
 import Logging
+import constants.*
 import game.common.BuildingType
 import game.common.modifiers.ActiveBuildingMod
 import game.common.modifiers.BuildingMod
@@ -34,9 +35,9 @@ class ProgrammaticWonderEffectsTask(
     }
 
     private fun applyHatshepsutTemple(b: Building) {
-        if (b.name == "WheatFarm") {
+        if (b.name == WHEAT_FARM) {
             val mod = BuildingMod(
-                from = "HatshepsutTemple",
+                from = HATSHEPSUT_TEMPLE,
                 bldName = b.name,
                 type = BuildingModType.WONDER,
                 target = BuildingModTarget.OUTPUT,
@@ -50,7 +51,7 @@ class ProgrammaticWonderEffectsTask(
     private fun applyPyramidOfGiza(b: Building) {
         if (b.output.keys.any { it.isWorker }) {
             val mod = BuildingMod(
-                from = "PyramidOfGiza",
+                from = PYRAMID_OF_GIZA,
                 bldName = b.name,
                 type = BuildingModType.WONDER,
                 target = BuildingModTarget.OUTPUT,
@@ -65,7 +66,7 @@ class ProgrammaticWonderEffectsTask(
         if (b.type == BuildingType.NORMAL) {
             applyModToBuilding(
                 b, BuildingMod(
-                    from = "TempleOfHeaven",
+                    from = TEMPLE_OF_HEAVEN,
                     bldName = b.name,
                     type = BuildingModType.WONDER,
                     target = BuildingModTarget.WORKER,
@@ -76,9 +77,9 @@ class ProgrammaticWonderEffectsTask(
     }
 
     private fun applyTerracottaArmy(b: Building) {
-        if (b.name == "IronForge") {
+        if (b.name == IRON_FORGE) {
             val mod = BuildingMod(
-                from = "TerracottaArmy",
+                from = TERRACOTTA_ARMY,
                 bldName = b.name,
                 type = BuildingModType.WONDER,
                 target = BuildingModTarget.OUTPUT,
@@ -90,11 +91,11 @@ class ProgrammaticWonderEffectsTask(
     }
 
     private fun applyRijksmuseum(b: Building) {
-        if (b.output.keys.any { it.name == "Culture" } || b.input.keys.any { it.name == "Culture" }) {
+        if (b.output.keys.any { it.name == CULTURE } || b.input.keys.any { it.name == CULTURE }) {
             listOf(BuildingModTarget.OUTPUT, BuildingModTarget.WORKER, BuildingModTarget.STORAGE).map {
                 applyModToBuilding(
                     b, BuildingMod(
-                        from = "Rijksmuseum",
+                        from = RIJKSMUSEUM,
                         bldName = b.name,
                         type = BuildingModType.WONDER,
                         target = it,
@@ -106,11 +107,11 @@ class ProgrammaticWonderEffectsTask(
     }
 
     private fun applySummerPalace(b: Building) {
-        if (b.output.keys.any { it.name == "Gunpowder" } || b.input.keys.any { it.name == "Gunpowder" }) {
+        if (b.output.keys.any { it.name == GUNPOWDER } || b.input.keys.any { it.name == GUNPOWDER }) {
             listOf(BuildingModTarget.OUTPUT, BuildingModTarget.WORKER, BuildingModTarget.STORAGE).map {
                 applyModToBuilding(
                     b, BuildingMod(
-                        from = "SummerPalace",
+                        from = SUMMER_PALACE,
                         bldName = b.name,
                         type = BuildingModType.WONDER,
                         target = it,
@@ -122,11 +123,11 @@ class ProgrammaticWonderEffectsTask(
     }
 
     private fun applyGoldenGateBridge(b: Building) {
-        if (b.output.keys.any { it.name == "Power" }) {
+        if (b.output.keys.any { it.name == POWER }) {
             applyModToBuilding(
                 b,
                 BuildingMod(
-                    from = "GoldenGateBridge",
+                    from = GOLDEN_GATE_BRIDGE,
                     bldName = b.name,
                     type = BuildingModType.WONDER,
                     target = BuildingModTarget.OUTPUT,
@@ -141,7 +142,7 @@ class ProgrammaticWonderEffectsTask(
             listOf(BuildingModTarget.OUTPUT, BuildingModTarget.WORKER, BuildingModTarget.STORAGE).forEach {
                 applyModToBuilding(
                     b, BuildingMod(
-                        from = "UnitedNations",
+                        from = UNITED_NATIONS,
                         bldName = b.name,
                         type = BuildingModType.WONDER,
                         target = it,
@@ -156,7 +157,7 @@ class ProgrammaticWonderEffectsTask(
         if (b.type == BuildingType.NORMAL && b.output.keys.any { it.isScience }) {
             applyModToBuilding(
                 b, BuildingMod(
-                    from = "MountTai",
+                    from = MOUNT_TAI,
                     bldName = b.name,
                     type = BuildingModType.WONDER,
                     target = BuildingModTarget.OUTPUT,
@@ -175,7 +176,7 @@ class ProgrammaticWonderEffectsTask(
             listOf(BuildingModTarget.OUTPUT, BuildingModTarget.WORKER, BuildingModTarget.STORAGE).forEach {
                 applyModToBuilding(
                     b, BuildingMod(
-                        from = "CNTower",
+                        from = C_N_TOWER,
                         bldName = b.name,
                         type = BuildingModType.WONDER,
                         target = it,

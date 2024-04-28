@@ -1,17 +1,17 @@
 package game.model
 
-import constants.DEFAULT_OUTPUT_PATH
+import constants.*
 
 class ModelFactoryConfiguration(
     val output: String = "$DEFAULT_OUTPUT_PATH/model.json",
     val waterNextToWheat: Double = 1.0,
     val ironNextToForge: Double = 1.0,
     val producers: Map<String, String> = mapOf(
-        "Worker" to "Condo",
-        "Power" to "HydroDam",
-        "Science" to "School",
-        "Water" to "HydroDam",
-        "Tool" to "IronForge",
-        "Faith" to "StPetersBasilica",
+        WORKER to APARTMENT,
+        POWER to HYDRO_DAM,
+        SCIENCE to SCHOOL,
+        WATER to HYDRO_DAM,
+        TOOL to IRON_FORGE,
+        FAITH to ST_PETERS_BASILICA,
     )
 )
