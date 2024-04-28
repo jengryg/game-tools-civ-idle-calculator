@@ -52,7 +52,8 @@ class ModelFactory(
             tiles = tiles,
             transports = transports,
             currentCity = cities[pd.city.name]!!,
-            unlockedTechnologies = pd.unlockedTechnology.mapValues { technologies[it.key]!! }
+            unlockedTechnologies = pd.unlockedTechnology.mapValues { technologies[it.key]!! },
+            assignedProducers = cfg.producers.map { (rName, bName) -> resources[rName]!! to buildings[bName]!! }.toMap()
         ).also {
             FileIo.writeFile(cfg.output, JsonParser.serialize(it))
         }

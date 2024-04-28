@@ -20,6 +20,7 @@ class Model(
     val transports: Map<Int, Transportation>,
     val currentCity: City,
     val unlockedTechnologies: Map<String, Technology>,
+    val assignedProducers: Map<Resource, Building>,
 ) : Logging {
     private val log = logger()
 
@@ -86,14 +87,6 @@ class Model(
     }
 
     fun getProducer(r: Resource): Building {
-        return when (r.name) {
-            "Worker" -> r.producer.firstOrNull { it.name == "Condo" }
-            "Power" -> r.producer.firstOrNull { it.name == "HydroDam" }
-            "Science" -> r.producer.firstOrNull { it.name == "School" }
-            "Water" -> r.producer.firstOrNull { it.name == "HydroDam" }
-            "Tool" -> r.producer.firstOrNull { it.name == "IronForge" }
-            "Faith" -> r.producer.firstOrNull { it.name == "StPetersBasilica" }
-            else -> return r.producer.single()
-        } ?: throw IllegalStateException("Could not determine producer for resource ${r.name} from model.")
+        return assignedProducers[r] ?: r.producer.single()
     }
 }
