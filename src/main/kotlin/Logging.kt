@@ -28,3 +28,21 @@ fun setLoggingLevel(level: Level) {
     val rootLogger = LoggerFactory.getLogger(Logger.ROOT_LOGGER_NAME) as ch.qos.logback.classic.Logger
     rootLogger.level = level
 }
+
+/**
+ * Simple method to set the logging level for the application.
+ * Valid options for [level] are the available levels from [Level] from logback classic.
+ *
+ * @param level the logging level as string
+ */
+fun setLoggingLevel(level: String) {
+    when (level.lowercase()) {
+        "off" -> setLoggingLevel(Level.OFF)
+        "all" -> setLoggingLevel(Level.ALL)
+        "trace" -> setLoggingLevel(Level.TRACE)
+        "info" -> setLoggingLevel(Level.INFO)
+        "warn" -> setLoggingLevel(Level.WARN)
+        "error" -> setLoggingLevel(Level.ERROR)
+        "debug" -> setLoggingLevel(Level.DEBUG)
+    }
+}

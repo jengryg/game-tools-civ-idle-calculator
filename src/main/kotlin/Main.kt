@@ -10,7 +10,7 @@ import game.loader.DataLoader
 import game.model.ModelFactory
 
 fun main(args: Array<String>) {
-    setLoggingLevel(Level.TRACE)
+    setLoggingLevel(args.toList().getOrElse(0) { Level.WARN.levelStr })
 
     val (gd, pd) = DataLoader().loadCombinedData()
     val model = ModelFactory().create(gd, pd)
