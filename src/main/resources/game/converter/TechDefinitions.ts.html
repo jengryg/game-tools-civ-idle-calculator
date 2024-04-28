@@ -641,7 +641,7 @@
             name: () => t(L.Ballistics),
             column: 19,
             requireTech: ["Synthetics"],
-            unlockBuilding: ["ArtilleryFactory"],
+            unlockBuilding: ["ArtilleryFactory", "SubmarineYard"],
         },
 
         Enrichment: ITechDefinition = {
@@ -725,7 +725,7 @@
             name: () => t(L.MilitaryTactics),
             column: 22,
             requireTech: ["JetPropulsion", "Satellite"],
-            unlockBuilding: ["FighterJetPlant", "SubmarineYard"],
+            unlockBuilding: ["FighterJetPlant", "NuclearMissileSilo"],
         },
 
         Semiconductor: ITechDefinition = {
@@ -760,7 +760,7 @@
             name: () => t(L.MutualAssuredDestruction),
             column: 23,
             requireTech: ["MilitaryTactics", "Semiconductor"],
-            unlockBuilding: ["NuclearMissileSilo", "AircraftCarrierYard"],
+            unlockBuilding: ["NuclearSubmarineYard", "AircraftCarrierYard"],
         },
 
         Computer: ITechDefinition = {

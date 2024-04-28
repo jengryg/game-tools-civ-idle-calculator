@@ -60,6 +60,12 @@
         NileRiver: [
             addMultiplier("WheatFarm", {output: 1, storage: 1}, buildingName),
         ],
+        ManhattanProject: [
+            addMultiplier("UraniumMine", {output: 2, worker: 2, storage: 2}, buildingName),
+        ],
+        ApolloProgram: [
+            addMultiplier("RocketFactory", {output: 2, worker: 2, storage: 2}, buildingName),
+        ]
     }
 
     document.getElementById("output").innerHTML = JSON.stringify(wonders)

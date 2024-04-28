@@ -552,6 +552,16 @@
     },
     "power": true
   },
+  "NuclearSubmarineYard": {
+    "input": {
+      "Submarine": 2,
+      "NuclearMissile": 2
+    },
+    "output": {
+      "NuclearSubmarine": 1
+    },
+    "power": true
+  },
   "NuclearMissileSilo": {
     "input": {
       "AtomicBomb": 1,

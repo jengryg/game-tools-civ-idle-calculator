@@ -312,6 +312,12 @@
             output: {Submarine: 1},
             power: true,
         },
+        NuclearSubmarineYard: {
+            name: () => t(L.NuclearSubmarineYard),
+            input: {Submarine: 2, NuclearMissile: 2},
+            output: {NuclearSubmarine: 1},
+            power: true,
+        },
         NuclearMissileSilo: {
             name: () => t(L.NuclearMissileSilo),
             input: {AtomicBomb: 1, Rocket: 1},

@@ -172,5 +172,25 @@
         "storage": 1
       }
     }
+  ],
+  "ManhattanProject": [
+    {
+      "target": "UraniumMine",
+      "mods": {
+        "output": 2,
+        "worker": 2,
+        "storage": 2
+      }
+    }
+  ],
+  "ApolloProgram": [
+    {
+      "target": "RocketFactory",
+      "mods": {
+        "output": 2,
+        "worker": 2,
+        "storage": 2
+      }
+    }
   ]
 }

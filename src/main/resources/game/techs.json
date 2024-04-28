@@ -966,7 +966,8 @@
       "Synthetics"
     ],
     "unlockBuilding": [
-      "ArtilleryFactory"
+      "ArtilleryFactory",
+      "SubmarineYard"
     ]
   },
   "Enrichment": {
@@ -1099,7 +1100,7 @@
     ],
     "unlockBuilding": [
       "FighterJetPlant",
-      "SubmarineYard"
+      "NuclearMissileSilo"
     ]
   },
   "Semiconductor": {
@@ -1149,7 +1150,7 @@
       "Semiconductor"
     ],
     "unlockBuilding": [
-      "NuclearMissileSilo",
+      "NuclearSubmarineYard",
       "AircraftCarrierYard"
     ]
   },
