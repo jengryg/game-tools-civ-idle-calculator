@@ -59,7 +59,8 @@ class ModelFactory(
             ProgrammaticWonderEffectsTask(
                 model = it,
                 waterNextToWheat = cfg.waterNextToWheat,
-                ironNextToForge = cfg.ironNextToForge
+                ironNextToForge = cfg.ironNextToForge,
+                oilNextToRefinery = cfg.oilNextToRefinery
             ).process()
             FileIo.writeFile(cfg.output, JsonParser.serialize(it))
         }

@@ -6,6 +6,7 @@ class ModelFactoryConfiguration(
     val output: String = "$DEFAULT_OUTPUT_PATH/model.json",
     val waterNextToWheat: Double = 1.0,
     val ironNextToForge: Double = 1.0,
+    val oilNextToRefinery: Double = 1.0,
     val producers: Map<String, String> = mapOf(
         WORKER to APARTMENT,
         POWER to HYDRO_DAM,

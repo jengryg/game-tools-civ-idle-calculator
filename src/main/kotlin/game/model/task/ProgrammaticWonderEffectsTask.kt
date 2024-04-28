@@ -16,6 +16,7 @@ class ProgrammaticWonderEffectsTask(
     private val model: Model,
     private val waterNextToWheat: Double,
     private val ironNextToForge: Double,
+    private val oilNextToRefinery: Double,
 ) : Logging {
     private val log = logger()
 
@@ -31,6 +32,7 @@ class ProgrammaticWonderEffectsTask(
             applyUnitedNations(b)
             applyMountTai(b)
             applyCNTower(b)
+            applyBrandenburgGate(b)
         }
     }
 
@@ -181,6 +183,22 @@ class ProgrammaticWonderEffectsTask(
                         type = BuildingModType.WONDER,
                         target = it,
                         value = m
+                    )
+                )
+            }
+        }
+    }
+
+    private fun applyBrandenburgGate(b: Building) {
+        if (b.name == OIL_REFINERY) {
+            listOf(BuildingModTarget.OUTPUT, BuildingModTarget.WORKER, BuildingModTarget.STORAGE).forEach {
+                applyModToBuilding(
+                    b, BuildingMod(
+                        from = BRANDENBURG_GATE,
+                        bldName = b.name,
+                        type = BuildingModType.WONDER,
+                        target = it,
+                        value = oilNextToRefinery
                     )
                 )
             }
