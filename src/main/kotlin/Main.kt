@@ -21,6 +21,10 @@ fun main(args: Array<String>) {
         export()
     }
 
+    CurrentMapVisualizer(model).apply {
+        export("_tiles")
+    }
+
     // TODO: exporting lists with resources, tiers and prices calculated
     // TODO: exporting lists with cost of wonders and their enterprise value
     // TODO: chain analysis with each variant and for each building

@@ -1,9 +1,11 @@
 package game.model
 
+import Logging
 import game.model.game.*
 import game.model.player.ObtainedGreatPeople
 import game.model.player.Tile
 import game.model.player.Transportation
+import logger
 
 class Model(
     val ages: Map<String, Age>,
@@ -18,7 +20,28 @@ class Model(
     val transports: Map<Int, Transportation>,
     val currentCity: City,
     val unlockedTechnologies: Map<String, Technology>,
-) {
+) : Logging {
+    private val log = logger()
+
+    init {
+        checkResourceProducers()
+    }
+
+    private fun checkResourceProducers() {
+        resources.forEach { (name, r) ->
+            r.producer.size.let { size ->
+                if (size != 1) {
+                    log.atDebug()
+                        .setMessage("Determination of resource producer is not unique.")
+                        .addKeyValue("producer") { name }
+                        .addKeyValue("size") { size }
+                        .addKeyValue("choices") { r.producer.joinToString(" ") { it.name } }
+                        .log()
+                }
+            }
+        }
+    }
+
     fun getAge(name: String): Age {
         return ages[name] ?: throw IllegalArgumentException("Requested unknown age $name from model.")
     }
@@ -60,5 +83,17 @@ class Model(
     fun getTransport(id: Int): Transportation {
         return transports[id]
             ?: throw IllegalArgumentException("Requested unknown transport $id from model.")
+    }
+
+    fun getProducer(r: Resource): Building {
+        return when (r.name) {
+            "Worker" -> r.producer.firstOrNull { it.name == "Condo" }
+            "Power" -> r.producer.firstOrNull { it.name == "HydroDam" }
+            "Science" -> r.producer.firstOrNull { it.name == "School" }
+            "Water" -> r.producer.firstOrNull { it.name == "HydroDam" }
+            "Tool" -> r.producer.firstOrNull { it.name == "IronForge" }
+            "Faith" -> r.producer.firstOrNull { it.name == "StPetersBasilica" }
+            else -> return r.producer.single()
+        } ?: throw IllegalStateException("Could not determine producer for resource ${r.name} from model.")
     }
 }

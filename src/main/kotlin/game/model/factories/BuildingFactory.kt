@@ -13,7 +13,38 @@ class BuildingFactory(
     private val deposits: Map<String, Deposit>
 ) {
     fun process(buildings: Map<String, BuildingData>): Map<String, Building> {
-        return buildings.mapValues { (_, data) -> create(data) }
+        return buildings.mapValues { (_, data) ->
+            when (data.name) {
+                "StPetersBasilica" -> createStPeters(data)
+                else -> create(data)
+            }.also { bld ->
+                bld.output.keys.forEach {
+                    it.producer.add(bld)
+                }
+            }
+        }
+    }
+
+    private fun createStPeters(data: BuildingData): Building {
+        return Building(
+            name = data.name,
+            input = createResourceAmountMap(data.input),
+            output = mapOf(resources["Faith"]!! to 300_000.0),
+            construction = createResourceAmountMap(data.construction),
+            deposit = data.deposit.map {
+                deposits[it.name]
+                    ?: throw IllegalStateException("Can not obtain model for deposit with name ${it.name}!")
+            },
+            type = data.type,
+            unlockedBy = data.unlockedBy?.let {
+                technologies[it.name]
+                    ?: throw IllegalStateException("Can not obtain model for technology with name ${it.name}!")
+            },
+            mods = data.mods.toList(),
+            tier = data.tier ?: throw IllegalStateException("Building ${data.name} has tier null!"),
+            cost = createResourceAmountMap(data.cost),
+            activeMods = data.activeMods.toList()
+        )
     }
 
     private fun create(data: BuildingData): Building {
@@ -35,11 +66,7 @@ class BuildingFactory(
             tier = data.tier ?: throw IllegalStateException("Building ${data.name} has tier null!"),
             cost = createResourceAmountMap(data.cost),
             activeMods = data.activeMods.toList()
-        ).also { bld ->
-            bld.output.keys.forEach {
-                it.producer.add(bld)
-            }
-        }
+        )
     }
 
     private fun createResourceAmountMap(amounts: Map<ResourceData, Double>): Map<Resource, Double> {

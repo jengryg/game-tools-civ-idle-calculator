@@ -13,6 +13,9 @@ class CurrentMapVisualizer(
 ) : BaseHexagonalMap(mapSize = model.currentCity.size, tiles = model.tiles), Logging {
     private val log = logger()
 
+    private val xOffset = -SVG_HEXAGON_SIZE * 0.8
+    private val yOffset = SVG_HEXAGON_SIZE / 3.0
+
     fun visualize() {
         addDeposits()
         addBuildings()
@@ -22,7 +25,7 @@ class CurrentMapVisualizer(
         flushTextBuffer()
     }
 
-    private fun addDeposits() {
+    fun addDeposits() {
         tileIteration.forEach { tile ->
             if (tile.deposit.isNotEmpty()) {
                 tile.deposit.values.toList().forEachIndexed { index, deposit ->
@@ -46,10 +49,7 @@ class CurrentMapVisualizer(
             .log()
     }
 
-    private fun addBuildings() {
-        val xOffset = -SVG_HEXAGON_SIZE * 0.8
-        val yOffset = SVG_HEXAGON_SIZE / 3.0
-
+    fun addBuildings() {
         tileIteration.forEach { tile ->
             val bld = tile.building?.bld ?: return@forEach
 
@@ -103,7 +103,7 @@ class CurrentMapVisualizer(
             .log()
     }
 
-    fun export() {
-        svg.export("Visualize_${model.currentCity.name}")
+    fun export(suffix: String = "") {
+        svg.export("Visualize_${model.currentCity.name}${suffix}")
     }
 }
