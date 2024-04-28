@@ -1,5 +1,6 @@
 package analysis.visual
 
+import constants.*
 import game.common.BuildingType
 import game.model.game.Building
 import game.model.game.Deposit
@@ -9,25 +10,26 @@ import java.awt.Color
 object VisualizerSchema {
     fun getColor(deposit: Deposit): Color {
         return when (deposit.name) {
-            "Water" -> DVIPSColors.NavyBlue
-            "Copper" -> DVIPSColors.Orange
-            "Iron" -> DVIPSColors.Red
-            "Wood" -> DVIPSColors.Brown
-            "Stone" -> DVIPSColors.Gray
-            "Gold" -> DVIPSColors.Goldenrod
-            "Coal" -> DVIPSColors.Black
-            "Oil" -> DVIPSColors.BlueGreen
-            "Aluminum" -> DVIPSColors.GreenYellow
-            "NaturalGas" -> DVIPSColors.Violet
+            WATER -> DVIPSColors.NavyBlue
+            COPPER -> DVIPSColors.Orange
+            IRON -> DVIPSColors.Red
+            WOOD -> DVIPSColors.Brown
+            STONE -> DVIPSColors.Gray
+            GOLD -> DVIPSColors.Goldenrod
+            COAL -> DVIPSColors.CadetBlue
+            OIL -> DVIPSColors.Rhodamine
+            ALUMINUM -> DVIPSColors.GreenYellow
+            NATURAL_GAS -> DVIPSColors.Violet
+            URANIUM -> DVIPSColors.OliveGreen
             else -> return DVIPSColors.Transparent
         }
     }
 
     fun getColor(building: Building): Color {
         return when (building.name) {
-            "GrottaAzzurra" -> DVIPSColors.Magenta
-            "MountSinai" -> DVIPSColors.Magenta
-            "MountTai" -> DVIPSColors.Magenta
+            GROTTA_AZZURRA -> DVIPSColors.Magenta
+            MOUNT_SINAI -> DVIPSColors.Magenta
+            MOUNT_TAI -> DVIPSColors.Magenta
             else -> getBuildingColorByType(building)
         }
     }
