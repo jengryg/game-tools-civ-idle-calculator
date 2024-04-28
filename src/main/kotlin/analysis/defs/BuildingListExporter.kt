@@ -1,6 +1,6 @@
 package analysis.defs
 
-import DEFAULT_OUTPUT_PATH
+import constants.DEFAULT_OUTPUT_PATH
 import game.common.BuildingType
 import game.model.Model
 import game.model.game.Resource
@@ -15,11 +15,11 @@ class BuildingListExporter(
         val table = model.buildings.filterValues { it.type == BuildingType.NORMAL }.values.sortedByDescending {
             it.tier
         }.map { b ->
-            listOf(b.name).plus(b.tier.nf()).plus(b.unlockedBy?.age?.name).plus(b.ageTierDiff.nf()).plus(
+            listOf(b.name).asSequence().plus(b.tier.nf()).plus(b.unlockedBy?.age?.name).plus(b.ageTierDiff.nf()).plus(
                 Resource.getEvOf(b.output).nf()
             ).plus(
                 b.outputMulti.nfd()
-            )
+            ).toList()
         }
 
         FileIo.writeTable(

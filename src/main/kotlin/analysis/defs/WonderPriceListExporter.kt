@@ -1,6 +1,6 @@
 package analysis.defs
 
-import DEFAULT_OUTPUT_PATH
+import constants.DEFAULT_OUTPUT_PATH
 import game.common.BuildingType
 import game.model.Model
 import game.model.game.Resource

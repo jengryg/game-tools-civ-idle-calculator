@@ -1,7 +1,7 @@
 package utils.svg
 
-import DEFAULT_OUTPUT_PATH
 import Logging
+import constants.DEFAULT_OUTPUT_PATH
 import logger
 import org.apache.batik.dom.GenericDOMImplementation
 import org.apache.batik.svggen.SVGGraphics2D

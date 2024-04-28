@@ -1,6 +1,6 @@
 package analysis.defs
 
-import DEFAULT_OUTPUT_PATH
+import constants.DEFAULT_OUTPUT_PATH
 import game.model.Model
 import utils.io.FileIo
 import utils.nf

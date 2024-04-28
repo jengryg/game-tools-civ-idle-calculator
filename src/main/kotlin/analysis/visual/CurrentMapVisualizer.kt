@@ -1,7 +1,7 @@
 package analysis.visual
 
 import Logging
-import SVG_HEXAGON_SIZE
+import constants.SVG_HEXAGON_SIZE
 import game.common.BuildingType
 import game.model.Model
 import logger

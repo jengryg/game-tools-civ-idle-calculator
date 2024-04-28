@@ -1,8 +1,8 @@
 package analysis.visual
 
-import SVG_DEFAULT_FONT_SIZE
-import SVG_HEXAGON_SIZE
 import analysis.visual.hexagons.Grid
+import constants.SVG_DEFAULT_FONT_SIZE
+import constants.SVG_HEXAGON_SIZE
 import game.model.player.Tile
 import utils.svg.DVIPSColors
 import utils.svg.DVIPSColors.withAlpha

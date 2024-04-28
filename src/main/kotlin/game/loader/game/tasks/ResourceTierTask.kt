@@ -1,7 +1,7 @@
 package game.loader.game.tasks
 
-import ENTERPRISE_VALUE_OF_SCIENCE
 import Logging
+import constants.ENTERPRISE_VALUE_OF_SCIENCE
 import game.loader.game.GameData
 import game.loader.game.IGameData
 import game.loader.game.data.BuildingData

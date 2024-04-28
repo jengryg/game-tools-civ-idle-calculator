@@ -1,3 +1,5 @@
+package constants
+
 // default directory constants
 const val DEFAULT_OUTPUT_PATH = "output"
 

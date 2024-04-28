@@ -1,6 +1,9 @@
 import analysis.defs.BuildingListExporter
+import analysis.defs.KotlinConstantsExporter
 import analysis.defs.ResourcePriceListExporter
 import analysis.defs.WonderPriceListExporter
+import analysis.strategy.BuildingVector
+import analysis.strategy.SimplexAlgorithm
 import analysis.visual.CurrentMapVisualizer
 import ch.qos.logback.classic.Level
 import game.loader.DataLoader
@@ -15,6 +18,7 @@ fun main(args: Array<String>) {
     ResourcePriceListExporter(model).apply { export() }
     WonderPriceListExporter(model).apply { export() }
     BuildingListExporter(model).apply { export() }
+    KotlinConstantsExporter(model).apply { export() }
 
     CurrentMapVisualizer(model).apply {
         visualize()

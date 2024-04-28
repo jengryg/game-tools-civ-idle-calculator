@@ -13,3 +13,6 @@ fun tabular(table: List<List<String?>>): String {
         it.mapIndexed { index, s -> (s ?: "").padStart(columnWidth[index]) }.joinToString(" ".repeat(3))
     }
 }
+
+private val humps = "(?<=.)(?=\\p{Upper})".toRegex()
+fun String.toConstName() = replace(humps, "_").uppercase()
