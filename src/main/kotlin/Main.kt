@@ -2,12 +2,13 @@ import analysis.defs.BuildingListExporter
 import analysis.defs.KotlinConstantsExporter
 import analysis.defs.ResourcePriceListExporter
 import analysis.defs.WonderPriceListExporter
-import analysis.strategy.BuildingVector
-import analysis.strategy.SimplexAlgorithm
+import analysis.strategy.SimplexStrategyFactory
 import analysis.visual.CurrentMapVisualizer
 import ch.qos.logback.classic.Level
+import game.common.BuildingType
 import game.loader.DataLoader
 import game.model.ModelFactory
+import game.model.game.Resource
 
 fun main(args: Array<String>) {
     setLoggingLevel(args.toList().getOrElse(0) { Level.WARN.levelStr })
@@ -25,8 +26,14 @@ fun main(args: Array<String>) {
         export()
     }
 
-    CurrentMapVisualizer(model).apply {
-        export("_tiles")
+    val ssf = SimplexStrategyFactory(model)
+    val targetEnterprise = 2_000_000_000.0 / 20.0
+
+    model.buildings.filterValues { it.type == BuildingType.NORMAL }.forEach { (name, building) ->
+        val r = Resource.getEvOf(building.effectiveOutput)
+        if (r > 0.0) {
+            ssf.processByEnterpriseValueTarget(name, targetEnterprise)
+        }
     }
 
     // TODO: exporting lists with resources, tiers and prices calculated
