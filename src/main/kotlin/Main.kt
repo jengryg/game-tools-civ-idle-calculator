@@ -1,3 +1,4 @@
+import analysis.current.EffectiveModifierExporter
 import analysis.defs.BuildingListExporter
 import analysis.defs.KotlinConstantsExporter
 import analysis.defs.ResourcePriceListExporter
@@ -5,6 +6,7 @@ import analysis.defs.WonderPriceListExporter
 import analysis.strategy.SimplexStrategyFactory
 import analysis.visual.CurrentMapVisualizer
 import ch.qos.logback.classic.Level
+import constants.SPACECRAFT_FACTORY
 import game.common.BuildingType
 import game.loader.DataLoader
 import game.model.ModelFactory
@@ -20,6 +22,7 @@ fun main(args: Array<String>) {
     WonderPriceListExporter(model).apply { export() }
     BuildingListExporter(model).apply { export() }
     KotlinConstantsExporter(model).apply { export() }
+    EffectiveModifierExporter(model).apply { export() }
 
     CurrentMapVisualizer(model).apply {
         visualize()
@@ -32,8 +35,16 @@ fun main(args: Array<String>) {
     model.buildings.filterValues { it.type == BuildingType.NORMAL }.forEach { (name, building) ->
         val r = Resource.getEvOf(building.effectiveOutput)
         if (r > 0.0) {
-            ssf.processByEnterpriseValueTarget(name, targetEnterprise)
+            ssf.processByEnterpriseValueTarget(name, targetEnterprise).apply {
+                solve()
+                export()
+            }
         }
+    }
+
+    ssf.process(SPACECRAFT_FACTORY, 200.0).apply {
+        solve()
+        export("simple")
     }
 
     // TODO: exporting lists with resources, tiers and prices calculated

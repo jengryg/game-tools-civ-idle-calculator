@@ -51,9 +51,11 @@ class SimplexAlgorithm(
         while (!done) {
             done = step()
         }
+    }
 
+    fun export(directory: String = "strategy") {
         FileIo.writeTable(
-            "$DEFAULT_OUTPUT_PATH/strategy/$name.txt",
+            "$DEFAULT_OUTPUT_PATH/$directory/$name.txt",
             solution.compact().filterValues { it > 0.0 }.map {
                 listOf(it.key.name, it.value.nfd())
             }
