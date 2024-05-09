@@ -8,9 +8,9 @@ class ModelFactoryConfiguration(
     val ironNextToForge: Double = 1.0,
     val oilNextToRefinery: Double = 1.0,
     val producers: Map<String, String> = mapOf(
-        WORKER to APARTMENT,
+        WORKER to CONDO,
         POWER to HYDRO_DAM,
-        SCIENCE to SCHOOL,
+        SCIENCE to RESEARCH_LAB,
         WATER to HYDRO_DAM,
         TOOL to IRON_FORGE,
         FAITH to ST_PETERS_BASILICA,
