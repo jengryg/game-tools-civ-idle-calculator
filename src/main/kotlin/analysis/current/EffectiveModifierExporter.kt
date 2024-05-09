@@ -2,7 +2,6 @@ package analysis.current
 
 import constants.DEFAULT_OUTPUT_PATH
 import game.common.BuildingType
-import game.common.modifiers.BuildingModTarget
 import game.model.Model
 import utils.io.FileIo
 import utils.nf
@@ -19,15 +18,13 @@ class EffectiveModifierExporter(
         val content = model.buildings.filterValues { it.type == BuildingType.NORMAL }.values.sortedByDescending {
             it.tier
         }.flatMap { b ->
-            val outputMods = b.activeMods.plus(b.specialMods).filter { it.mod.target == BuildingModTarget.OUTPUT }
-            val inputMods = b.activeMods.plus(b.specialMods).filter { it.mod.target == BuildingModTarget.INPUT }
 
             listOf(
                 listOf(b.name, b.tier.nf(), (1.0 + b.outputMulti).nfd(), (1.0 + b.inputMulti).nfd())
             ).plus(
-                outputMods.map { listOf("OUTPUT", it.effect.nfd(), it.mod.type.toString(), it.mod.from) }
+                b.outputMods.map { listOf("OUTPUT", it.effect.nfd(), it.mod.type.toString(), it.mod.from) }
             ).plus(
-                inputMods.map { listOf("INPUT", it.effect.nfd(), it.mod.type.toString(), it.mod.from) }
+                b.inputMods.map { listOf("INPUT", it.effect.nfd(), it.mod.type.toString(), it.mod.from) }
             ).plus(
                 listOf(listOf(), listOf())
             )

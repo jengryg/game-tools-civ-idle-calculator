@@ -22,7 +22,7 @@ class SimplexAlgorithm(
     private val model: Model,
     private val target: BuildingVector,
     private val happyness: BuildingVector,
-    private val ceilingScale: Double = 10.0,
+    private val ceilingScale: Double = 10.0
 ) : Logging {
     private val log = logger()
 
@@ -58,7 +58,11 @@ class SimplexAlgorithm(
             "$DEFAULT_OUTPUT_PATH/$directory/$name.txt",
             solution.compact().filterValues { it > 0.0 }.map {
                 listOf(it.key.name, it.value.nfd())
-            }
+            }.plusElement(
+                listOf("", "")
+            ).plusElement(
+                listOf("Total", solution.happy(happyness).nfd())
+            )
         )
     }
 

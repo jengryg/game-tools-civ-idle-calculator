@@ -17,7 +17,7 @@ class ProductionMatrix(
                     true -> b.effectiveWorkers
                 }
 
-                rv.set(r, output - input)
+                rv[r] = output - input
             }
         }
     }
