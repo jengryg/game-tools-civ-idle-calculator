@@ -230,7 +230,7 @@ class ProgrammaticWonderEffectsTask(
     }
 
     private fun getModsValue(mod: BuildingMod): Double {
-        return if (model.tiles.values.any { it.building?.bld?.name == mod.from && it.explored }) {
+        return if (model.tiles.values.any { (it.building?.bld?.name == mod.from && it.explored) || IGNORE_WONDER_UNLOCK_FOR_MOD }) {
             mod.value
         } else {
             0.0

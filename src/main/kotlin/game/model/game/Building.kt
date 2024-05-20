@@ -28,6 +28,7 @@ class Building(
 ) : HasNameBase(name) {
     private val customMods: MutableList<ActiveBuildingMod> = mutableListOf()
 
+    @Suppress("unused")
     fun addCustomMod(from: String, type: BuildingModType, target: BuildingModTarget, totalEffect: Double) {
         val mod = BuildingMod(
             from = from,

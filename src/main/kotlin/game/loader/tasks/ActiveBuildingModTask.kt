@@ -1,6 +1,8 @@
 package game.loader.tasks
 
 import Logging
+import constants.IGNORE_TECH_UNLOCK_FOR_MOD
+import constants.IGNORE_WONDER_UNLOCK_FOR_MOD
 import game.common.modifiers.ActiveBuildingMod
 import game.common.modifiers.BuildingMod
 import game.common.modifiers.BuildingModType
@@ -44,6 +46,10 @@ class ActiveBuildingModTask(
     }
 
     private fun checkWonderBuildingMod(mod: BuildingMod): Double {
+        if (IGNORE_WONDER_UNLOCK_FOR_MOD) {
+            return mod.value
+        }
+
         return if (pd.tiles.values.any { it.building?.bld?.name == mod.from }) {
             mod.value
         } else {
@@ -63,6 +69,10 @@ class ActiveBuildingModTask(
     }
 
     private fun checkTechnologyBuildingMod(mod: BuildingMod): Double {
+        if (IGNORE_TECH_UNLOCK_FOR_MOD) {
+            return mod.value
+        }
+
         return if (pd.unlockedTechnology.containsKey(mod.from)) {
             mod.value
         } else {

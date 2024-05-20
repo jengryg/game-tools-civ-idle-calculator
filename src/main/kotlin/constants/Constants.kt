@@ -17,3 +17,6 @@ const val SVG_HEXAGON_SIZE = 64
 //const val CHAIN_TEXT_INDENT = 12
 //const val CHAIN_TEXT_LINE_START = "| %type "
 //const val DATA_TEXT_INDENT = 4
+
+const val IGNORE_TECH_UNLOCK_FOR_MOD = true
+const val IGNORE_WONDER_UNLOCK_FOR_MOD = true
