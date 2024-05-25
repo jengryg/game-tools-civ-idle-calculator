@@ -48,8 +48,7 @@
     "construction": {
       "Concrete": 3,
       "Steel": 1
-    },
-    "power": true
+    }
   },
   "WheatFarm": {
     "input": {},
@@ -714,6 +713,15 @@
     },
     "output": {
       "Science": 5560
+    }
+  },
+  "ResearchFund": {
+    "input": {
+      "Banknote": 1,
+      "Bond": 1
+    },
+    "output": {
+      "Science": 25940
     }
   },
   "Museum": {
@@ -1917,5 +1925,70 @@
     "max": 1,
     "special": "WorldWonder",
     "wikipedia": "Atomium"
+  },
+  "ChoghaZanbil": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "Water": 100,
+      "Wood": 100,
+      "Stone": 100,
+      "Wheat": 100
+    },
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "Chogha_Zanbil"
+  },
+  "Broadway": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "Opera": 100,
+      "Culture": 100,
+      "Bond": 100
+    },
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "Broadway_theatre"
+  },
+  "TheMet": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "Book": 100,
+      "Law": 100,
+      "Rifle": 100
+    },
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "Metropolitan_Museum_of_Art"
+  },
+  "WallStreet": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "Bond": 100,
+      "Law": 100,
+      "Banknote": 100
+    },
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "Wall_Street"
+  },
+  "Shenandoah": {
+    "input": {},
+    "output": {},
+    "construction": {},
+    "max": 0,
+    "wikipedia": "Shenandoah_Valley",
+    "special": "NaturalWonder"
+  },
+  "NiagaraFalls": {
+    "input": {},
+    "output": {},
+    "construction": {},
+    "max": 0,
+    "wikipedia": "Niagara_Falls",
+    "special": "NaturalWonder"
   }
 }

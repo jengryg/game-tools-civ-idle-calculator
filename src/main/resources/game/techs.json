@@ -92,10 +92,7 @@
       "Hut": {
         "output": 1
       }
-    },
-    "additionalUpgrades": [
-      null
-    ]
+    }
   },
   "Herding": {
     "column": 2,
@@ -105,16 +102,10 @@
     "requireTech": [
       "Counting",
       "Farming"
-    ],
-    "additionalUpgrades": [
-      null
     ]
   },
   "HorsebackRiding": {
     "column": 2,
-    "additionalUpgrades": [
-      null
-    ],
     "unlockBuilding": [
       "Stable",
       "Sandpit"
@@ -244,7 +235,8 @@
     ],
     "unlockBuilding": [
       "IronForge",
-      "Marbleworks"
+      "Marbleworks",
+      "ChoghaZanbil"
     ]
   },
   "Music": {
@@ -326,9 +318,6 @@
     "unlockBuilding": [
       "SiegeWorkshop",
       "TerracottaArmy"
-    ],
-    "additionalUpgrades": [
-      null
     ]
   },
   "Politics": {
@@ -418,10 +407,7 @@
       "Library": {
         "output": 1
       }
-    },
-    "additionalUpgrades": [
-      null
-    ]
+    }
   },
   "Physics": {
     "column": 9,
@@ -433,10 +419,7 @@
     ],
     "globalMultiplier": {
       "storage": 1
-    },
-    "additionalUpgrades": [
-      null
-    ]
+    }
   },
   "Feudalism": {
     "column": 9,
@@ -519,10 +502,7 @@
       "School": {
         "output": 1
       }
-    },
-    "additionalUpgrades": [
-      null
-    ]
+    }
   },
   "Banking": {
     "column": 11,
@@ -532,9 +512,6 @@
     ],
     "unlockBuilding": [
       "Bank"
-    ],
-    "additionalUpgrades": [
-      null
     ]
   },
   "University": {
@@ -726,9 +703,6 @@
     },
     "unlockBuilding": [
       "Parliament"
-    ],
-    "additionalUpgrades": [
-      null
     ]
   },
   "RapidFire": {
@@ -800,9 +774,6 @@
     ],
     "unlockBuilding": [
       "CoalPowerPlant"
-    ],
-    "additionalUpgrades": [
-      null
     ]
   },
   "StockMarket": {

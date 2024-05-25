@@ -13,8 +13,9 @@
 <script type="application/javascript">
     const GreatPersonType = {
         Normal: "Normal",
-        Wildcard: "Wildcard"
-    };
+        Wildcard: "Wildcard",
+        Promotion: "Promotion"
+    }
 
     const data = {
         // Bronze /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -209,7 +210,7 @@
 
         Confucius: {
             name: () => t(L.Confucius),
-            desc: (self, level) => t(L.ConfuciusDesc, {value: self.value(level)}),
+            desc: (self, level) => t(L.ConfuciusDescV2, {value: self.value(level)}),
             time: "c. 600s BC",
             value: 1,
             maxLevel: Number.POSITIVE_INFINITY,
@@ -272,6 +273,16 @@
             maxLevel: Number.POSITIVE_INFINITY,
             age: "ClassicalAge",
             type: GreatPersonType.Wildcard,
+        },
+
+        AshokaTheGreat: {
+            name: () => t(L.AshokaTheGreat),
+            desc: (self, level) => t(L.PromotionGreatPersonDesc),
+            time: "304 ~ 232 BC",
+            value: 1,
+            maxLevel: Number.POSITIVE_INFINITY,
+            age: "ClassicalAge",
+            type: GreatPersonType.Promotion,
         },
 
         // Middle Age /////////////////////////////////////////////////////////////////////////////////////////////
@@ -374,6 +385,16 @@
             type: GreatPersonType.Wildcard,
         },
 
+        MarcoPolo: {
+            name: () => t(L.MarcoPolo),
+            desc: (self, level) => t(L.PromotionGreatPersonDesc),
+            time: "1254 ~ 1324 AD",
+            value: 1,
+            maxLevel: Number.POSITIVE_INFINITY,
+            age: "MiddleAge",
+            type: GreatPersonType.Promotion,
+        },
+
         // Renaissance ////////////////////////////////////////////////////////////////////////////////////////////
 
         LeonardoDaVinci: {
@@ -472,8 +493,8 @@
 
         IsaacNewton: {
             name: () => t(L.IsaacNewton),
-            desc: (self, level) => t(L.IsaacNewtonDesc, {value: self.value(level)}),
-            time: "1642 ~ 1727",
+            desc: (self, level) => t(L.IsaacNewtonDescV2, {value: self.value(level)}),
+            time: "1642 ~ 1727 AD",
             value: 1 * 2,
             maxLevel: Number.POSITIVE_INFINITY,
             age: "RenaissanceAge",
@@ -499,7 +520,21 @@
             value: 1,
             maxLevel: Number.POSITIVE_INFINITY,
             age: "RenaissanceAge",
+            tick: (self, level, source) => {
+            },
             type: GreatPersonType.Wildcard,
+        },
+
+        JohannesGutenberg: {
+            name: () => t(L.JohannesGutenberg),
+            desc: (self, level) => t(L.PromotionGreatPersonDesc),
+            time: "1393 ~ 1406 AD",
+            value: 1,
+            maxLevel: Number.POSITIVE_INFINITY,
+            age: "RenaissanceAge",
+            tick: (self, level, source) => {
+            },
+            type: GreatPersonType.Promotion,
         },
 
         // Industrial /////////////////////////////////////////////////////////////////////////////////////////////
@@ -584,6 +619,17 @@
             type: GreatPersonType.Normal,
         },
 
+        CarlFriedrichGauss: {
+            name: () => t(L.CarlFriedrichGauss),
+            desc: (self, level) =>
+                t(L.CarlFriedrichGaussDesc, {idle: 0.5 * self.value(level), busy: 1.5 * self.value(level)}),
+            time: "c. 1777 ~ 1855 AD",
+            value: 1,
+            maxLevel: Number.POSITIVE_INFINITY,
+            age: "IndustrialAge",
+            type: GreatPersonType.Normal,
+        },
+
         FlorenceNightingale: {
             name: () => t(L.FlorenceNightingale),
             desc: (self, level) => t(L.FlorenceNightingaleDesc, {value: self.value(level)}),
@@ -626,6 +672,16 @@
             maxLevel: Number.POSITIVE_INFINITY,
             age: "IndustrialAge",
             type: GreatPersonType.Wildcard,
+        },
+
+        AdamSmith: {
+            name: () => t(L.AdamSmith),
+            desc: (self, level) => t(L.PromotionGreatPersonDesc),
+            time: "1723 ~ 1790 AD",
+            value: 1,
+            maxLevel: Number.POSITIVE_INFINITY,
+            age: "IndustrialAge",
+            type: GreatPersonType.Promotion,
         },
 
         // World Wars /////////////////////////////////////////////////////////////////////////////////////////////
@@ -742,7 +798,7 @@
             name: () => t(L.AlanTuring),
             desc: (self, level) => t(L.AlanTuringDesc, {value: self.value(level)}),
             time: "1912 ~ 1954 AD",
-            value: 1 * 3,
+            value: 1 * 2,
             maxLevel: Number.POSITIVE_INFINITY,
             age: "WorldWarAge",
             type: GreatPersonType.Normal,
@@ -750,7 +806,7 @@
 
         NielsBohr: {
             name: () => t(L.NielsBohr),
-            desc: (self, level) => t(L.NielsBohrDesc, {value: self.value(level)}),
+            desc: (self, level) => t(L.NielsBohrDescV2, {value: self.value(level)}),
             time: "1885 ~ 1962",
             value: 1 * 3,
             maxLevel: Number.POSITIVE_INFINITY,
@@ -791,6 +847,48 @@
             age: "WorldWarAge",
             type: GreatPersonType.Wildcard,
         },
+
+        PabloPicasso: {
+            name: () => t(L.PabloPicasso),
+            desc: (self, level) => t(L.PromotionGreatPersonDesc),
+            time: "1881 ~ 1973 AD",
+            value: 1,
+            maxLevel: Number.POSITIVE_INFINITY,
+            age: "WorldWarAge",
+            type: GreatPersonType.Promotion,
+        },
+
+        JohnVonNeumann: {
+            name: () => t(L.JohnVonNeumann),
+            desc: (self, level) => t(L.JohnVonNeumannDesc, {value: self.value(level)}),
+            time: "1903 ~ 1957 AD",
+            value: 1 * 3,
+            maxLevel: Number.POSITIVE_INFINITY,
+            age: "WorldWarAge",
+            type: GreatPersonType.Normal,
+        },
+
+        CharlieChaplin: {
+            name: () => t(L.CharlieChaplin),
+            desc: (self, level) => t(L.CharlieChaplinDesc, {value: self.value(level)}),
+            time: "1889 ~ 1977 AD",
+            value: 1 * 4,
+            maxLevel: Number.POSITIVE_INFINITY,
+            age: "WorldWarAge",
+            type: GreatPersonType.Normal,
+        },
+
+        FrankLloydWright: {
+            name: () => t(L.FrankLloydWright),
+            desc: (self, level) => t(L.FrankLloydWrightDesc, {value: self.value(level)}),
+            time: "1867 ~ 1959 AD",
+            value: 1 * 4,
+            maxLevel: Number.POSITIVE_INFINITY,
+            age: "WorldWarAge",
+            type: GreatPersonType.Normal,
+        },
+
+        // Cold Wars /////////////////////////////////////////////////////////////////////////////////////////////
 
         JRobertOppenheimer: {
             name: () => t(L.JRobertOppenheimer),
@@ -922,6 +1020,55 @@
             type: GreatPersonType.Wildcard,
         },
 
+        JamesWatson: {
+            name: () => t(L.JamesWatson),
+            desc: (self, level) => t(L.JamesWatsonDesc, {value: self.value(level)}),
+            time: "1928 ~ AD",
+            value: 1 * 4,
+            maxLevel: Number.POSITIVE_INFINITY,
+            age: "ColdWarAge",
+            type: GreatPersonType.Normal,
+        },
+
+        RichardFeynman: {
+            name: () => t(L.RichardFeynman),
+            desc: (self, level) => t(L.RichardFeynmanDesc, {value: self.value(level)}),
+            time: "1918 ~ 1988",
+            value: 1 * 4,
+            maxLevel: Number.POSITIVE_INFINITY,
+            age: "ColdWarAge",
+            type: GreatPersonType.Normal,
+        },
+
+        LinusPauling: {
+            name: () => t(L.LinusPauling),
+            desc: (self, level) => t(L.LinusPaulingDesc, {value: self.value(level)}),
+            time: "1901 ~ 1994",
+            value: 1 * 3,
+            maxLevel: Number.POSITIVE_INFINITY,
+            age: "ColdWarAge",
+            type: GreatPersonType.Normal,
+        },
+
+        IMPei: {
+            name: () => t(L.IMPei),
+            desc: (self, level) => t(L.IMPeiDesc, {value: self.value(level)}),
+            time: "1917 ~ 2019 AD",
+            value: 1 * 5,
+            maxLevel: Number.POSITIVE_INFINITY,
+            age: "ColdWarAge",
+            type: GreatPersonType.Normal,
+        },
+
+        BobHope: {
+            name: () => t(L.BobHope),
+            desc: (self, level) => t(L.BobHopeDesc, {value: self.value(level)}),
+            time: "1903 ~ 2003 AD",
+            value: 1 * 5,
+            maxLevel: Number.POSITIVE_INFINITY,
+            age: "ColdWarAge",
+            type: GreatPersonType.Normal,
+        },
     }
 
 

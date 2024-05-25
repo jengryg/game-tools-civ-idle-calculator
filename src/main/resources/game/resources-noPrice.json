@@ -3,5 +3,6 @@
   "Power": true,
   "Science": true,
   "Warp": true,
-  "Explorer": true
+  "Explorer": true,
+  "Teleport": true
 }

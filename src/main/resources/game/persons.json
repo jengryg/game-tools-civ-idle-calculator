@@ -287,6 +287,13 @@
     "age": "ClassicalAge",
     "type": "Wildcard"
   },
+  "AshokaTheGreat": {
+    "time": "304 ~ 232 BC",
+    "value": 1,
+    "maxLevel": null,
+    "age": "ClassicalAge",
+    "type": "Promotion"
+  },
   "Justinian": {
     "boost": {
       "multipliers": [
@@ -383,6 +390,13 @@
     "maxLevel": null,
     "age": "MiddleAge",
     "type": "Wildcard"
+  },
+  "MarcoPolo": {
+    "time": "1254 ~ 1324 AD",
+    "value": 1,
+    "maxLevel": null,
+    "age": "MiddleAge",
+    "type": "Promotion"
   },
   "LeonardoDaVinci": {
     "boost": {
@@ -502,7 +516,7 @@
     "age": "RenaissanceAge"
   },
   "IsaacNewton": {
-    "time": "1642 ~ 1727",
+    "time": "1642 ~ 1727 AD",
     "value": 2,
     "maxLevel": null,
     "age": "RenaissanceAge",
@@ -530,6 +544,13 @@
     "maxLevel": null,
     "age": "RenaissanceAge",
     "type": "Wildcard"
+  },
+  "JohannesGutenberg": {
+    "time": "1393 ~ 1406 AD",
+    "value": 1,
+    "maxLevel": null,
+    "age": "RenaissanceAge",
+    "type": "Promotion"
   },
   "JamesWatt": {
     "boost": {
@@ -625,6 +646,13 @@
     "age": "IndustrialAge",
     "type": "Normal"
   },
+  "CarlFriedrichGauss": {
+    "time": "c. 1777 ~ 1855 AD",
+    "value": 1,
+    "maxLevel": null,
+    "age": "IndustrialAge",
+    "type": "Normal"
+  },
   "FlorenceNightingale": {
     "time": "1820 ~ 1910 AD",
     "value": 3,
@@ -670,6 +698,13 @@
     "maxLevel": null,
     "age": "IndustrialAge",
     "type": "Wildcard"
+  },
+  "AdamSmith": {
+    "time": "1723 ~ 1790 AD",
+    "value": 1,
+    "maxLevel": null,
+    "age": "IndustrialAge",
+    "type": "Promotion"
   },
   "JohnDRockefeller": {
     "boost": {
@@ -815,7 +850,7 @@
   },
   "AlanTuring": {
     "time": "1912 ~ 1954 AD",
-    "value": 3,
+    "value": 2,
     "maxLevel": null,
     "age": "WorldWarAge",
     "type": "Normal"
@@ -863,6 +898,34 @@
     "maxLevel": null,
     "age": "WorldWarAge",
     "type": "Wildcard"
+  },
+  "PabloPicasso": {
+    "time": "1881 ~ 1973 AD",
+    "value": 1,
+    "maxLevel": null,
+    "age": "WorldWarAge",
+    "type": "Promotion"
+  },
+  "JohnVonNeumann": {
+    "time": "1903 ~ 1957 AD",
+    "value": 3,
+    "maxLevel": null,
+    "age": "WorldWarAge",
+    "type": "Normal"
+  },
+  "CharlieChaplin": {
+    "time": "1889 ~ 1977 AD",
+    "value": 4,
+    "maxLevel": null,
+    "age": "WorldWarAge",
+    "type": "Normal"
+  },
+  "FrankLloydWright": {
+    "time": "1867 ~ 1959 AD",
+    "value": 4,
+    "maxLevel": null,
+    "age": "WorldWarAge",
+    "type": "Normal"
   },
   "JRobertOppenheimer": {
     "boost": {
@@ -1020,5 +1083,40 @@
     "maxLevel": null,
     "age": "ColdWarAge",
     "type": "Wildcard"
+  },
+  "JamesWatson": {
+    "time": "1928 ~ AD",
+    "value": 4,
+    "maxLevel": null,
+    "age": "ColdWarAge",
+    "type": "Normal"
+  },
+  "RichardFeynman": {
+    "time": "1918 ~ 1988",
+    "value": 4,
+    "maxLevel": null,
+    "age": "ColdWarAge",
+    "type": "Normal"
+  },
+  "LinusPauling": {
+    "time": "1901 ~ 1994",
+    "value": 3,
+    "maxLevel": null,
+    "age": "ColdWarAge",
+    "type": "Normal"
+  },
+  "IMPei": {
+    "time": "1917 ~ 2019 AD",
+    "value": 5,
+    "maxLevel": null,
+    "age": "ColdWarAge",
+    "type": "Normal"
+  },
+  "BobHope": {
+    "time": "1903 ~ 2003 AD",
+    "value": 5,
+    "maxLevel": null,
+    "age": "ColdWarAge",
+    "type": "Normal"
   }
 }

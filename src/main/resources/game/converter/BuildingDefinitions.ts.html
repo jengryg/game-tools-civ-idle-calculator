@@ -18,7 +18,6 @@
     }
 
     const data = {
-        // #region Workers ////////////////////////////////////////////////////////////////////////////////////////
         Hut: {
             name: () => t(L.Hut),
             input: {},
@@ -42,7 +41,6 @@
             input: {Pizza: 3},
             output: {Worker: 510},
             construction: {Concrete: 3, Steel: 1},
-            power: true,
         },
         // #endregion /////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -402,6 +400,11 @@
             name: () => t(L.ResearchLab),
             input: {Culture: 2, Philosophy: 2},
             output: {Science: 5560},
+        },
+        ResearchFund: {
+            name: () => t(L.ResearchFund),
+            input: {Banknote: 1, Bond: 1},
+            output: {Science: 25940},
         },
         Museum: {
             name: () => t(L.Museum),
@@ -1268,7 +1271,7 @@
             special: BuildingSpecial.NaturalWonder,
             wikipedia: "Yangtze",
         },
-        // SydneyOperaHouse:  {
+        // SydneyOperaHouse: {
         //    name: () => t(L.SydneyOperaHouse),
         //    desc: () => t(L.SydneyOperaHouseDescV2),
         //    input: {},
@@ -1288,7 +1291,7 @@
             special: BuildingSpecial.WorldWonder,
             wikipedia: "CN_Tower",
         },
-        // GatewayArch:  {
+        // GatewayArch: {
         //    name: () => t(L.GatewayArch),
         //    desc: () => t(L.GatewayArchDesc),
         //    input: {},
@@ -1320,7 +1323,7 @@
         },
         Atomium: {
             name: () => t(L.Atomium),
-            desc: () => t(L.AtomiumDesc),
+            desc: () => t(L.AtomiumDescV2),
             input: {},
             output: {},
             construction: {NuclearFuelRod: 100, AtomicBomb: 100, Artillery: 100},
@@ -1328,7 +1331,69 @@
             special: BuildingSpecial.WorldWonder,
             wikipedia: "Atomium",
         },
-        // ArcDeTriomphe:  {
+        ChoghaZanbil: {
+            name: () => t(L.ChoghaZanbil),
+            desc: () => t(L.ChoghaZanbilDescV2),
+            input: {},
+            output: {},
+            construction: {Water: 100, Wood: 100, Stone: 100, Wheat: 100},
+            max: 1,
+            special: BuildingSpecial.WorldWonder,
+            wikipedia: "Chogha_Zanbil",
+        },
+        Broadway: {
+            name: () => t(L.Broadway),
+            desc: () => t(L.BroadwayDesc),
+            input: {},
+            output: {},
+            construction: {Opera: 100, Culture: 100, Bond: 100},
+            max: 1,
+            special: BuildingSpecial.WorldWonder,
+            wikipedia: "Broadway_theatre",
+        },
+        TheMet: {
+            name: () => t(L.TheMet),
+            desc: () => t(L.TheMetDesc),
+            input: {},
+            output: {},
+            construction: {Book: 100, Law: 100, Rifle: 100},
+            max: 1,
+            special: BuildingSpecial.WorldWonder,
+            wikipedia: "Metropolitan_Museum_of_Art",
+        },
+        WallStreet: {
+            name: () => t(L.WallStreet),
+            desc: () => t(L.WallStreetDesc),
+            input: {},
+            output: {},
+            construction: {Bond: 100, Law: 100, Banknote: 100},
+            max: 1,
+            special: BuildingSpecial.WorldWonder,
+            wikipedia: "Wall_Street",
+        },
+
+        Shenandoah: {
+            name: () => t(L.Shenandoah),
+            desc: () => t(L.ShenandoahDescV2),
+            input: {},
+            output: {},
+            construction: {},
+            max: 0,
+            wikipedia: "Shenandoah_Valley",
+            special: BuildingSpecial.NaturalWonder,
+        },
+
+        NiagaraFalls: {
+            name: () => t(L.NiagaraFalls),
+            desc: () => t(L.NiagaraFallsDesc),
+            input: {},
+            output: {},
+            construction: {},
+            max: 0,
+            wikipedia: "Niagara_Falls",
+            special: BuildingSpecial.NaturalWonder,
+        },
+        // ArcDeTriomphe: {
         //    name: () => t(L.ArcDeTriomphe),
         //    desc: () => t(L.ArcDeTriompheDesc),
         //    input: {},
@@ -1340,14 +1405,14 @@
         // },
         // #endregion /////////////////////////////////////////////////////////////////////////////////////////////
 
-        // Winery:  {
+        // Winery: {
         //    name: () => t(L.Winery),
         //    input: { Grape: 1, Water: 1 },
         //    output: { Wine: 1 },
         //    construction: { Stone: 1, Marble: 1 },
         // },
 
-        // Pantheon:  {
+        // Pantheon: {
         //    name: () => t(L.Pantheon),
         //    desc: () => t(L.PantheonDesc),
         //    input: {},
@@ -1358,7 +1423,7 @@
         //    wikipedia: "Pantheon,_Rome",
         // },
 
-        // GreatDagonPagoda:  {
+        // GreatDagonPagoda: {
         //    name: () => t(L.GreatDagonPagoda),
         //    desc: () => t(L.GreatDagonPagodaDesc),
         //    input: {},
@@ -1368,7 +1433,7 @@
         //    wikipedia: "Shwedagon_Pagoda",
         // },
 
-        // Borobudur:  {
+        // Borobudur: {
         //    name: () => t(L.Borobudur),
         //    desc: () => t(L.BorobudurDesc),
         //    input: {},
@@ -1377,7 +1442,7 @@
         //    wikipedia: "Borobudur",
         // },
 
-        // ItsukushimaShrine:  {
+        // ItsukushimaShrine: {
         //    name: () => t(L.ItsukushimaShrine),
         //    desc: () => t(L.ItsukushimaShrineDesc),
         //    input: {},
@@ -1386,7 +1451,7 @@
         //    wikipedia: "Itsukushima_Shrine",
         // },
 
-        // Moai:  {
+        // Moai: {
         //    name: () => t(L.Moai),
         //    desc: () => t(L.MoaiDesc),
         //    input: {},
@@ -1395,7 +1460,7 @@
         //    wikipedia: "Moai",
         // },
 
-        // BranCastle:  {
+        // BranCastle: {
         //    name: () => t(L.BranCastle),
         //    desc: () => t(L.BranCastleDesc),
         //    input: {},
@@ -1404,7 +1469,7 @@
         //    wikipedia: "Bran_Castle",
         // },
 
-        // ChoghaZanbil:  {
+        // ChoghaZanbil: {
         //    name: () => t(L.ChoghaZanbil),
         //    desc: () => t(L.ChoghaZanbilDesc),
         //    input: {},
@@ -1413,7 +1478,7 @@
         //    wikipedia: "Chogha_Zanbil",
         // },
 
-        // SydneyOperaHouse:  {
+        // SydneyOperaHouse: {
         //    name: () => t(L.SydneyOperaHouse),
         //    desc: () => t(L.SydneyOperaHouseDesc),
         //    input: {},
@@ -1422,7 +1487,7 @@
         //    wikipedia: "Sydney_Opera_House",
         // },
 
-        // FishPond:  {
+        // FishPond: {
         //    name: () => t(L.FishPond),
         //    input: {},
         //    deposit: { Water: true },
@@ -1430,21 +1495,21 @@
         //    construction: { Brick: 1 },
         // },
 
-        // OlivePlantation:  {
+        // OlivePlantation: {
         //    name: () => t(L.OlivePlantation),
         //    input: {},
         //    output: { Olive: 1 },
         //    construction: { Wood: 1 },
         // },
 
-        // Vineyard:  {
+        // Vineyard: {
         //    name: () => t(L.Vineyard),
         //    input: {},
         //    output: { Grape: 1 },
         //    construction: { Wood: 1 },
         // },
 
-        // OilPress:  {
+        // OilPress: {
         //    name: () => t(L.OilPress),
         //    input: { Olive: 2 },
         //    output: { OliveOil: 1 },
