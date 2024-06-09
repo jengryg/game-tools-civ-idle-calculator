@@ -49,7 +49,15 @@ class BuildingCostTask(
     }
 
     private fun getWorldWonderCostMultiplier(b: BuildingData): Double {
-        val tech = b.unlockedBy ?: throw IllegalArgumentException("Wonder ${b.name} is not unlocked by a tech.")
+        val tech = b.unlockedBy.also {
+            if (it == null) {
+                log.atWarn()
+                    .setMessage("Wonder ${b.name} is not unlocked by a tech.")
+                    .log()
+            }
+        } ?: return 0.0
+        // TODO: this needs to be adjusted to the religion based wonder unlocks.
+        // ?: throw IllegalArgumentException("Wonder ${b.name} is not unlocked by a tech.")
         val aId = tech.age.id.toDouble()
         val tId = tech.column.toDouble()
 
