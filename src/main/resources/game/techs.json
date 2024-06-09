@@ -439,8 +439,6 @@
       "Religion"
     ],
     "unlockBuilding": [
-      "Church",
-      "Mosque",
       "MogaoCaves"
     ]
   },
@@ -470,7 +468,6 @@
       "Theocracy"
     ],
     "unlockBuilding": [
-      "Cathedral",
       "HagiaSophia"
     ]
   },
@@ -591,8 +588,7 @@
       "Chemistry"
     ],
     "unlockBuilding": [
-      "Museum",
-      "StPetersBasilica"
+      "Museum"
     ]
   },
   "Firearm": {
@@ -1036,7 +1032,7 @@
       "Atomium"
     ]
   },
-  "Skyscrapper": {
+  "Skyscraper": {
     "column": 21,
     "requireTech": [
       "UnitedNations",
@@ -1087,7 +1083,7 @@
   "Television": {
     "column": 22,
     "requireTech": [
-      "Skyscrapper",
+      "Skyscraper",
       "NuclearReactor"
     ],
     "unlockBuilding": [
@@ -1098,7 +1094,7 @@
   "MonetarySystem": {
     "column": 22,
     "requireTech": [
-      "Skyscrapper"
+      "Skyscraper"
     ],
     "unlockBuilding": [
       "ForexMarket"

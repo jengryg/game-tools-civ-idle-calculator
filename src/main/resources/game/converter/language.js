@@ -1,4 +1,4 @@
-export const EN = {
+const EN = {
     About: "About CivIdle",
     AbuSimbel: "Abu Simbel",
     AbuSimbelDesc: "Double the effect of Ramesses II. All Adjacent wonders get +1 Happiness",

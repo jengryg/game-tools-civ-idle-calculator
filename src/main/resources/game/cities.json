@@ -19,6 +19,7 @@
       "CircusMaximus": "CivilService",
       "Colosseum": "Theater"
     },
+    "uniqueMultipliers": {},
     "naturalWonders": {
       "Alps": true,
       "GrottaAzzurra": true
@@ -46,6 +47,7 @@
       "StatueOfZeus": "Theater",
       "Parthenon": "Democracy"
     },
+    "uniqueMultipliers": {},
     "naturalWonders": {
       "Aphrodite": true,
       "Poseidon": true
@@ -73,6 +75,7 @@
       "AbuSimbel": "Housing",
       "GreatSphinx": "Arithmetic"
     },
+    "uniqueMultipliers": {},
     "naturalWonders": {
       "NileRiver": true,
       "MountSinai": true
@@ -101,6 +104,7 @@
       "YellowCraneTower": "Geography",
       "PorcelainTower": "Banking"
     },
+    "uniqueMultipliers": {},
     "naturalWonders": {
       "MountTai": true,
       "YangtzeRiver": true
@@ -129,6 +133,15 @@
       "WallStreet": "Capitalism",
       "TheMet": "RapidFire",
       "ResearchFund": "UnitedNations"
+    },
+    "uniqueMultipliers": {
+      "Skyscraper": {
+        "buildingMultiplier": {
+          "ResearchFund": {
+            "output": 1
+          }
+        }
+      }
     },
     "naturalWonders": {
       "Shenandoah": true,

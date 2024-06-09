@@ -1,0 +1,513 @@
+{
+  "Cultivation1": {
+    "requireResources": {},
+    "buildingMultiplier": {
+      "Aqueduct": {
+        "output": 1
+      }
+    }
+  },
+  "Cultivation2": {
+    "requireResources": {
+      "Wood": 1,
+      "Water": 1
+    },
+    "buildingMultiplier": {
+      "Aqueduct": {
+        "output": 1
+      },
+      "PaperMaker": {
+        "output": 1
+      }
+    }
+  },
+  "Cultivation3": {
+    "requireResources": {
+      "Paper": 3
+    },
+    "buildingMultiplier": {
+      "Aqueduct": {
+        "output": 1
+      },
+      "PaperMaker": {
+        "output": 1
+      },
+      "Library": {
+        "output": 1
+      }
+    }
+  },
+  "Cultivation4": {
+    "requireResources": {
+      "Faith": 1,
+      "Poem": 1
+    },
+    "buildingMultiplier": {
+      "Aqueduct": {
+        "output": 1
+      },
+      "PaperMaker": {
+        "output": 1
+      },
+      "Library": {
+        "output": 1
+      },
+      "School": {
+        "output": 1
+      }
+    }
+  },
+  "Commerce1": {
+    "requireResources": {},
+    "buildingMultiplier": {
+      "StoneQuarry": {
+        "output": 1
+      }
+    }
+  },
+  "Commerce2": {
+    "requireResources": {
+      "Stone": 2
+    },
+    "buildingMultiplier": {
+      "StoneQuarry": {
+        "output": 1
+      },
+      "Brickworks": {
+        "output": 1
+      }
+    }
+  },
+  "Commerce3": {
+    "requireResources": {
+      "Gold": 1
+    },
+    "buildingMultiplier": {
+      "StoneQuarry": {
+        "output": 1
+      },
+      "Brickworks": {
+        "output": 1
+      },
+      "GoldMiningCamp": {
+        "output": 1
+      }
+    }
+  },
+  "Commerce4": {
+    "requireResources": {
+      "Gold": 3
+    },
+    "buildingMultiplier": {
+      "StoneQuarry": {
+        "output": 1
+      },
+      "Brickworks": {
+        "output": 1
+      },
+      "GoldMiningCamp": {
+        "output": 1
+      },
+      "CoinMint": {
+        "output": 1
+      }
+    }
+  },
+  "Honor1": {
+    "requireResources": {},
+    "buildingMultiplier": {
+      "LoggingCamp": {
+        "output": 1
+      }
+    }
+  },
+  "Honor2": {
+    "requireResources": {
+      "Wood": 2
+    },
+    "buildingMultiplier": {
+      "LoggingCamp": {
+        "output": 1
+      },
+      "LumberMill": {
+        "output": 1
+      }
+    }
+  },
+  "Honor3": {
+    "requireResources": {
+      "Lumber": 2,
+      "Iron": 2,
+      "Tool": 1
+    },
+    "buildingMultiplier": {
+      "LoggingCamp": {
+        "output": 1
+      },
+      "LumberMill": {
+        "output": 1
+      },
+      "SiegeWorkshop": {
+        "output": 1
+      }
+    }
+  },
+  "Honor4": {
+    "requireResources": {
+      "Horse": 1,
+      "Armor": 1,
+      "Sword": 1
+    },
+    "buildingMultiplier": {
+      "LoggingCamp": {
+        "output": 1
+      },
+      "LumberMill": {
+        "output": 1
+      },
+      "SiegeWorkshop": {
+        "output": 1
+      },
+      "KnightCamp": {
+        "output": 1
+      }
+    }
+  },
+  "Expansion1": {
+    "requireResources": {},
+    "buildingMultiplier": {
+      "WheatFarm": {
+        "output": 1
+      }
+    }
+  },
+  "Expansion2": {
+    "requireResources": {
+      "Wheat": 2
+    },
+    "buildingMultiplier": {
+      "WheatFarm": {
+        "output": 1
+      },
+      "FlourMill": {
+        "output": 1
+      }
+    }
+  },
+  "Expansion3": {
+    "requireResources": {
+      "Water": 1,
+      "Flour": 1
+    },
+    "buildingMultiplier": {
+      "WheatFarm": {
+        "output": 1
+      },
+      "FlourMill": {
+        "output": 1
+      },
+      "Bakery": {
+        "output": 1
+      }
+    }
+  },
+  "Expansion4": {
+    "requireResources": {
+      "Cheese": 1,
+      "Meat": 2,
+      "Bread": 1
+    },
+    "buildingMultiplier": {
+      "WheatFarm": {
+        "output": 1
+      },
+      "FlourMill": {
+        "output": 1
+      },
+      "Bakery": {
+        "output": 1
+      },
+      "Apartment": {
+        "output": 1
+      }
+    },
+    "globalMultiplier": {
+      "sciencePerBusyWorker": 1,
+      "sciencePerIdleWorker": 1
+    }
+  },
+  "Christianity1": {
+    "requireResources": {},
+    "unlockBuilding": [
+      "Church"
+    ],
+    "tech": "Religion"
+  },
+  "Christianity2": {
+    "requireResources": {
+      "Faith": 1
+    },
+    "unlockBuilding": [
+      "StPetersBasilica"
+    ],
+    "buildingMultiplier": {
+      "Church": {
+        "output": 1
+      }
+    },
+    "tech": "HolyEmpire"
+  },
+  "Christianity3": {
+    "requireResources": {
+      "Faith": 1
+    },
+    "buildingMultiplier": {
+      "Church": {
+        "output": 1
+      },
+      "KnightCamp": {
+        "output": 1
+      }
+    }
+  },
+  "Christianity4": {
+    "requireResources": {
+      "Faith": 1
+    },
+    "buildingMultiplier": {
+      "Church": {
+        "output": 1
+      },
+      "KnightCamp": {
+        "output": 1
+      },
+      "Bank": {
+        "output": 1
+      }
+    }
+  },
+  "Christianity5": {
+    "requireResources": {
+      "Faith": 1
+    },
+    "buildingMultiplier": {
+      "Church": {
+        "output": 1
+      },
+      "KnightCamp": {
+        "output": 1
+      },
+      "Bank": {
+        "output": 1
+      }
+    },
+    "globalMultiplier": {
+      "builderCapacity": 2
+    }
+  },
+  "Islam1": {
+    "requireResources": {},
+    "unlockBuilding": [
+      "Mosque"
+    ],
+    "tech": "Religion"
+  },
+  "Islam2": {
+    "requireResources": {
+      "Faith": 1
+    },
+    "unlockBuilding": [
+      "ProphetsMosque"
+    ],
+    "buildingMultiplier": {
+      "Mosque": {
+        "output": 1
+      }
+    },
+    "tech": "HolyEmpire"
+  },
+  "Islam3": {
+    "requireResources": {
+      "Faith": 1
+    },
+    "buildingMultiplier": {
+      "Mosque": {
+        "output": 1
+      },
+      "CaravelBuilder": {
+        "output": 1
+      }
+    }
+  },
+  "Islam4": {
+    "requireResources": {
+      "Faith": 1
+    },
+    "buildingMultiplier": {
+      "Mosque": {
+        "output": 1
+      },
+      "CaravelBuilder": {
+        "output": 1
+      },
+      "Museum": {
+        "output": 1
+      }
+    }
+  },
+  "Islam5": {
+    "requireResources": {
+      "Faith": 1
+    },
+    "buildingMultiplier": {
+      "Mosque": {
+        "output": 1
+      },
+      "CaravelBuilder": {
+        "output": 1
+      },
+      "Museum": {
+        "output": 1
+      }
+    }
+  },
+  "Buddhism1": {
+    "requireResources": {},
+    "unlockBuilding": [
+      "Pagoda"
+    ],
+    "tech": "Religion"
+  },
+  "Buddhism2": {
+    "requireResources": {
+      "Faith": 1
+    },
+    "unlockBuilding": [
+      "GreatDagonPagoda"
+    ],
+    "buildingMultiplier": {
+      "Pagoda": {
+        "output": 1
+      }
+    },
+    "tech": "HolyEmpire"
+  },
+  "Buddhism3": {
+    "requireResources": {
+      "Faith": 1
+    },
+    "buildingMultiplier": {
+      "Pagoda": {
+        "output": 1
+      },
+      "CoinMint": {
+        "output": 1
+      }
+    }
+  },
+  "Buddhism4": {
+    "requireResources": {
+      "Faith": 1
+    },
+    "buildingMultiplier": {
+      "Pagoda": {
+        "output": 1
+      },
+      "CoinMint": {
+        "output": 1
+      },
+      "GunpowderMill": {
+        "output": 1
+      }
+    }
+  },
+  "Buddhism5": {
+    "requireResources": {
+      "Faith": 1
+    },
+    "buildingMultiplier": {
+      "Pagoda": {
+        "output": 1
+      },
+      "CoinMint": {
+        "output": 1
+      },
+      "GunpowderMill": {
+        "output": 1
+      }
+    },
+    "globalMultiplier": {
+      "happiness": 10
+    }
+  },
+  "Polytheism1": {
+    "requireResources": {},
+    "buildingMultiplier": {
+      "Shrine": {
+        "output": 1
+      }
+    }
+  },
+  "Polytheism2": {
+    "requireResources": {
+      "Faith": 1
+    },
+    "buildingMultiplier": {
+      "Shrine": {
+        "output": 1
+      }
+    },
+    "unlockBuilding": [
+      "Pantheon"
+    ],
+    "tech": "HolyEmpire"
+  },
+  "Polytheism3": {
+    "requireResources": {
+      "Faith": 1
+    },
+    "buildingMultiplier": {
+      "Shrine": {
+        "output": 1
+      },
+      "School": {
+        "output": 1
+      }
+    }
+  },
+  "Polytheism4": {
+    "requireResources": {
+      "Faith": 1
+    },
+    "buildingMultiplier": {
+      "Shrine": {
+        "output": 1
+      },
+      "School": {
+        "output": 1
+      },
+      "PrintingHouse": {
+        "output": 1
+      }
+    }
+  },
+  "Polytheism5": {
+    "requireResources": {
+      "Faith": 1
+    },
+    "buildingMultiplier": {
+      "Shrine": {
+        "output": 1
+      },
+      "School": {
+        "output": 1
+      },
+      "PrintingHouse": {
+        "output": 1
+      }
+    },
+    "globalMultiplier": {
+      "sciencePerBusyWorker": 2
+    }
+  }
+}

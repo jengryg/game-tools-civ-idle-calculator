@@ -316,7 +316,7 @@
             name: () => t(L.Theocracy),
             column: 9,
             requireTech: ["Autocracy", "Religion"],
-            unlockBuilding: ["Church", "Mosque", "MogaoCaves"],
+            unlockBuilding: ["MogaoCaves"],
         },
 
         Navigation: ITechDefinition = {
@@ -337,7 +337,7 @@
             name: () => t(L.HolyEmpire),
             column: 10,
             requireTech: ["Feudalism", "Theocracy"],
-            unlockBuilding: ["Cathedral", "HagiaSophia"],
+            unlockBuilding: ["HagiaSophia"],
         },
 
         Education: ITechDefinition = {
@@ -409,7 +409,7 @@
             name: () => t(L.Enlightenment),
             column: 12,
             requireTech: ["University", "Chemistry"],
-            unlockBuilding: ["Museum", "StPetersBasilica"],
+            unlockBuilding: ["Museum"],
         },
 
         Firearm: ITechDefinition = {
@@ -707,8 +707,8 @@
             unlockBuilding: ["NuclearPowerPlant", "Atomium"],
         },
 
-        Skyscrapper: ITechDefinition = {
-            name: () => t(L.Skyscrapper),
+        Skyscraper: ITechDefinition = {
+            name: () => t(L.Skyscraper),
             column: 21,
             requireTech: ["UnitedNations", "Hydroelectricity"],
             unlockBuilding: ["Condo"],
@@ -738,14 +738,14 @@
         Television: ITechDefinition = {
             name: () => t(L.Television),
             column: 22,
-            requireTech: ["Skyscrapper", "NuclearReactor"],
+            requireTech: ["Skyscraper", "NuclearReactor"],
             unlockBuilding: ["TVStation", "CNTower"],
         },
 
         MonetarySystem: ITechDefinition = {
             name: () => t(L.MonetarySystem),
             column: 22,
-            requireTech: ["Skyscrapper"],
+            requireTech: ["Skyscraper"],
             unlockBuilding: ["ForexMarket"],
         },
 

@@ -347,10 +347,10 @@
             name: () => t(L.Xuanzang),
             boost: {
                 multipliers: ["output"],
-                buildings: ["Library"],
+                buildings: ["Library", "Pagoda"],
             },
             time: "602 ~ 664 AD",
-            value: 2 * 1,
+            value: 1 * 1,
             maxLevel: Number.POSITIVE_INFINITY,
             age: "MiddleAge",
         },
@@ -435,7 +435,7 @@
             name: () => t(L.MartinLuther),
             boost: {
                 multipliers: ["output", "storage"],
-                buildings: ["Church", "Cathedral"],
+                buildings: ["Church", "School"],
             },
             time: "1483 ~ 1546 AD",
             value: 1,
@@ -520,8 +520,7 @@
             value: 1,
             maxLevel: Number.POSITIVE_INFINITY,
             age: "RenaissanceAge",
-            tick: (self, level, source) => {
-            },
+
             type: GreatPersonType.Wildcard,
         },
 
@@ -532,8 +531,7 @@
             value: 1,
             maxLevel: Number.POSITIVE_INFINITY,
             age: "RenaissanceAge",
-            tick: (self, level, source) => {
-            },
+
             type: GreatPersonType.Promotion,
         },
 

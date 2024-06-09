@@ -1,0 +1,38 @@
+{
+  "Christianity": {
+    "content": [
+      "Christianity1",
+      "Christianity2",
+      "Christianity3",
+      "Christianity4",
+      "Christianity5"
+    ]
+  },
+  "Islam": {
+    "content": [
+      "Islam1",
+      "Islam2",
+      "Islam3",
+      "Islam4",
+      "Islam5"
+    ]
+  },
+  "Buddhism": {
+    "content": [
+      "Buddhism1",
+      "Buddhism2",
+      "Buddhism3",
+      "Buddhism4",
+      "Buddhism5"
+    ]
+  },
+  "Polytheism": {
+    "content": [
+      "Polytheism1",
+      "Polytheism2",
+      "Polytheism3",
+      "Polytheism4",
+      "Polytheism5"
+    ]
+  }
+}

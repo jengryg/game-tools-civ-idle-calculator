@@ -641,19 +641,19 @@
   "Mosque": {
     "input": {
       "Cheese": 1,
-      "Marble": 1
+      "Opera": 1
+    },
+    "output": {
+      "Faith": 4
+    }
+  },
+  "Pagoda": {
+    "input": {
+      "Painting": 1,
+      "Furniture": 1
     },
     "output": {
       "Faith": 3
-    }
-  },
-  "Cathedral": {
-    "input": {
-      "Sword": 1,
-      "Armor": 1
-    },
-    "output": {
-      "Faith": 6
     }
   },
   "Library": {
@@ -673,7 +673,7 @@
       "Poem": 1
     },
     "output": {
-      "Science": 470
+      "Science": 400
     }
   },
   "University": {
@@ -712,7 +712,7 @@
       "Philosophy": 2
     },
     "output": {
-      "Science": 5560
+      "Science": 5000
     }
   },
   "ResearchFund": {
@@ -1481,9 +1481,7 @@
     "wikipedia": "Mausoleum_at_Halicarnassus"
   },
   "HagiaSophia": {
-    "input": {
-      "Faith": 10
-    },
+    "input": {},
     "construction": {
       "Faith": 150,
       "Marble": 150,
@@ -1541,16 +1539,6 @@
     },
     "special": "WorldWonder",
     "wikipedia": "University_of_Oxford"
-  },
-  "StPetersBasilica": {
-    "input": {},
-    "output": {},
-    "max": 1,
-    "construction": {
-      "Faith": 500
-    },
-    "special": "WorldWonder",
-    "wikipedia": "St._Peter%27s_Basilica"
   },
   "SaintBasilsCathedral": {
     "input": {},
@@ -1808,7 +1796,7 @@
     "input": {},
     "output": {},
     "construction": {
-      "Uranium": 500
+      "NuclearFuelRod": 500
     },
     "max": 1,
     "special": "WorldWonder",
@@ -1990,5 +1978,45 @@
     "max": 0,
     "wikipedia": "Niagara_Falls",
     "special": "NaturalWonder"
+  },
+  "StPetersBasilica": {
+    "input": {},
+    "output": {},
+    "max": 1,
+    "construction": {
+      "Faith": 300
+    },
+    "special": "WorldWonder",
+    "wikipedia": "St._Peter%27s_Basilica"
+  },
+  "ProphetsMosque": {
+    "input": {},
+    "output": {},
+    "max": 1,
+    "construction": {
+      "Faith": 300
+    },
+    "special": "WorldWonder",
+    "wikipedia": "Prophet%27s_Mosque"
+  },
+  "GreatDagonPagoda": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "Faith": 300
+    },
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "Shwedagon_Pagoda"
+  },
+  "Pantheon": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "Faith": 300
+    },
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "Pantheon,_Rome"
   }
 }

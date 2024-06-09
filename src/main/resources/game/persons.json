@@ -362,11 +362,12 @@
         "output"
       ],
       "buildings": [
-        "Library"
+        "Library",
+        "Pagoda"
       ]
     },
     "time": "602 ~ 664 AD",
-    "value": 2,
+    "value": 1,
     "maxLevel": null,
     "age": "MiddleAge"
   },
@@ -445,7 +446,7 @@
       ],
       "buildings": [
         "Church",
-        "Cathedral"
+        "School"
       ]
     },
     "time": "1483 ~ 1546 AD",
