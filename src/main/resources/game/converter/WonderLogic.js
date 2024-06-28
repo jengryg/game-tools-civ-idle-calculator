@@ -1,0 +1,56 @@
+function addMultiplier(target, mods, _) {
+    return {
+        target: target,
+        mods: mods
+    }
+}
+
+let buildingName = undefined
+// just a throwaway var to allow us simpler copy and paste from source code of game
+
+const wonders = {
+    CircusMaximus: [
+        addMultiplier("MusiciansGuild", {output: 1, storage: 1}, buildingName),
+        addMultiplier("PaintersGuild", {output: 1, storage: 1}, buildingName),
+        addMultiplier("WritersGuild", {output: 1, storage: 1}, buildingName),
+    ],
+    Parthenon: [
+        addMultiplier("MusiciansGuild", {output: 1, worker: 1, storage: 1}, buildingName),
+        addMultiplier("PaintersGuild", {output: 1, worker: 1, storage: 1}, buildingName),
+    ],
+    TerracottaArmy: [
+        addMultiplier("IronMiningCamp", {output: 1, worker: 1, storage: 1,}, buildingName)
+    ],
+    Persepolis: [
+        addMultiplier("StoneQuarry", {output: 1, worker: 1, storage: 1}, buildingName),
+        addMultiplier("LoggingCamp", {output: 1, worker: 1, storage: 1}, buildingName),
+        addMultiplier("CopperMiningCamp", {output: 1, worker: 1, storage: 1}, buildingName),
+    ],
+    ForbiddenCity: [
+        addMultiplier("PaperMaker", {output: 1, worker: 1, storage: 1}, buildingName),
+        addMultiplier("WritersGuild", {output: 1, worker: 1, storage: 1}, buildingName),
+        addMultiplier("PrintingHouse", {output: 1, worker: 1, storage: 1}, buildingName),
+    ],
+    HimejiCastle: [
+        addMultiplier("CaravelBuilder", {output: 1, worker: 1, storage: 1}, buildingName),
+        addMultiplier("GalleonBuilder", {output: 1, worker: 1, storage: 1}, buildingName),
+        addMultiplier("FrigateBuilder", {output: 1, worker: 1, storage: 1}, buildingName),
+    ],
+    TempleOfArtemis: [
+        addMultiplier("SwordForge", {worker: 1, storage: 1, output: 1}, buildingName),
+        addMultiplier("Armory", {worker: 1, storage: 1, output: 1}, buildingName),
+    ],
+    BrandenburgGate: [
+        addMultiplier("OilWell", {output: 1, worker: 1, storage: 1}, buildingName),
+        addMultiplier("CoalMine", {output: 1, worker: 1, storage: 1}, buildingName),
+    ],
+    NileRiver: [
+        addMultiplier("WheatFarm", {output: 1, storage: 1}, buildingName),
+    ],
+    ManhattanProject: [
+        addMultiplier("UraniumMine", {output: 2, worker: 2, storage: 2}, buildingName),
+    ],
+    ApolloProgram: [
+        addMultiplier("RocketFactory", {output: 2, worker: 2, storage: 2}, buildingName),
+    ]
+}

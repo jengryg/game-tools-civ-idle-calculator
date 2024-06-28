@@ -571,6 +571,17 @@
     },
     "power": true
   },
+  "Peacekeeper": {
+    "input": {
+      "NuclearMissile": 4,
+      "Diplomacy": 1,
+      "Radio": 1
+    },
+    "output": {
+      "Peace": 1
+    },
+    "power": true
+  },
   "WritersGuild": {
     "input": {
       "Paper": 2
@@ -802,6 +813,68 @@
     },
     "output": {
       "TV": 1
+    },
+    "power": true
+  },
+  "InternetServiceProvider": {
+    "input": {
+      "Computer": 1,
+      "OpticalFiber": 5
+    },
+    "output": {
+      "Internet": 1
+    },
+    "power": true
+  },
+  "SoftwareCompany": {
+    "input": {
+      "Computer": 1,
+      "Philosophy": 10
+    },
+    "output": {
+      "Software": 1
+    },
+    "power": true
+  },
+  "SupercomputerLab": {
+    "input": {
+      "Software": 1,
+      "Computer": 5
+    },
+    "output": {
+      "Supercomputer": 1
+    },
+    "power": true
+  },
+  "CivGPT": {
+    "input": {
+      "Internet": 1,
+      "Supercomputer": 2,
+      "Radio": 1
+    },
+    "output": {
+      "CivGPT": 1
+    },
+    "power": true
+  },
+  "CivTok": {
+    "input": {
+      "Internet": 1,
+      "Politics": 1
+    },
+    "output": {
+      "CivTok": 1
+    },
+    "power": true
+  },
+  "CivOasis": {
+    "input": {
+      "CivTok": 1,
+      "Supercomputer": 1,
+      "Diplomacy": 2
+    },
+    "output": {
+      "CivOasis": 1
     },
     "power": true
   },
@@ -1093,6 +1166,17 @@
       "Train": 1
     }
   },
+  "MaglevFactory": {
+    "input": {
+      "Train": 15,
+      "Airplane": 15,
+      "Car": 15
+    },
+    "output": {
+      "Maglev": 1
+    },
+    "power": true
+  },
   "CarFactory": {
     "input": {
       "Engine": 1,
@@ -1104,6 +1188,28 @@
     },
     "output": {
       "Car": 1
+    },
+    "power": true
+  },
+  "RobocarFactory": {
+    "input": {
+      "Car": 5,
+      "Supercomputer": 2,
+      "Satellite": 1
+    },
+    "output": {
+      "Robocar": 1
+    },
+    "power": true
+  },
+  "SpaceCenter": {
+    "input": {
+      "Maglev": 1,
+      "Radio": 1,
+      "Supercomputer": 1
+    },
+    "output": {
+      "PlanetaryRover": 2
     },
     "power": true
   },
@@ -1225,6 +1331,32 @@
       "Forex": 1
     }
   },
+  "MutualFund": {
+    "input": {
+      "Forex": 1,
+      "Stock": 1
+    },
+    "output": {
+      "MutualFund": 1
+    }
+  },
+  "HedgeFund": {
+    "input": {
+      "MutualFund": 2
+    },
+    "output": {
+      "HedgeFund": 1
+    }
+  },
+  "BitcoinMiner": {
+    "input": {
+      "HedgeFund": 2,
+      "CivTok": 1
+    },
+    "output": {
+      "Bitcoin": 1
+    }
+  },
   "Caravansary": {
     "input": {},
     "output": {},
@@ -1250,6 +1382,13 @@
       "Lumber": 1,
       "Brick": 1,
       "Horse": 1
+    }
+  },
+  "CloneFactory": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "Concrete": 10
     }
   },
   "Headquarter": {
@@ -2018,5 +2157,57 @@
     "max": 1,
     "special": "WorldWonder",
     "wikipedia": "Pantheon,_Rome"
+  },
+  "WallOfBabylon": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "Brick": 100,
+      "Lumber": 100,
+      "Sand": 100
+    },
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "Ishtar_Gate"
+  },
+  "TowerOfBabel": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "Brick": 100,
+      "Lumber": 100,
+      "Sand": 100
+    },
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "Tower_of_Babel"
+  },
+  "ZigguratOfUr": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "Brick": 100,
+      "Lumber": 100,
+      "Sand": 100
+    },
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "Ziggurat_of_Ur"
+  },
+  "EuphratesRiver": {
+    "input": {},
+    "output": {},
+    "construction": {},
+    "max": 0,
+    "special": "NaturalWonder",
+    "wikipedia": "Euphrates"
+  },
+  "ZagrosMountains": {
+    "input": {},
+    "output": {},
+    "construction": {},
+    "max": 0,
+    "special": "NaturalWonder",
+    "wikipedia": "Zagros_Mountains"
   }
 }

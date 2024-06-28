@@ -2,33 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>BuildingDefinitions</title>
+    <title>ReligionDefinitions</title>
 </head>
 <body>
 <div id="output"></div>
 </body>
 </html>
 
-<script type="text/javascript" src="language.js"></script>
+<script type="text/javascript" src="_language.js"></script>
+<script type="text/javascript" src="ReligionDefinitions.js"></script>
 <script type="application/javascript">
-    const data = {
-        Christianity: {
-            name: () => t(L.ReligionChristianity),
-            content: ["Christianity1", "Christianity2", "Christianity3", "Christianity4", "Christianity5"],
-        },
-        Islam: {
-            name: () => t(L.ReligionIslam),
-            content: ["Islam1", "Islam2", "Islam3", "Islam4", "Islam5"],
-        },
-        Buddhism: {
-            name: () => t(L.ReligionBuddhism),
-            content: ["Buddhism1", "Buddhism2", "Buddhism3", "Buddhism4", "Buddhism5"],
-        },
-        Polytheism: {
-            name: () => t(L.ReligionPolytheism),
-            content: ["Polytheism1", "Polytheism2", "Polytheism3", "Polytheism4", "Polytheism5"],
-        },
-    }
-
-    document.getElementById("output").innerHTML = JSON.stringify(data)
+    document.getElementById("output").innerHTML = JSON.stringify(Religions)
 </script>

@@ -754,7 +754,6 @@
   "Imperialism": {
     "column": 16,
     "requireTech": [
-      "Railway",
       "RapidFire"
     ],
     "unlockBuilding": [
@@ -766,7 +765,8 @@
     "column": 16,
     "requireTech": [
       "Railway",
-      "Drilling"
+      "Drilling",
+      "RapidFire"
     ],
     "unlockBuilding": [
       "CoalPowerPlant"
@@ -919,8 +919,7 @@
   "Assembly": {
     "column": 19,
     "requireTech": [
-      "Aviation",
-      "Synthetics"
+      "Aviation"
     ],
     "unlockBuilding": [
       "CarFactory",
@@ -930,7 +929,8 @@
   "Ballistics": {
     "column": 19,
     "requireTech": [
-      "Synthetics"
+      "Synthetics",
+      "Aviation"
     ],
     "unlockBuilding": [
       "ArtilleryFactory",
@@ -1146,80 +1146,126 @@
     "requireTech": [
       "MutualAssuredDestruction",
       "SpaceProgram"
+    ],
+    "unlockBuilding": [
+      "MaglevFactory"
     ]
   },
-  "Internet": {
+  "Software": {
     "column": 24,
     "requireTech": [
-      "MutualAssuredDestruction",
-      "Computer",
-      "Globalization"
+      "Computer"
+    ],
+    "unlockBuilding": [
+      "SoftwareCompany"
     ]
   },
-  "Genetics": {
+  "WorldWideWeb": {
     "column": 24,
     "requireTech": [
-      "Globalization"
+      "Globalization",
+      "Computer"
+    ],
+    "unlockBuilding": [
+      "InternetServiceProvider"
     ]
   },
   "FinancialLeverage": {
     "column": 24,
     "requireTech": [
       "Globalization"
+    ],
+    "unlockBuilding": [
+      "MutualFund"
     ]
   },
-  "Robotics": {
+  "Genetics": {
     "column": 25,
     "requireTech": [
       "Nanotechnology",
-      "Internet"
+      "Software"
+    ],
+    "unlockBuilding": [
+      "CloneFactory"
+    ]
+  },
+  "CloudComputing": {
+    "column": 25,
+    "requireTech": [
+      "Software",
+      "WorldWideWeb"
+    ],
+    "unlockBuilding": [
+      "SupercomputerLab"
     ]
   },
   "SocialNetwork": {
     "column": 25,
     "requireTech": [
-      "Internet"
+      "WorldWideWeb"
+    ],
+    "unlockBuilding": [
+      "CivTok"
     ]
   },
-  "Smartphone": {
-    "column": 25,
-    "requireTech": [
-      "Internet"
-    ]
-  },
-  "UniversalHealthcare": {
+  "FinancialArbitrage": {
     "column": 25,
     "requireTech": [
       "FinancialLeverage",
+      "WorldWideWeb"
+    ],
+    "unlockBuilding": [
+      "HedgeFund"
+    ]
+  },
+  "Robotics": {
+    "column": 26,
+    "requireTech": [
       "Genetics"
+    ],
+    "unlockBuilding": [
+      "RobocarFactory",
+      "SpaceCenter"
     ]
   },
   "ArtificialIntelligence": {
     "column": 26,
-    "unlockBuilding": [],
+    "unlockBuilding": [
+      "CivGPT"
+    ],
     "requireTech": [
-      "Robotics",
-      "SocialNetwork"
-    ]
-  },
-  "CloudComputing": {
-    "column": 26,
-    "requireTech": [
-      "SocialNetwork"
+      "CloudComputing",
+      "Genetics"
     ]
   },
   "VirtualReality": {
     "column": 26,
     "requireTech": [
       "SocialNetwork",
-      "Smartphone"
+      "CloudComputing"
+    ],
+    "unlockBuilding": [
+      "CivOasis",
+      "Peacekeeper"
     ]
   },
-  "Cryptocurrency": {
+  "Blockchain": {
     "column": 26,
     "requireTech": [
-      "Smartphone",
-      "UniversalHealthcare"
+      "FinancialArbitrage",
+      "SocialNetwork"
+    ],
+    "unlockBuilding": [
+      "BitcoinMiner"
+    ]
+  },
+  "Future": {
+    "column": 27,
+    "requireTech": [
+      "Blockchain",
+      "VirtualReality",
+      "Robotics",
+      "ArtificialIntelligence"
     ]
   }
 }

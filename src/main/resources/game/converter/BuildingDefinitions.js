@@ -310,6 +310,12 @@ const Buildings = {
         output: {NuclearMissile: 1},
         power: true,
     },
+    Peacekeeper: {
+        name: () => t(L.Peacekeeper),
+        input: {NuclearMissile: 4, Diplomacy: 1, Radio: 1},
+        output: {Peace: 1},
+        power: true,
+    },
     // #endregion /////////////////////////////////////////////////////////////////////////////////////////////
 
     // #region Culture ////////////////////////////////////////////////////////////////////////////////////////
@@ -435,6 +441,42 @@ const Buildings = {
         name: () => t(L.TVStation),
         input: {Radio: 2, Movie: 10},
         output: {TV: 1},
+        power: true,
+    },
+    InternetServiceProvider: {
+        name: () => t(L.InternetServiceProvider),
+        input: {Computer: 1, OpticalFiber: 5},
+        output: {Internet: 1},
+        power: true,
+    },
+    SoftwareCompany: {
+        name: () => t(L.SoftwareCompany),
+        input: {Computer: 1, Philosophy: 10},
+        output: {Software: 1},
+        power: true,
+    },
+    SupercomputerLab: {
+        name: () => t(L.SupercomputerLab),
+        input: {Software: 1, Computer: 5},
+        output: {Supercomputer: 1},
+        power: true,
+    },
+    CivGPT: {
+        name: () => t(L.CivGPT),
+        input: {Internet: 1, Supercomputer: 2, Radio: 1},
+        output: {CivGPT: 1},
+        power: true,
+    },
+    CivTok: {
+        name: () => t(L.CivTok),
+        input: {Internet: 1, Politics: 1},
+        output: {CivTok: 1},
+        power: true,
+    },
+    CivOasis: {
+        name: () => t(L.CivOasis),
+        input: {CivTok: 1, Supercomputer: 1, Diplomacy: 2},
+        output: {CivOasis: 1},
         power: true,
     },
     // #endregion /////////////////////////////////////////////////////////////////////////////////////////////
@@ -595,10 +637,28 @@ const Buildings = {
         input: {Engine: 1, Steel: 10},
         output: {Train: 1},
     },
+    MaglevFactory: {
+        name: () => t(L.MaglevFactory),
+        input: {Train: 15, Airplane: 15, Car: 15},
+        output: {Maglev: 1},
+        power: true,
+    },
     CarFactory: {
         name: () => t(L.CarFactory),
         input: {Engine: 1, Steel: 1, Furniture: 1, Cable: 1, Plastics: 1, Petrol: 5},
         output: {Car: 1},
+        power: true,
+    },
+    RobocarFactory: {
+        name: () => t(L.RobocarFactory),
+        input: {Car: 5, Supercomputer: 2, Satellite: 1},
+        output: {Robocar: 1},
+        power: true,
+    },
+    SpaceCenter: {
+        name: () => t(L.SpaceCenter),
+        input: {Maglev: 1, Radio: 1, Supercomputer: 1},
+        output: {PlanetaryRover: 2},
         power: true,
     },
     OilRefinery: {
@@ -672,6 +732,21 @@ const Buildings = {
         input: {Banknote: 2, Bond: 2},
         output: {Forex: 1},
     },
+    MutualFund: {
+        name: () => t(L.MutualFund),
+        input: {Forex: 1, Stock: 1},
+        output: {MutualFund: 1},
+    },
+    HedgeFund: {
+        name: () => t(L.HedgeFund),
+        input: {MutualFund: 2},
+        output: {HedgeFund: 1},
+    },
+    BitcoinMiner: {
+        name: () => t(L.BitcoinMiner),
+        input: {HedgeFund: 2, CivTok: 1},
+        output: {Bitcoin: 1},
+    },
     Caravansary: {
         name: () => t(L.Caravansary),
         desc: () => t(L.CaravansaryDesc),
@@ -692,6 +767,13 @@ const Buildings = {
         output: {},
         desc: () => t(L.WarehouseDesc),
         construction: {Lumber: 1, Brick: 1, Horse: 1},
+    },
+    CloneFactory: {
+        name: () => t(L.CloneFactory),
+        input: {},
+        output: {},
+        desc: () => t(L.CloneFactoryDesc),
+        construction: {Concrete: 10},
     },
     // #endregion /////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -1414,6 +1496,61 @@ const Buildings = {
         max: 1,
         special: BuildingSpecial.WorldWonder,
         wikipedia: "Pantheon,_Rome",
+    },
+
+    WallOfBabylon: {
+        name: () => t(L.WallOfBabylon),
+        desc: () => t(L.WallOfBabylonDesc),
+        input: {},
+        output: {},
+        construction: {Brick: 100, Lumber: 100, Sand: 100},
+        max: 1,
+        special: BuildingSpecial.WorldWonder,
+        wikipedia: "Ishtar_Gate",
+    },
+
+    TowerOfBabel: {
+        name: () => t(L.TowerOfBabel),
+        desc: () => t(L.TowerOfBabelDesc),
+        input: {},
+        output: {},
+        construction: {Brick: 100, Lumber: 100, Sand: 100},
+        max: 1,
+        special: BuildingSpecial.WorldWonder,
+        wikipedia: "Tower_of_Babel",
+    },
+
+    ZigguratOfUr: {
+        name: () => t(L.ZigguratOfUr),
+        desc: () => t(L.ZigguratOfUrDesc),
+        input: {},
+        output: {},
+        construction: {Brick: 100, Lumber: 100, Sand: 100},
+        max: 1,
+        special: BuildingSpecial.WorldWonder,
+        wikipedia: "Ziggurat_of_Ur",
+    },
+
+    EuphratesRiver: {
+        name: () => t(L.EuphratesRiver),
+        desc: () => t(L.EuphratesRiverDesc),
+        input: {},
+        output: {},
+        construction: {},
+        max: 0,
+        special: BuildingSpecial.NaturalWonder,
+        wikipedia: "Euphrates",
+    },
+
+    ZagrosMountains: {
+        name: () => t(L.ZagrosMountains),
+        desc: () => t(L.ZagrosMountainsDesc),
+        input: {},
+        output: {},
+        construction: {},
+        max: 0,
+        special: BuildingSpecial.NaturalWonder,
+        wikipedia: "Zagros_Mountains",
     },
 
     // ArcDeTriomphe: {

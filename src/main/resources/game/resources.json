@@ -99,5 +99,18 @@
   "OpticalFiber": {},
   "Submarine": {},
   "NuclearSubmarine": {},
-  "Teleport": {}
+  "Teleport": {},
+  "Maglev": {},
+  "Internet": {},
+  "Software": {},
+  "MutualFund": {},
+  "HedgeFund": {},
+  "Supercomputer": {},
+  "CivTok": {},
+  "CivOasis": {},
+  "Bitcoin": {},
+  "CivGPT": {},
+  "Robocar": {},
+  "PlanetaryRover": {},
+  "Peace": {}
 }
