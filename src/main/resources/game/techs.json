@@ -1128,7 +1128,8 @@
       "Television"
     ],
     "unlockBuilding": [
-      "ComputerFactory"
+      "ComputerFactory",
+      "ComputerLab"
     ]
   },
   "Globalization": {
@@ -1148,7 +1149,8 @@
       "SpaceProgram"
     ],
     "unlockBuilding": [
-      "MaglevFactory"
+      "MaglevFactory",
+      "InternationalSpaceStation"
     ]
   },
   "Software": {
@@ -1186,7 +1188,8 @@
       "Software"
     ],
     "unlockBuilding": [
-      "CloneFactory"
+      "CloneFactory",
+      "CloneLab"
     ]
   },
   "CloudComputing": {
@@ -1205,7 +1208,8 @@
       "WorldWideWeb"
     ],
     "unlockBuilding": [
-      "CivTok"
+      "CivTok",
+      "MarinaBaySands"
     ]
   },
   "FinancialArbitrage": {
@@ -1256,7 +1260,8 @@
       "SocialNetwork"
     ],
     "unlockBuilding": [
-      "BitcoinMiner"
+      "BitcoinMiner",
+      "PalmJumeirah"
     ]
   },
   "Future": {
@@ -1266,6 +1271,11 @@
       "VirtualReality",
       "Robotics",
       "ArtificialIntelligence"
+    ],
+    "unlockBuilding": [
+      "AldersonDisk",
+      "DysonSphere",
+      "MatrioshkaBrain"
     ]
   }
 }

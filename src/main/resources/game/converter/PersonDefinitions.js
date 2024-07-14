@@ -10,7 +10,7 @@ const GreatPersons = {
     Hammurabi: {
         name: () => t(L.Hammurabi),
         boost: {
-            multipliers: ["output"],
+            multipliers: ["output", "storage"],
             buildings: ["House", "Hut"],
         },
         value: 1,
@@ -254,7 +254,7 @@ const GreatPersons = {
 
     Plato: {
         name: () => t(L.Plato),
-        desc: (self, level) => t(L.WildCardGreatPersonDesc),
+        desc: (self, level) => t(L.WildCardGreatPersonDescV2),
         time: "427 ~ 348 BC",
         value: 1,
         maxLevel: Number.POSITIVE_INFINITY,
@@ -264,7 +264,7 @@ const GreatPersons = {
 
     AshokaTheGreat: {
         name: () => t(L.AshokaTheGreat),
-        desc: (self, level) => t(L.PromotionGreatPersonDesc),
+        desc: (self, level) => t(L.PromotionGreatPersonDescV2),
         time: "304 ~ 232 BC",
         value: 1,
         maxLevel: Number.POSITIVE_INFINITY,
@@ -333,11 +333,11 @@ const GreatPersons = {
     Xuanzang: {
         name: () => t(L.Xuanzang),
         boost: {
-            multipliers: ["output"],
+            multipliers: ["output", "storage"],
             buildings: ["Library", "Pagoda"],
         },
         time: "602 ~ 664 AD",
-        value: 1 * 1,
+        value: 1,
         maxLevel: Number.POSITIVE_INFINITY,
         age: "MiddleAge",
     },
@@ -364,7 +364,7 @@ const GreatPersons = {
 
     Saladin: {
         name: () => t(L.Saladin),
-        desc: (self, level) => t(L.WildCardGreatPersonDesc),
+        desc: (self, level) => t(L.WildCardGreatPersonDescV2),
         time: "1137 ~ 1193 AD",
         value: 1,
         maxLevel: Number.POSITIVE_INFINITY,
@@ -374,7 +374,7 @@ const GreatPersons = {
 
     MarcoPolo: {
         name: () => t(L.MarcoPolo),
-        desc: (self, level) => t(L.PromotionGreatPersonDesc),
+        desc: (self, level) => t(L.PromotionGreatPersonDescV2),
         time: "1254 ~ 1324 AD",
         value: 1,
         maxLevel: Number.POSITIVE_INFINITY,
@@ -445,11 +445,11 @@ const GreatPersons = {
     ReneDescartes: {
         name: () => t(L.ReneDescartes),
         boost: {
-            multipliers: ["output"],
+            multipliers: ["output", "storage"],
             buildings: ["School"],
         },
         time: "1596 ~ 1650 AD",
-        value: 2 * 1,
+        value: 2,
         maxLevel: Number.POSITIVE_INFINITY,
         age: "RenaissanceAge",
     },
@@ -502,23 +502,21 @@ const GreatPersons = {
 
     Michelangelo: {
         name: () => t(L.Michelangelo),
-        desc: (self, level) => t(L.WildCardGreatPersonDesc),
+        desc: (self, level) => t(L.WildCardGreatPersonDescV2),
         time: "1475 ~ 1564 AD",
         value: 1,
         maxLevel: Number.POSITIVE_INFINITY,
         age: "RenaissanceAge",
-
         type: GreatPersonType.Wildcard,
     },
 
     JohannesGutenberg: {
         name: () => t(L.JohannesGutenberg),
-        desc: (self, level) => t(L.PromotionGreatPersonDesc),
+        desc: (self, level) => t(L.PromotionGreatPersonDescV2),
         time: "1393 ~ 1406 AD",
         value: 1,
         maxLevel: Number.POSITIVE_INFINITY,
         age: "RenaissanceAge",
-
         type: GreatPersonType.Promotion,
     },
 
@@ -651,7 +649,7 @@ const GreatPersons = {
 
     ThomasEdison: {
         name: () => t(L.ThomasEdison),
-        desc: (self, level) => t(L.WildCardGreatPersonDesc),
+        desc: (self, level) => t(L.WildCardGreatPersonDescV2),
         time: "1847 ~ 1931 AD",
         value: 1,
         maxLevel: Number.POSITIVE_INFINITY,
@@ -661,7 +659,7 @@ const GreatPersons = {
 
     AdamSmith: {
         name: () => t(L.AdamSmith),
-        desc: (self, level) => t(L.PromotionGreatPersonDesc),
+        desc: (self, level) => t(L.PromotionGreatPersonDescV2),
         time: "1723 ~ 1790 AD",
         value: 1,
         maxLevel: Number.POSITIVE_INFINITY,
@@ -770,11 +768,11 @@ const GreatPersons = {
     AlbertEinstein: {
         name: () => t(L.AlbertEinstein),
         boost: {
-            multipliers: ["output"],
+            multipliers: ["output", "storage"],
             buildings: ["ResearchLab"],
         },
         time: "1879 ~ 1955 AD",
-        value: 2 * 1,
+        value: 2,
         maxLevel: Number.POSITIVE_INFINITY,
         age: "WorldWarAge",
     },
@@ -802,7 +800,7 @@ const GreatPersons = {
     AmeliaEarhart: {
         name: () => t(L.AmeliaEarhart),
         boost: {
-            multipliers: ["output"],
+            multipliers: ["output", "storage"],
             buildings: ["BiplaneFactory", "GasPowerPlant"],
         },
         time: "1897 ~ 1937 AD",
@@ -814,7 +812,7 @@ const GreatPersons = {
     HenryFord: {
         name: () => t(L.HenryFord),
         boost: {
-            multipliers: ["output"],
+            multipliers: ["output", "storage"],
             buildings: ["CarFactory", "PlasticsFactory"],
         },
         time: "1863 ~ 1947 AD",
@@ -825,7 +823,7 @@ const GreatPersons = {
 
     MahatmaGandhi: {
         name: () => t(L.MahatmaGandhi),
-        desc: (self, level) => t(L.WildCardGreatPersonDesc),
+        desc: (self, level) => t(L.WildCardGreatPersonDescV2),
         time: "1869 ~ 1948 AD",
         value: 1,
         maxLevel: Number.POSITIVE_INFINITY,
@@ -835,7 +833,7 @@ const GreatPersons = {
 
     PabloPicasso: {
         name: () => t(L.PabloPicasso),
-        desc: (self, level) => t(L.PromotionGreatPersonDesc),
+        desc: (self, level) => t(L.PromotionGreatPersonDescV2),
         time: "1881 ~ 1973 AD",
         value: 1,
         maxLevel: Number.POSITIVE_INFINITY,
@@ -878,7 +876,7 @@ const GreatPersons = {
     JRobertOppenheimer: {
         name: () => t(L.JRobertOppenheimer),
         boost: {
-            multipliers: ["output"],
+            multipliers: ["output", "storage"],
             buildings: ["UraniumEnrichmentPlant", "AtomicFacility"],
         },
         time: "1904 ~ 1967 AD",
@@ -890,7 +888,7 @@ const GreatPersons = {
     WaltDisney: {
         name: () => t(L.WaltDisney),
         boost: {
-            multipliers: ["output"],
+            multipliers: ["output", "storage"],
             buildings: ["MovieStudio", "RadioStation"],
         },
         time: "1901 ~ 1966 AD",
@@ -902,7 +900,7 @@ const GreatPersons = {
     WernherVonBraun: {
         name: () => t(L.WernherVonBraun),
         boost: {
-            multipliers: ["output"],
+            multipliers: ["output", "storage"],
             buildings: ["RocketFactory", "ArtilleryFactory"],
         },
         time: "1912 ~ 1977 AD",
@@ -914,7 +912,7 @@ const GreatPersons = {
     ChesterWNimitz: {
         name: () => t(L.ChesterWNimitz),
         boost: {
-            multipliers: ["output"],
+            multipliers: ["output", "storage"],
             buildings: ["BattleshipBuilder", "HydroDam"],
         },
         time: "1885 ~ 1966 AD",
@@ -926,7 +924,7 @@ const GreatPersons = {
     FrankWhittle: {
         name: () => t(L.FrankWhittle),
         boost: {
-            multipliers: ["output"],
+            multipliers: ["output", "storage"],
             buildings: ["AirplaneFactory", "FighterJetPlant"],
         },
         time: "1907 ~ 1996 AD",
@@ -938,7 +936,7 @@ const GreatPersons = {
     EnricoFermi: {
         name: () => t(L.EnricoFermi),
         boost: {
-            multipliers: ["output"],
+            multipliers: ["output", "storage"],
             buildings: ["NuclearPowerPlant", "SubmarineYard"],
         },
         time: "1901 ~ 1954 AD",
@@ -950,7 +948,7 @@ const GreatPersons = {
     PhiloFarnsworth: {
         name: () => t(L.PhiloFarnsworth),
         boost: {
-            multipliers: ["output"],
+            multipliers: ["output", "storage"],
             buildings: ["TVStation", "NuclearMissileSilo"],
         },
         time: "1906 ~ 1971 AD",
@@ -962,7 +960,7 @@ const GreatPersons = {
     SergeiKorolev: {
         name: () => t(L.SergeiKorolev),
         boost: {
-            multipliers: ["output"],
+            multipliers: ["output", "storage"],
             buildings: ["SatelliteFactory", "SpacecraftFactory"],
         },
         time: "1907 ~ 1966 AD",
@@ -974,7 +972,7 @@ const GreatPersons = {
     GeorgeCMarshall: {
         name: () => t(L.GeorgeCMarshall),
         boost: {
-            multipliers: ["output"],
+            multipliers: ["output", "storage"],
             buildings: ["Embassy", "ForexMarket"],
         },
         time: "1880 ~ 1959 AD",
@@ -986,7 +984,7 @@ const GreatPersons = {
     RobertNoyce: {
         name: () => t(L.RobertNoyce),
         boost: {
-            multipliers: ["output"],
+            multipliers: ["output", "storage"],
             buildings: ["SemiconductorFab", "SiliconSmelter"],
         },
         time: "1927 ~ 1990 AD",
@@ -997,7 +995,7 @@ const GreatPersons = {
 
     ElvisPresley: {
         name: () => t(L.ElvisPresley),
-        desc: (self, level) => t(L.WildCardGreatPersonDesc),
+        desc: (self, level) => t(L.WildCardGreatPersonDescV2),
         time: "1935 ~ 1977 AD",
         value: 1,
         maxLevel: Number.POSITIVE_INFINITY,
@@ -1053,5 +1051,113 @@ const GreatPersons = {
         maxLevel: Number.POSITIVE_INFINITY,
         age: "ColdWarAge",
         type: GreatPersonType.Normal,
+    },
+
+    TimBernersLee: {
+        name: () => t(L.TimBernersLee),
+        boost: {
+            multipliers: ["output", "storage"],
+            buildings: ["InternetServiceProvider", "OpticalFiberPlant"],
+        },
+        time: "1955 ~ ",
+        value: 1,
+        maxLevel: Number.POSITIVE_INFINITY,
+        age: "InformationAge",
+    },
+
+    GordonMoore: {
+        name: () => t(L.GordonMoore),
+        boost: {
+            multipliers: ["output", "storage"],
+            buildings: ["ComputerFactory", "SupercomputerLab"],
+        },
+        time: "1929 ~ 2023",
+        value: 1,
+        maxLevel: Number.POSITIVE_INFINITY,
+        age: "InformationAge",
+    },
+
+    DennisRitchie: {
+        name: () => t(L.DennisRitchie),
+        boost: {
+            multipliers: ["output", "storage"],
+            buildings: ["SoftwareCompany", "MaglevFactory"],
+        },
+        time: "1941 ~ 2011",
+        value: 1,
+        maxLevel: Number.POSITIVE_INFINITY,
+        age: "InformationAge",
+    },
+
+    HymanGRickover: {
+        name: () => t(L.HymanGRickover),
+        boost: {
+            multipliers: ["output", "storage"],
+            buildings: ["AircraftCarrierYard", "NuclearSubmarineYard"],
+        },
+        time: "1900 ~ 1986",
+        value: 1,
+        maxLevel: Number.POSITIVE_INFINITY,
+        age: "InformationAge",
+    },
+
+    HarryMarkowitz: {
+        name: () => t(L.HarryMarkowitz),
+        boost: {
+            multipliers: ["output", "storage"],
+            buildings: ["MutualFund", "HedgeFund"],
+        },
+        time: "1927 ~ 2023",
+        value: 1,
+        maxLevel: Number.POSITIVE_INFINITY,
+        age: "InformationAge",
+    },
+
+    JohnCarmack: {
+        name: () => t(L.JohnCarmack),
+        boost: {
+            multipliers: ["output", "storage"],
+            buildings: ["ComputerLab", "CivOasis"],
+        },
+        time: "1970 ~ ",
+        value: 1,
+        maxLevel: Number.POSITIVE_INFINITY,
+        age: "InformationAge",
+    },
+
+    SatoshiNakamoto: {
+        name: () => t(L.SatoshiNakamoto),
+        boost: {
+            multipliers: ["output", "storage"],
+            buildings: ["CivTok", "BitcoinMiner"],
+        },
+        time: "??? ~ ???",
+        value: 1,
+        maxLevel: Number.POSITIVE_INFINITY,
+        age: "InformationAge",
+    },
+
+    CarlSagan: {
+        name: () => t(L.CarlSagan),
+        boost: {
+            multipliers: ["output", "storage"],
+            buildings: ["SpaceCenter", "Peacekeeper"],
+        },
+        time: "1934 ~ 1996",
+        value: 1,
+        maxLevel: Number.POSITIVE_INFINITY,
+        age: "InformationAge",
+    },
+
+    JohnMcCarthy: {
+        name: () => t(L.JohnMcCarthy),
+        boost: {
+            multipliers: ["output", "storage"],
+            buildings: ["CivGPT", "RobocarFactory"],
+        },
+        time: "1927 ~ 2011",
+        value: 1,
+        maxLevel: Number.POSITIVE_INFINITY,
+        age: "InformationAge",
     },
 };

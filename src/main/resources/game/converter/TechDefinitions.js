@@ -752,7 +752,7 @@ const Techs = {
         name: () => t(L.Computer),
         column: 23,
         requireTech: ["Semiconductor", "Television"],
-        unlockBuilding: ["ComputerFactory"],
+        unlockBuilding: ["ComputerFactory", "ComputerLab"],
     },
 
     Globalization: ITechDefinition = {
@@ -766,7 +766,7 @@ const Techs = {
         name: () => t(L.Nanotechnology),
         column: 24,
         requireTech: ["MutualAssuredDestruction", "SpaceProgram"],
-        unlockBuilding: ["MaglevFactory"],
+        unlockBuilding: ["MaglevFactory", "InternationalSpaceStation"],
     },
     Software: ITechDefinition = {
         name: () => t(L.Software),
@@ -791,7 +791,7 @@ const Techs = {
         name: () => t(L.Genetics),
         column: 25,
         requireTech: ["Nanotechnology", "Software"],
-        unlockBuilding: ["CloneFactory"],
+        unlockBuilding: ["CloneFactory", "CloneLab"],
     },
     CloudComputing: ITechDefinition = {
         name: () => t(L.CloudComputing),
@@ -803,7 +803,7 @@ const Techs = {
         name: () => t(L.SocialNetwork),
         column: 25,
         requireTech: ["WorldWideWeb"],
-        unlockBuilding: ["CivTok"],
+        unlockBuilding: ["CivTok", "MarinaBaySands"],
     },
     FinancialArbitrage: ITechDefinition = {
         name: () => t(L.FinancialArbitrage),
@@ -834,12 +834,13 @@ const Techs = {
         name: () => t(L.Blockchain),
         column: 26,
         requireTech: ["FinancialArbitrage", "SocialNetwork"],
-        unlockBuilding: ["BitcoinMiner"],
+        unlockBuilding: ["BitcoinMiner", "PalmJumeirah"],
     },
     Future: ITechDefinition = {
         name: () => t(L.Future),
         column: 27,
         requireTech: ["Blockchain", "VirtualReality", "Robotics", "ArtificialIntelligence"],
+        unlockBuilding: ["AldersonDisk", "DysonSphere", "MatrioshkaBrain"],
     },
 };
 

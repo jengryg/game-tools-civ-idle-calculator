@@ -735,6 +735,15 @@
       "Science": 25940
     }
   },
+  "ComputerLab": {
+    "input": {
+      "Computer": 1
+    },
+    "output": {
+      "Science": 79930
+    },
+    "power": true
+  },
   "Museum": {
     "input": {
       "Music": 2,
@@ -1355,7 +1364,8 @@
     },
     "output": {
       "Bitcoin": 1
-    }
+    },
+    "power": true
   },
   "Caravansary": {
     "input": {},
@@ -1388,8 +1398,19 @@
     "input": {},
     "output": {},
     "construction": {
-      "Concrete": 10
-    }
+      "Software": 1,
+      "Tank": 1
+    },
+    "power": true
+  },
+  "CloneLab": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "Rocket": 1,
+      "Computer": 1
+    },
+    "power": true
   },
   "Headquarter": {
     "input": {},
@@ -2209,5 +2230,77 @@
     "max": 0,
     "special": "NaturalWonder",
     "wikipedia": "Zagros_Mountains"
+  },
+  "InternationalSpaceStation": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "Spacecraft": 100,
+      "AircraftCarrier": 100,
+      "NuclearSubmarine": 100
+    },
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "International_Space_Station"
+  },
+  "MarinaBaySands": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "TV": 100,
+      "CivTok": 100,
+      "MutualFund": 100
+    },
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "Marina_Bay_Sands"
+  },
+  "PalmJumeirah": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "HedgeFund": 100,
+      "Bitcoin": 100,
+      "Supercomputer": 100
+    },
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "Palm_Jumeirah"
+  },
+  "AldersonDisk": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "CivOasis": 100,
+      "Robocar": 100,
+      "Bitcoin": 100
+    },
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "Alderson_disk"
+  },
+  "DysonSphere": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "CivGPT": 100,
+      "Peace": 100,
+      "PlanetaryRover": 100
+    },
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "Dyson_sphere"
+  },
+  "MatrioshkaBrain": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "CivOasis": 100,
+      "Peace": 100,
+      "CivGPT": 100
+    },
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "Matrioshka_brain"
   }
 }

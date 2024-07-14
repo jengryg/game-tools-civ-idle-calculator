@@ -2,7 +2,8 @@
   "Hammurabi": {
     "boost": {
       "multipliers": [
-        "output"
+        "output",
+        "storage"
       ],
       "buildings": [
         "House",
@@ -359,7 +360,8 @@
   "Xuanzang": {
     "boost": {
       "multipliers": [
-        "output"
+        "output",
+        "storage"
       ],
       "buildings": [
         "Library",
@@ -473,7 +475,8 @@
   "ReneDescartes": {
     "boost": {
       "multipliers": [
-        "output"
+        "output",
+        "storage"
       ],
       "buildings": [
         "School"
@@ -838,7 +841,8 @@
   "AlbertEinstein": {
     "boost": {
       "multipliers": [
-        "output"
+        "output",
+        "storage"
       ],
       "buildings": [
         "ResearchLab"
@@ -866,7 +870,8 @@
   "AmeliaEarhart": {
     "boost": {
       "multipliers": [
-        "output"
+        "output",
+        "storage"
       ],
       "buildings": [
         "BiplaneFactory",
@@ -881,7 +886,8 @@
   "HenryFord": {
     "boost": {
       "multipliers": [
-        "output"
+        "output",
+        "storage"
       ],
       "buildings": [
         "CarFactory",
@@ -931,7 +937,8 @@
   "JRobertOppenheimer": {
     "boost": {
       "multipliers": [
-        "output"
+        "output",
+        "storage"
       ],
       "buildings": [
         "UraniumEnrichmentPlant",
@@ -946,7 +953,8 @@
   "WaltDisney": {
     "boost": {
       "multipliers": [
-        "output"
+        "output",
+        "storage"
       ],
       "buildings": [
         "MovieStudio",
@@ -961,7 +969,8 @@
   "WernherVonBraun": {
     "boost": {
       "multipliers": [
-        "output"
+        "output",
+        "storage"
       ],
       "buildings": [
         "RocketFactory",
@@ -976,7 +985,8 @@
   "ChesterWNimitz": {
     "boost": {
       "multipliers": [
-        "output"
+        "output",
+        "storage"
       ],
       "buildings": [
         "BattleshipBuilder",
@@ -991,7 +1001,8 @@
   "FrankWhittle": {
     "boost": {
       "multipliers": [
-        "output"
+        "output",
+        "storage"
       ],
       "buildings": [
         "AirplaneFactory",
@@ -1006,7 +1017,8 @@
   "EnricoFermi": {
     "boost": {
       "multipliers": [
-        "output"
+        "output",
+        "storage"
       ],
       "buildings": [
         "NuclearPowerPlant",
@@ -1021,7 +1033,8 @@
   "PhiloFarnsworth": {
     "boost": {
       "multipliers": [
-        "output"
+        "output",
+        "storage"
       ],
       "buildings": [
         "TVStation",
@@ -1036,7 +1049,8 @@
   "SergeiKorolev": {
     "boost": {
       "multipliers": [
-        "output"
+        "output",
+        "storage"
       ],
       "buildings": [
         "SatelliteFactory",
@@ -1051,7 +1065,8 @@
   "GeorgeCMarshall": {
     "boost": {
       "multipliers": [
-        "output"
+        "output",
+        "storage"
       ],
       "buildings": [
         "Embassy",
@@ -1066,7 +1081,8 @@
   "RobertNoyce": {
     "boost": {
       "multipliers": [
-        "output"
+        "output",
+        "storage"
       ],
       "buildings": [
         "SemiconductorFab",
@@ -1119,5 +1135,149 @@
     "maxLevel": null,
     "age": "ColdWarAge",
     "type": "Normal"
+  },
+  "TimBernersLee": {
+    "boost": {
+      "multipliers": [
+        "output",
+        "storage"
+      ],
+      "buildings": [
+        "InternetServiceProvider",
+        "OpticalFiberPlant"
+      ]
+    },
+    "time": "1955 ~ ",
+    "value": 1,
+    "maxLevel": null,
+    "age": "InformationAge"
+  },
+  "GordonMoore": {
+    "boost": {
+      "multipliers": [
+        "output",
+        "storage"
+      ],
+      "buildings": [
+        "ComputerFactory",
+        "SupercomputerLab"
+      ]
+    },
+    "time": "1929 ~ 2023",
+    "value": 1,
+    "maxLevel": null,
+    "age": "InformationAge"
+  },
+  "DennisRitchie": {
+    "boost": {
+      "multipliers": [
+        "output",
+        "storage"
+      ],
+      "buildings": [
+        "SoftwareCompany",
+        "MaglevFactory"
+      ]
+    },
+    "time": "1941 ~ 2011",
+    "value": 1,
+    "maxLevel": null,
+    "age": "InformationAge"
+  },
+  "HymanGRickover": {
+    "boost": {
+      "multipliers": [
+        "output",
+        "storage"
+      ],
+      "buildings": [
+        "AircraftCarrierYard",
+        "NuclearSubmarineYard"
+      ]
+    },
+    "time": "1900 ~ 1986",
+    "value": 1,
+    "maxLevel": null,
+    "age": "InformationAge"
+  },
+  "HarryMarkowitz": {
+    "boost": {
+      "multipliers": [
+        "output",
+        "storage"
+      ],
+      "buildings": [
+        "MutualFund",
+        "HedgeFund"
+      ]
+    },
+    "time": "1927 ~ 2023",
+    "value": 1,
+    "maxLevel": null,
+    "age": "InformationAge"
+  },
+  "JohnCarmack": {
+    "boost": {
+      "multipliers": [
+        "output",
+        "storage"
+      ],
+      "buildings": [
+        "ComputerLab",
+        "CivOasis"
+      ]
+    },
+    "time": "1970 ~ ",
+    "value": 1,
+    "maxLevel": null,
+    "age": "InformationAge"
+  },
+  "SatoshiNakamoto": {
+    "boost": {
+      "multipliers": [
+        "output",
+        "storage"
+      ],
+      "buildings": [
+        "CivTok",
+        "BitcoinMiner"
+      ]
+    },
+    "time": "??? ~ ???",
+    "value": 1,
+    "maxLevel": null,
+    "age": "InformationAge"
+  },
+  "CarlSagan": {
+    "boost": {
+      "multipliers": [
+        "output",
+        "storage"
+      ],
+      "buildings": [
+        "SpaceCenter",
+        "Peacekeeper"
+      ]
+    },
+    "time": "1934 ~ 1996",
+    "value": 1,
+    "maxLevel": null,
+    "age": "InformationAge"
+  },
+  "JohnMcCarthy": {
+    "boost": {
+      "multipliers": [
+        "output",
+        "storage"
+      ],
+      "buildings": [
+        "CivGPT",
+        "RobocarFactory"
+      ]
+    },
+    "time": "1927 ~ 2011",
+    "value": 1,
+    "maxLevel": null,
+    "age": "InformationAge"
   }
 }

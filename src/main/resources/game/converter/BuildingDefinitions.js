@@ -400,6 +400,12 @@ const Buildings = {
         input: {Banknote: 1, Bond: 1},
         output: {Science: 25940},
     },
+    ComputerLab: {
+        name: () => t(L.ComputerLab),
+        input: {Computer: 1},
+        output: {Science: 79930},
+        power: true,
+    },
     Museum: {
         name: () => t(L.Museum),
         input: {Music: 2, Painting: 2},
@@ -746,6 +752,7 @@ const Buildings = {
         name: () => t(L.BitcoinMiner),
         input: {HedgeFund: 2, CivTok: 1},
         output: {Bitcoin: 1},
+        power: true,
     },
     Caravansary: {
         name: () => t(L.Caravansary),
@@ -773,7 +780,16 @@ const Buildings = {
         input: {},
         output: {},
         desc: () => t(L.CloneFactoryDesc),
-        construction: {Concrete: 10},
+        construction: {Software: 1, Tank: 1},
+        power: true,
+    },
+    CloneLab: {
+        name: () => t(L.CloneLab),
+        input: {},
+        output: {},
+        desc: () => t(L.CloneLabDesc),
+        construction: {Rocket: 1, Computer: 1},
+        power: true,
     },
     // #endregion /////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -1331,7 +1347,7 @@ const Buildings = {
         special: BuildingSpecial.NaturalWonder,
         wikipedia: "Yangtze",
     },
-    // SydneyOperaHouse: {
+    // SydneyOperaHouse:  {
     //    name: () => t(L.SydneyOperaHouse),
     //    desc: () => t(L.SydneyOperaHouseDescV2),
     //    input: {},
@@ -1351,7 +1367,7 @@ const Buildings = {
         special: BuildingSpecial.WorldWonder,
         wikipedia: "CN_Tower",
     },
-    // GatewayArch: {
+    // GatewayArch:  {
     //    name: () => t(L.GatewayArch),
     //    desc: () => t(L.GatewayArchDesc),
     //    input: {},
@@ -1553,7 +1569,73 @@ const Buildings = {
         wikipedia: "Zagros_Mountains",
     },
 
-    // ArcDeTriomphe: {
+    InternationalSpaceStation: {
+        name: () => t(L.InternationalSpaceStation),
+        desc: () => t(L.InternationalSpaceStationDesc),
+        input: {},
+        output: {},
+        construction: {Spacecraft: 100, AircraftCarrier: 100, NuclearSubmarine: 100},
+        max: 1,
+        special: BuildingSpecial.WorldWonder,
+        wikipedia: "International_Space_Station",
+    },
+
+    MarinaBaySands: {
+        name: () => t(L.MarinaBaySands),
+        desc: () => t(L.MarinaBaySandsDesc),
+        input: {},
+        output: {},
+        construction: {TV: 100, CivTok: 100, MutualFund: 100},
+        max: 1,
+        special: BuildingSpecial.WorldWonder,
+        wikipedia: "Marina_Bay_Sands",
+    },
+
+    PalmJumeirah: {
+        name: () => t(L.PalmJumeirah),
+        desc: () => t(L.PalmJumeirahDesc),
+        input: {},
+        output: {},
+        construction: {HedgeFund: 100, Bitcoin: 100, Supercomputer: 100},
+        max: 1,
+        special: BuildingSpecial.WorldWonder,
+        wikipedia: "Palm_Jumeirah",
+    },
+
+    AldersonDisk: {
+        name: () => t(L.AldersonDisk),
+        desc: () => t(L.AldersonDiskDesc),
+        input: {},
+        output: {},
+        construction: {CivOasis: 100, Robocar: 100, Bitcoin: 100},
+        max: 1,
+        special: BuildingSpecial.WorldWonder,
+        wikipedia: "Alderson_disk",
+    },
+
+    DysonSphere: {
+        name: () => t(L.DysonSphere),
+        desc: () => t(L.DysonSphereDesc),
+        input: {},
+        output: {},
+        construction: {CivGPT: 100, Peace: 100, PlanetaryRover: 100},
+        max: 1,
+        special: BuildingSpecial.WorldWonder,
+        wikipedia: "Dyson_sphere",
+    },
+
+    MatrioshkaBrain: {
+        name: () => t(L.MatrioshkaBrain),
+        desc: () => t(L.MatrioshkaBrainDescV2),
+        input: {},
+        output: {},
+        construction: {CivOasis: 100, Peace: 100, CivGPT: 100},
+        max: 1,
+        special: BuildingSpecial.WorldWonder,
+        wikipedia: "Matrioshka_brain",
+    },
+
+    // ArcDeTriomphe:  {
     //    name: () => t(L.ArcDeTriomphe),
     //    desc: () => t(L.ArcDeTriompheDesc),
     //    input: {},
@@ -1565,14 +1647,14 @@ const Buildings = {
     // },
     // #endregion /////////////////////////////////////////////////////////////////////////////////////////////
 
-    // Winery: {
+    // Winery:  {
     //    name: () => t(L.Winery),
     //    input: { Grape: 1, Water: 1 },
     //    output: { Wine: 1 },
     //    construction: { Stone: 1, Marble: 1 },
     // },
 
-    // Borobudur: {
+    // Borobudur:  {
     //    name: () => t(L.Borobudur),
     //    desc: () => t(L.BorobudurDesc),
     //    input: {},
@@ -1581,7 +1663,7 @@ const Buildings = {
     //    wikipedia: "Borobudur",
     // },
 
-    // ItsukushimaShrine: {
+    // ItsukushimaShrine:  {
     //    name: () => t(L.ItsukushimaShrine),
     //    desc: () => t(L.ItsukushimaShrineDesc),
     //    input: {},
@@ -1590,7 +1672,7 @@ const Buildings = {
     //    wikipedia: "Itsukushima_Shrine",
     // },
 
-    // Moai: {
+    // Moai:  {
     //    name: () => t(L.Moai),
     //    desc: () => t(L.MoaiDesc),
     //    input: {},
@@ -1599,7 +1681,7 @@ const Buildings = {
     //    wikipedia: "Moai",
     // },
 
-    // BranCastle: {
+    // BranCastle:  {
     //    name: () => t(L.BranCastle),
     //    desc: () => t(L.BranCastleDesc),
     //    input: {},
@@ -1608,7 +1690,7 @@ const Buildings = {
     //    wikipedia: "Bran_Castle",
     // },
 
-    // ChoghaZanbil: {
+    // ChoghaZanbil:  {
     //    name: () => t(L.ChoghaZanbil),
     //    desc: () => t(L.ChoghaZanbilDesc),
     //    input: {},
@@ -1617,7 +1699,7 @@ const Buildings = {
     //    wikipedia: "Chogha_Zanbil",
     // },
 
-    // SydneyOperaHouse: {
+    // SydneyOperaHouse:  {
     //    name: () => t(L.SydneyOperaHouse),
     //    desc: () => t(L.SydneyOperaHouseDesc),
     //    input: {},
@@ -1626,7 +1708,7 @@ const Buildings = {
     //    wikipedia: "Sydney_Opera_House",
     // },
 
-    // FishPond: {
+    // FishPond:  {
     //    name: () => t(L.FishPond),
     //    input: {},
     //    deposit: { Water: true },
@@ -1634,21 +1716,21 @@ const Buildings = {
     //    construction: { Brick: 1 },
     // },
 
-    // OlivePlantation: {
+    // OlivePlantation:  {
     //    name: () => t(L.OlivePlantation),
     //    input: {},
     //    output: { Olive: 1 },
     //    construction: { Wood: 1 },
     // },
 
-    // Vineyard: {
+    // Vineyard:  {
     //    name: () => t(L.Vineyard),
     //    input: {},
     //    output: { Grape: 1 },
     //    construction: { Wood: 1 },
     // },
 
-    // OilPress: {
+    // OilPress:  {
     //    name: () => t(L.OilPress),
     //    input: { Olive: 2 },
     //    output: { OliveOil: 1 },
