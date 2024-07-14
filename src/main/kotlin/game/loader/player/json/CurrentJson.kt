@@ -5,5 +5,6 @@ class CurrentJson(
     val unlockedTech: Map<String, Boolean>,
     val greatPeople: Map<String, Int>,
     val tiles: TileWrapper,
-    val transportation: TransportationWrapper,
+    val transportation: TransportationWrapper? = null,
+    // TODO: transportation V2 is not implemented
 )

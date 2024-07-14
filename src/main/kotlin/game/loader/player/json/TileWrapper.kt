@@ -34,6 +34,7 @@ class TileWrapper(
                         resources = (building["resources"] as? LinkedHashMap<*, *>)?.map { resources ->
                             (resources.key as String) to when(resources.value) {
                                 is Int -> (resources.value as Int).toDouble()
+                                is Long -> (resources.value as Long).toDouble()
                                 else -> (resources.value as Double)
                             }
                         }?.toMap() ?: emptyMap()

@@ -31,7 +31,8 @@ class TileConverter(
     private fun createBuilding(id: Int, json: TileBuildingJson): TileBuildingData {
         return TileBuildingData(
             id = id,
-            bld = gameData.buildings[json.type]!!,
+            bld = gameData.buildings[json.type]
+                ?: throw IllegalArgumentException("Requested unknown building: ${json.type}"),
             level = json.level,
             desiredLevel = json.desiredLevel,
             capacity = json.capacity,
@@ -40,7 +41,9 @@ class TileConverter(
             options = json.options,
             electrification = json.electrification,
             status = BuildingStatus.fromString(json.status),
-            resources = json.resources.mapKeys { (r, _) -> gameData.resources[r]!! }
+            resources = json.resources.mapKeys { (r, _) ->
+                gameData.resources[r] ?: throw IllegalArgumentException("Requested unknown resource: $r")
+            }
         )
     }
 }

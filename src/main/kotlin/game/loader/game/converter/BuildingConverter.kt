@@ -2,7 +2,7 @@ package game.loader.game.converter
 
 import Logging
 import game.common.BuildingType
- import game.common.modifiers.BuildingMod
+import game.common.modifiers.BuildingMod
 import game.common.modifiers.BuildingModTarget
 import game.common.modifiers.BuildingModType
 import game.loader.game.data.*
@@ -86,7 +86,9 @@ class BuildingConverter(
     }
 
     private fun createResourceAmountMap(amounts: Map<String, Int>): Map<ResourceData, Double> {
-        return amounts.map { (r, a) -> resources[r]!! to a.toDouble() }.toMap()
+        return amounts.map { (r, a) ->
+            (resources[r] ?: throw IllegalArgumentException("Requested unknown resource $r.")) to a.toDouble()
+        }.toMap()
     }
 
     private fun getBuildingMods(buildingName: String): MutableList<BuildingMod> {

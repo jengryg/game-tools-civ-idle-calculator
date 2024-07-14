@@ -66,10 +66,13 @@ class PlayerConverter(
         }
 
     private fun processTransportation(ps: PlayerJson, tiles: Map<Int, TileData>): Map<Int, TransportationData> =
-        TransportationConverter(gd, tiles).process(ps.saveGame.current.transportation.value).also {
-            log.atInfo()
-                .setMessage("Processed transportations.")
-                .addKeyValue("size") { it.size }
-                .log()
-        }
+        ps.saveGame.current.transportation?.value?.let { transportV1 ->
+            TransportationConverter(gd, tiles).process(transportV1).also {
+                log.atInfo()
+                    .setMessage("Processed transportations.")
+                    .addKeyValue("size") { it.size }
+                    .log()
+            }
+        } ?: emptyMap()
+
 }

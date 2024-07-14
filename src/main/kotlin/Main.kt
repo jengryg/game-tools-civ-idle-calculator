@@ -4,6 +4,7 @@ import analysis.defs.KotlinConstantsExporter
 import analysis.defs.ResourcePriceListExporter
 import analysis.defs.WonderPriceListExporter
 import analysis.strategy.SimplexStrategyFactory
+import analysis.visual.CurrentBuildingLevelVisualizer
 import analysis.visual.CurrentMapVisualizer
 import ch.qos.logback.classic.Level
 import constants.*
@@ -25,6 +26,11 @@ fun main(args: Array<String>) {
     EffectiveModifierExporter(model).apply { export() }
 
     CurrentMapVisualizer(model).apply {
+        visualize()
+        export()
+    }
+
+    CurrentBuildingLevelVisualizer(model).apply {
         visualize()
         export()
     }
@@ -76,6 +82,11 @@ fun main(args: Array<String>) {
 //    }
 
     ssf.process(SPACECRAFT_FACTORY, 200.0).apply {
+        solve()
+        export("simple")
+    }
+
+    ssf.process(SCHOOL, 200.0).apply {
         solve()
         export("simple")
     }

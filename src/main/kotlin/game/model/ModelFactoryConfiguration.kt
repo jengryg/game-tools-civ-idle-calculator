@@ -13,6 +13,6 @@ class ModelFactoryConfiguration(
         SCIENCE to RESEARCH_LAB,
         WATER to HYDRO_DAM,
         TOOL to IRON_FORGE,
-        FAITH to ST_PETERS_BASILICA,
+        FAITH to SHRINE,
     )
 )

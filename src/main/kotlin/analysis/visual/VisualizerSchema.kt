@@ -34,6 +34,10 @@ object VisualizerSchema {
         }
     }
 
+    fun getColor(number: Int): Color {
+        return DVIPSColors.palette[number % DVIPSColors.palette.size]
+    }
+
     private fun getBuildingColorByType(building: Building): Color {
         return when (building.type) {
             BuildingType.NORMAL -> DVIPSColors.SpringGreen
