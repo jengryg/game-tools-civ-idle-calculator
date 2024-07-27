@@ -593,6 +593,19 @@
       "Brick": 2
     }
   },
+  "PoetrySchool": {
+    "input": {
+      "Paper": 2,
+      "Alcohol": 1
+    },
+    "output": {
+      "Poem": 2
+    },
+    "construction": {
+      "Brick": 1,
+      "Lumber": 1
+    }
+  },
   "PaintersGuild": {
     "input": {
       "Paper": 2
@@ -955,6 +968,28 @@
     },
     "construction": {
       "Lumber": 1
+    }
+  },
+  "PoultryFarm": {
+    "input": {
+      "Wheat": 2
+    },
+    "output": {
+      "Meat": 2
+    },
+    "construction": {
+      "Lumber": 1
+    }
+  },
+  "DairyFarm": {
+    "input": {
+      "Wheat": 2
+    },
+    "output": {
+      "Milk": 2
+    },
+    "construction": {
+      "Brick": 1
     }
   },
   "Stable": {
@@ -1398,8 +1433,8 @@
     "input": {},
     "output": {},
     "construction": {
-      "Software": 1,
-      "Tank": 1
+      "Software": 5,
+      "Tank": 5
     },
     "power": true
   },
@@ -1407,8 +1442,8 @@
     "input": {},
     "output": {},
     "construction": {
-      "Rocket": 1,
-      "Computer": 1
+      "Rocket": 5,
+      "Computer": 5
     },
     "power": true
   },
@@ -2302,5 +2337,27 @@
     "max": 1,
     "special": "WorldWonder",
     "wikipedia": "Matrioshka_brain"
+  },
+  "LargeHadronCollider": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "Supercomputer": 100,
+      "CivTok": 100,
+      "HedgeFund": 100
+    },
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "Large_Hadron_Collider"
+  },
+  "BigBen": {
+    "input": {},
+    "output": {},
+    "max": 1,
+    "special": "WorldWonder",
+    "construction": {
+      "Politics": 300
+    },
+    "wikipedia": "Big_Ben"
   }
 }

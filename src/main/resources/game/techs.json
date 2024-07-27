@@ -97,7 +97,8 @@
   "Herding": {
     "column": 2,
     "unlockBuilding": [
-      "LivestockFarm"
+      "PoultryFarm",
+      "DairyFarm"
     ],
     "requireTech": [
       "Counting",
@@ -347,7 +348,8 @@
     ],
     "unlockBuilding": [
       "Library",
-      "Glassworks"
+      "Glassworks",
+      "PoetrySchool"
     ]
   },
   "Architecture": {
@@ -698,7 +700,8 @@
       }
     },
     "unlockBuilding": [
-      "Parliament"
+      "Parliament",
+      "BigBen"
     ]
   },
   "RapidFire": {
@@ -1219,7 +1222,8 @@
       "WorldWideWeb"
     ],
     "unlockBuilding": [
-      "HedgeFund"
+      "HedgeFund",
+      "Peacekeeper"
     ]
   },
   "Robotics": {
@@ -1250,7 +1254,7 @@
     ],
     "unlockBuilding": [
       "CivOasis",
-      "Peacekeeper"
+      "LargeHadronCollider"
     ]
   },
   "Blockchain": {

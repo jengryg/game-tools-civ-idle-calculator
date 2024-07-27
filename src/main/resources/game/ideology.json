@@ -1,0 +1,38 @@
+{
+  "Liberalism": {
+    "content": [
+      "Liberalism1",
+      "Liberalism2",
+      "Liberalism3",
+      "Liberalism4",
+      "Liberalism5"
+    ]
+  },
+  "Conservatism": {
+    "content": [
+      "Conservatism1",
+      "Conservatism2",
+      "Conservatism3",
+      "Conservatism4",
+      "Conservatism5"
+    ]
+  },
+  "Socialism": {
+    "content": [
+      "Socialism1",
+      "Socialism2",
+      "Socialism3",
+      "Socialism4",
+      "Socialism5"
+    ]
+  },
+  "Communism": {
+    "content": [
+      "Communism1",
+      "Communism2",
+      "Communism3",
+      "Communism4",
+      "Communism5"
+    ]
+  }
+}

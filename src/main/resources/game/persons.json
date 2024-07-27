@@ -100,8 +100,9 @@
         "storage"
       ],
       "buildings": [
-        "LivestockFarm",
-        "Stable"
+        "DairyFarm",
+        "PoultryFarm",
+        "LivestockFarm"
       ]
     },
     "time": "c. 800s BC",
@@ -225,6 +226,22 @@
     "maxLevel": null,
     "age": "ClassicalAge",
     "type": "Normal"
+  },
+  "Homer": {
+    "boost": {
+      "multipliers": [
+        "output",
+        "storage"
+      ],
+      "buildings": [
+        "Stable",
+        "PoetrySchool"
+      ]
+    },
+    "time": "c. 800s BC",
+    "value": 1,
+    "maxLevel": null,
+    "age": "ClassicalAge"
   },
   "Archimedes": {
     "boost": {
@@ -861,7 +878,7 @@
     "type": "Normal"
   },
   "NielsBohr": {
-    "time": "1885 ~ 1962",
+    "time": "1885 ~ 1962 AD",
     "value": 3,
     "maxLevel": null,
     "age": "WorldWarAge",
@@ -1094,29 +1111,22 @@
     "maxLevel": null,
     "age": "ColdWarAge"
   },
-  "ElvisPresley": {
-    "time": "1935 ~ 1977 AD",
-    "value": 1,
-    "maxLevel": null,
-    "age": "ColdWarAge",
-    "type": "Wildcard"
-  },
   "JamesWatson": {
-    "time": "1928 ~ AD",
+    "time": "1928 ~ ",
     "value": 4,
     "maxLevel": null,
     "age": "ColdWarAge",
     "type": "Normal"
   },
   "RichardFeynman": {
-    "time": "1918 ~ 1988",
+    "time": "1918 ~ 1988 AD",
     "value": 4,
     "maxLevel": null,
     "age": "ColdWarAge",
     "type": "Normal"
   },
   "LinusPauling": {
-    "time": "1901 ~ 1994",
+    "time": "1901 ~ 1994 AD",
     "value": 3,
     "maxLevel": null,
     "age": "ColdWarAge",
@@ -1135,6 +1145,20 @@
     "maxLevel": null,
     "age": "ColdWarAge",
     "type": "Normal"
+  },
+  "ElvisPresley": {
+    "time": "1935 ~ 1977 AD",
+    "value": 1,
+    "maxLevel": null,
+    "age": "ColdWarAge",
+    "type": "Wildcard"
+  },
+  "YuriGagarin": {
+    "time": "1934 ~ 1968 AD",
+    "value": 1,
+    "maxLevel": null,
+    "age": "ColdWarAge",
+    "type": "Promotion"
   },
   "TimBernersLee": {
     "boost": {
@@ -1163,7 +1187,7 @@
         "SupercomputerLab"
       ]
     },
-    "time": "1929 ~ 2023",
+    "time": "1929 ~ 2023 AD",
     "value": 1,
     "maxLevel": null,
     "age": "InformationAge"
@@ -1179,7 +1203,7 @@
         "MaglevFactory"
       ]
     },
-    "time": "1941 ~ 2011",
+    "time": "1941 ~ 2011 AD",
     "value": 1,
     "maxLevel": null,
     "age": "InformationAge"
@@ -1195,7 +1219,7 @@
         "NuclearSubmarineYard"
       ]
     },
-    "time": "1900 ~ 1986",
+    "time": "1900 ~ 1986 AD",
     "value": 1,
     "maxLevel": null,
     "age": "InformationAge"
@@ -1211,7 +1235,7 @@
         "HedgeFund"
       ]
     },
-    "time": "1927 ~ 2023",
+    "time": "1927 ~ 2023 AD",
     "value": 1,
     "maxLevel": null,
     "age": "InformationAge"
@@ -1259,7 +1283,7 @@
         "Peacekeeper"
       ]
     },
-    "time": "1934 ~ 1996",
+    "time": "1934 ~ 1996 AD",
     "value": 1,
     "maxLevel": null,
     "age": "InformationAge"
@@ -1275,7 +1299,13 @@
         "RobocarFactory"
       ]
     },
-    "time": "1927 ~ 2011",
+    "time": "1927 ~ 2011 AD",
+    "value": 1,
+    "maxLevel": null,
+    "age": "InformationAge"
+  },
+  "StephenHawking": {
+    "time": "1942 ~ 2018 AD",
     "value": 1,
     "maxLevel": null,
     "age": "InformationAge"

@@ -64,14 +64,14 @@ const Techs = {
         column: 2,
         unlockBuilding: ["House"],
         requireTech: ["Masonry", "Counting"],
-        buildingMultiplier: {Hut: {output: 1}},
+        buildingMultiplier: { Hut: { output: 1 } },
         additionalUpgrades: () => [t(L.TechResourceTransportPreference)],
     },
 
     Herding: ITechDefinition = {
         name: () => t(L.Herding),
         column: 2,
-        unlockBuilding: ["LivestockFarm"],
+        unlockBuilding: ["PoultryFarm", "DairyFarm"],
         requireTech: ["Counting", "Farming"],
         additionalUpgrades: () => [t(L.TechProductionPriority)],
     },
@@ -132,7 +132,7 @@ const Techs = {
         column: 4,
         requireTech: ["Market", "Stateship"],
         unlockBuilding: ["Warehouse", "GreatMosqueOfSamarra"],
-        buildingMultiplier: {House: {worker: 1}},
+        buildingMultiplier: { House: { worker: 1 } },
     },
 
     LandTrade: ITechDefinition = {
@@ -140,7 +140,7 @@ const Techs = {
         column: 4,
         requireTech: ["Market", "Arithmetic"],
         unlockBuilding: ["Caravansary"],
-        globalMultiplier: {transportCapacity: 1},
+        globalMultiplier: { transportCapacity: 1 },
     },
 
     Astronomy: ITechDefinition = {
@@ -236,7 +236,7 @@ const Techs = {
         name: () => t(L.Library),
         column: 7,
         requireTech: ["Literature"],
-        unlockBuilding: ["Library", "Glassworks"],
+        unlockBuilding: ["Library", "Glassworks", "PoetrySchool"],
     },
 
     Architecture: ITechDefinition = {
@@ -244,7 +244,7 @@ const Techs = {
         column: 8,
         requireTech: ["Machinery", "Politics"],
         unlockBuilding: ["SwordForge", "ChichenItza"],
-        globalMultiplier: {builderCapacity: 1},
+        globalMultiplier: { builderCapacity: 1 },
     },
 
     Democracy: ITechDefinition = {
@@ -274,9 +274,12 @@ const Techs = {
         requireTech: ["Architecture"],
         unlockBuilding: ["CaravelBuilder"],
         buildingMultiplier: {
-            Library: {output: 1},
+            Library: { output: 1 },
         },
-        additionalUpgrades: () => [t(L.SeaTradeUpgrade, {tariff: formatPercent(SEA_TILE_COST_1)})],
+        additionalUpgrades: () => [
+            t(L.SeaTradeUpgrade, { tariff: formatPercent(SEA_TILE_COST_1) }),
+            t(L.ExplorerRangeUpgradeDesc, { range: 2 }),
+        ],
     },
 
     Physics: ITechDefinition = {
@@ -337,12 +340,12 @@ const Techs = {
         column: 11,
         requireTech: ["Navigation"],
         unlockBuilding: ["LensWorkshop"],
-        globalMultiplier: {builderCapacity: 1},
+        globalMultiplier: { builderCapacity: 1 },
         buildingMultiplier: {
-            Library: {output: 1},
-            School: {output: 1},
+            Library: { output: 1 },
+            School: { output: 1 },
         },
-        additionalUpgrades: () => [t(L.SeaTradeUpgrade, {tariff: formatPercent(SEA_TILE_COST_2)})],
+        additionalUpgrades: () => [t(L.SeaTradeUpgrade, { tariff: formatPercent(SEA_TILE_COST_2) })],
     },
 
     Banking: ITechDefinition = {
@@ -358,7 +361,7 @@ const Techs = {
         column: 11,
         requireTech: ["HolyEmpire", "Education", "CivilService"],
         unlockBuilding: ["University", "OxfordUniversity"],
-        globalMultiplier: {sciencePerBusyWorker: 1},
+        globalMultiplier: { sciencePerBusyWorker: 1 },
     },
 
     Chemistry: ITechDefinition = {
@@ -368,11 +371,11 @@ const Techs = {
         revealDeposit: ["Coal"],
         unlockBuilding: ["CoalMine"],
         buildingMultiplier: {
-            StoneQuarry: {storage: 1, output: 1},
-            LoggingCamp: {storage: 1, output: 1},
-            IronMiningCamp: {storage: 1, output: 1},
-            CopperMiningCamp: {storage: 1, output: 1},
-            Sandpit: {storage: 1, output: 1},
+            StoneQuarry: { storage: 1, output: 1 },
+            LoggingCamp: { storage: 1, output: 1 },
+            IronMiningCamp: { storage: 1, output: 1 },
+            CopperMiningCamp: { storage: 1, output: 1 },
+            Sandpit: { storage: 1, output: 1 },
         },
     },
 
@@ -454,6 +457,7 @@ const Techs = {
         globalMultiplier: {
             storage: 1,
         },
+        additionalUpgrades: () => [t(L.ExplorerRangeUpgradeDesc, { range: 3 })],
     },
 
     Capitalism: ITechDefinition = {
@@ -464,12 +468,12 @@ const Techs = {
             builderCapacity: 1,
         },
         buildingMultiplier: {
-            Library: {output: 1},
-            School: {output: 1},
-            University: {output: 1},
+            Library: { output: 1 },
+            School: { output: 1 },
+            University: { output: 1 },
         },
-        unlockBuilding: ["Parliament"],
-        additionalUpgrades: () => [t(L.SeaTradeUpgrade, {tariff: formatPercent(SEA_TILE_COST_3)})],
+        unlockBuilding: ["Parliament", "BigBen"],
+        additionalUpgrades: () => [t(L.SeaTradeUpgrade, { tariff: formatPercent(SEA_TILE_COST_3) })],
     },
 
     RapidFire: ITechDefinition = {
@@ -584,6 +588,7 @@ const Techs = {
         column: 18,
         requireTech: ["Combustion", "Electrolysis"],
         unlockBuilding: ["BiplaneFactory"],
+        additionalUpgrades: () => [t(L.ExplorerRangeUpgradeDesc, { range: 4 })],
     },
 
     Synthetics: ITechDefinition = {
@@ -600,11 +605,11 @@ const Techs = {
         revealDeposit: ["Uranium"],
         unlockBuilding: ["UraniumMine"],
         buildingMultiplier: {
-            Library: {output: 1},
-            School: {output: 1},
-            University: {output: 1},
-            PublishingHouse: {output: 1},
-            ResearchLab: {output: 1},
+            Library: { output: 1 },
+            School: { output: 1 },
+            University: { output: 1 },
+            PublishingHouse: { output: 1 },
+            ResearchLab: { output: 1 },
         },
     },
 
@@ -698,11 +703,11 @@ const Techs = {
         requireTech: ["UnitedNations", "Hydroelectricity"],
         unlockBuilding: ["Condo"],
         buildingMultiplier: {
-            Library: {output: 1},
-            School: {output: 1},
-            University: {output: 1},
-            PublishingHouse: {output: 1},
-            ResearchLab: {output: 1},
+            Library: { output: 1 },
+            School: { output: 1 },
+            University: { output: 1 },
+            PublishingHouse: { output: 1 },
+            ResearchLab: { output: 1 },
         },
     },
 
@@ -809,7 +814,7 @@ const Techs = {
         name: () => t(L.FinancialArbitrage),
         column: 25,
         requireTech: ["FinancialLeverage", "WorldWideWeb"],
-        unlockBuilding: ["HedgeFund"],
+        unlockBuilding: ["HedgeFund", "Peacekeeper"],
     },
 
     Robotics: ITechDefinition = {
@@ -828,7 +833,7 @@ const Techs = {
         name: () => t(L.VirtualReality),
         column: 26,
         requireTech: ["SocialNetwork", "CloudComputing"],
-        unlockBuilding: ["CivOasis", "Peacekeeper"],
+        unlockBuilding: ["CivOasis", "LargeHadronCollider"],
     },
     Blockchain: ITechDefinition = {
         name: () => t(L.Blockchain),
@@ -845,9 +850,9 @@ const Techs = {
 };
 
 const Ages = {
-    StoneAge: ITechAgeDefinition = {idx: 0, from: 0, to: 1, name: () => t(L.StoneAge), color: 0xb2bec3},
-    BronzeAge: ITechAgeDefinition = {idx: 1, from: 2, to: 3, name: () => t(L.BronzeAge), color: 0xb2bec3},
-    IronAge: ITechAgeDefinition = {idx: 2, from: 4, to: 5, name: () => t(L.IronAge), color: 0x596275},
+    StoneAge: ITechAgeDefinition = { idx: 0, from: 0, to: 1, name: () => t(L.StoneAge), color: 0xb2bec3 },
+    BronzeAge: ITechAgeDefinition = { idx: 1, from: 2, to: 3, name: () => t(L.BronzeAge), color: 0xb2bec3 },
+    IronAge: ITechAgeDefinition = { idx: 2, from: 4, to: 5, name: () => t(L.IronAge), color: 0x596275 },
     ClassicalAge: ITechAgeDefinition = {
         idx: 3,
         from: 6,
@@ -855,7 +860,7 @@ const Ages = {
         name: () => t(L.ClassicalAge),
         color: 0x81ecec,
     },
-    MiddleAge: ITechAgeDefinition = {idx: 4, from: 9, to: 10, name: () => t(L.MiddleAge), color: 0xff7675},
+    MiddleAge: ITechAgeDefinition = { idx: 4, from: 9, to: 10, name: () => t(L.MiddleAge), color: 0xff7675 },
     RenaissanceAge: ITechAgeDefinition = {
         idx: 5,
         from: 11,

@@ -509,5 +509,307 @@
     "globalMultiplier": {
       "sciencePerBusyWorker": 2
     }
+  },
+  "Liberalism1": {
+    "requireResources": {
+      "Politics": 1
+    },
+    "buildingMultiplier": {
+      "BondMarket": {
+        "output": 1
+      }
+    }
+  },
+  "Liberalism2": {
+    "requireResources": {
+      "Politics": 1
+    },
+    "buildingMultiplier": {
+      "BondMarket": {
+        "output": 1
+      },
+      "Warehouse": {
+        "storage": 1
+      },
+      "Caravansary": {
+        "storage": 1
+      }
+    }
+  },
+  "Liberalism3": {
+    "requireResources": {
+      "Politics": 1
+    },
+    "buildingMultiplier": {
+      "BondMarket": {
+        "output": 1
+      },
+      "Warehouse": {
+        "storage": 1
+      },
+      "Caravansary": {
+        "storage": 1
+      }
+    }
+  },
+  "Liberalism4": {
+    "requireResources": {
+      "Politics": 1
+    },
+    "buildingMultiplier": {
+      "BondMarket": {
+        "output": 1
+      },
+      "Warehouse": {
+        "storage": 1
+      },
+      "Caravansary": {
+        "storage": 1
+      }
+    }
+  },
+  "Liberalism5": {
+    "requireResources": {
+      "Politics": 1
+    },
+    "buildingMultiplier": {
+      "BondMarket": {
+        "output": 1
+      },
+      "StockExchange": {
+        "output": 1
+      },
+      "Warehouse": {
+        "storage": 1
+      },
+      "Caravansary": {
+        "storage": 1
+      }
+    }
+  },
+  "Conservatism1": {
+    "requireResources": {
+      "Politics": 1
+    },
+    "buildingMultiplier": {
+      "LocomotiveFactory": {
+        "output": 1
+      }
+    }
+  },
+  "Conservatism2": {
+    "requireResources": {
+      "Politics": 1
+    },
+    "buildingMultiplier": {
+      "LocomotiveFactory": {
+        "output": 1
+      }
+    },
+    "globalMultiplier": {
+      "happiness": 2
+    }
+  },
+  "Conservatism3": {
+    "requireResources": {
+      "Politics": 1
+    },
+    "buildingMultiplier": {
+      "LocomotiveFactory": {
+        "output": 1
+      },
+      "Stadium": {
+        "output": 1
+      }
+    },
+    "globalMultiplier": {
+      "happiness": 3
+    }
+  },
+  "Conservatism4": {
+    "requireResources": {
+      "Politics": 1
+    },
+    "buildingMultiplier": {
+      "LocomotiveFactory": {
+        "output": 1
+      },
+      "Stadium": {
+        "output": 1
+      },
+      "MovieStudio": {
+        "output": 1
+      }
+    },
+    "globalMultiplier": {
+      "happiness": 4
+    }
+  },
+  "Conservatism5": {
+    "requireResources": {
+      "Politics": 1
+    },
+    "buildingMultiplier": {
+      "LocomotiveFactory": {
+        "output": 1
+      },
+      "Stadium": {
+        "output": 1
+      },
+      "MovieStudio": {
+        "output": 1
+      },
+      "RadioStation": {
+        "output": 1
+      }
+    },
+    "globalMultiplier": {
+      "happiness": 5
+    }
+  },
+  "Socialism1": {
+    "requireResources": {
+      "Politics": 1
+    },
+    "buildingMultiplier": {
+      "PublishingHouse": {
+        "output": 1
+      }
+    }
+  },
+  "Socialism2": {
+    "requireResources": {
+      "Politics": 1
+    },
+    "buildingMultiplier": {
+      "PublishingHouse": {
+        "output": 1
+      },
+      "MagazinePublisher": {
+        "output": 1
+      }
+    }
+  },
+  "Socialism3": {
+    "requireResources": {
+      "Politics": 1
+    },
+    "buildingMultiplier": {
+      "PublishingHouse": {
+        "output": 1
+      },
+      "MagazinePublisher": {
+        "output": 1
+      },
+      "ResearchLab": {
+        "output": 1
+      }
+    }
+  },
+  "Socialism4": {
+    "requireResources": {
+      "Politics": 1
+    },
+    "buildingMultiplier": {
+      "PublishingHouse": {
+        "output": 1
+      },
+      "MagazinePublisher": {
+        "output": 1
+      },
+      "ResearchLab": {
+        "output": 1
+      }
+    }
+  },
+  "Socialism5": {
+    "requireResources": {
+      "Politics": 1
+    },
+    "buildingMultiplier": {
+      "PublishingHouse": {
+        "output": 1
+      },
+      "MagazinePublisher": {
+        "output": 1
+      },
+      "ResearchLab": {
+        "output": 1
+      }
+    }
+  },
+  "Communism1": {
+    "requireResources": {
+      "Politics": 1
+    },
+    "buildingMultiplier": {
+      "GatlingGunFactory": {
+        "output": 1
+      }
+    }
+  },
+  "Communism2": {
+    "requireResources": {
+      "Politics": 1
+    },
+    "buildingMultiplier": {
+      "GatlingGunFactory": {
+        "output": 1
+      }
+    },
+    "globalMultiplier": {
+      "sciencePerBusyWorker": 1
+    }
+  },
+  "Communism3": {
+    "requireResources": {
+      "Politics": 1
+    },
+    "buildingMultiplier": {
+      "GatlingGunFactory": {
+        "output": 1
+      },
+      "IroncladBuilder": {
+        "output": 1
+      }
+    },
+    "globalMultiplier": {
+      "sciencePerBusyWorker": 1
+    }
+  },
+  "Communism4": {
+    "requireResources": {
+      "Politics": 1
+    },
+    "buildingMultiplier": {
+      "GatlingGunFactory": {
+        "output": 1
+      },
+      "IroncladBuilder": {
+        "output": 1
+      },
+      "BiplaneFactory": {
+        "output": 1
+      }
+    },
+    "globalMultiplier": {
+      "sciencePerBusyWorker": 1
+    }
+  },
+  "Communism5": {
+    "requireResources": {
+      "Politics": 1
+    },
+    "buildingMultiplier": {
+      "GatlingGunFactory": {
+        "output": 1
+      },
+      "IroncladBuilder": {
+        "output": 1
+      },
+      "BiplaneFactory": {
+        "output": 1
+      }
+    }
   }
 }
