@@ -14,5 +14,8 @@ class ModelFactoryConfiguration(
         WATER to HYDRO_DAM,
         TOOL to IRON_FORGE,
         FAITH to SHRINE,
+        POEM to WRITERS_GUILD,
+        MEAT to POULTRY_FARM,
+        MILK to DAIRY_FARM
     )
 )

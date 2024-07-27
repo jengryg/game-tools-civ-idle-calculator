@@ -1,5 +1,6 @@
 package game.model.game
 
+import com.fasterxml.jackson.annotation.JsonIgnore
 import com.fasterxml.jackson.databind.annotation.JsonSerialize
 import utils.io.HasNameBase
 import utils.io.JustNameSerializer
@@ -23,5 +24,16 @@ class Resource(
         fun getEvOf(map: Map<Resource, Double>): Double {
             return map.map { (r, d) -> d * r.price }.sum()
         }
+    }
+
+    @JsonIgnore
+    fun getSingleProducerOrThrow(): Building {
+        if (producer.isEmpty()) {
+            throw IllegalArgumentException("Resource $name has no known producer.")
+        }
+        if (producer.size > 1) {
+            throw IllegalArgumentException("Resource $name has more than one producer: ${producer.joinToString(", ") { it.name }}")
+        }
+        return producer[0]
     }
 }

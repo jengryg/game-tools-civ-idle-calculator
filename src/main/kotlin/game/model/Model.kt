@@ -87,6 +87,6 @@ class Model(
     }
 
     fun getProducer(r: Resource): Building {
-        return assignedProducers[r] ?: r.producer.single()
+        return assignedProducers[r] ?: r.getSingleProducerOrThrow()
     }
 }
