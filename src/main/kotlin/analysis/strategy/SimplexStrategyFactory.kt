@@ -17,6 +17,16 @@ class SimplexStrategyFactory(
         )
     }
 
+    fun process(simName: String, targets: Map<String, Double>): SimplexAlgorithm {
+        return SimplexAlgorithm(
+            name = simName,
+            model = model,
+            target = BuildingVector.just(targets.mapKeys { model.getBuilding(it.key) }),
+            happyness = BuildingVector(model.buildings.values.toList(), 1.0),
+            ceilingScale = 1.0
+        )
+    }
+
     fun processByEnterpriseValueTarget(name: String, value: Double): SimplexAlgorithm {
         val building = model.getBuilding(name)
         val r = Resource.getEvOf(building.effectiveOutput)

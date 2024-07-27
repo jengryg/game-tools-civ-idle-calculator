@@ -91,6 +91,24 @@ fun main(args: Array<String>) {
         export("simple")
     }
 
+    ssf.process(
+        "endgame",
+        mapOf<String, Double>(
+            CIV_G_P_T to 6.0,
+            PEACEKEEPER to 6.0,
+            SPACE_CENTER to 6.0,
+            CIV_OASIS to 6.0,
+            ROBOCAR_FACTORY to 6.0,
+            BITCOIN_MINER to 12.0,
+            SUPERCOMPUTER_LAB to 12.0,
+            CIV_TOK to 12.0,
+            HEDGE_FUND to 12.0,
+        )
+    ).apply {
+        solve()
+        export("simple")
+    }
+
     // TODO: exporting lists with resources, tiers and prices calculated
     // TODO: exporting lists with cost of wonders and their enterprise value
     // TODO: chain analysis with each variant and for each building

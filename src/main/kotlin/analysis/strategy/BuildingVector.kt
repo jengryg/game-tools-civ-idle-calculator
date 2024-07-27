@@ -78,5 +78,11 @@ class BuildingVector(
                 change(b, v)
             }
         }
+
+        fun just(targets: Map<Building, Double>): BuildingVector {
+            return BuildingVector(listOf()).apply {
+                targets.forEach(::change)
+            }
+        }
     }
 }
