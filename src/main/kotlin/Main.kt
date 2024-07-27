@@ -94,15 +94,15 @@ fun main(args: Array<String>) {
     ssf.process(
         "endgame",
         mapOf<String, Double>(
-            CIV_G_P_T to 6.0,
-            PEACEKEEPER to 6.0,
-            SPACE_CENTER to 6.0,
+            CIV_G_P_T to 10.0,
+            PEACEKEEPER to 10.0,
+            SPACE_CENTER to 10.0,
             CIV_OASIS to 6.0,
             ROBOCAR_FACTORY to 6.0,
             BITCOIN_MINER to 12.0,
-            SUPERCOMPUTER_LAB to 12.0,
-            CIV_TOK to 12.0,
-            HEDGE_FUND to 12.0,
+            SUPERCOMPUTER_LAB to 20.0,
+            CIV_TOK to 20.0,
+            HEDGE_FUND to 20.0,
         )
     ).apply {
         solve()

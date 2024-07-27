@@ -25,7 +25,12 @@ class TileWrapper(
                         level = building["level"]!! as Int,
                         desiredLevel = building["desiredLevel"] as Int,
                         status = building["status"] as String,
-                        capacity = building["capacity"] as Int,
+                        capacity = building["capacity"].let {
+                            when(it) {
+                                is Int -> it.toDouble()
+                                else -> it as Double
+                            }
+                        },
                         stockpileCapacity = building["stockpileCapacity"] as Int,
                         stockpileMax = building["stockpileMax"] as Int,
                         options = building["options"] as Int,

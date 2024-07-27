@@ -3,7 +3,7 @@ package game.loader.player.json
 class TileBuildingJson(
     val level: Int,
     val desiredLevel: Int,
-    val capacity: Int,
+    val capacity: Double,
     val stockpileCapacity: Int,
     val stockpileMax: Int,
     val options: Int,

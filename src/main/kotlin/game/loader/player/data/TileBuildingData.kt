@@ -13,7 +13,7 @@ class TileBuildingData(
     val bld: BuildingData,
     val level: Int,
     val desiredLevel: Int,
-    val capacity: Int,
+    val capacity: Double,
     val stockpileCapacity: Int,
     val stockpileMax: Int,
     val options: Int,
