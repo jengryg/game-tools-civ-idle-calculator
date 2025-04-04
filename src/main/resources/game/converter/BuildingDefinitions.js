@@ -398,8 +398,8 @@ const Buildings = {
     },
     ResearchLab: {
         name: () => t(L.ResearchLab),
-        input: {Culture: 2, Philosophy: 2},
-        output: {Science: 5000},
+        input: {Culture: 3, Philosophy: 3},
+        output: {Science: 7500},
     },
     ResearchFund: {
         name: () => t(L.ResearchFund),
@@ -527,12 +527,6 @@ const Buildings = {
         output: {Flour: 1},
         construction: {Brick: 1},
     },
-    LivestockFarm: {
-        name: () => t(L.LivestockFarm),
-        input: {Wheat: 2},
-        output: {Meat: 1, Milk: 1},
-        construction: {Lumber: 1},
-    },
     PoultryFarm: {
         name: () => t(L.PoultryFarm),
         input: {Wheat: 2},
@@ -545,12 +539,6 @@ const Buildings = {
         output: {Milk: 2},
         construction: {Brick: 1},
     },
-    // LivestockFarm: {
-    //    name: () => t(L.LivestockFarm),
-    //    input: { Wheat: 2 },
-    //    output: { Meat: 1, Milk: 1 },
-    //    construction: { Lumber: 1 },
-    // },
     Stable: {
         name: () => t(L.Stable),
         input: {Wheat: 2},
@@ -831,7 +819,7 @@ const Buildings = {
         desc: () => t(L.StatisticsOfficeDesc),
         input: {},
         output: {},
-        construction: {Brick: 100, Wood: 100, Lumber: 100},
+        construction: {Stone: 150, Wood: 150},
         max: 1,
         special: BuildingSpecial.WorldWonder,
     },
@@ -860,7 +848,7 @@ const Buildings = {
     },
     GrottaAzzurra: {
         name: () => t(L.GrottaAzzurra),
-        desc: () => t(L.GrottaAzzurraDesc),
+        desc: () => t(L.GrottaAzzurraDescV2),
         input: {},
         output: {},
         construction: {},
@@ -870,7 +858,7 @@ const Buildings = {
     },
     Aphrodite: {
         name: () => t(L.Aphrodite),
-        desc: () => t(L.AphroditeDesc),
+        desc: () => t(L.AphroditeDescV2),
         input: {},
         output: {},
         construction: {},
@@ -880,7 +868,7 @@ const Buildings = {
     },
     Poseidon: {
         name: () => t(L.Poseidon),
-        desc: () => t(L.PoseidonDesc),
+        desc: () => t(L.PoseidonDescV2),
         input: {},
         output: {},
         construction: {},
@@ -1133,7 +1121,7 @@ const Buildings = {
     },
     Colosseum: {
         name: () => t(L.Colosseum),
-        desc: () => t(L.ColosseumDesc),
+        desc: () => t(L.ColosseumDescV2),
         input: {Chariot: 10},
         output: {},
         construction: {Brick: 100, Chariot: 100, Alcohol: 100},
@@ -1452,14 +1440,14 @@ const Buildings = {
         wikipedia: "Broadway_theatre",
     },
     TheMet: {
-        name: () => t(L.TheMet),
-        desc: () => t(L.TheMetDesc),
+        name: () => t(L.ThePentagon),
+        desc: () => t(L.ThePentagonDesc),
         input: {},
         output: {},
         construction: {Book: 100, Law: 100, Rifle: 100},
         max: 1,
         special: BuildingSpecial.WorldWonder,
-        wikipedia: "Metropolitan_Museum_of_Art",
+        wikipedia: "The_Pentagon",
     },
     WallStreet: {
         name: () => t(L.WallStreet),
@@ -1473,13 +1461,13 @@ const Buildings = {
     },
 
     Shenandoah: {
-        name: () => t(L.Shenandoah),
-        desc: () => t(L.ShenandoahDescV2),
+        name: () => t(L.GrandCanyon),
+        desc: () => t(L.GrandCanyonDesc),
         input: {},
         output: {},
         construction: {},
         max: 0,
-        wikipedia: "Shenandoah_Valley",
+        wikipedia: "Grand_Canyon",
         special: BuildingSpecial.NaturalWonder,
     },
 
@@ -1562,7 +1550,7 @@ const Buildings = {
 
     ZigguratOfUr: {
         name: () => t(L.ZigguratOfUr),
-        desc: () => t(L.ZigguratOfUrDesc),
+        desc: () => t(L.ZigguratOfUrDescV2),
         input: {},
         output: {},
         construction: {Brick: 100, Lumber: 100, Sand: 100},
@@ -1681,16 +1669,281 @@ const Buildings = {
         wikipedia: "Big_Ben",
     },
 
-    // ArcDeTriomphe: {
-    //    name: () => t(L.ArcDeTriomphe),
-    //    desc: () => t(L.ArcDeTriompheDesc),
-    //    input: {},
-    //    output: {},
-    //    construction: { Culture: 100, Brick: 100, Marble: 100 },
-    //    max: 1,
-    //    special: BuildingSpecial.WorldWonder,
-    //    wikipedia: "Arc_de_Triomphe",
-    // },
+    ItsukushimaShrine: {
+        name: () => t(L.ItsukushimaShrine),
+        desc: () => t(L.ItsukushimaShrineDescV2),
+        input: {},
+        output: {},
+        construction: {Furniture: 100, Opera: 100, SiegeRam: 100},
+        max: 1,
+        special: BuildingSpecial.WorldWonder,
+        wikipedia: "Itsukushima_Shrine",
+    },
+
+    GoldenPavilion: {
+        name: () => t(L.GoldenPavilion),
+        desc: () => t(L.GoldenPavilionDesc),
+        input: {},
+        output: {},
+        construction: {Faith: 100, Coin: 100, Sword: 100},
+        max: 1,
+        special: BuildingSpecial.WorldWonder,
+        wikipedia: "Kinkaku-ji",
+    },
+
+    OsakaCastle: {
+        name: () => t(L.OsakaCastle),
+        desc: () => t(L.OsakaCastleDesc),
+        input: {},
+        output: {},
+        construction: {Train: 100, GatlingGun: 100, Politics: 100},
+        max: 1,
+        special: BuildingSpecial.WorldWonder,
+        wikipedia: "Osaka_Castle",
+    },
+
+    Kanagawa: {
+        name: () => t(L.Kanagawa),
+        desc: () => t(L.KanagawaDesc),
+        input: {},
+        output: {},
+        construction: {},
+        max: 0,
+        special: BuildingSpecial.NaturalWonder,
+        wikipedia: "The_Great_Wave_off_Kanagawa",
+    },
+
+    MountFuji: {
+        name: () => t(L.MountFuji),
+        desc: () => t(L.MountFujiDescV2),
+        input: {},
+        output: {},
+        construction: {},
+        max: 0,
+        special: BuildingSpecial.NaturalWonder,
+        wikipedia: "Mount_Fuji",
+    },
+
+    CologneCathedral: {
+        name: () => t(L.CologneCathedral),
+        desc: () => t(L.CologneCathedralDesc),
+        input: {},
+        output: {},
+        construction: {Faith: 100, Knight: 100, Caravel: 100},
+        max: 1,
+        special: BuildingSpecial.WorldWonder,
+        wikipedia: "Cologne_Cathedral",
+    },
+
+    Elbphilharmonie: {
+        name: () => t(L.Elbphilharmonie),
+        desc: () => t(L.ElbphilharmonieDesc),
+        input: {},
+        output: {},
+        construction: {Radio: 100, Diplomacy: 100, Rocket: 100},
+        max: 1,
+        special: BuildingSpecial.WorldWonder,
+        wikipedia: "Elbphilharmonie",
+    },
+
+    Zugspitze: {
+        name: () => t(L.Zugspitze),
+        desc: () => t(L.ZugspitzeDesc),
+        input: {},
+        output: {},
+        construction: {},
+        max: 0,
+        special: BuildingSpecial.NaturalWonder,
+        wikipedia: "Zugspitze",
+    },
+
+    RhineGorge: {
+        name: () => t(L.RhineGorge),
+        desc: () => t(L.RhineGorgeDesc),
+        input: {},
+        output: {},
+        construction: {},
+        max: 0,
+        special: BuildingSpecial.NaturalWonder,
+        wikipedia: "Rhine_Gorge",
+    },
+
+    BlackForest: {
+        name: () => t(L.BlackForest),
+        desc: () => t(L.BlackForestDesc),
+        input: {},
+        output: {},
+        construction: {},
+        max: 0,
+        special: BuildingSpecial.NaturalWonder,
+        wikipedia: "Black_Forest",
+    },
+
+    SantaClausVillage: {
+        name: () => t(L.SantaClausVillage),
+        desc: () => t(L.SantaClausVillageDesc),
+        input: {},
+        output: {},
+        construction: {Faith: 500},
+        max: 1,
+        special: BuildingSpecial.WorldWonder,
+        wikipedia: "Santa_Claus_Village",
+    },
+
+    Lapland: {
+        name: () => t(L.Lapland),
+        desc: () => t(L.LaplandDesc),
+        input: {},
+        output: {},
+        construction: {},
+        max: 0,
+        special: BuildingSpecial.NaturalWonder,
+        wikipedia: "Lapland_(Finland)",
+    },
+
+    RockefellerCenterChristmasTree: {
+        name: () => t(L.RockefellerCenterChristmasTree),
+        desc: () => t(L.RockefellerCenterChristmasTreeDesc),
+        input: {},
+        output: {},
+        construction: {},
+        max: 0,
+        special: BuildingSpecial.NaturalWonder,
+        wikipedia: "Rockefeller_Center_Christmas_Tree",
+    },
+
+    YearOfTheSnake: {
+        name: () => t(L.YearOfTheSnake),
+        desc: () => t(L.YearOfTheSnakeDesc),
+        input: {},
+        output: {},
+        construction: {Opera: 500},
+        max: 1,
+        special: BuildingSpecial.WorldWonder,
+        wikipedia: "Snake_(zodiac)",
+    },
+
+    BritishMuseum: {
+        name: () => t(L.BritishMuseum),
+        desc: () => t(L.BritishMuseumDesc),
+        input: {},
+        output: {},
+        construction: {Tank: 100, Ironclad: 100, Train: 100},
+        max: 1,
+        special: BuildingSpecial.WorldWonder,
+        wikipedia: "British_Museum",
+    },
+
+    CambridgeUniversity: {
+        name: () => t(L.CambridgeUniversity),
+        desc: () => t(L.CambridgeUniversityDesc),
+        input: {},
+        output: {},
+        construction: {Philosophy: 100, Culture: 100, Faith: 100},
+        max: 1,
+        special: BuildingSpecial.WorldWonder,
+        wikipedia: "University_of_Cambridge",
+    },
+
+    TowerBridge: {
+        name: () => t(L.TowerBridge),
+        desc: () => t(L.TowerBridgeDesc),
+        input: {},
+        output: {},
+        construction: {Concrete: 150, Steel: 150},
+        max: 1,
+        special: BuildingSpecial.WorldWonder,
+        wikipedia: "Tower_Bridge",
+    },
+
+    EastIndiaCompany: {
+        name: () => t(L.EastIndiaCompany),
+        desc: () => t(L.EastIndiaCompanyDescV2),
+        input: {},
+        output: {},
+        construction: {Bond: 100, Frigate: 100, Gunpowder: 100},
+        max: 1,
+        special: BuildingSpecial.WorldWonder,
+        wikipedia: "East_India_Company",
+    },
+
+    CerneAbbasGiant: {
+        name: () => t(L.CerneAbbasGiant),
+        desc: () => t(L.CerneAbbasGiantDesc),
+        input: {},
+        output: {},
+        construction: {},
+        max: 0,
+        special: BuildingSpecial.NaturalWonder,
+        wikipedia: "Cerne_Abbas_Giant",
+    },
+
+    DuneOfPilat: {
+        name: () => t(L.DuneOfPilat),
+        desc: () => t(L.DuneOfPilatDesc),
+        input: {},
+        output: {},
+        construction: {},
+        max: 0,
+        special: BuildingSpecial.NaturalWonder,
+        wikipedia: "Dune_of_Pilat",
+    },
+
+    ArcDeTriomphe: {
+        name: () => t(L.ArcDeTriomphe),
+        desc: () => t(L.ArcDeTriompheDescV2),
+        input: {},
+        output: {},
+        construction: {Train: 100, GatlingGun: 100, Politics: 100},
+        max: 1,
+        special: BuildingSpecial.WorldWonder,
+        wikipedia: "Arc_de_Triomphe",
+    },
+
+    MontSaintMichel: {
+        name: () => t(L.MontSaintMichel),
+        desc: () => t(L.MontSaintMichelDesc),
+        input: {},
+        output: {},
+        construction: {Culture: 1000},
+        max: 1,
+        special: BuildingSpecial.WorldWonder,
+        wikipedia: "Mont-Saint-Michel",
+    },
+
+    Louvre: {
+        name: () => t(L.Louvre),
+        desc: () => t(L.LouvreDesc),
+        input: {},
+        output: {},
+        construction: {Bond: 100, Law: 100, Frigate: 100},
+        max: 1,
+        special: BuildingSpecial.WorldWonder,
+        wikipedia: "Louvre",
+    },
+
+    CentrePompidou: {
+        name: () => t(L.CentrePompidou),
+        desc: () => t(L.CentrePompidouDesc),
+        input: {},
+        output: {},
+        construction: {TV: 100, Computer: 100, Forex: 100},
+        max: 1,
+        special: BuildingSpecial.WorldWonder,
+        wikipedia: "Centre_Pompidou",
+    },
+
+    EasterBunny: {
+        name: () => t(L.EasterBunny),
+        desc: () => t(L.EasterBunnyDesc),
+        input: {},
+        output: {},
+        construction: {Bond: 100, Book: 100, Culture: 100},
+        max: 1,
+        special: BuildingSpecial.WorldWonder,
+        wikipedia: "Easter_Bunny",
+    },
+
     // #endregion /////////////////////////////////////////////////////////////////////////////////////////////
 
     // Winery: {
@@ -1709,15 +1962,6 @@ const Buildings = {
     //    wikipedia: "Borobudur",
     // },
 
-    // ItsukushimaShrine: {
-    //    name: () => t(L.ItsukushimaShrine),
-    //    desc: () => t(L.ItsukushimaShrineDesc),
-    //    input: {},
-    //    output: {},
-    //    max: 1,
-    //    wikipedia: "Itsukushima_Shrine",
-    // },
-
     // Moai: {
     //    name: () => t(L.Moai),
     //    desc: () => t(L.MoaiDesc),
@@ -1734,15 +1978,6 @@ const Buildings = {
     //    output: {},
     //    max: 1,
     //    wikipedia: "Bran_Castle",
-    // },
-
-    // ChoghaZanbil: {
-    //    name: () => t(L.ChoghaZanbil),
-    //    desc: () => t(L.ChoghaZanbilDesc),
-    //    input: {},
-    //    output: {},
-    //    max: 1,
-    //    wikipedia: "Chogha_Zanbil",
     // },
 
     // SydneyOperaHouse: {

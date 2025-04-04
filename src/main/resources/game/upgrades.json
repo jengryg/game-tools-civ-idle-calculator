@@ -811,5 +811,21 @@
         "output": 1
       }
     }
+  },
+  "BritishMuseum": {
+    "requireResources": {}
+  },
+  "SpaceshipIdle": {
+    "requireResources": {},
+    "buildingMultiplier": {
+      "SpaceCenter": {
+        "output": 1,
+        "storage": 1
+      },
+      "SpacecraftFactory": {
+        "output": 1,
+        "storage": 1
+      }
+    }
   }
 }

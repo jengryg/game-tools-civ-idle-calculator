@@ -34,9 +34,13 @@ const Upgrades = {
         },
         additionalUpgrades: () => [t(L.Cultivation4UpgradeHTML)],
         onUnlocked: (gs) => {
-            const candidates = rollGreatPeopleThisRun("RenaissanceAge", gs.city, getGreatPeopleChoiceCount(gs));
+            const candidates = rollGreatPeopleThisRun(
+                new Set(["RenaissanceAge"]),
+                gs.city,
+                getGreatPeopleChoiceCount(gs),
+            );
             if (candidates) {
-                gs.greatPeopleChoices.push(candidates);
+                gs.greatPeopleChoicesV2.push(candidates);
             }
             RequestChooseGreatPerson.emit({permanent: false});
         },
@@ -131,7 +135,7 @@ const Upgrades = {
             const total = getGreatPersonTotalEffect("ZhengHe", gs);
             if (total > 0) {
                 const def = Config.GreatPerson.ZhengHe;
-                def.tick(def, total, t(L.ExpansionLevelX, {level: "IV"}));
+                def.tick(def, total, t(L.ExpansionLevelX, {level: "IV"}), GreatPersonTickFlag.None);
             }
         },
     },
@@ -520,21 +524,13 @@ const Upgrades = {
             ResearchLab: {output: 1},
         },
         onUnlocked: (gs) => {
-            let science = 0;
-            forEach(Config.Tech, (tech, def) => {
-                if (
-                    def.column >= Config.TechAge.WorldWarAge.from &&
-                    def.column <= Config.TechAge.WorldWarAge.to
-                ) {
-                    science = Math.max(getTechUnlockCost(tech), science);
-                }
-            });
+            const [science, _] = getTechUnlockCostInAge("WorldWarAge");
             const hq = findSpecialBuilding("Headquarter", gs);
             if (hq) {
                 safeAdd(hq.building.resources, "Science", science);
             }
         },
-        additionalUpgrades: () => [t(L.SocialismLevel4DescHTML)],
+        additionalUpgrades: () => [t(L.SocialismLevel4DescHTMLV2)],
     },
 
     Socialism5: IUpgradeDefinition = {
@@ -546,18 +542,13 @@ const Upgrades = {
             ResearchLab: {output: 1},
         },
         onUnlocked: (gs) => {
-            let science = 0;
-            forEach(Config.Tech, (tech, def) => {
-                if (def.column >= Config.TechAge.ColdWarAge.from && def.column <= Config.TechAge.ColdWarAge.to) {
-                    science = Math.max(getTechUnlockCost(tech), science);
-                }
-            });
+            const [science, _] = getTechUnlockCostInAge("ColdWarAge");
             const hq = findSpecialBuilding("Headquarter", gs);
             if (hq) {
                 safeAdd(hq.building.resources, "Science", science);
             }
         },
-        additionalUpgrades: () => [t(L.SocialismLevel5DescHTML)],
+        additionalUpgrades: () => [t(L.SocialismLevel5DescHTMLV2)],
     },
 
     Communism1: IUpgradeDefinition = {
@@ -603,13 +594,21 @@ const Upgrades = {
             sciencePerBusyWorker: 1,
         },
         onUnlocked: (gs) => {
-            const candidates1 = rollGreatPeopleThisRun("IndustrialAge", gs.city, getGreatPeopleChoiceCount(gs));
+            const candidates1 = rollGreatPeopleThisRun(
+                new Set(["IndustrialAge"]),
+                gs.city,
+                getGreatPeopleChoiceCount(gs),
+            );
             if (candidates1) {
-                gs.greatPeopleChoices.push(candidates1);
+                gs.greatPeopleChoicesV2.push(candidates1);
             }
-            const candidates2 = rollGreatPeopleThisRun("WorldWarAge", gs.city, getGreatPeopleChoiceCount(gs));
+            const candidates2 = rollGreatPeopleThisRun(
+                new Set(["WorldWarAge"]),
+                gs.city,
+                getGreatPeopleChoiceCount(gs),
+            );
             if (candidates2) {
-                gs.greatPeopleChoices.push(candidates2);
+                gs.greatPeopleChoicesV2.push(candidates2);
             }
         },
         additionalUpgrades: () => [t(L.CommunismLevel4DescHTML)],
@@ -624,11 +623,24 @@ const Upgrades = {
             BiplaneFactory: {output: 1},
         },
         onUnlocked: (gs) => {
-            const candidates = rollGreatPeopleThisRun("ColdWarAge", gs.city, getGreatPeopleChoiceCount(gs));
+            const candidates = rollGreatPeopleThisRun(
+                new Set(["ColdWarAge"]),
+                gs.city,
+                getGreatPeopleChoiceCount(gs),
+            );
             if (candidates) {
-                gs.greatPeopleChoices.push(candidates);
+                gs.greatPeopleChoicesV2.push(candidates);
             }
         },
         additionalUpgrades: () => [t(L.CommunismLevel5DescHTML)],
+    },
+    BritishMuseum: IUpgradeDefinition = {name: () => "", requireResources: {}},
+    SpaceshipIdle: IUpgradeDefinition = {
+        name: () => t(L.WishlistSpaceshipIdle),
+        requireResources: {},
+        buildingMultiplier: {
+            SpaceCenter: {output: 1, storage: 1},
+            SpacecraftFactory: {output: 1, storage: 1},
+        },
     },
 }

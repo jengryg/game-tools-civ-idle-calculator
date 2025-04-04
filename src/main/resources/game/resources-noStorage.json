@@ -1,5 +1,9 @@
 {
   "Worker": true,
   "Power": true,
-  "Science": true
+  "Science": true,
+  "Warp": true,
+  "Festival": true,
+  "Cycle": true,
+  "TradeValue": true
 }

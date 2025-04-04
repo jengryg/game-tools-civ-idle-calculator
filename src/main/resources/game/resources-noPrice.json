@@ -2,7 +2,10 @@
   "Worker": true,
   "Power": true,
   "Science": true,
+  "Festival": true,
   "Warp": true,
   "Explorer": true,
-  "Teleport": true
+  "Teleport": true,
+  "Cycle": true,
+  "TradeValue": true
 }

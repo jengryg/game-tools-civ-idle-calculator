@@ -19,9 +19,9 @@ const GreatPersons = {
         time: "c. 1800s BC",
     },
 
-    RamessesII: {
+    RamessesII: IGreatPersonDefinition = {
         name: () => t(L.RamessesII),
-        desc: (self, level) => t(L.RamessesIIDesc, { value: self.value(level) }),
+        desc: (self, level) => t(L.RamessesIIDesc, {value: self.value(level)}),
         time: "c. 1300s BC",
         value: 1,
         maxLevel: Number.POSITIVE_INFINITY,
@@ -29,9 +29,9 @@ const GreatPersons = {
         type: GreatPersonType.Normal,
     },
 
-    TangOfShang: {
+    TangOfShang: IGreatPersonDefinition = {
         name: () => t(L.TangOfShang),
-        desc: (self, level) => t(L.TangOfShangDesc, { value: self.value(level) }),
+        desc: (self, level) => t(L.TangOfShangDesc, {value: self.value(level)}),
         time: "c. 1600s BC",
         value: 1 * 0.5,
         maxLevel: Number.POSITIVE_INFINITY,
@@ -93,7 +93,7 @@ const GreatPersons = {
         name: () => t(L.Dido),
         boost: {
             multipliers: ["output", "storage"],
-            buildings: ["DairyFarm", "PoultryFarm", "LivestockFarm"],
+            buildings: ["DairyFarm", "PoultryFarm"],
         },
         time: "c. 800s BC",
         value: 1,
@@ -111,6 +111,19 @@ const GreatPersons = {
         value: 1,
         maxLevel: Number.POSITIVE_INFINITY,
         age: "IronAge",
+    },
+
+    Samsuiluna: {
+        name: () => t(L.Samsuiluna),
+        boost: {
+            multipliers: ["output", "storage"],
+            buildings: ["Marbleworks"],
+        },
+        time: "c. 1700s BC",
+        value: 2,
+        maxLevel: Number.POSITIVE_INFINITY,
+        age: "IronAge",
+        city: "Babylon",
     },
 
     // Classical //////////////////////////////////////////////////////////////////////////////////////////////
@@ -175,9 +188,9 @@ const GreatPersons = {
         age: "ClassicalAge",
     },
 
-    Socrates: {
+    Socrates: IGreatPersonDefinition = {
         name: () => t(L.Socrates),
-        desc: (self, level) => t(L.SocratesDesc, { value: self.value(level) }),
+        desc: (self, level) => t(L.SocratesDesc, {value: self.value(level)}),
         time: "c. 600s BC",
         value: 1,
         maxLevel: Number.POSITIVE_INFINITY,
@@ -185,9 +198,9 @@ const GreatPersons = {
         type: GreatPersonType.Normal,
     },
 
-    Aristophanes: {
+    Aristophanes: IGreatPersonDefinition = {
         name: () => t(L.Aristophanes),
-        desc: (self, level) => t(L.AristophanesDesc, { value: self.value(level) }),
+        desc: (self, level) => t(L.AristophanesDesc, {value: self.value(level)}),
         time: "446 ~ 386 AD",
         value: 1,
         maxLevel: Number.POSITIVE_INFINITY,
@@ -195,9 +208,9 @@ const GreatPersons = {
         type: GreatPersonType.Normal,
     },
 
-    Confucius: {
+    Confucius: IGreatPersonDefinition = {
         name: () => t(L.Confucius),
-        desc: (self, level) => t(L.ConfuciusDescV2, { value: self.value(level) }),
+        desc: (self, level) => t(L.ConfuciusDescV2, {value: self.value(level)}),
         time: "c. 600s BC",
         value: 1,
         maxLevel: Number.POSITIVE_INFINITY,
@@ -215,6 +228,32 @@ const GreatPersons = {
         value: 1,
         maxLevel: Number.POSITIVE_INFINITY,
         age: "ClassicalAge",
+    },
+
+    Aristotle: {
+        name: () => t(L.Aristotle),
+        boost: {
+            multipliers: ["output", "storage"],
+            buildings: ["Library"],
+        },
+        time: "384 ~ 322 BC",
+        value: 1 * 2,
+        maxLevel: Number.POSITIVE_INFINITY,
+        age: "ClassicalAge",
+        city: "Athens",
+    },
+
+    JuliusCaesar: {
+        name: () => t(L.JuliusCaesar),
+        boost: {
+            multipliers: ["output", "storage"],
+            buildings: ["GoldMiningCamp"],
+        },
+        time: "100 ~ 44 BC",
+        value: 1 * 2,
+        maxLevel: Number.POSITIVE_INFINITY,
+        age: "ClassicalAge",
+        city: "Rome",
     },
 
     Archimedes: {
@@ -254,36 +293,46 @@ const GreatPersons = {
         age: "ClassicalAge",
     },
 
-    Zenobia: {
+    Cleopatra: {
+        name: () => t(L.Cleopatra),
+        boost: {
+            multipliers: ["output", "storage"],
+            buildings: ["Shrine"],
+        },
+        city: "Memphis",
+        time: "70 ~ 30 BC",
+        value: 2,
+        maxLevel: Number.POSITIVE_INFINITY,
+        age: "ClassicalAge",
+    },
+
+    Zenobia: IGreatPersonDefinition = {
         name: () => t(L.Zenobia),
-        desc: (self, level) => t(L.ZenobiaDesc, { value: self.value(level) }),
+        desc: (self, level) => t(L.ZenobiaDesc, {value: self.value(level)}),
         time: "240 ~ 274 AD",
         value: 1,
         maxLevel: Number.POSITIVE_INFINITY,
         age: "ClassicalAge",
-        tick: (self, level, source) => {},
         type: GreatPersonType.Normal,
     },
 
-    Plato: {
+    Plato: IGreatPersonDefinition = {
         name: () => t(L.Plato),
         desc: (self, level) => t(L.WildCardGreatPersonDescV2),
         time: "427 ~ 348 BC",
         value: 1,
         maxLevel: Number.POSITIVE_INFINITY,
         age: "ClassicalAge",
-        tick: (self, level, source) => {},
         type: GreatPersonType.Wildcard,
     },
 
-    AshokaTheGreat: {
+    AshokaTheGreat: IGreatPersonDefinition = {
         name: () => t(L.AshokaTheGreat),
         desc: (self, level) => t(L.PromotionGreatPersonDescV2),
         time: "304 ~ 232 BC",
         value: 1,
         maxLevel: Number.POSITIVE_INFINITY,
         age: "ClassicalAge",
-        tick: (self, level, source) => {},
         type: GreatPersonType.Promotion,
     },
 
@@ -301,9 +350,9 @@ const GreatPersons = {
         age: "MiddleAge",
     },
 
-    IsidoreOfMiletus: {
+    IsidoreOfMiletus: IGreatPersonDefinition = {
         name: () => t(L.IsidoreOfMiletus),
-        desc: (self, level) => t(L.IsidoreOfMiletusDesc, { value: self.value(level) }),
+        desc: (self, level) => t(L.IsidoreOfMiletusDesc, {value: self.value(level)}),
         time: "c. 500 AD",
         value: 1 * 2,
         maxLevel: Number.POSITIVE_INFINITY,
@@ -335,9 +384,9 @@ const GreatPersons = {
         age: "MiddleAge",
     },
 
-    WuZetian: {
+    WuZetian: IGreatPersonDefinition = {
         name: () => t(L.WuZetian),
-        desc: (self, level) => t(L.WuZetianDesc, { value: self.value(level) }),
+        desc: (self, level) => t(L.WuZetianDesc, {value: self.value(level)}),
         time: "624 ~ 705 AD",
         value: 1,
         maxLevel: Number.POSITIVE_INFINITY,
@@ -357,9 +406,9 @@ const GreatPersons = {
         age: "MiddleAge",
     },
 
-    Rurik: {
+    Rurik: IGreatPersonDefinition = {
         name: () => t(L.Rurik),
-        desc: (self, level) => t(L.RurikDesc, { value: self.value(level) }),
+        desc: (self, level) => t(L.RurikDesc, {value: self.value(level)}),
         time: "624 ~ 705 AD",
         value: 1 * 2,
         maxLevel: Number.POSITIVE_INFINITY,
@@ -367,9 +416,9 @@ const GreatPersons = {
         type: GreatPersonType.Normal,
     },
 
-    Fibonacci: {
+    Fibonacci: IGreatPersonDefinition = {
         name: () => t(L.Fibonacci),
-        desc: (self, level) => t(L.FibonacciDescV2, { idle: self.value(level) / 2, busy: self.value(level) }),
+        desc: (self, level) => t(L.FibonacciDescV2, {idle: self.value(level) / 2, busy: self.value(level)}),
         time: "c. 1170 ~ 1250 AD",
         value: 1,
         maxLevel: Number.POSITIVE_INFINITY,
@@ -377,25 +426,23 @@ const GreatPersons = {
         type: GreatPersonType.Normal,
     },
 
-    Saladin: {
+    Saladin: IGreatPersonDefinition = {
         name: () => t(L.Saladin),
         desc: (self, level) => t(L.WildCardGreatPersonDescV2),
         time: "1137 ~ 1193 AD",
         value: 1,
         maxLevel: Number.POSITIVE_INFINITY,
         age: "MiddleAge",
-        tick: (self, level, source) => {},
         type: GreatPersonType.Wildcard,
     },
 
-    MarcoPolo: {
+    MarcoPolo: IGreatPersonDefinition = {
         name: () => t(L.MarcoPolo),
         desc: (self, level) => t(L.PromotionGreatPersonDescV2),
         time: "1254 ~ 1324 AD",
         value: 1,
         maxLevel: Number.POSITIVE_INFINITY,
         age: "MiddleAge",
-        tick: (self, level, source) => {},
         type: GreatPersonType.Promotion,
     },
 
@@ -425,9 +472,9 @@ const GreatPersons = {
         age: "RenaissanceAge",
     },
 
-    GalileoGalilei: {
+    GalileoGalilei: IGreatPersonDefinition = {
         name: () => t(L.GalileoGalilei),
-        desc: (self, level) => t(L.GalileoGalileiDesc, { value: self.value(level) }),
+        desc: (self, level) => t(L.GalileoGalileiDesc, {value: self.value(level)}),
         time: "1564 ~ 1642 AD",
         value: 1 * 1,
         maxLevel: Number.POSITIVE_INFINITY,
@@ -445,6 +492,19 @@ const GreatPersons = {
         value: 1,
         maxLevel: Number.POSITIVE_INFINITY,
         age: "RenaissanceAge",
+    },
+
+    OdaNobunaga: {
+        name: () => t(L.OdaNobunaga),
+        boost: {
+            multipliers: ["output", "storage"],
+            buildings: ["FrigateBuilder"],
+        },
+        time: "1534 ~ 1582 AD",
+        value: 2,
+        maxLevel: Number.POSITIVE_INFINITY,
+        age: "RenaissanceAge",
+        city: "Kyoto",
     },
 
     WilliamShakespeare: {
@@ -495,16 +555,13 @@ const GreatPersons = {
         age: "RenaissanceAge",
     },
 
-    IsaacNewton: {
+    IsaacNewton: IGreatPersonDefinition = {
         name: () => t(L.IsaacNewton),
-        desc: (self, level) => t(L.IsaacNewtonDescV2, { value: self.value(level) }),
+        desc: (self, level) => t(L.IsaacNewtonDescV2, {value: self.value(level)}),
         time: "1642 ~ 1727 AD",
         value: 1 * 2,
         maxLevel: Number.POSITIVE_INFINITY,
         age: "RenaissanceAge",
-        tick: (self, level, source) => {
-            addScienceBasedOnBusyWorkers(self.value(level), source);
-        },
         type: GreatPersonType.Normal,
     },
 
@@ -520,26 +577,50 @@ const GreatPersons = {
         age: "RenaissanceAge",
     },
 
-    Michelangelo: {
+    Voltaire: {
+        name: () => t(L.Voltaire),
+        boost: {
+            multipliers: ["output", "storage"],
+            buildings: ["Museum"],
+        },
+        time: "1694 ~ 1778 AD",
+        value: 1 * 2,
+        maxLevel: Number.POSITIVE_INFINITY,
+        age: "RenaissanceAge",
+        city: "French",
+    },
+
+    Michelangelo: IGreatPersonDefinition = {
         name: () => t(L.Michelangelo),
         desc: (self, level) => t(L.WildCardGreatPersonDescV2),
         time: "1475 ~ 1564 AD",
         value: 1,
         maxLevel: Number.POSITIVE_INFINITY,
         age: "RenaissanceAge",
-        tick: (self, level, source) => {},
         type: GreatPersonType.Wildcard,
     },
 
-    JohannesGutenberg: {
+    JohannesGutenberg: IGreatPersonDefinition = {
         name: () => t(L.JohannesGutenberg),
         desc: (self, level) => t(L.PromotionGreatPersonDescV2),
         time: "1393 ~ 1406 AD",
         value: 1,
         maxLevel: Number.POSITIVE_INFINITY,
         age: "RenaissanceAge",
-        tick: (self, level, source) => {},
         type: GreatPersonType.Promotion,
+    },
+
+    ThomasGresham: {
+        name: () => t(L.ThomasGresham),
+        boost: {
+            multipliers: ["output", "storage"],
+            buildings: ["BondMarket"],
+        },
+        time: "1519 ~ 1579 AD",
+        value: 1 * 2,
+        maxLevel: Number.POSITIVE_INFINITY,
+        age: "RenaissanceAge",
+        city: "English",
     },
 
     // Industrial /////////////////////////////////////////////////////////////////////////////////////////////
@@ -568,9 +649,22 @@ const GreatPersons = {
         age: "IndustrialAge",
     },
 
-    LouisSullivan: {
+    GeorgeWashington: {
+        name: () => t(L.GeorgeWashington),
+        boost: {
+            multipliers: ["output", "storage"],
+            buildings: ["Parliament"],
+        },
+        time: "1732 ~ 1799 AD",
+        value: 2,
+        maxLevel: Number.POSITIVE_INFINITY,
+        age: "IndustrialAge",
+        city: "NewYork",
+    },
+
+    LouisSullivan: IGreatPersonDefinition = {
         name: () => t(L.LouisSullivan),
-        desc: (self, level) => t(L.LouisSullivanDesc, { value: self.value(level) }),
+        desc: (self, level) => t(L.LouisSullivanDesc, {value: self.value(level)}),
         time: "1856 ~ 1924 AD",
         value: 1 * 3,
         maxLevel: Number.POSITIVE_INFINITY,
@@ -614,9 +708,9 @@ const GreatPersons = {
         age: "IndustrialAge",
     },
 
-    CharlesDarwin: {
+    CharlesDarwin: IGreatPersonDefinition = {
         name: () => t(L.CharlesDarwin),
-        desc: (self, level) => t(L.CharlesDarwinDesc, { value: self.value(level) }),
+        desc: (self, level) => t(L.CharlesDarwinDesc, {value: self.value(level)}),
         time: "1809 ~ 1882 AD",
         value: 1 * 2,
         maxLevel: Number.POSITIVE_INFINITY,
@@ -624,10 +718,10 @@ const GreatPersons = {
         type: GreatPersonType.Normal,
     },
 
-    CarlFriedrichGauss: {
+    CarlFriedrichGauss: IGreatPersonDefinition = {
         name: () => t(L.CarlFriedrichGauss),
         desc: (self, level) =>
-            t(L.CarlFriedrichGaussDesc, { idle: 0.5 * self.value(level), busy: 1.5 * self.value(level) }),
+            t(L.CarlFriedrichGaussDesc, {idle: 0.5 * self.value(level), busy: 1.5 * self.value(level)}),
         time: "c. 1777 ~ 1855 AD",
         value: 1,
         maxLevel: Number.POSITIVE_INFINITY,
@@ -635,9 +729,9 @@ const GreatPersons = {
         type: GreatPersonType.Normal,
     },
 
-    FlorenceNightingale: {
+    FlorenceNightingale: IGreatPersonDefinition = {
         name: () => t(L.FlorenceNightingale),
-        desc: (self, level) => t(L.FlorenceNightingaleDesc, { value: self.value(level) }),
+        desc: (self, level) => t(L.FlorenceNightingaleDesc, {value: self.value(level)}),
         time: "1820 ~ 1910 AD",
         value: 1 * 3,
         maxLevel: Number.POSITIVE_INFINITY,
@@ -669,25 +763,23 @@ const GreatPersons = {
         age: "IndustrialAge",
     },
 
-    ThomasEdison: {
+    ThomasEdison: IGreatPersonDefinition = {
         name: () => t(L.ThomasEdison),
         desc: (self, level) => t(L.WildCardGreatPersonDescV2),
         time: "1847 ~ 1931 AD",
         value: 1,
         maxLevel: Number.POSITIVE_INFINITY,
         age: "IndustrialAge",
-        tick: (self, level, source) => {},
         type: GreatPersonType.Wildcard,
     },
 
-    AdamSmith: {
+    AdamSmith: IGreatPersonDefinition = {
         name: () => t(L.AdamSmith),
         desc: (self, level) => t(L.PromotionGreatPersonDescV2),
         time: "1723 ~ 1790 AD",
         value: 1,
         maxLevel: Number.POSITIVE_INFINITY,
         age: "IndustrialAge",
-        tick: (self, level, source) => {},
         type: GreatPersonType.Promotion,
     },
 
@@ -801,9 +893,9 @@ const GreatPersons = {
         age: "WorldWarAge",
     },
 
-    AlanTuring: {
+    AlanTuring: IGreatPersonDefinition = {
         name: () => t(L.AlanTuring),
-        desc: (self, level) => t(L.AlanTuringDesc, { value: self.value(level) }),
+        desc: (self, level) => t(L.AlanTuringDesc, {value: self.value(level)}),
         time: "1912 ~ 1954 AD",
         value: 1 * 2,
         maxLevel: Number.POSITIVE_INFINITY,
@@ -811,16 +903,13 @@ const GreatPersons = {
         type: GreatPersonType.Normal,
     },
 
-    NielsBohr: {
+    NielsBohr: IGreatPersonDefinition = {
         name: () => t(L.NielsBohr),
-        desc: (self, level) => t(L.NielsBohrDescV2, { value: self.value(level) }),
+        desc: (self, level) => t(L.NielsBohrDescV2, {value: self.value(level)}),
         time: "1885 ~ 1962 AD",
         value: 1 * 3,
         maxLevel: Number.POSITIVE_INFINITY,
         age: "WorldWarAge",
-        tick: (self, level, source) => {
-            addScienceBasedOnBusyWorkers(self.value(level), source);
-        },
         type: GreatPersonType.Normal,
     },
 
@@ -848,31 +937,42 @@ const GreatPersons = {
         age: "WorldWarAge",
     },
 
-    MahatmaGandhi: {
+    OttoVonBismarck: {
+        name: () => t(L.OttoVonBismarck),
+        boost: {
+            multipliers: ["output", "storage"],
+            buildings: ["BattleshipBuilder"],
+        },
+        time: "1815 ~ 1898 AD",
+        value: 2,
+        maxLevel: Number.POSITIVE_INFINITY,
+        age: "WorldWarAge",
+        city: "German",
+    },
+
+    MahatmaGandhi: IGreatPersonDefinition = {
         name: () => t(L.MahatmaGandhi),
         desc: (self, level) => t(L.WildCardGreatPersonDescV2),
         time: "1869 ~ 1948 AD",
         value: 1,
         maxLevel: Number.POSITIVE_INFINITY,
         age: "WorldWarAge",
-        tick: (self, level, source) => {},
         type: GreatPersonType.Wildcard,
     },
 
-    PabloPicasso: {
+    PabloPicasso: IGreatPersonDefinition = {
         name: () => t(L.PabloPicasso),
         desc: (self, level) => t(L.PromotionGreatPersonDescV2),
         time: "1881 ~ 1973 AD",
         value: 1,
         maxLevel: Number.POSITIVE_INFINITY,
         age: "WorldWarAge",
-        tick: (self, level, source) => {},
         type: GreatPersonType.Promotion,
     },
 
-    JohnVonNeumann: {
+    JohnVonNeumann: IGreatPersonDefinition = {
         name: () => t(L.JohnVonNeumann),
-        desc: (self, level) => t(L.JohnVonNeumannDesc, { value: self.value(level) }),
+        desc: (self, level) => t(L.JohnVonNeumannDesc, {value: self.value(level)}),
         time: "1903 ~ 1957 AD",
         value: 1 * 3,
         maxLevel: Number.POSITIVE_INFINITY,
@@ -880,9 +980,9 @@ const GreatPersons = {
         type: GreatPersonType.Normal,
     },
 
-    CharlieChaplin: {
+    CharlieChaplin: IGreatPersonDefinition = {
         name: () => t(L.CharlieChaplin),
-        desc: (self, level) => t(L.CharlieChaplinDesc, { value: self.value(level) }),
+        desc: (self, level) => t(L.CharlieChaplinDesc, {value: self.value(level)}),
         time: "1889 ~ 1977 AD",
         value: 1 * 4,
         maxLevel: Number.POSITIVE_INFINITY,
@@ -890,9 +990,9 @@ const GreatPersons = {
         type: GreatPersonType.Normal,
     },
 
-    FrankLloydWright: {
+    FrankLloydWright: IGreatPersonDefinition = {
         name: () => t(L.FrankLloydWright),
-        desc: (self, level) => t(L.FrankLloydWrightDesc, { value: self.value(level) }),
+        desc: (self, level) => t(L.FrankLloydWrightDesc, {value: self.value(level)}),
         time: "1867 ~ 1959 AD",
         value: 1 * 4,
         maxLevel: Number.POSITIVE_INFINITY,
@@ -1022,9 +1122,9 @@ const GreatPersons = {
         age: "ColdWarAge",
     },
 
-    JamesWatson: {
+    JamesWatson: IGreatPersonDefinition = {
         name: () => t(L.JamesWatson),
-        desc: (self, level) => t(L.JamesWatsonDesc, { value: self.value(level) }),
+        desc: (self, level) => t(L.JamesWatsonDesc, {value: self.value(level)}),
         time: "1928 ~ ",
         value: 1 * 4,
         maxLevel: Number.POSITIVE_INFINITY,
@@ -1032,22 +1132,19 @@ const GreatPersons = {
         type: GreatPersonType.Normal,
     },
 
-    RichardFeynman: {
+    RichardFeynman: IGreatPersonDefinition = {
         name: () => t(L.RichardFeynman),
-        desc: (self, level) => t(L.RichardFeynmanDesc, { value: self.value(level) }),
+        desc: (self, level) => t(L.RichardFeynmanDesc, {value: self.value(level)}),
         time: "1918 ~ 1988 AD",
         value: 1 * 4,
         maxLevel: Number.POSITIVE_INFINITY,
         age: "ColdWarAge",
-        tick: (self, level, source) => {
-            addScienceBasedOnBusyWorkers(self.value(level), source);
-        },
         type: GreatPersonType.Normal,
     },
 
-    LinusPauling: {
+    LinusPauling: IGreatPersonDefinition = {
         name: () => t(L.LinusPauling),
-        desc: (self, level) => t(L.LinusPaulingDesc, { value: self.value(level) }),
+        desc: (self, level) => t(L.LinusPaulingDesc, {value: self.value(level)}),
         time: "1901 ~ 1994 AD",
         value: 1 * 3,
         maxLevel: Number.POSITIVE_INFINITY,
@@ -1055,9 +1152,9 @@ const GreatPersons = {
         type: GreatPersonType.Normal,
     },
 
-    IMPei: {
+    IMPei: IGreatPersonDefinition = {
         name: () => t(L.IMPei),
-        desc: (self, level) => t(L.IMPeiDesc, { value: self.value(level) }),
+        desc: (self, level) => t(L.IMPeiDesc, {value: self.value(level)}),
         time: "1917 ~ 2019 AD",
         value: 1 * 5,
         maxLevel: Number.POSITIVE_INFINITY,
@@ -1065,9 +1162,9 @@ const GreatPersons = {
         type: GreatPersonType.Normal,
     },
 
-    BobHope: {
+    BobHope: IGreatPersonDefinition = {
         name: () => t(L.BobHope),
-        desc: (self, level) => t(L.BobHopeDesc, { value: self.value(level) }),
+        desc: (self, level) => t(L.BobHopeDesc, {value: self.value(level)}),
         time: "1903 ~ 2003 AD",
         value: 1 * 5,
         maxLevel: Number.POSITIVE_INFINITY,
@@ -1075,25 +1172,23 @@ const GreatPersons = {
         type: GreatPersonType.Normal,
     },
 
-    ElvisPresley: {
+    ElvisPresley: IGreatPersonDefinition = {
         name: () => t(L.ElvisPresley),
         desc: (self, level) => t(L.WildCardGreatPersonDescV2),
         time: "1935 ~ 1977 AD",
         value: 1,
         maxLevel: Number.POSITIVE_INFINITY,
         age: "ColdWarAge",
-        tick: (self, level, source) => {},
         type: GreatPersonType.Wildcard,
     },
 
-    YuriGagarin: {
+    YuriGagarin: IGreatPersonDefinition = {
         name: () => t(L.YuriGagarin),
         desc: (self, level) => t(L.PromotionGreatPersonDescV2),
         time: "1934 ~ 1968 AD",
         value: 1,
         maxLevel: Number.POSITIVE_INFINITY,
         age: "ColdWarAge",
-        tick: (self, level, source) => {},
         type: GreatPersonType.Promotion,
     },
 
@@ -1207,12 +1302,53 @@ const GreatPersons = {
         age: "InformationAge",
     },
 
-    StephenHawking: {
+    StephenHawking: IGreatPersonDefinition = {
         name: () => t(L.StephenHawking),
         desc: (self, level) => t(L.WildCardGreatPersonDescV2),
         time: "1942 ~ 2018 AD",
         value: 1,
         maxLevel: Number.POSITIVE_INFINITY,
         age: "InformationAge",
+        type: GreatPersonType.Wildcard,
+    },
+
+    ZahaHadid: IGreatPersonDefinition = {
+        name: () => t(L.ZahaHadid),
+        desc: (self, level) => t(L.ZahaHadidDesc, {value: self.value(level)}),
+        time: "1950 ~ 2016 AD",
+        value: 1 * 6,
+        maxLevel: Number.POSITIVE_INFINITY,
+        age: "InformationAge",
+        type: GreatPersonType.Normal,
+    },
+
+    PeterHiggs: IGreatPersonDefinition = {
+        name: () => t(L.PeterHiggs),
+        desc: (self, level) => t(L.PeterHiggsDesc, {value: self.value(level)}),
+        time: "1929 ~ 2024 AD",
+        value: 1 * 5,
+        maxLevel: Number.POSITIVE_INFINITY,
+        age: "InformationAge",
+        type: GreatPersonType.Normal,
+    },
+
+    GabrielGarciaMarquez: IGreatPersonDefinition = {
+        name: () => t(L.GabrielGarciaMarquez),
+        desc: (self, level) => t(L.GabrielGarciaMarquezDesc, {value: self.value(level)}),
+        time: "1927 ~ 2014 AD",
+        value: 1 * 6,
+        maxLevel: Number.POSITIVE_INFINITY,
+        age: "InformationAge",
+        type: GreatPersonType.Normal,
+    },
+
+    MaryamMirzakhani: IGreatPersonDefinition = {
+        name: () => t(L.MaryamMirzakhani),
+        desc: (self, level) => t(L.MaryamMirzakhaniDesc, {value: self.value(level)}),
+        time: "1977 ~ 2017 AD",
+        value: 1 * 4,
+        maxLevel: Number.POSITIVE_INFINITY,
+        age: "InformationAge",
+        type: GreatPersonType.Normal,
     },
 };

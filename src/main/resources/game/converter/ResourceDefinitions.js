@@ -113,21 +113,31 @@ const Resources = {
     Robocar: IResourceDefinition = {name: () => t(L.Robocar)},
     PlanetaryRover: IResourceDefinition = {name: () => t(L.PlanetaryRover)},
     Peace: IResourceDefinition = {name: () => t(L.Peace)},
+    Festival: IResourceDefinition = {name: () => t(L.Festival)},
+    Cycle: IResourceDefinition = {name: () => t(L.Cycle)},
+    TradeValue: IResourceDefinition = {name: () => t(L.TradeValue)},
 }
 
 const NoPrice = {
     Worker: true,
     Power: true,
     Science: true,
+    Festival: true,
     Warp: true,
     Explorer: true,
     Teleport: true,
+    Cycle: true,
+    TradeValue: true,
 }
 
 const NoStorage = {
     Worker: true,
     Power: true,
     Science: true,
+    Warp: true,
+    Festival: true,
+    Cycle: true,
+    TradeValue: true,
 }
 
 const Deposit = {

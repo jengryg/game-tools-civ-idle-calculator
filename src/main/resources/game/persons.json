@@ -101,8 +101,7 @@
       ],
       "buildings": [
         "DairyFarm",
-        "PoultryFarm",
-        "LivestockFarm"
+        "PoultryFarm"
       ]
     },
     "time": "c. 800s BC",
@@ -125,6 +124,22 @@
     "value": 1,
     "maxLevel": null,
     "age": "IronAge"
+  },
+  "Samsuiluna": {
+    "boost": {
+      "multipliers": [
+        "output",
+        "storage"
+      ],
+      "buildings": [
+        "Marbleworks"
+      ]
+    },
+    "time": "c. 1700s BC",
+    "value": 2,
+    "maxLevel": null,
+    "age": "IronAge",
+    "city": "Babylon"
   },
   "Aeschylus": {
     "boost": {
@@ -243,6 +258,38 @@
     "maxLevel": null,
     "age": "ClassicalAge"
   },
+  "Aristotle": {
+    "boost": {
+      "multipliers": [
+        "output",
+        "storage"
+      ],
+      "buildings": [
+        "Library"
+      ]
+    },
+    "time": "384 ~ 322 BC",
+    "value": 2,
+    "maxLevel": null,
+    "age": "ClassicalAge",
+    "city": "Athens"
+  },
+  "JuliusCaesar": {
+    "boost": {
+      "multipliers": [
+        "output",
+        "storage"
+      ],
+      "buildings": [
+        "GoldMiningCamp"
+      ]
+    },
+    "time": "100 ~ 44 BC",
+    "value": 2,
+    "maxLevel": null,
+    "age": "ClassicalAge",
+    "city": "Rome"
+  },
   "Archimedes": {
     "boost": {
       "multipliers": [
@@ -288,6 +335,22 @@
     },
     "time": "c. 200s BC",
     "value": 1,
+    "maxLevel": null,
+    "age": "ClassicalAge"
+  },
+  "Cleopatra": {
+    "boost": {
+      "multipliers": [
+        "output",
+        "storage"
+      ],
+      "buildings": [
+        "Shrine"
+      ]
+    },
+    "city": "Memphis",
+    "time": "70 ~ 30 BC",
+    "value": 2,
     "maxLevel": null,
     "age": "ClassicalAge"
   },
@@ -473,6 +536,22 @@
     "maxLevel": null,
     "age": "RenaissanceAge"
   },
+  "OdaNobunaga": {
+    "boost": {
+      "multipliers": [
+        "output",
+        "storage"
+      ],
+      "buildings": [
+        "FrigateBuilder"
+      ]
+    },
+    "time": "1534 ~ 1582 AD",
+    "value": 2,
+    "maxLevel": null,
+    "age": "RenaissanceAge",
+    "city": "Kyoto"
+  },
   "WilliamShakespeare": {
     "boost": {
       "multipliers": [
@@ -559,6 +638,22 @@
     "maxLevel": null,
     "age": "RenaissanceAge"
   },
+  "Voltaire": {
+    "boost": {
+      "multipliers": [
+        "output",
+        "storage"
+      ],
+      "buildings": [
+        "Museum"
+      ]
+    },
+    "time": "1694 ~ 1778 AD",
+    "value": 2,
+    "maxLevel": null,
+    "age": "RenaissanceAge",
+    "city": "French"
+  },
   "Michelangelo": {
     "time": "1475 ~ 1564 AD",
     "value": 1,
@@ -572,6 +667,22 @@
     "maxLevel": null,
     "age": "RenaissanceAge",
     "type": "Promotion"
+  },
+  "ThomasGresham": {
+    "boost": {
+      "multipliers": [
+        "output",
+        "storage"
+      ],
+      "buildings": [
+        "BondMarket"
+      ]
+    },
+    "time": "1519 ~ 1579 AD",
+    "value": 2,
+    "maxLevel": null,
+    "age": "RenaissanceAge",
+    "city": "English"
   },
   "JamesWatt": {
     "boost": {
@@ -604,6 +715,22 @@
     "value": 1,
     "maxLevel": null,
     "age": "IndustrialAge"
+  },
+  "GeorgeWashington": {
+    "boost": {
+      "multipliers": [
+        "output",
+        "storage"
+      ],
+      "buildings": [
+        "Parliament"
+      ]
+    },
+    "time": "1732 ~ 1799 AD",
+    "value": 2,
+    "maxLevel": null,
+    "age": "IndustrialAge",
+    "city": "NewYork"
   },
   "LouisSullivan": {
     "time": "1856 ~ 1924 AD",
@@ -915,6 +1042,22 @@
     "value": 1,
     "maxLevel": null,
     "age": "WorldWarAge"
+  },
+  "OttoVonBismarck": {
+    "boost": {
+      "multipliers": [
+        "output",
+        "storage"
+      ],
+      "buildings": [
+        "BattleshipBuilder"
+      ]
+    },
+    "time": "1815 ~ 1898 AD",
+    "value": 2,
+    "maxLevel": null,
+    "age": "WorldWarAge",
+    "city": "German"
   },
   "MahatmaGandhi": {
     "time": "1869 ~ 1948 AD",
@@ -1308,6 +1451,35 @@
     "time": "1942 ~ 2018 AD",
     "value": 1,
     "maxLevel": null,
-    "age": "InformationAge"
+    "age": "InformationAge",
+    "type": "Wildcard"
+  },
+  "ZahaHadid": {
+    "time": "1950 ~ 2016 AD",
+    "value": 6,
+    "maxLevel": null,
+    "age": "InformationAge",
+    "type": "Normal"
+  },
+  "PeterHiggs": {
+    "time": "1929 ~ 2024 AD",
+    "value": 5,
+    "maxLevel": null,
+    "age": "InformationAge",
+    "type": "Normal"
+  },
+  "GabrielGarciaMarquez": {
+    "time": "1927 ~ 2014 AD",
+    "value": 6,
+    "maxLevel": null,
+    "age": "InformationAge",
+    "type": "Normal"
+  },
+  "MaryamMirzakhani": {
+    "time": "1977 ~ 2017 AD",
+    "value": 4,
+    "maxLevel": null,
+    "age": "InformationAge",
+    "type": "Normal"
   }
 }

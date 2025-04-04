@@ -54,7 +54,8 @@
       "StoneTools"
     ],
     "unlockBuilding": [
-      "LumberMill"
+      "LumberMill",
+      "Statistics"
     ]
   },
   "Farming": {
@@ -131,8 +132,7 @@
       "Housing"
     ],
     "unlockBuilding": [
-      "FlourMill",
-      "CottonPlantation"
+      "FlourMill"
     ]
   },
   "Market": {
@@ -153,7 +153,7 @@
       "HorsebackRiding"
     ],
     "unlockBuilding": [
-      "Statistics"
+      "CottonPlantation"
     ]
   },
   "Writing": {

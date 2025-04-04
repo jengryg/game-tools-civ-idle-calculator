@@ -1,6 +1,6 @@
 const Cities = {
     Rome: {
-        name: () => t(L.Rome),
+        name: () => t(L.Roman),
         deposits: {
             Water: 0.02,
             Copper: 0.02,
@@ -26,9 +26,10 @@ const Cities = {
         naturalWonders: {Alps: true, GrottaAzzurra: true},
         requireGreatPeopleLevel: 0,
         requireSupporterPack: false,
+        festivalDesc: () => t(L.Saturnalia),
     },
     Athens: {
-        name: () => t(L.Athens),
+        name: () => t(L.Greek),
         deposits: {
             Water: 0.01,
             Copper: 0.03,
@@ -51,9 +52,10 @@ const Cities = {
         naturalWonders: {Aphrodite: true, Poseidon: true},
         requireGreatPeopleLevel: 5,
         requireSupporterPack: false,
+        festivalDesc: () => t(L.Panathenaea),
     },
     Memphis: {
-        name: () => t(L.Memphis),
+        name: () => t(L.Egyptian),
         deposits: {
             Water: 0.01,
             Copper: 0.01,
@@ -79,9 +81,10 @@ const Cities = {
         naturalWonders: {NileRiver: true, MountSinai: true},
         requireGreatPeopleLevel: 10,
         requireSupporterPack: false,
+        festivalDesc: () => t(L.Opet),
     },
     Beijing: {
-        name: () => t(L.Beijing),
+        name: () => t(L.Chinese),
         deposits: {
             Water: 0.01,
             Copper: 0.02,
@@ -108,9 +111,10 @@ const Cities = {
         naturalWonders: {MountTai: true, YangtzeRiver: true},
         requireGreatPeopleLevel: 15,
         requireSupporterPack: false,
+        festivalDesc: () => t(L.LunarNewYear),
     },
     NewYork: {
-        name: () => t(L.NewYork),
+        name: () => t(L.American),
         deposits: {
             Water: 0.03,
             Copper: 0.03,
@@ -126,7 +130,7 @@ const Cities = {
         },
         size: 30,
         buildingNames: {
-            Headquarter: () => t(L.Manhattan),
+            Headquarter: () => t(L.TheWhiteHouse),
         },
         uniqueBuildings: {
             Broadway: "Railway",
@@ -144,9 +148,10 @@ const Cities = {
         naturalWonders: {Shenandoah: true, NiagaraFalls: true},
         requireGreatPeopleLevel: 20,
         requireSupporterPack: true,
+        festivalDesc: () => t(L.Thanksgiving),
     },
     Babylon: {
-        name: () => t(L.Babylon),
+        name: () => t(L.Babylonian),
         deposits: {
             Water: 0.01,
             Copper: 0.025,
@@ -162,7 +167,7 @@ const Cities = {
         },
         size: 35,
         buildingNames: {
-            Headquarter: () => t(L.Babylon),
+            Headquarter: () => t(L.Babylonian),
         },
         uniqueBuildings: {
             WallOfBabylon: "LandTrade",
@@ -173,5 +178,133 @@ const Cities = {
         naturalWonders: {EuphratesRiver: true, ZagrosMountains: true},
         requireGreatPeopleLevel: 30,
         requireSupporterPack: true,
+        festivalDesc: () => t(L.Akitu),
+    },
+    Kyoto: {
+        name: () => t(L.Japanese),
+        deposits: {
+            Water: 0.03,
+            Copper: 0.025,
+            Iron: 0.025,
+            Wood: 0.03,
+            Stone: 0.03,
+            Gold: 0.025,
+            Coal: 0.01,
+            Oil: 0.01,
+            Aluminum: 0.025,
+            NaturalGas: 0.01,
+            Uranium: 0.025,
+        },
+        size: 35,
+        buildingNames: {
+            Headquarter: () => t(L.ImperialPalace),
+        },
+        uniqueBuildings: {
+            ItsukushimaShrine: "Religion",
+            GoldenPavilion: "Theocracy",
+            OsakaCastle: "Electricity",
+        },
+        uniqueMultipliers: {},
+        naturalWonders: {Kanagawa: true, MountFuji: true},
+        requireGreatPeopleLevel: 40,
+        requireSupporterPack: true,
+        festivalDesc: () => t(L.AoiMatsuri),
+    },
+    German: {
+        name: () => t(L.German),
+        deposits: {
+            Water: 0.025,
+            Copper: 0.025,
+            Iron: 0.025,
+            Wood: 0.01,
+            Stone: 0.03,
+            Gold: 0.025,
+            Coal: 0.035,
+            Oil: 0.025,
+            Aluminum: 0.03,
+            NaturalGas: 0.02,
+            Uranium: 0.015,
+        },
+        size: 40,
+        buildingNames: {
+            Headquarter: () => t(L.Reichstag),
+        },
+        uniqueBuildings: {
+            CologneCathedral: "HolyEmpire",
+            Elbphilharmonie: "Skyscraper",
+        },
+        uniqueMultipliers: {},
+        naturalWonders: {Zugspitze: true, RhineGorge: true, BlackForest: true},
+        requireGreatPeopleLevel: 50,
+        requireSupporterPack: true,
+        festivalDesc: () => t(L.Oktoberfest),
+    },
+
+    English: {
+        name: () => t(L.English),
+        deposits: {
+            Water: 0.02,
+            Copper: 0.03,
+            Iron: 0.025,
+            Wood: 0.03,
+            Stone: 0.03,
+            Gold: 0.02,
+            Coal: 0.02,
+            Oil: 0.02,
+            Aluminum: 0.03,
+            NaturalGas: 0.03,
+            Uranium: 0.02,
+        },
+        size: 40,
+        buildingNames: {
+            Headquarter: () => t(L.Westminster),
+        },
+        uniqueBuildings: {
+            BritishMuseum: "Combustion",
+            CambridgeUniversity: "Enlightenment",
+            TowerBridge: "Electricity",
+            EastIndiaCompany: "PrivateOwnership",
+        },
+        uniqueMultipliers: {},
+        naturalWonders: {
+            CerneAbbasGiant: true,
+        },
+        requireGreatPeopleLevel: 60,
+        requireSupporterPack: true,
+        festivalDesc: () => t(L.GuyFawkesNightV2),
+    },
+
+    French: {
+        name: () => t(L.French),
+        deposits: {
+            Water: 0.03,
+            Copper: 0.02,
+            Iron: 0.025,
+            Wood: 0.02,
+            Stone: 0.02,
+            Gold: 0.01,
+            Coal: 0.03,
+            Oil: 0.04,
+            Aluminum: 0.02,
+            NaturalGas: 0.03,
+            Uranium: 0.03,
+        },
+        size: 50,
+        buildingNames: {
+            Headquarter: () => t(L.ElyseePalace),
+        },
+        uniqueBuildings: {
+            ArcDeTriomphe: "Electricity",
+            MontSaintMichel: "Revolution",
+            Louvre: "Railway",
+            CentrePompidou: "Software",
+        },
+        uniqueMultipliers: {},
+        naturalWonders: {
+            DuneOfPilat: true,
+        },
+        requireGreatPeopleLevel: 70,
+        requireSupporterPack: true,
+        festivalDesc: () => t(L.BastilleDay),
     },
 }

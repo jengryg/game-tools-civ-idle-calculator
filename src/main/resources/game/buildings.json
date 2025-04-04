@@ -732,11 +732,11 @@
   },
   "ResearchLab": {
     "input": {
-      "Culture": 2,
-      "Philosophy": 2
+      "Culture": 3,
+      "Philosophy": 3
     },
     "output": {
-      "Science": 5000
+      "Science": 7500
     }
   },
   "ResearchFund": {
@@ -956,18 +956,6 @@
     },
     "construction": {
       "Brick": 1
-    }
-  },
-  "LivestockFarm": {
-    "input": {
-      "Wheat": 2
-    },
-    "output": {
-      "Meat": 1,
-      "Milk": 1
-    },
-    "construction": {
-      "Lumber": 1
     }
   },
   "PoultryFarm": {
@@ -1460,9 +1448,8 @@
     "input": {},
     "output": {},
     "construction": {
-      "Brick": 100,
-      "Wood": 100,
-      "Lumber": 100
+      "Stone": 150,
+      "Wood": 150
     },
     "max": 1,
     "special": "WorldWonder"
@@ -2144,7 +2131,7 @@
     },
     "max": 1,
     "special": "WorldWonder",
-    "wikipedia": "Metropolitan_Museum_of_Art"
+    "wikipedia": "The_Pentagon"
   },
   "WallStreet": {
     "input": {},
@@ -2163,7 +2150,7 @@
     "output": {},
     "construction": {},
     "max": 0,
-    "wikipedia": "Shenandoah_Valley",
+    "wikipedia": "Grand_Canyon",
     "special": "NaturalWonder"
   },
   "NiagaraFalls": {
@@ -2359,5 +2346,262 @@
       "Politics": 300
     },
     "wikipedia": "Big_Ben"
+  },
+  "ItsukushimaShrine": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "Furniture": 100,
+      "Opera": 100,
+      "SiegeRam": 100
+    },
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "Itsukushima_Shrine"
+  },
+  "GoldenPavilion": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "Faith": 100,
+      "Coin": 100,
+      "Sword": 100
+    },
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "Kinkaku-ji"
+  },
+  "OsakaCastle": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "Train": 100,
+      "GatlingGun": 100,
+      "Politics": 100
+    },
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "Osaka_Castle"
+  },
+  "Kanagawa": {
+    "input": {},
+    "output": {},
+    "construction": {},
+    "max": 0,
+    "special": "NaturalWonder",
+    "wikipedia": "The_Great_Wave_off_Kanagawa"
+  },
+  "MountFuji": {
+    "input": {},
+    "output": {},
+    "construction": {},
+    "max": 0,
+    "special": "NaturalWonder",
+    "wikipedia": "Mount_Fuji"
+  },
+  "CologneCathedral": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "Faith": 100,
+      "Knight": 100,
+      "Caravel": 100
+    },
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "Cologne_Cathedral"
+  },
+  "Elbphilharmonie": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "Radio": 100,
+      "Diplomacy": 100,
+      "Rocket": 100
+    },
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "Elbphilharmonie"
+  },
+  "Zugspitze": {
+    "input": {},
+    "output": {},
+    "construction": {},
+    "max": 0,
+    "special": "NaturalWonder",
+    "wikipedia": "Zugspitze"
+  },
+  "RhineGorge": {
+    "input": {},
+    "output": {},
+    "construction": {},
+    "max": 0,
+    "special": "NaturalWonder",
+    "wikipedia": "Rhine_Gorge"
+  },
+  "BlackForest": {
+    "input": {},
+    "output": {},
+    "construction": {},
+    "max": 0,
+    "special": "NaturalWonder",
+    "wikipedia": "Black_Forest"
+  },
+  "SantaClausVillage": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "Faith": 500
+    },
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "Santa_Claus_Village"
+  },
+  "Lapland": {
+    "input": {},
+    "output": {},
+    "construction": {},
+    "max": 0,
+    "special": "NaturalWonder",
+    "wikipedia": "Lapland_(Finland)"
+  },
+  "RockefellerCenterChristmasTree": {
+    "input": {},
+    "output": {},
+    "construction": {},
+    "max": 0,
+    "special": "NaturalWonder",
+    "wikipedia": "Rockefeller_Center_Christmas_Tree"
+  },
+  "YearOfTheSnake": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "Opera": 500
+    },
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "Snake_(zodiac)"
+  },
+  "BritishMuseum": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "Tank": 100,
+      "Ironclad": 100,
+      "Train": 100
+    },
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "British_Museum"
+  },
+  "CambridgeUniversity": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "Philosophy": 100,
+      "Culture": 100,
+      "Faith": 100
+    },
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "University_of_Cambridge"
+  },
+  "TowerBridge": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "Concrete": 150,
+      "Steel": 150
+    },
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "Tower_Bridge"
+  },
+  "EastIndiaCompany": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "Bond": 100,
+      "Frigate": 100,
+      "Gunpowder": 100
+    },
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "East_India_Company"
+  },
+  "CerneAbbasGiant": {
+    "input": {},
+    "output": {},
+    "construction": {},
+    "max": 0,
+    "special": "NaturalWonder",
+    "wikipedia": "Cerne_Abbas_Giant"
+  },
+  "DuneOfPilat": {
+    "input": {},
+    "output": {},
+    "construction": {},
+    "max": 0,
+    "special": "NaturalWonder",
+    "wikipedia": "Dune_of_Pilat"
+  },
+  "ArcDeTriomphe": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "Train": 100,
+      "GatlingGun": 100,
+      "Politics": 100
+    },
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "Arc_de_Triomphe"
+  },
+  "MontSaintMichel": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "Culture": 1000
+    },
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "Mont-Saint-Michel"
+  },
+  "Louvre": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "Bond": 100,
+      "Law": 100,
+      "Frigate": 100
+    },
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "Louvre"
+  },
+  "CentrePompidou": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "TV": 100,
+      "Computer": 100,
+      "Forex": 100
+    },
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "Centre_Pompidou"
+  },
+  "EasterBunny": {
+    "input": {},
+    "output": {},
+    "construction": {
+      "Bond": 100,
+      "Book": 100,
+      "Culture": 100
+    },
+    "max": 1,
+    "special": "WorldWonder",
+    "wikipedia": "Easter_Bunny"
   }
 }
