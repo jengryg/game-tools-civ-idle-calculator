@@ -11,5 +11,6 @@ class PlayerData(
     override val unlockedTechnology: Map<String, TechnologyData>,
     override val obtainedGreatPeople: Map<String, ObtainedGreatPeopleData>,
     override val tiles: Map<Int, TileData>,
-    override val transportation: Map<Int, TransportationData>
+    override val transportation: Map<Int, TransportationData>,
+    override val ageWisdom: Map<String, Int>
 ) : IPlayerData

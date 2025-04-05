@@ -12,4 +12,5 @@ interface IPlayerData {
     val obtainedGreatPeople: Map<String, ObtainedGreatPeopleData>
     val tiles: Map<Int, TileData>
     val transportation: Map<Int, TransportationData>
+    val ageWisdom: Map<String, Int>
 }

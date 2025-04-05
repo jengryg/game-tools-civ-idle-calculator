@@ -1,6 +1,9 @@
 package game.model
 
 import Logging
+import game.common.BuildingType
+import game.common.modifiers.BuildingModTarget
+import game.common.modifiers.BuildingModType
 import game.model.game.*
 import game.model.player.ObtainedGreatPeople
 import game.model.player.Tile
@@ -88,5 +91,41 @@ class Model(
 
     fun getProducer(r: Resource): Building {
         return assignedProducers[r] ?: r.getSingleProducerOrThrow()
+    }
+
+    fun applyDysonWonder(level: Int) {
+        if (level <= 0) {
+            return
+        }
+
+        buildings.forEach { (_, building) ->
+            if (building.type == BuildingType.NORMAL) {
+                building.addCustomMod(
+                    from = "DysonSphere",
+                    type = BuildingModType.WONDER,
+                    target = BuildingModTarget.OUTPUT,
+                    totalEffect = 5.0 + 1.0 * (level - 1).toDouble()
+                )
+            }
+        }
+    }
+
+    fun applyLargeHadronMulti(level: Int) {
+        if (level < 0) {
+            return
+        }
+
+        greatPersons.values.filter { it.age.name == "InformationAge" }.forEach { person ->
+            person.mods.forEach { mod ->
+                buildings.values.filter { mod.bldName == it.name }.forEach { bld ->
+                    bld.addCustomMod(
+                        from = "Large Hadron ${person.name}",
+                        type = BuildingModType.WONDER,
+                        target = mod.target,
+                        totalEffect = level * person.value
+                    )
+                }
+            }
+        }
     }
 }

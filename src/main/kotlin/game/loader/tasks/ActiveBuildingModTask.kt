@@ -64,8 +64,9 @@ class ActiveBuildingModTask(
         if (obtained == null) {
             return 0.0
         }
+        val wisdomEffect = pd.ageWisdom.getOrDefault(obtained.greatPerson.age.name, 0).toDouble()
 
-        return obtained.totalEffect * obtained.greatPerson.value
+        return (obtained.totalEffect + wisdomEffect) * obtained.greatPerson.value
     }
 
     private fun checkTechnologyBuildingMod(mod: BuildingMod): Double {

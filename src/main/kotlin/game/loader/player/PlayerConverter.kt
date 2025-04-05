@@ -40,7 +40,8 @@ class PlayerConverter(
             unlockedTechnology = unlockedTechnology,
             obtainedGreatPeople = obtainedGreatPeople,
             tiles = tiles,
-            transportation = transportation
+            transportation = transportation,
+            ageWisdom = ps.saveGame.options.ageWisdom
         ).also {
             // TODO apply tasks
         }
