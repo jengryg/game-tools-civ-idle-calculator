@@ -2,6 +2,7 @@ package game.loader.game.converter
 
 import Logging
 import game.loader.game.data.AgeData
+import game.loader.game.data.BuildingMultiplier
 import game.loader.game.data.TechnologyData
 import game.loader.game.json.TechJson
 import logger
@@ -64,7 +65,13 @@ class TechnologyConverter(
             revealDepositNames = json.revealDeposit ?: emptyList(),
             unlocksBuildingNames = json.unlockBuilding ?: emptyList(),
             buildingMultipliers = json.buildingMultiplier?.flatMap { (bName, multi) ->
-                multi.map { (type, factor) -> Triple(bName, type, factor.toDouble()) }
+                multi.map { (type, factor) ->
+                    BuildingMultiplier(
+                        name = bName,
+                        target = type,
+                        value = factor.toDouble()
+                    )
+                }
             } ?: emptyList()
         )
     }

@@ -10,7 +10,7 @@ class GreatPersonData(
     val value: Double,
     @JsonSerialize(using = JustNameSerializer::class)
     val age: AgeData,
-    val buildingMultipliers: List<Triple<String, String, Double>>
+    val buildingMultipliers: List<BuildingMultiplier>
 ) : HasNameBase(name) {
     val mods: MutableList<BuildingMod> = mutableListOf()
 }

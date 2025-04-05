@@ -93,25 +93,25 @@ class BuildingConverter(
 
     private fun getBuildingMods(buildingName: String): MutableList<BuildingMod> {
         val modsFromTech = technologies.values.flatMap { tech ->
-            tech.buildingMultipliers.filter { m -> m.first == buildingName }.map {
+            tech.buildingMultipliers.filter { m -> m.name == buildingName }.map {
                 BuildingMod(
                     from = tech.name,
                     bldName = buildingName,
                     type = BuildingModType.TECHNOLOGY,
-                    target = BuildingModTarget.fromString(it.second),
-                    value = it.third
+                    target = BuildingModTarget.fromString(it.target),
+                    value = it.value
                 ).also { bm -> tech.mods.add(bm) }
             }
         }
 
         val modsFromPersons = greatPersons.values.flatMap { person ->
-            person.buildingMultipliers.filter { m -> m.first == buildingName }.map {
+            person.buildingMultipliers.filter { m -> m.name == buildingName }.map {
                 BuildingMod(
                     from = person.name,
                     bldName = buildingName,
                     type = BuildingModType.GREAT_PERSON,
-                    target = BuildingModTarget.fromString(it.second),
-                    value = it.third
+                    target = BuildingModTarget.fromString(it.target),
+                    value = it.value
                 ).also { bm -> person.mods.add(bm) }
             }
         }

@@ -14,7 +14,7 @@ class TechnologyData(
     val predecessor: List<TechnologyData>,
     val revealDepositNames: List<String>,
     val unlocksBuildingNames: List<String>,
-    val buildingMultipliers: List<Triple<String, String, Double>>
+    val buildingMultipliers: List<BuildingMultiplier>
 ) : HasNameBase(name) {
     val mods: MutableList<BuildingMod> = mutableListOf()
 }
