@@ -122,7 +122,7 @@ class Model(
                         from = "Large Hadron ${person.name}",
                         type = BuildingModType.WONDER,
                         target = mod.target,
-                        totalEffect = level * person.value
+                        totalEffect = (1.0 + level) * person.value
                     )
                 }
             }
