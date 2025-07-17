@@ -20,7 +20,7 @@ dependencies {
     implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.16.1")
     implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.16.1")
 
-    implementation("org.apache.xmlgraphics:batik-svggen:1.17")
+    implementation("org.apache.xmlgraphics:batik-svggen:1.19")
     implementation("org.apache.xmlgraphics:batik-dom:1.17")
 
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
